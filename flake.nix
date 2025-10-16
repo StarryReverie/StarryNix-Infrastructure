@@ -14,7 +14,8 @@
   outputs =
     { self, flake-parts, ... }@inputs:
     let
-      root = ./.;
+      flakeRoot = ./.;
+      hostPrefix = "starrynix-";
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
@@ -38,5 +39,24 @@
 
           formatter = pkgs.nixfmt-tree;
         };
+
+      flake = {
+        nixosConfigurations = {
+          homelab =
+            let
+              host = "homelab";
+              constants = (import ./modules/constants.nix) // {
+                inherit flakeRoot;
+                hostname = "${hostPrefix}${host}";
+                system = "x86_64-linux";
+              };
+            in
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit (constants) system;
+              specialArgs = { inherit inputs constants; };
+              modules = [ ./hosts/${host}/system.nix ];
+            };
+        };
+      };
     };
 }
