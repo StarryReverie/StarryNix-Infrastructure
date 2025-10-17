@@ -41,7 +41,6 @@
     packages = with pkgs; [
       tree
       git
-      helix
       neofetch
       ripgrep
       htop
