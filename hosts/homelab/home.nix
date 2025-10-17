@@ -8,6 +8,7 @@
 }:
 {
   imports = [
+    (flakeRoot + /modules/home/direnv)
     (flakeRoot + /modules/home/helix)
   ];
 
