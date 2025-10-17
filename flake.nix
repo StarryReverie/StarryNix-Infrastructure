@@ -6,6 +6,11 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
     };
@@ -42,20 +47,13 @@
 
       flake = {
         nixosConfigurations = {
-          homelab =
-            let
-              host = "homelab";
-              constants = (import ./modules/constants.nix) // {
-                inherit flakeRoot;
-                hostname = "${hostPrefix}${host}";
-                system = "x86_64-linux";
-              };
-            in
-            inputs.nixpkgs.lib.nixosSystem {
-              inherit (constants) system;
-              specialArgs = { inherit inputs constants; };
-              modules = [ ./hosts/${host}/system.nix ];
+          homelab = (import ./hosts/homelab/entry-point.nix) {
+            inherit inputs flakeRoot;
+            constants = (import ./modules/constants.nix) // {
+              system = "x86_64-linux";
+              hostname = "${hostPrefix}homelab";
             };
+          };
         };
       };
     };
