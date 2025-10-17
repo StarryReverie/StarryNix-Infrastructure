@@ -3,6 +3,7 @@
   lib,
   pkgs,
   modulesPath,
+  constants,
   ...
 }:
 
@@ -77,6 +78,6 @@
     HandleLidSwitchDocked = "ignore";
   };
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs.hostPlatform = lib.mkDefault constants.system;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
