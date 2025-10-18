@@ -23,7 +23,6 @@
     extraGroups = [ "wheel" ];
 
     packages = with pkgs; [
-      tree
       neofetch
       htop
       zellij

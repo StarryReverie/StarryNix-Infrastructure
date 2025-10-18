@@ -11,6 +11,7 @@
     (flakeRoot + /modules/home/atuin)
     (flakeRoot + /modules/home/bat)
     (flakeRoot + /modules/home/direnv)
+    (flakeRoot + /modules/home/eza)
     (flakeRoot + /modules/home/fzf)
     (flakeRoot + /modules/home/git)
     (flakeRoot + /modules/home/helix)
