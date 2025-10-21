@@ -41,8 +41,11 @@
   programs.tcpdump.enable = true;
 
   services.openssh.enable = true;
-  services.v2raya.enable = true;
   services.tailscale.enable = true;
+  services.dae = {
+    enable = true;
+    configFile = "/etc/nixos/config.dae";
+  };
 
   system.stateVersion = "25.05";
 
