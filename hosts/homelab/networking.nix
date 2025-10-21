@@ -43,21 +43,48 @@
     networkConfig.Bridge = "microvm";
   };
 
-  networking.nat = {
-    enable = true;
-    externalInterface = "wlp3s0";
-    internalInterfaces = [ "microvm" ];
-
-    forwardPorts = [
-      {
-        proto = "tcp";
-        sourcePort = 8080;
-        destination = "172.25.0.1:80";
-      }
-    ];
-  };
+  networking.nat.enable = true;
 
   networking.firewall.enable = true;
   networking.nftables.enable = true;
   networking.firewall.allowedTCPPorts = [ 8080 ];
+
+  networking.nftables.tables."starrynix-infrastructure-services-nat" = {
+    family = "ip";
+    content = ''
+      set internal-interfaces {
+          type ifname;
+          elements = { "microvm" }
+      }
+
+      set external-interfaces {
+          type ifname;
+          elements = { "wlp3s0", "tailscale0" }
+      }
+
+      map service-port-forwarding {
+          typeof meta l4proto . th dport : ip daddr . th dport;
+          counter
+          elements = {
+              tcp . 8080 : 172.25.0.1 . 80
+          }
+      }
+
+      chain pre {
+          type nat hook prerouting priority dstnat; policy accept;
+          iifname @external-interfaces meta l4proto { tcp, udp } dnat ip to meta l4proto . th dport map @service-port-forwarding comment "DNAT external requests to internal services"
+          iifname "lo" meta l4proto { tcp, udp } dnat ip to meta l4proto . th dport map @service-port-forwarding comment "DNAT external requests to internal services"
+      }
+
+      chain postrouting {
+          type nat hook postrouting priority srcnat; policy accept;
+          iifname @internal-interfaces oifname @external-interfaces counter masquerade comment "SNAT from internal services"
+          iifname != @internal-interfaces oifname @internal-interfaces counter masquerade comment "Masquerade for DNAT reflection"
+      }
+
+      chain output {
+          type nat hook output priority mangle; policy accept;
+      }
+    '';
+  };
 }
