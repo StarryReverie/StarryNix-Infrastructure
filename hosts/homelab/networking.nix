@@ -5,6 +5,9 @@
   constants,
   ...
 }:
+let
+  clusters = config.starrynix-infrastructure.registry.clusters;
+in
 {
   networking.useDHCP = lib.mkDefault true;
 
@@ -25,22 +28,26 @@
   networking.useNetworkd = true;
   systemd.network.enable = true;
 
-  systemd.network.netdevs."10-microvm".netdevConfig = {
-    Kind = "bridge";
-    Name = "microvm";
+  systemd.network.netdevs."10-starrynix-infrastructure-cluster1-bridges" = {
+    netdevConfig = {
+      Kind = "bridge";
+      Name = clusters."web-fireworks".networkBridge;
+    };
   };
 
-  systemd.network.networks."10-microvm" = {
-    matchConfig.Name = "microvm";
-    address = [ "172.25.0.254/24" ];
+  systemd.network.networks."10-starrynix-infrastructure-cluster1-bridges" = {
+    matchConfig.Name = clusters."web-fireworks".networkBridge;
+    address = [ clusters."web-fireworks".gatewayIpv4AddressCidr ];
     networkConfig = {
       IPv4Forwarding = true;
     };
   };
 
-  systemd.network.networks."11-microvm" = {
-    matchConfig.Name = "vmif-*";
-    networkConfig.Bridge = "microvm";
+  systemd.network.networks."11-tarrynix-infrastructure-cluster1-network" = {
+    matchConfig.Name = builtins.concatStringsSep "," (
+      lib.attrsets.mapAttrsToList (name: node: node.networkInterface) clusters."web-fireworks".nodes
+    );
+    networkConfig.Bridge = clusters."web-fireworks".networkBridge;
   };
 
   networking.nat.enable = true;
@@ -54,7 +61,7 @@
     content = ''
       set internal-interfaces {
           type ifname;
-          elements = { "microvm" }
+          elements = { "${clusters."web-fireworks".networkBridge}" }
       }
 
       set external-interfaces {

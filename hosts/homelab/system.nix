@@ -10,6 +10,8 @@
 {
   imports = [
     (flakeRoot + /modules/nixos/nix)
+    (flakeRoot + /modules/nixos/starrynix-infrastructure/registry)
+    (flakeRoot + /services/registry.nix)
     ./hardware.nix
     ./networking.nix
   ];
