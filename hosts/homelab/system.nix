@@ -39,6 +39,12 @@
     dig
   ];
 
+  console = {
+    earlySetup = true;
+    packages = with pkgs; [ terminus_font ];
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-d24b.psf.gz";
+  };
+
   programs.zsh.enable = true;
   programs.tcpdump.enable = true;
 
