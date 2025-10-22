@@ -73,6 +73,8 @@
     { device = "/dev/disk/by-uuid/fd164910-91cf-4216-9605-d9f2248bb0cb"; }
   ];
 
+  services.fstrim.enable = true;
+
   services.logind.settings.Login = {
     HandleLidSwitchExternalPower = "ignore";
     HandleLidSwitchDocked = "ignore";
