@@ -37,13 +37,28 @@ let
 
         index = lib.mkOption {
           type = lib.types.ints.between 1 253;
-          description = "The unique index of this service node, which will be used in the node's IPv4 address";
+          description = ''
+            The unique index of this service node, which will be used in the
+            node's IPv4 address
+          '';
           example = 1;
+        };
+
+        hostName = lib.mkOption {
+          type = lib.types.str;
+          description = ''
+            The name of this service node that will be written to
+            `/etc/hostname`
+          '';
+          readOnly = true;
         };
 
         networkInterface = lib.mkOption {
           type = lib.types.str;
-          description = "The name of this service node's network interface on the host's side (readonly)";
+          description = ''
+            The name of this service node's network interface on the host's
+            side (readonly)
+          '';
           readOnly = true;
         };
 
@@ -55,13 +70,17 @@ let
 
         ipv4AddressCidr = lib.mkOption {
           type = lib.types.str;
-          description = "The IPv4 address of this service node in CIDR notation (readonly)";
+          description = ''
+            The IPv4 address of this service node in CIDR notation (readonly)
+          '';
           readOnly = true;
         };
 
         macAddress = lib.mkOption {
           type = lib.types.str;
-          description = "The MAC address of this service node's network interface (readonly)";
+          description = ''
+            The MAC address of this service node's network interface (readonly)
+          '';
           readOnly = true;
         };
       };
@@ -72,6 +91,7 @@ let
         in
         {
           name = lib.mkDefault name;
+          hostName = lib.mkDefault "starrynix-node-${clusterName}-${name}";
           networkInterface = lib.mkDefault "starrynix${builtins.toString clusterIndex}-${builtins.toString index}";
           ipv4Address = lib.mkDefault ipv4Address;
           ipv4AddressCidr = lib.mkDefault "${ipv4Address}/24";
@@ -95,7 +115,10 @@ let
 
         index = lib.mkOption {
           type = lib.types.ints.between 1 255;
-          description = "The unique index of this service cluster, which will be used in the cluster's network address";
+          description = ''
+            The unique index of this service cluster, which will be used in the
+            cluster's network address
+          '';
           example = 1;
         };
 
@@ -122,13 +145,18 @@ let
 
         gatewayIpv4Address = lib.mkOption {
           type = lib.types.str;
-          description = "The IPv4 address of this cluster's subnet's gateway (readonly)";
+          description = ''
+            The IPv4 address of this cluster's subnet's gateway (readonly)
+          '';
           readOnly = true;
         };
 
         gatewayIpv4AddressCidr = lib.mkOption {
           type = lib.types.str;
-          description = "The IPv4 address of this cluster's subnet's gateway in CIDR notation (readonly)";
+          description = ''
+            The IPv4 address of this cluster's subnet's gateway in CIDR
+            notation (readonly)
+          '';
           readOnly = true;
         };
       };

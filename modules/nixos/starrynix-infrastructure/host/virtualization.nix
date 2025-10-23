@@ -16,7 +16,7 @@ let
   vms =
     let
       mapNode = cluster: node: {
-        name = "${cluster.name}-${node.name}";
+        name = node.hostName;
         value =
           let
             allConfigurations = hostCfg.deployment.serviceConfigurations;
