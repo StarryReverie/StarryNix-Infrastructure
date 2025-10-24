@@ -3,18 +3,12 @@
   lib,
   pkgs,
   serviceConstants,
-  flakeRoot,
   ...
 }:
 let
   serviceCfg = config.starrynix-infrastructure.service;
 in
 {
-  imports = [
-    (flakeRoot + /modules/nixos/starrynix-infrastructure/service)
-    (flakeRoot + /services/registry.nix)
-  ];
-
   starrynix-infrastructure.service = {
     name = {
       inherit (serviceConstants) cluster node;

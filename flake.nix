@@ -51,6 +51,8 @@
         };
 
       flake = {
+        lib = import ./lib;
+
         nixosConfigurations = {
           homelab = (import ./hosts/homelab/entry-point.nix) {
             inherit inputs flakeRoot;
@@ -65,8 +67,8 @@
           web-fireworks = {
             web = (import ./services/web-fireworks/web/entry-point.nix) {
               inherit inputs flakeRoot;
+              system = "x86_64-linux";
               serviceConstants = (import ./modules/constants.nix) // {
-                system = "x86_64-linux";
                 cluster = "web-fireworks";
                 node = "web";
               };
