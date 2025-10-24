@@ -3,18 +3,22 @@ layout {
         plugin location="zellij:tab-bar"
     }
     pane split_direction="vertical" {
-        pane size="20%" {
+        pane name="Files" size="20%" {
             plugin location="zellij:strider"
         }
         pane {
-            pane size="80%" {
-                focus true
-                command "direnv"
-                args "exec" "." "hx" "."
+            pane size="80%" stacked=true {
+                pane name="Lazygit" {
+                    command "lazygit"
+                }
+                pane name="Helix" expanded=true focus=true {
+                    command "direnv"
+                    args "exec" "." "hx" "."
+                }
             }
             pane split_direction="vertical" {
-                pane
-                pane
+                pane name="Terminal 1"
+                pane name="Terminal 2"
             }
         }
     }
