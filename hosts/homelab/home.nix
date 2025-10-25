@@ -19,6 +19,7 @@
     (flakeRoot + /modules/home/helix)
     (flakeRoot + /modules/home/lazygit)
     (flakeRoot + /modules/home/ripgrep)
+    (flakeRoot + /modules/home/systemctl-tui)
     (flakeRoot + /modules/home/zellij)
     (flakeRoot + /modules/home/zoxide)
     (flakeRoot + /modules/home/zsh)
@@ -26,6 +27,10 @@
 
   home.username = constants.username;
   home.homeDirectory = "/home/${constants.username}";
+
+  home.packages = with pkgs; [
+    htop
+  ];
 
   programs.home-manager.enable = true;
 

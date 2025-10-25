@@ -27,10 +27,6 @@
     shell = pkgs.zsh;
     extraGroups = [ "wheel" ];
 
-    packages = with pkgs; [
-      htop
-    ];
-
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQrkIsLMV70klKFtQY8JK5QgXKGyTpZcIaLarXG5dBv"
     ];
