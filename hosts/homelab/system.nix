@@ -9,6 +9,7 @@
 }:
 {
   imports = [
+    (flakeRoot + /modules/nixos/dae)
     (flakeRoot + /modules/nixos/nix)
     (flakeRoot + /modules/nixos/secret)
     (flakeRoot + /modules/nixos/starrynix-infrastructure/host)
@@ -50,10 +51,6 @@
 
   services.openssh.enable = true;
   services.tailscale.enable = true;
-  services.dae = {
-    enable = true;
-    configFile = "/etc/nixos/config.dae";
-  };
 
   system.stateVersion = "25.11";
 

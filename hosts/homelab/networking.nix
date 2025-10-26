@@ -24,4 +24,9 @@ in
     extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
     allowAuxiliaryImperativeNetworks = true;
   };
+
+  services.dae = {
+    wanInterfaces = [ "wlp3s0" ];
+    lanInterfaces = config.starrynix-infrastructure.host.networking.internalInterfaces;
+  };
 }
