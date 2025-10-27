@@ -17,17 +17,17 @@
   ];
 
   options = {
-    starrynix-infrastructure.service = {
+    starrynix-infrastructure.node = {
       name = {
         cluster = lib.mkOption {
           type = lib.types.str;
-          description = "The name of the cluster that this service belongs to";
+          description = "The name of the cluster that this node belongs to";
           example = "cluster";
         };
 
         node = lib.mkOption {
           type = lib.types.str;
-          description = "The name of this service node";
+          description = "The name of this node";
           example = "node";
         };
       };
@@ -64,8 +64,8 @@
       clusterInformation = lib.mkOption {
         type = lib.types.attrsOf lib.types.anything;
         description = ''
-          Information of the cluster that this service belongs to in the
-          registry `starrynix-infrastructure.registry` (readonly)
+          Information of the cluster that this node belongs to in the registry
+          `starrynix-infrastructure.registry` (readonly)
         '';
         readOnly = true;
       };
@@ -73,7 +73,7 @@
       nodeInformation = lib.mkOption {
         type = lib.types.attrsOf lib.types.anything;
         description = ''
-          Information of this service node in the registry
+          Information of this node in the registry
           `starrynix-infrastructure.registry` (readonly)
         '';
         readOnly = true;
@@ -84,12 +84,12 @@
   config =
     let
       registryCfg = config.starrynix-infrastructure.registry;
-      serviceCfg = config.starrynix-infrastructure.service;
+      nodeCfg = config.starrynix-infrastructure.node;
     in
     {
-      starrynix-infrastructure.service = {
-        clusterInformation = registryCfg.clusters.${serviceCfg.name.cluster};
-        nodeInformation = serviceCfg.clusterInformation.nodes.${serviceCfg.name.node};
+      starrynix-infrastructure.node = {
+        clusterInformation = registryCfg.clusters.${nodeCfg.name.cluster};
+        nodeInformation = nodeCfg.clusterInformation.nodes.${nodeCfg.name.node};
       };
     };
 }

@@ -8,7 +8,7 @@
 {
   starrynix-infrastructure.host = {
     deployment = {
-      inherit (inputs.self) serviceConfigurations;
+      inherit (inputs.self) nodeConfigurations;
       enabledClusters = [ "web-fireworks" ];
     };
 

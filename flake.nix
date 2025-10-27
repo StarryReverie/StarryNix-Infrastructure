@@ -76,12 +76,12 @@
           };
         };
 
-        serviceConfigurations = {
+        nodeConfigurations = {
           web-fireworks = {
-            web = (import ./services/web-fireworks/web/entry-point.nix) {
+            web = (import ./nodes/web-fireworks/web/entry-point.nix) {
               inherit inputs flakeRoot;
               system = "x86_64-linux";
-              serviceConstants = (import ./modules/constants.nix) // {
+              nodeConstants = (import ./modules/constants.nix) // {
                 cluster = "web-fireworks";
                 node = "web";
               };
@@ -95,7 +95,7 @@
             let
               lib = inputs.nixpkgs.lib;
 
-              flattenedServiceConfigurations = (
+              flattenedNodeConfigurations = (
                 lib.attrsets.listToAttrs (
                   lib.lists.flatten (
                     lib.attrsets.mapAttrsToList (
@@ -104,12 +104,12 @@
                         name = "${clusterName}-${nodeName}";
                         value = node.nixosSystem;
                       }) cluster
-                    ) self.serviceConfigurations
+                    ) self.nodeConfigurations
                   )
                 )
               );
             in
-            self.nixosConfigurations // flattenedServiceConfigurations;
+            self.nixosConfigurations // flattenedNodeConfigurations;
         };
       };
     };

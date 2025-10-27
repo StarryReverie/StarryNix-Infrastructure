@@ -19,7 +19,7 @@ let
         name = node.hostName;
         value =
           let
-            allConfigurations = hostCfg.deployment.serviceConfigurations;
+            allConfigurations = hostCfg.deployment.nodeConfigurations;
             nodeConfiguartion = allConfigurations.${cluster.name}.${node.name};
           in
           {

@@ -26,19 +26,19 @@ let
 
         toCluster = lib.mkOption {
           type = lib.types.str;
-          description = "The cluster name of the destination service";
+          description = "The cluster name of the destination node";
           example = "cluster1";
         };
 
         toNode = lib.mkOption {
           type = lib.types.str;
-          description = "The node name of the destination service";
+          description = "The name of the destination node";
           example = "node1";
         };
 
         destinationPort = lib.mkOption {
           type = lib.types.port;
-          description = "The destination port of the internal service.";
+          description = "The destination port of the internal node.";
           example = 80;
         };
       };
@@ -55,21 +55,18 @@ in
   options = {
     starrynix-infrastructure.host = {
       deployment = {
-        serviceConfigurations = lib.mkOption {
+        nodeConfigurations = lib.mkOption {
           type = lib.types.attrsOf lib.types.anything;
           description = ''
-            Definitions of all services that run on VMs. All services are not
-            necessarily enabled, which is determined by the `enabledClusters`
-            option
+            Definitions of all VM nodes. All nodes are not necessarily enabled,
+            which is determined by the `enabledClusters` option
           '';
           default = { };
         };
 
         enabledClusters = lib.mkOption {
           type = lib.types.listOf lib.types.str;
-          description = ''
-            Names of all service clusters that are served by this host
-          '';
+          description = "Names of all clusters that are served by this host";
           default = [ ];
           example = [
             "cluster1"

@@ -5,7 +5,7 @@
   ...
 }:
 let
-  keyCfg = config.starrynix-infrastructure.service.nodeInformation.sshKey;
+  keyCfg = config.starrynix-infrastructure.node.nodeInformation.sshKey;
 in
 {
   config = {

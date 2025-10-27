@@ -31,15 +31,15 @@ let
       options = {
         name = lib.mkOption {
           type = lib.types.strMatching "[a-zA-Z0-9_-]+";
-          description = "The identifier of this service node";
+          description = "The identifier of this node";
           example = "web";
         };
 
         index = lib.mkOption {
           type = lib.types.ints.between 1 253;
           description = ''
-            The unique index of this service node, which will be used in the
-            node's IPv4 address
+            The unique index of this node, which will be used in the node's
+            IPv4 address
           '';
           example = 1;
         };
@@ -75,8 +75,8 @@ let
         hostName = lib.mkOption {
           type = lib.types.str;
           description = ''
-            The name of this service node that will be written to
-            `/etc/hostname` (readonly)
+            The name of this node that will be written to `/etc/hostname`
+            (readonly)
           '';
           readOnly = true;
         };
@@ -84,22 +84,22 @@ let
         networkInterface = lib.mkOption {
           type = lib.types.str;
           description = ''
-            The name of this service node's network interface on the host's
-            side (readonly)
+            The name of this node's network interface on the host's side
+            (readonly)
           '';
           readOnly = true;
         };
 
         ipv4Address = lib.mkOption {
           type = lib.types.str;
-          description = "The IPv4 address of this service node (readonly)";
+          description = "The IPv4 address of this node (readonly)";
           readOnly = true;
         };
 
         ipv4AddressCidr = lib.mkOption {
           type = lib.types.str;
           description = ''
-            The IPv4 address of this service node in CIDR notation (readonly)
+            The IPv4 address of this node in CIDR notation (readonly)
           '';
           readOnly = true;
         };
@@ -107,7 +107,7 @@ let
         macAddress = lib.mkOption {
           type = lib.types.str;
           description = ''
-            The MAC address of this service node's network interface (readonly)
+            The MAC address of this node's network interface (readonly)
           '';
           readOnly = true;
         };
@@ -137,14 +137,14 @@ let
       options = {
         name = lib.mkOption {
           type = lib.types.strMatching "[a-zA-Z0-9_-]+";
-          description = "The identifier of this service cluster";
+          description = "The identifier of this cluster";
           example = "cluster";
         };
 
         index = lib.mkOption {
           type = lib.types.ints.between 1 255;
           description = ''
-            The unique index of this service cluster, which will be used in the
+            The unique index of this cluster, which will be used in the
             cluster's network address
           '';
           example = 1;
@@ -161,7 +161,7 @@ let
               };
             }
           );
-          description = "All service nodes in this cluster";
+          description = "All nodes in this cluster";
           default = { };
         };
 

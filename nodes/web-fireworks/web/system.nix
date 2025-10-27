@@ -2,16 +2,16 @@
   config,
   lib,
   pkgs,
-  serviceConstants,
+  nodeConstants,
   ...
 }:
 let
-  serviceCfg = config.starrynix-infrastructure.service;
+  nodeCfg = config.starrynix-infrastructure.node;
 in
 {
-  starrynix-infrastructure.service = {
+  starrynix-infrastructure.node = {
     name = {
-      inherit (serviceConstants) cluster node;
+      inherit (nodeConstants) cluster node;
     };
 
     remote = {

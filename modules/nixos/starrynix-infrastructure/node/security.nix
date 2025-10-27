@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.starrynix-infrastructure.service;
+  cfg = config.starrynix-infrastructure.node;
 in
 {
   config = {

@@ -1,5 +1,5 @@
 {
-  makeServiceEntryPoint =
+  makeNodeEntryPoint =
     { inputs, system, ... }@specialArgs:
     { modules }:
     {

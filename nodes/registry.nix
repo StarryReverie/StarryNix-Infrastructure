@@ -19,8 +19,8 @@
     "web-fireworks".nodes."web".sshKey = {
       mount = true;
       type = "ed25519";
-      publicKeyFile = flakeRoot + /services/web-fireworks/web/ssh-keys/ed25519.pub;
-      encryptedPrivateKeyFile = flakeRoot + /services/web-fireworks/web/ssh-keys/ed25519.age;
+      publicKeyFile = flakeRoot + /nodes/web-fireworks/web/ssh-keys/ed25519.pub;
+      encryptedPrivateKeyFile = flakeRoot + /nodes/web-fireworks/web/ssh-keys/ed25519.age;
     };
   };
 
@@ -31,6 +31,6 @@
         pubkey = "age1ke6r2945sh89e6kax2myzahaedwk7647wq4kjn7luwgqg4rgduhsyggmxm";
       }
     ];
-    localStorageDir = flakeRoot + /secrets/rekeyed/services;
+    localStorageDir = flakeRoot + /secrets/rekeyed/nodes;
   };
 }
