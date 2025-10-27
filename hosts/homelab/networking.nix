@@ -3,6 +3,7 @@
   lib,
   pkgs,
   constants,
+  flakeRoot,
   ...
 }:
 let
@@ -23,6 +24,10 @@ in
     '';
     extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
     allowAuxiliaryImperativeNetworks = true;
+  };
+
+  age.secrets = {
+    "wireless-password.conf".rekeyFile = flakeRoot + /secrets/wireless-password.conf.age;
   };
 
   services.dae = {

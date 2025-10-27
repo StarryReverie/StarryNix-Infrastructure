@@ -80,6 +80,12 @@
     HandleLidSwitchDocked = "ignore";
   };
 
+  console = {
+    earlySetup = true;
+    packages = with pkgs; [ terminus_font ];
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-d24b.psf.gz";
+  };
+
   nixpkgs.hostPlatform = lib.mkDefault constants.system;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

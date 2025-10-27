@@ -17,7 +17,7 @@
     (flakeRoot + /services/registry.nix)
     ./hardware.nix
     ./networking.nix
-    ./secrets.nix
+    ./service.nix
   ];
 
   networking.hostName = constants.hostname;
@@ -41,40 +41,10 @@
     dig
   ];
 
-  console = {
-    earlySetup = true;
-    packages = with pkgs; [ terminus_font ];
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-d24b.psf.gz";
-  };
-
   programs.zsh.enable = true;
   programs.tcpdump.enable = true;
 
   services.tailscale.enable = true;
 
   system.stateVersion = "25.11";
-
-  starrynix-infrastructure.host = {
-    deployment = {
-      inherit (inputs.self) serviceConfigurations;
-      enabledClusters = [ "web-fireworks" ];
-    };
-
-    networking = {
-      externalInterfaces = [
-        "wlp3s0"
-        "tailscale0"
-      ];
-
-      forwardPorts = [
-        {
-          protocol = "tcp";
-          sourcePort = 8080;
-          toCluster = "web-fireworks";
-          toNode = "web";
-          destinationPort = 80;
-        }
-      ];
-    };
-  };
 }
