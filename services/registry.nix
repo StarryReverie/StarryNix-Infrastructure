@@ -23,4 +23,14 @@
       encryptedPrivateKeyFile = flakeRoot + /services/web-fireworks/web/ssh-keys/ed25519.age;
     };
   };
+
+  starrynix-infrastructure.registry.secret = {
+    masterIdentities = [
+      {
+        identity = flakeRoot + /secrets/identities/main.key.age;
+        pubkey = "age1ke6r2945sh89e6kax2myzahaedwk7647wq4kjn7luwgqg4rgduhsyggmxm";
+      }
+    ];
+    localStorageDir = flakeRoot + /secrets/rekeyed/services;
+  };
 }

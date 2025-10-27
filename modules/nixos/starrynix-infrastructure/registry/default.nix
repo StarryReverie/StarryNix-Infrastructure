@@ -216,6 +216,19 @@ in
         description = "All clusters' definition";
         default = { };
       };
+
+      secret = {
+        masterIdentities = lib.mkOption {
+          type = lib.types.listOf lib.types.anything;
+          description = "Master identities passed to `agenix-rekey`";
+          default = [ ];
+        };
+
+        localStorageDir = lib.mkOption {
+          type = lib.types.path;
+          description = "Directory that stores rekeyed secrets";
+        };
+      };
     };
   };
 

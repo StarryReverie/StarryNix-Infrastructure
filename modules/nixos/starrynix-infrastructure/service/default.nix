@@ -7,10 +7,10 @@
 }:
 {
   imports = [
-    (flakeRoot + /modules/nixos/secret)
     ../registry
     ./hardware.nix
     ./networking.nix
+    ./secret.nix
     ./security.nix
     ./ssh-keys.nix
     ./system.nix
