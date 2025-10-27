@@ -20,7 +20,7 @@ in
     initContent = ''
       # Set prompt style
       setopt prompt_subst
-      export PS1='%{%F{226}%}%n%{%F{220}%}@%{%F{214}%}%m%{%F{red}%}$(${getCwdGitBranchScript}) %{%F{45}%}%~
+      export PS1='%{%F{226}%}%n%{%F{220}%}@%{%F{214}%}%m%{%F{red}%}$(${getCwdGitBranchScript}) %{%F{45}%}%~ %{%F{white}%}($(date +%H:%M))
       %{%f%}> '
 
       export RPROMPT="%F{red}%(?..%?)%f"
