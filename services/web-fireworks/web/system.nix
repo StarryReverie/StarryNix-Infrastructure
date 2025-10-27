@@ -26,5 +26,7 @@ in
   microvm.vcpu = 1;
   microvm.mem = 256;
 
+  age.rekey.hostPubkey = builtins.readFile serviceCfg.nodeInformation.sshKey.publicKeyFile;
+
   system.stateVersion = "25.11";
 }

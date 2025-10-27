@@ -91,7 +91,25 @@
 
         agenix-rekey = inputs.agenix-rekey.configure {
           userFlake = self;
-          nixosConfigurations = self.nixosConfigurations;
+          nixosConfigurations =
+            let
+              lib = inputs.nixpkgs.lib;
+
+              flattenedServiceConfigurations = (
+                lib.attrsets.listToAttrs (
+                  lib.lists.flatten (
+                    lib.attrsets.mapAttrsToList (
+                      clusterName: cluster:
+                      lib.attrsets.mapAttrsToList (nodeName: node: {
+                        name = "${clusterName}-${nodeName}";
+                        value = node.nixosSystem;
+                      }) cluster
+                    ) self.serviceConfigurations
+                  )
+                )
+              );
+            in
+            self.nixosConfigurations // flattenedServiceConfigurations;
         };
       };
     };

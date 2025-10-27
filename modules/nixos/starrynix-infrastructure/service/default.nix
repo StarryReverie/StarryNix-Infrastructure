@@ -2,10 +2,12 @@
   config,
   lib,
   pkgs,
+  flakeRoot,
   ...
 }:
 {
   imports = [
+    (flakeRoot + /modules/nixos/secret)
     ../registry
     ./hardware.nix
     ./networking.nix

@@ -8,5 +8,9 @@
       config = {
         imports = modules;
       };
+
+      nixosSystem = inputs.nixpkgs.lib.nixosSystem {
+        inherit system specialArgs modules;
+      };
     };
 }

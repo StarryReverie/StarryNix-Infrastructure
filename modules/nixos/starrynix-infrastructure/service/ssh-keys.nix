@@ -34,5 +34,9 @@ in
         "ro"
       ];
     };
+
+    systemd.services."agenix-install-secrets" = {
+      unitConfig.RequiresMountsFor = "/etc/ssh/ssh_host_${keyCfg.type}_key";
+    };
   };
 }
