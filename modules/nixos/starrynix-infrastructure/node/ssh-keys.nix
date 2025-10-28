@@ -16,26 +16,28 @@ in
       }
     ];
 
-    fileSystems."/etc/ssh/ssh_host_${keyCfg.type}_key.pub" = lib.mkIf keyCfg.mount {
-      device = "${keyCfg.publicKeyFile}";
-      fsType = "none";
-      options = [
-        "bind"
-        "ro"
-      ];
+    fileSystems = lib.mkIf keyCfg.mount {
+      "/etc/ssh/ssh_host_${keyCfg.type}_key.pub" = {
+        device = "${keyCfg.publicKeyFile}";
+        fsType = "none";
+        options = [
+          "bind"
+          "ro"
+        ];
+      };
+
+      "/etc/ssh/ssh_host_${keyCfg.type}_key" = {
+        depends = [ "/etc/ssh/mount" ];
+        device = "/etc/ssh/mount/ssh_host_${keyCfg.type}_key";
+        fsType = "none";
+        options = [
+          "bind"
+          "ro"
+        ];
+      };
     };
 
-    fileSystems."/etc/ssh/ssh_host_${keyCfg.type}_key" = lib.mkIf keyCfg.mount {
-      depends = [ "/etc/ssh/mount" ];
-      device = "/etc/ssh/mount/ssh_host_${keyCfg.type}_key";
-      fsType = "none";
-      options = [
-        "bind"
-        "ro"
-      ];
-    };
-
-    systemd.services."agenix-install-secrets" = {
+    systemd.services."agenix-install-secrets" = lib.mkIf keyCfg.mount {
       unitConfig.RequiresMountsFor = "/etc/ssh/ssh_host_${keyCfg.type}_key";
     };
   };

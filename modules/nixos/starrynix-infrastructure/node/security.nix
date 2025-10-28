@@ -10,6 +10,7 @@ in
 {
   config = {
     users.mutableUsers = false;
+    users.allowNoPasswordLogin = true;
 
     users.users.test = lib.mkIf cfg.remote.enable {
       isNormalUser = true;
