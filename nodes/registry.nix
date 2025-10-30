@@ -18,6 +18,7 @@
       index = 2;
       nodes."main".index = 1;
       nodes."storage".index = 2;
+      nodes."cache".index = 3;
     };
   };
 
@@ -41,6 +42,13 @@
       type = "ed25519";
       publicKeyFile = flakeRoot + /nodes/nextcloud/storage/ssh-keys/ed25519.pub;
       encryptedPrivateKeyFile = flakeRoot + /nodes/nextcloud/storage/ssh-keys/ed25519.age;
+    };
+
+    "nextcloud".nodes."cache".sshKey = {
+      mount = true;
+      type = "ed25519";
+      publicKeyFile = flakeRoot + /nodes/nextcloud/cache/ssh-keys/ed25519.pub;
+      encryptedPrivateKeyFile = flakeRoot + /nodes/nextcloud/cache/ssh-keys/ed25519.age;
     };
   };
 
