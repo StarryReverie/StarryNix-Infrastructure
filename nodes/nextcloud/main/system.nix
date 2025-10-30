@@ -18,26 +18,16 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMYndghkby7QFFZ8476PT9RM7D2z+f4YyY16pd2TyT4A starryreverie@starrynix-homelab"
       ];
     };
+
+    states = {
+      "nextcloud".mountPoint = "/var/lib/nextcloud";
+      "postgresql".mountPoint = "/var/lib/postgresql";
+    };
   };
 
   microvm = {
     vcpu = 1;
     mem = 1024;
-
-    shares = [
-      {
-        proto = "virtiofs";
-        tag = "nextcloud";
-        source = "nextcloud";
-        mountPoint = "/var/lib/nextcloud";
-      }
-      {
-        proto = "virtiofs";
-        tag = "postgresql";
-        source = "postgresql";
-        mountPoint = "/var/lib/postgresql";
-      }
-    ];
   };
 
   system.stateVersion = "25.11";

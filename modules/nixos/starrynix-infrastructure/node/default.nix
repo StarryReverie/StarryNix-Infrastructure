@@ -5,6 +5,29 @@
   inputs,
   ...
 }:
+let
+  stateSubmodule =
+    { name, ... }:
+    {
+      options = {
+        name = lib.mkOption {
+          type = lib.types.str;
+          description = "The name of this state directory";
+          example = "postgresql";
+        };
+
+        mountPoint = lib.mkOption {
+          type = lib.types.str;
+          description = "The mount point of this state directory in the node";
+          example = "/var/lib/postgresql";
+        };
+      };
+
+      config = {
+        name = lib.mkDefault name;
+      };
+    };
+in
 {
   imports = [
     inputs.agenix.nixosModules.default
@@ -61,6 +84,17 @@
           '';
           default = [ ];
           example = [ "ssh-ed25519 xxxxxxxxxxx" ];
+        };
+      };
+
+      states = lib.mkOption {
+        type = lib.types.attrsOf (lib.types.submodule stateSubmodule);
+        description = "All persistent states that the node needs";
+        default = { };
+        example = {
+          "postgresql" = {
+            mountPoint = "/var/lib/postgresql";
+          };
         };
       };
 

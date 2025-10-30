@@ -18,20 +18,15 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMYndghkby7QFFZ8476PT9RM7D2z+f4YyY16pd2TyT4A starryreverie@starrynix-homelab"
       ];
     };
+
+    states = {
+      "minio".mountPoint = "/var/lib/minio";
+    };
   };
 
   microvm = {
     vcpu = 1;
     mem = 512;
-
-    shares = [
-      {
-        proto = "virtiofs";
-        tag = "minio";
-        source = "minio";
-        mountPoint = "/var/lib/minio";
-      }
-    ];
   };
 
   system.stateVersion = "25.11";
