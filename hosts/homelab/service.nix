@@ -24,6 +24,13 @@
       forwardPorts = [
         {
           protocol = "tcp";
+          sourcePort = 8096;
+          toCluster = "jellyfin";
+          toNode = "main";
+          destinationPort = 8096;
+        }
+        {
+          protocol = "tcp";
           sourcePort = 8081;
           toCluster = "nextcloud";
           toNode = "main";

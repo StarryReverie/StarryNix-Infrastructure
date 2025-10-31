@@ -18,11 +18,22 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMYndghkby7QFFZ8476PT9RM7D2z+f4YyY16pd2TyT4A starryreverie@starrynix-homelab"
       ];
     };
+
+    states = {
+      "jellyfin-data".mountPoint = config.services.jellyfin.dataDir;
+      "jellyfin-cache".mountPoint = config.services.jellyfin.cacheDir;
+      "jellyfin-library".mountPoint = "/library";
+    };
   };
 
   microvm = {
-    vcpu = 1;
-    mem = 512;
+    vcpu = 2;
+    mem = 2560;
+  };
+
+  boot.tmp = {
+    useTmpfs = true;
+    tmpfsSize = "100%";
   };
 
   system.stateVersion = "25.11";
