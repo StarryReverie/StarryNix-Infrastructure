@@ -10,7 +10,6 @@
     deployment = {
       inherit (inputs.self) nodeConfigurations;
       enabledClusters = [
-        "web-fireworks"
         "nextcloud"
       ];
     };
@@ -22,13 +21,6 @@
       ];
 
       forwardPorts = [
-        {
-          protocol = "tcp";
-          sourcePort = 8080;
-          toCluster = "web-fireworks";
-          toNode = "web";
-          destinationPort = 80;
-        }
         {
           protocol = "tcp";
           sourcePort = 8081;

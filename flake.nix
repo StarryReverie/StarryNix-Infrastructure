@@ -77,17 +77,6 @@
         };
 
         nodeConfigurations = {
-          "web-fireworks" = {
-            "web" = (import ./nodes/web-fireworks/web/entry-point.nix) {
-              inherit inputs flakeRoot;
-              system = "x86_64-linux";
-              nodeConstants = (import ./modules/constants.nix) // {
-                cluster = "web-fireworks";
-                node = "web";
-              };
-            };
-          };
-
           "nextcloud" = {
             "main" = (import ./nodes/nextcloud/main/entry-point.nix) {
               inherit inputs flakeRoot;
