@@ -10,6 +10,7 @@
     deployment = {
       inherit (inputs.self) nodeConfigurations;
       enabledClusters = [
+        "jellyfin"
         "nextcloud"
       ];
     };
