@@ -37,6 +37,13 @@
           toNode = "main";
           destinationPort = 80;
         }
+        {
+          protocol = "tcp";
+          sourcePort = 8248;
+          toCluster = "searxng";
+          toNode = "main";
+          destinationPort = 8248;
+        }
       ];
     };
   };
