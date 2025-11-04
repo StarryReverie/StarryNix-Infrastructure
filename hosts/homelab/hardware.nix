@@ -88,6 +88,8 @@
     font = "${pkgs.terminus_font}/share/consolefonts/ter-d24b.psf.gz";
   };
 
+  zramSwap.enable = true;
+
   nixpkgs.hostPlatform = lib.mkDefault constants.system;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
