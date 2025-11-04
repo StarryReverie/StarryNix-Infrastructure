@@ -95,7 +95,7 @@ in
             );
           in
           {
-            "starrynix-infrastructure-services-nat" = {
+            "starrynix-infrastructure-nat" = {
               family = "ip";
               content = ''
                 set internal-interfaces {
@@ -128,6 +128,21 @@ in
 
                 chain output {
                     type nat hook output priority mangle; policy accept;
+                }
+              '';
+            };
+
+            "starrynix-infrastructure-cluster-isolation" = {
+              family = "ip";
+              content = ''
+                set internal-interfaces {
+                    type ifname;
+                    elements = { ${internalInterfaceElements} }
+                }
+
+                chain forward {
+                    type filter hook forward priority filter; policy accept;
+                    iifname @internal-interfaces oifname @internal-interfaces counter drop comment "Block inter-cluster traffic"
                 }
               '';
             };
