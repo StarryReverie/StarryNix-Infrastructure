@@ -75,10 +75,12 @@
 
   services.fstrim.enable = true;
 
-  services.logind.settings.Login = {
-    HandleLidSwitchExternalPower = "ignore";
-    HandleLidSwitchDocked = "ignore";
-  };
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
 
   console = {
     earlySetup = true;
