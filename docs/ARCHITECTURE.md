@@ -36,6 +36,8 @@ This project tries to conform the design philosophy below:
         - `main`: Web UI & database of Nextcloud's states.
         - `storage`: S3-compatible object storage backend.
         - `cache`: Redis-based caching service.
+    - `searxng`: SearXNG meta-search engine.
+        - `main`: Main node of the SearXNG service.
     - `registry.nix`: Node manifest and core metadata management.
 - `secrets`: Secret management of the infrastructure.
     - `identities`: Encrypted identities of secrets.
