@@ -45,6 +45,13 @@
           toNode = "main";
           destinationPort = 8248;
         }
+        {
+          protocol = "tcp";
+          sourcePort = 8799;
+          toCluster = "jupyter";
+          toNode = "main";
+          destinationPort = 8799;
+        }
       ];
     };
   };
