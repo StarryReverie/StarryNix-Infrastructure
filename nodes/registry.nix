@@ -33,6 +33,7 @@
 
     "dns" = {
       index = 5;
+      nodes."main".index = 1;
       nodes."recursive".index = 2;
     };
   };
@@ -89,6 +90,13 @@
     };
 
     "dns".nodes = {
+      "main".sshKey = {
+        mount = true;
+        type = "ed25519";
+        publicKeyFile = flakeRoot + /nodes/dns/main/ssh-keys/ed25519.pub;
+        encryptedPrivateKeyFile = flakeRoot + /nodes/dns/main/ssh-keys/ed25519.age;
+      };
+
       "recursive".sshKey = {
         mount = true;
         type = "ed25519";

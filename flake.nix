@@ -140,6 +140,15 @@
           };
 
           "dns" = {
+            "main" = (import ./nodes/dns/main/entry-point.nix) {
+              inherit inputs flakeRoot;
+              system = "x86_64-linux";
+              nodeConstants = (import ./modules/constants.nix) // {
+                cluster = "dns";
+                node = "main";
+              };
+            };
+
             "recursive" = (import ./nodes/dns/recursive/entry-point.nix) {
               inherit inputs flakeRoot;
               system = "x86_64-linux";
