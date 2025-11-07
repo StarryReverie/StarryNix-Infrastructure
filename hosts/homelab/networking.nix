@@ -12,6 +12,8 @@ in
 {
   networking.useDHCP = lib.mkDefault true;
 
+  networking.nameservers = [ clusters."dns".nodes."main".ipv4Address ];
+
   networking.wireless = {
     enable = true;
     secretsFile = config.age.secrets."wireless-password.conf".path;
