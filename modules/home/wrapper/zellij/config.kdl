@@ -118,11 +118,6 @@ keybinds clear-defaults=true {
         bind "Alt K" { MoveFocus "Down"; }
         bind "Alt I" { MoveFocus "Up"; }
         bind "Alt F" { ToggleFocusFullscreen; }
-        bind "Alt D" {
-            NewTab {
-                layout "@@%%xdg-config-home%%@@/zellij/layouts/development.kdl"
-            }
-        }
         bind "Alt {" { GoToPreviousTab; }
         bind "Alt }" { GoToNextTab; }
     }

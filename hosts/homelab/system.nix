@@ -39,6 +39,7 @@
             (flakeRoot + /modules/home/wrapper/helix)
             (flakeRoot + /modules/home/wrapper/lazygit)
             (flakeRoot + /modules/home/wrapper/ripgrep)
+            (flakeRoot + /modules/home/wrapper/zellij)
           ];
         };
       in
