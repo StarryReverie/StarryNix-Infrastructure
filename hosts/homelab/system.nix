@@ -33,13 +33,15 @@
         wrapperManagerConfigurations = inputs.wrapper-manager.lib {
           inherit pkgs;
           modules = [
-            { wrappers = {}; }
+            { wrappers = { }; }
+            (flakeRoot + /modules/home/wrapper/bat)
           ];
         };
       in
       (with pkgs; [
         htop
-      ]) ++ (builtins.attrValues wrapperManagerConfigurations.config.build.packages);
+      ])
+      ++ (builtins.attrValues wrapperManagerConfigurations.config.build.packages);
 
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQrkIsLMV70klKFtQY8JK5QgXKGyTpZcIaLarXG5dBv"

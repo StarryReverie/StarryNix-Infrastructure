@@ -65,6 +65,21 @@
             };
 
           formatter = pkgs.nixfmt-tree;
+
+          legacyPackages = {
+            configurationWrapped =
+              let
+                wrapperArgs = {
+                  inherit pkgs;
+                  lib = inputs.nixpkgs.lib;
+                  constants = import ./modules/constants.nix;
+                };
+                makeWrappedPackage = wrapper: inputs.wrapper-manager.lib.wrapWith pkgs (wrapper wrapperArgs);
+              in
+              {
+                bat = makeWrappedPackage (import ./modules/home/wrapper/bat/wrapper.nix);
+              };
+          };
         };
 
       flake = {
