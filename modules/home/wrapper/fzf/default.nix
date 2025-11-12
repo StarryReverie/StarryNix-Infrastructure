@@ -5,7 +5,7 @@
   ...
 }:
 let
-  fdExecutable = lib.getExe pkgs.fd;
+  fdExecutable = lib.getExe config.wrapperConfigurations.finalPackages.fd;
 in
 {
   wrappers.fzf.basePackage = pkgs.fzf;
@@ -18,8 +18,6 @@ in
       "--cycle"
     ];
 
-    FZF_DEFAULT_COMMAND.value = ''
-      ${fdExecutable} --follow --color=always -E ".git" -E "build" -E "target" -E "node_modules" .
-    '';
+    FZF_DEFAULT_COMMAND.value = "${fdExecutable} --color=always .";
   };
 }
