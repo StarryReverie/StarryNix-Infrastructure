@@ -29,10 +29,6 @@
   home.username = constants.username;
   home.homeDirectory = "/home/${constants.username}";
 
-  home.packages = with pkgs; [
-    htop
-  ];
-
   programs.home-manager.enable = true;
 
   home.stateVersion = "25.11";

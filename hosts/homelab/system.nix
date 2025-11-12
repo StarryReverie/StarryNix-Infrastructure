@@ -28,6 +28,19 @@
     shell = pkgs.zsh;
     extraGroups = [ "wheel" ];
 
+    packages =
+      let
+        wrapperManagerConfigurations = inputs.wrapper-manager.lib {
+          inherit pkgs;
+          modules = [
+            { wrappers = {}; }
+          ];
+        };
+      in
+      (with pkgs; [
+        htop
+      ]) ++ (builtins.attrValues wrapperManagerConfigurations.config.build.packages);
+
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQrkIsLMV70klKFtQY8JK5QgXKGyTpZcIaLarXG5dBv"
     ];
