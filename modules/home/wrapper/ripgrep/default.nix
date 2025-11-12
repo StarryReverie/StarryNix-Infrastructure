@@ -5,10 +5,11 @@
   ...
 }:
 {
-  programs.ripgrep.enable = true;
+  wrappers.ripgrep.basePackage = pkgs.ripgrep;
 
-  programs.ripgrep.arguments = [
+  wrappers.ripgrep.prependFlags = [
     "--smart-case"
+
     "--glob=!**/node_modules/**"
     "--glob=!**/dist/**"
     "--glob=!**/{,_}build/**"

@@ -36,6 +36,7 @@
             { wrappers = { }; }
             (flakeRoot + /modules/home/wrapper/bat)
             (flakeRoot + /modules/home/wrapper/fd)
+            (flakeRoot + /modules/home/wrapper/ripgrep)
           ];
         };
       in
