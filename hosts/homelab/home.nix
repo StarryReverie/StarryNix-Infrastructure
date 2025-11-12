@@ -12,7 +12,6 @@
     (flakeRoot + /modules/home/difftastic)
     (flakeRoot + /modules/home/direnv)
     (flakeRoot + /modules/home/eza)
-    (flakeRoot + /modules/home/fastfetch)
     (flakeRoot + /modules/home/fzf)
     (flakeRoot + /modules/home/git)
     (flakeRoot + /modules/home/systemctl-tui)
