@@ -10,7 +10,6 @@
   imports = [
     (flakeRoot + /modules/home/difftastic)
     (flakeRoot + /modules/home/direnv)
-    (flakeRoot + /modules/home/git)
   ];
 
   home.username = constants.username;
