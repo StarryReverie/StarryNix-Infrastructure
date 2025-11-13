@@ -32,6 +32,7 @@
 
       (flakeRoot + /modules/home/wrapper/atuin)
       (flakeRoot + /modules/home/wrapper/bat)
+      (flakeRoot + /modules/home/wrapper/difftastic)
       (flakeRoot + /modules/home/wrapper/eza)
       (flakeRoot + /modules/home/wrapper/fastfetch)
       (flakeRoot + /modules/home/wrapper/fd)

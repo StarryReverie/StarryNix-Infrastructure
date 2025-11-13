@@ -8,7 +8,6 @@
 }:
 {
   imports = [
-    (flakeRoot + /modules/home/difftastic)
     (flakeRoot + /modules/home/direnv)
   ];
 
