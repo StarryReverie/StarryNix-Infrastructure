@@ -10,7 +10,6 @@
   imports = [
     (flakeRoot + /modules/home/difftastic)
     (flakeRoot + /modules/home/direnv)
-    (flakeRoot + /modules/home/eza)
     (flakeRoot + /modules/home/git)
     (flakeRoot + /modules/home/systemctl-tui)
     (flakeRoot + /modules/home/zoxide)
