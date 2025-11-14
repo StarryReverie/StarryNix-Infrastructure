@@ -1,0 +1,167 @@
+theme = "one-dark-transparent"
+
+[editor]
+bufferline = "always"
+color-modes = true
+completion-trigger-len = 1
+cursorline = true
+idle-timeout = 0
+insert-final-newline = true
+line-number = "relative"
+text-width = 165
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+display-messages = true
+
+[editor.statusline]
+left = [
+    "mode",
+    "spacer",
+    "version-control",
+    "file-name",
+    "spinner",
+    "diagnostics",
+]
+right = [
+    "position",
+    "primary-selection-length",
+    "selections",
+    "total-line-numbers",
+    "file-encoding",
+    "file-line-ending",
+    "file-type",
+]
+
+[editor.statusline.mode]
+insert = "INSERT"
+normal = "NORMAL"
+select = "SELECT"
+
+[keys.insert]
+A-I = ["move_line_up", "move_line_up", "move_line_up", "move_line_up", "move_line_up"]
+A-J = "move_prev_word_start"
+A-K = ["move_line_down", "move_line_down", "move_line_down", "move_line_down", "move_line_down"]
+A-L = ["move_next_word_end", "move_char_right"]
+A-i = "move_line_up"
+A-j = "move_char_left"
+A-k = "move_line_down"
+A-l = "move_char_right"
+
+[keys.normal]
+A-i = "expand_selection"
+A-j = "select_prev_sibling"
+A-k = "shrink_selection"
+A-l = "select_next_sibling"
+A-n = "no_op"
+A-o = "no_op"
+A-p = "no_op"
+A-tab = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-A-i = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-A-k = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+E = ":quit"
+H = "insert_at_line_start"
+I = ["move_line_up", "move_line_up", "move_line_up", "move_line_up", "move_line_up"]
+J = "move_prev_word_start"
+K = ["move_line_down", "move_line_down", "move_line_down", "move_line_down", "move_line_down"]
+L = "move_next_word_end"
+W = ":write"
+X = "extend_line_below"
+h = "insert_mode"
+i = "move_line_up"
+j = "move_char_left"
+k = "move_line_down"
+x = "@miw"
+
+[keys.normal.Z]
+I = ["scroll_up", "scroll_up", "scroll_up", "scroll_up", "scroll_up"]
+K = ["scroll_down", "scroll_down", "scroll_down", "scroll_down", "scroll_down"]
+i = "scroll_up"
+j = "no_op"
+k = "scroll_down"
+
+[keys.normal.g]
+h = "goto_line_start"
+i = "move_line_up"
+j = "goto_first_nonwhitespace"
+k = "move_line_down"
+l = "goto_line_end"
+s = "no_op"
+
+[keys.normal.w]
+I = ["hsplit", "swap_view_up"]
+J = ["vsplit", "swap_view_left"]
+K = "hsplit"
+L = "vsplit"
+e = ":buffer-close"
+i = "jump_view_up"
+j = "jump_view_left"
+k = "jump_view_down"
+l = "jump_view_right"
+n = ":new"
+w = "rotate_view"
+
+[keys.normal.z]
+i = "scroll_up"
+k = "scroll_down"
+
+[keys.select]
+A-i = "expand_selection"
+A-j = "select_prev_sibling"
+A-k = "shrink_selection"
+A-l = "select_next_sibling"
+A-n = "no_op"
+A-o = "no_op"
+A-p = "no_op"
+E = ":quit"
+H = "insert_at_line_start"
+I = ["extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up"]
+J = "extend_prev_word_start"
+K = ["extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down"]
+L = "extend_next_word_end"
+W = ":write"
+X = "extend_line_below"
+h = "insert_mode"
+i = "extend_line_up"
+j = "extend_char_left"
+k = "extend_line_down"
+x = ["move_prev_word_end", "move_next_word_start", "trim_selections"]
+
+[keys.select.Z]
+I = ["scroll_up", "scroll_up", "scroll_up", "scroll_up", "scroll_up"]
+K = ["scroll_down", "scroll_down", "scroll_down", "scroll_down", "scroll_down"]
+i = "scroll_up"
+j = "no_op"
+k = "scroll_down"
+
+[keys.select.g]
+h = "goto_line_start"
+i = "extend_line_up"
+j = "goto_first_nonwhitespace"
+k = "extend_line_down"
+l = "goto_line_end"
+
+[keys.select.w]
+I = ["hsplit", "swap_view_up"]
+J = ["vsplit", "swap_view_left"]
+K = "hsplit"
+L = "vsplit"
+e = ":buffer-close"
+i = "jump_view_up"
+j = "jump_view_left"
+k = "jump_view_down"
+l = "jump_view_right"
+n = ":new"
+w = "rotate_view"
+
+[keys.select.z]
+i = "scroll_up"
+k = "scroll_down"

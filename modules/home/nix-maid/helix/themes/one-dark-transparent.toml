@@ -1,0 +1,40 @@
+comment = "#939496"
+inherits = "onedark"
+
+[palette]
+brighter-gray = "#8e98ab"
+
+["ui.background"]
+fg = "foreground"
+
+["ui.cursor.match"]
+bg = "light-gray"
+fg = "foreground"
+
+["ui.cursorline.primary"]
+bg = "cursorline"
+
+["ui.help"]
+fg = "foreground"
+
+["ui.menu"]
+bg = "light-black"
+fg = "brighter-gray"
+
+["ui.menu.selected"]
+bg = "gray"
+fg = "white"
+
+["ui.popup"]
+bg = "light-black"
+fg = "brighter-gray"
+
+["ui.statusline"]
+fg = "foreground"
+
+["ui.statusline.inactive"]
+fg = "light-gray"
+
+["ui.window"]
+bg = "light-black"
+fg = "light-gray"
