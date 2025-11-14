@@ -5,7 +5,7 @@
   ...
 }:
 let
-  finalPackage = config.wrapperConfigurations.finalPackages.atuin;
+  finalPackage = config.wrapping.packages.atuin;
 
   configFile = pkgs.writers.writeTOML "atuin-config.toml" {
     update_check = false;

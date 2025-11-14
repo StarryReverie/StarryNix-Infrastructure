@@ -37,11 +37,11 @@ inputs.nixpkgs.lib.nixosSystem {
           (flakeRoot + /modules/home/nix-maid/helix)
         ];
 
-        wrapperConfigurations = {
+        wrapping = {
           inherit pkgs;
           modules = [
             (flakeRoot + /modules/home/wrapper/wrapper-options.nix)
-            { wrapperConfigurations.finalPackages = config.wrapperConfigurations.finalPackages; }
+            { wrapping.packages = config.wrapping.packages; }
 
             (flakeRoot + /modules/home/wrapper/atuin)
             (flakeRoot + /modules/home/wrapper/bat)

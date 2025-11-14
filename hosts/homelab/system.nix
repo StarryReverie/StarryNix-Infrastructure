@@ -14,14 +14,14 @@
 
   users.users.${constants.username} = {
     isNormalUser = true;
-    shell = config.wrapperConfigurations.finalPackages.zsh;
+    shell = config.wrapping.packages.zsh;
     extraGroups = [ "wheel" ];
 
     packages =
       (with pkgs; [
         htop
       ])
-      ++ (builtins.attrValues config.wrapperConfigurations.finalPackages);
+      ++ (builtins.attrValues config.wrapping.packages);
 
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQrkIsLMV70klKFtQY8JK5QgXKGyTpZcIaLarXG5dBv"

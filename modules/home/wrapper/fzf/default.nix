@@ -5,8 +5,8 @@
   ...
 }:
 let
-  fdExecutable = lib.getExe config.wrapperConfigurations.finalPackages.fd;
-  fzfExecutable = lib.getExe config.wrapperConfigurations.finalPackages.fzf;
+  fdExecutable = lib.getExe config.wrapping.packages.fd;
+  fzfExecutable = lib.getExe config.wrapping.packages.fzf;
 in
 {
   wrappers.fzf.basePackage = pkgs.fzf;

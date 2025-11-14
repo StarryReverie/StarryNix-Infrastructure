@@ -6,11 +6,11 @@
   ...
 }:
 let
-  cfg = config.wrapperConfigurations;
+  cfg = config.wrapping;
 in
 {
   options = {
-    wrapperConfigurations = {
+    wrapping = {
       pkgs = lib.mkOption {
         type = lib.types.raw;
         description = "The Nixpkgs package set";
@@ -22,13 +22,13 @@ in
         default = [ ];
       };
 
-      evaluationResult = lib.mkOption {
+      evaluation = lib.mkOption {
         type = lib.types.raw;
         description = "The evaluation result of `wrapper-manager.lib { ... }`";
         readOnly = true;
       };
 
-      finalPackages = lib.mkOption {
+      packages = lib.mkOption {
         type = lib.types.attrsOf lib.types.raw;
         description = "The resulting wrapper package set";
         readOnly = true;
@@ -37,13 +37,13 @@ in
   };
 
   config = {
-    wrapperConfigurations = {
-      evaluationResult = inputs.wrapper-manager.lib {
+    wrapping = {
+      evaluation = inputs.wrapper-manager.lib {
         inherit (cfg) pkgs;
         modules = [ { wrappers = { }; } ] ++ cfg.modules;
       };
 
-      finalPackages = cfg.evaluationResult.config.build.packages;
+      packages = cfg.evaluation.config.build.packages;
     };
   };
 }
