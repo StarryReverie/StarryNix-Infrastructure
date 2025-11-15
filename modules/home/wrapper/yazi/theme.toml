@@ -1,0 +1,27 @@
+[mgr]
+border_symbol = " "
+
+[tabs]
+  [tabs.sep_inner]
+  open = ""
+  close = ""
+
+  [tabs.sep_outer]
+  open = ""
+  close = ""
+
+[status]
+  [status.sep_left]
+  open = ""
+  close = ""
+
+  [status.sep_right]
+  open = ""
+  close = ""
+
+[icon]
+globs = []
+dirs  = []
+files = []
+exts  = []
+conds = []

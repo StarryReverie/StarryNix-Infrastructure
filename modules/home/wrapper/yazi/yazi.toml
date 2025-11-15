@@ -1,0 +1,10 @@
+[mgr]
+ratio = [2, 4, 5]
+sort_by = "natural"
+sort_sensitive = false
+sort_dir_first = true
+linemode = "mtime"
+scrolloff = 5
+
+[preview]
+wrap = "yes"
