@@ -101,13 +101,15 @@ I = ["hsplit", "swap_view_up"]
 J = ["vsplit", "swap_view_left"]
 K = "hsplit"
 L = "vsplit"
-e = ":buffer-close"
 i = "jump_view_up"
 j = "jump_view_left"
 k = "jump_view_down"
 l = "jump_view_right"
-n = ":new"
 w = "rotate_view"
+c = ":new"
+e = ":buffer-close"
+n = ":buffer-next"
+p = ":buffer-previous"
 
 [keys.normal.z]
 i = "scroll_up"

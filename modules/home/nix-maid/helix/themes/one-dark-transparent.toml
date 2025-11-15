@@ -12,7 +12,10 @@ bg = "light-gray"
 fg = "foreground"
 
 ["ui.cursorline.primary"]
-bg = "cursorline"
+bg = "gray"
+
+["ui.cursorline.secondary"]
+bg = "light-black"
 
 ["ui.help"]
 fg = "foreground"
@@ -24,6 +27,14 @@ fg = "brighter-gray"
 ["ui.menu.selected"]
 bg = "gray"
 fg = "white"
+
+["ui.selection.primary"]
+fg = "foreground"
+bg = "light-gray"
+
+["ui.selection"]
+fg = "foreground"
+bg = "light-gray"
 
 ["ui.popup"]
 bg = "light-black"
