@@ -26,6 +26,12 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    colmena = {
+      url = "github:zhaofengli/colmena";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.stable.follows = "";
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
     };
@@ -58,6 +64,7 @@
             mkShell {
               packages = with pkgs; [
                 inputs'.agenix-rekey.packages.default
+                inputs'.colmena.packages.colmena
                 nil
                 nixfmt-rfc-style
               ];
@@ -69,8 +76,21 @@
       flake = {
         lib = import ./lib;
 
+        colmenaHive =
+          let
+            conf = self.nixosConfigurations;
+          in
+          inputs.colmena.lib.makeHive (
+            (builtins.mapAttrs (name: value: { imports = value._module.args.modules; }) conf)
+            // {
+              meta.nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
+              meta.nodeNixpkgs = builtins.mapAttrs (name: value: value.pkgs) conf;
+              meta.nodeSpecialArgs = builtins.mapAttrs (name: value: value._module.specialArgs) conf;
+            }
+          );
+
         nixosConfigurations = {
-          homelab = (import ./hosts/homelab/entry-point.nix) {
+          "homelab" = (import ./hosts/homelab/entry-point.nix) {
             inherit inputs flakeRoot;
             constants = (import ./modules/constants.nix) // {
               system = "x86_64-linux";
@@ -169,6 +189,8 @@
             let
               lib = inputs.nixpkgs.lib;
 
+              colmenaNodeConfigurations = (self.colmenaHive.introspect (x: x)).nodes;
+
               flattenedNodeConfigurations = (
                 lib.attrsets.listToAttrs (
                   lib.lists.flatten (
@@ -183,7 +205,10 @@
                 )
               );
             in
-            self.nixosConfigurations // flattenedNodeConfigurations;
+            lib.mergeAttrsList [
+              colmenaNodeConfigurations
+              flattenedNodeConfigurations
+            ];
         };
       };
     };

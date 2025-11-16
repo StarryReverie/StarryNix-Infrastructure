@@ -8,9 +8,20 @@ inputs.nixpkgs.lib.nixosSystem {
   inherit (constants) system;
   inherit specialArgs;
 
+  extraModules = [
+    inputs.colmena.nixosModules.deploymentOptions
+  ];
+
   modules = [
     # External modules
     inputs.nix-maid.nixosModules.default
+
+    # Colmena
+    {
+      deployment.allowLocalDeployment = true;
+      deployment.targetHost = null;
+      deployment.tags = [ "server" ];
+    }
 
     # StarryNix-Infrastructure
     (flakeRoot + /modules/nixos/starrynix-infrastructure/host)
