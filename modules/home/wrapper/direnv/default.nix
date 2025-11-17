@@ -4,8 +4,11 @@
   pkgs,
   ...
 }:
+let
+  direnvExecutable = lib.getExe (config.wrappers.direnv.wrapped or pkgs.direnv);
+in
 {
   settings.zsh.initContent = ''
-    eval "$(${lib.getExe pkgs.direnv} hook zsh)"
+    eval "$(${direnvExecutable} hook zsh)"
   '';
 }

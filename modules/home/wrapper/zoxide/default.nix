@@ -4,11 +4,12 @@
   pkgs,
   ...
 }:
+let
+  zoxideExecutable = lib.getExe (config.wrappers.zoxide.wrapped or pkgs.zoxide);
+in
 {
-  wrappers.zoxide.basePackage = pkgs.zoxide;
-
   settings.zsh.initContent = ''
     # Zoxide integration
-    eval "$(${lib.getExe config.wrappers.zoxide.wrapped} init zsh --cmd cd)"
+    eval "$(${zoxideExecutable} init zsh --cmd cd)"
   '';
 }

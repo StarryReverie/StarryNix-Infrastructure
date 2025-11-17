@@ -5,6 +5,8 @@
   ...
 }:
 let
+  difftasticExecutable = lib.getExe (config.wrappers.difftastic.wrapped or pkgs.difftastic);
+
   configFile = pkgs.writers.writeYAML "config.yaml" {
     gui = {
       language = "en";
@@ -15,7 +17,7 @@ let
 
     git = {
       pagers = lib.singleton {
-        externalDiffCommand = "${lib.getExe pkgs.difftastic} --color=always";
+        externalDiffCommand = "${difftasticExecutable} --color=always";
       };
     };
 

@@ -5,6 +5,8 @@
   ...
 }:
 let
+  atuinExecutable = lib.getExe (config.wrappers.atuin.wrapped or pkgs.atuin);
+
   configFile = pkgs.writers.writeTOML "atuin-config.toml" {
     update_check = false;
     style = "compact";
@@ -50,6 +52,6 @@ in
 
   settings.zsh.initContent = ''
     # Atuin integration
-    eval "$(${lib.getExe config.wrappers.atuin.wrapped} init zsh)"
+    eval "$(${atuinExecutable} init zsh)"
   '';
 }
