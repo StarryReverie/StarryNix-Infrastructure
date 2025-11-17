@@ -5,8 +5,6 @@
   ...
 }:
 let
-  finalPackage = config.wrapping.packages.atuin;
-
   configFile = pkgs.writers.writeTOML "atuin-config.toml" {
     update_check = false;
     style = "compact";
@@ -52,6 +50,6 @@ in
 
   settings.zsh.initContent = ''
     # Atuin integration
-    eval "$(${lib.getExe finalPackage} init zsh)"
+    eval "$(${lib.getExe config.wrappers.atuin.wrapped} init zsh)"
   '';
 }

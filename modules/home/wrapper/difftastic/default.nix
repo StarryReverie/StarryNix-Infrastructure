@@ -9,7 +9,7 @@
 
   settings.git.config =
     let
-      difftasticExecutable = lib.getExe config.wrapping.packages.difftastic;
+      difftasticExecutable = lib.getExe config.wrappers.difftastic.wrapped;
     in
     {
       diff = {

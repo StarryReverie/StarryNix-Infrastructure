@@ -51,9 +51,6 @@ inputs.nixpkgs.lib.nixosSystem {
         wrapping = {
           inherit pkgs;
           modules = [
-            (flakeRoot + /modules/home/wrapper/wrapper-options.nix)
-            { wrapping.packages = config.wrapping.packages; }
-
             (flakeRoot + /modules/home/wrapper/atuin)
             (flakeRoot + /modules/home/wrapper/bat)
             (flakeRoot + /modules/home/wrapper/difftastic)

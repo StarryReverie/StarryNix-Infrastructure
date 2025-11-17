@@ -9,6 +9,6 @@
 
   settings.zsh.initContent = ''
     # Zoxide integration
-    eval "$(${lib.getExe config.wrapping.packages.zoxide} init zsh --cmd cd)"
+    eval "$(${lib.getExe config.wrappers.zoxide.wrapped} init zsh --cmd cd)"
   '';
 }
