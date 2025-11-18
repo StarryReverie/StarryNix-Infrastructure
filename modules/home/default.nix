@@ -13,7 +13,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-32.3.3"
+    "electron-36.9.5"
   ];
 
   services.mpd.enable = lib.mkForce false;
