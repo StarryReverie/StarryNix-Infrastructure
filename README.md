@@ -53,3 +53,208 @@ A brief explanation of the structure of this repository is presented below:
 ![Desktop](./screenshots/desktop.png)
 
 ![Tilling Window Management](./screenshots/tilling-window-management.png)
+
+```kdl
+spawn-at-startup "waybar"
+spawn-sh-at-startup "swaybg -i ~/download/eric-stoynov-Asi4unAq4us-unsplash.jpg"
+
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+environment {
+    GDK_BACKEND "wayland,x11,*"
+    QT_QPA_PLATFORM "wayland;xcb"
+    SDL_VIDEODRIVER "wayland"
+    CLUTTER_BACKEND "wayland"
+
+    XDG_CURRENT_DESKTOP "niri"
+    XDG_SESSION_DESKTOP "niri"
+
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+}
+
+input {
+    keyboard {
+        numlock
+        repeat-delay 200
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+        scroll-factor 0.5
+        accel-speed 0.4
+        accel-profile "flat"
+    }
+
+    mouse {
+        accel-profile "flat"
+    }
+}
+
+output "eDP-1" {
+    off
+    mode "2560x1440@240.000"
+    scale 2
+    transform "normal"
+    position x=0 y=0
+}
+
+output "HDMI-A-1" {
+    mode "2560x1440@144.001"
+    scale 2
+    transform "normal"
+    position x=0 y=0
+}
+
+layout {
+    gaps 8
+    center-focused-column "never"
+    always-center-single-column
+    empty-workspace-above-first
+    background-color "transparent"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 2
+        active-gradient from="#1a84ab" to="#8653ed" angle=45
+        inactive-color "#505050"
+    }
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    draw-border-with-background false
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+binds {
+    //! Applications
+    // Frequently used applications
+    Mod+X hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
+    Mod+W hotkey-overlay-title="Open Web Browser" { spawn "firefox"; }
+    Mod+Space hotkey-overlay-title="Open Launcher" { spawn-sh "exec $(tofi-drun)"; }
+    Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "swaylock"; }
+
+    // Screenshot
+    Mod+S { screenshot; }
+    Mod+Shift+S { screenshot-screen; }
+    Mod+Ctrl+S { screenshot-window; }
+
+    // `Fn` keys
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+    //! Window management
+    // Misc
+    Mod+Ctrl+Shift+Escape { quit; }
+    Mod+Tab repeat=false { toggle-overview; }
+    Mod+Q repeat=false { close-window; }
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // Window focus
+    Mod+J { focus-column-left; }
+    Mod+L { focus-column-right; }
+    Mod+K { focus-window-or-workspace-down; }
+    Mod+I { focus-window-or-workspace-up; }
+
+    // Workspace focus
+    Mod+Shift+I { focus-workspace-up; }
+    Mod+Shift+K { focus-workspace-down; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    // Window movement
+    Mod+Ctrl+J { move-column-left; }
+    Mod+Ctrl+L { move-column-right; }
+    Mod+Ctrl+I { move-window-up-or-to-workspace-up; }
+    Mod+Ctrl+K { move-window-down-or-to-workspace-down; }
+
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    Mod+Comma  { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+
+    Mod+Z { center-column; }
+
+    Mod+Shift+Ctrl+J { move-column-left; }
+    Mod+Shift+Ctrl+L { move-column-right; }
+    Mod+Shift+Ctrl+I { move-column-to-workspace-up; }
+    Mod+Shift+Ctrl+K { move-column-to-workspace-down; }
+
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+
+    // Workspace movement
+    Mod+Shift+Alt+Ctrl+I { move-workspace-up; }
+    Mod+Shift+Alt+Ctrl+K { move-workspace-down; }
+
+    // Window resizing
+    Mod+C     { switch-preset-column-width; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    Mod+Shift+C     { switch-preset-window-height; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    Mod+F       { maximize-column; }
+    Mod+Shift+F { expand-column-to-available-width; }
+    Mod+Ctrl+F  { fullscreen-window; }
+
+    // Floating
+    Mod+U       { toggle-window-floating; }
+    Mod+Shift+U { switch-focus-between-floating-and-tiling; }
+
+    // Tab
+    Mod+V { toggle-column-tabbed-display; }
+}
+
+```
