@@ -24,15 +24,12 @@
         zoxide
       ])
       ++ (builtins.attrValues config.wrapping.packages);
-
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQrkIsLMV70klKFtQY8JK5QgXKGyTpZcIaLarXG5dBv"
-    ];
   };
 
   services.openssh.enable = true;
 
-  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO4btfGiTXkKcsgsSi76e1ExF46ZhBArbJPPyQz0epOT";
+  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIKkfLJ1nNXoIFe33/puw/m/8ytPQhD7TYoTD2WCCl88";
 
+  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.11";
 }

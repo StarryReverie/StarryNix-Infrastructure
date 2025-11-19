@@ -27,32 +27,32 @@ global {
 }
 
 dns {
-    # ipversion_prefer: 4
+    ipversion_prefer: 4
 
-    # upstream {
-    #     alibaba: 'https://dns.alidns.com/dns-query'
-    #     cloudflare: 'https://1.1.1.1/dns-query'
-    #     google: 'tcp+udp://8.8.8.8:53'
-    # }
+    upstream {
+        alibaba: 'https://dns.alidns.com/dns-query'
+        quad9: 'https://9.9.9.9:5053/dns-query'
+        google: 'tcp+udp://8.8.8.8:53'
+    }
 
-    # routing {
-    #     request {
-    #         qname(full: dns.alidns.com) -> google
-    #         qname(full: cloudflare-dns.com) -> google
-    #         qname(geosite:category-ads-all) -> reject
-    #         qtype(https) -> reject
-    #         qname(geosite:cn) -> alibaba
-    #         fallback: cloudflare
-    #         # fallback: google
-    #     }
+    routing {
+        request {
+            qname(full: dns.alidns.com) -> google
+            # qname(full: quad9-dns.com) -> google
+            qname(geosite:category-ads-all) -> reject
+            qtype(https) -> reject
+            qname(geosite:cn) -> alibaba
+            fallback: quad9
+            fallback: google
+        }
 
-    #     response {
-    #         upstream(google) -> accept
-    #         upstream(cloudflare) -> accept
-    #         ip(geoip:private) && !qname(geosite:cn) -> cloudflare
-    #         fallback: accept
-    #     }
-    # }
+        response {
+            upstream(google) -> accept
+            upstream(quad9) -> accept
+            ip(geoip:private) && !qname(geosite:cn) -> quad9
+            fallback: accept
+        }
+    }
 }
 
 group {

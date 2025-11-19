@@ -98,11 +98,11 @@
             };
           };
 
-          "workstation-vm" = (import ./hosts/workstation-vm/entry-point.nix) {
+          "workstation" = (import ./hosts/workstation/entry-point.nix) {
             inherit inputs flakeRoot;
             constants = (import ./modules/constants.nix) // {
               system = "x86_64-linux";
-              hostname = makeHostnameForHost "workstation-vm";
+              hostname = makeHostnameForHost "workstation";
             };
           };
         };
