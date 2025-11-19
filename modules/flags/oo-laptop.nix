@@ -14,6 +14,7 @@
     packages = {
       desktop = {
         environment.plasma.enable = true;
+        # environment.enable = true;
 
         communication.enable = true;
         i18n.enable = true;

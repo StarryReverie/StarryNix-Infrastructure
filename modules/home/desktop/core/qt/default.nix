@@ -26,7 +26,7 @@ in {
     home.packages = with pkgs; [
       kdePackages.qtstyleplugin-kvantum
     ] ++ lib.optionals (!hasPlasma) (with pkgs; [
-      qt6ct
+      qt6Packages.qt6ct
     ]);
 
     home.sessionVariables = envVars // envVarsExtra;

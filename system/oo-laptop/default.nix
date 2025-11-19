@@ -33,9 +33,17 @@
     # this sets the default vendor to integrated video card, which fixes slow
     # startup time of EGL-based softwares in machines with hybrid graphics
     # under Wayland.
-    __EGL_VENDOR_LIBRARY_FILENAMES =
-      "${pkgs.mesa}/share/glvnd/egl_vendor.d/50_mesa.json";
+    # __EGL_VENDOR_LIBRARY_FILENAMES =
+    #   "${pkgs.mesa}/share/glvnd/egl_vendor.d/50_mesa.json";
   };
+
+  programs.niri.enable = true;
+  services.displayManager.ly.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    tofi
+    swaybg
+  ];
 
   system.stateVersion = "24.05";
 }

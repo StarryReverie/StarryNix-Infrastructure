@@ -18,11 +18,6 @@ in {
     keyboard.bindings = import ./keybindings.nix args;
     colors = import ./themes/${colorscheme}.nix args;
 
-    terminal.shell = {
-      program = "${pkgs.zsh}/bin/zsh";
-      args = [ "--no-rcs" "-c" "sleep 0.01; zellij" ];
-    };
-
     window = {
       decorations = "None";
       opacity = 0.7;
