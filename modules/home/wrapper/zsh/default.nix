@@ -43,9 +43,10 @@ in
     settings.zsh.initContent = lib.mkMerge [
       ''
         # Set prompt style
-        ${builtins.readFile ./get-cwd-git-branch.sh}
+        source ${./short-cwd.sh}
+        source ${./get-cwd-git-branch.sh}
         setopt prompt_subst
-        export PS1='%{%F{226}%}%n%{%F{220}%}@%{%F{214}%}%m%{%F{red}%}$(get-cwd-git-branch) %{%F{45}%}%~ %{%F{white}%}($(date +%H:%M))
+        export PS1='%{%F{226}%}%n%{%F{220}%}@%{%F{214}%}%m%{%F{red}%}$(get-cwd-git-branch) %{%F{45}%}$(short-cwd) %{%F{white}%}($(date +%H:%M))
         %{%f%}> '
         export RPROMPT="%F{red}%(?..%?)%f"
       ''
