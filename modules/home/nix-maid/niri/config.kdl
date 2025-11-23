@@ -51,7 +51,6 @@ layout {
 
     preset-column-widths {
         proportion 0.33333
-        proportion 1.0
         proportion 0.5
         proportion 0.66667
     }
@@ -59,10 +58,16 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        width 2
-        active-gradient from="#1a84ab" to="#8653ed" angle=45
-        inactive-color "#505050"
+        off
     }
+
+    border {
+        width 2
+        active-gradient from="#1a84ab" to="#8653ed" angle=135
+        inactive-color "#505050"
+        urgent-color "#9b0000"
+    }
+
 }
 
 window-rule {
@@ -78,6 +83,8 @@ window-rule {
 
 window-rule {
     draw-border-with-background false
+    geometry-corner-radius 8
+    clip-to-geometry true
 }
 
 layer-rule {
