@@ -1,3 +1,4 @@
+spawn-at-startup "kanshi"
 spawn-at-startup "waybar"
 spawn-sh-at-startup "alacritty --daemon"
 spawn-sh-at-startup "swaybg -i ~/userdata/pictures/wallpapers/2/b5757011b2a24502b9d82b99d0056a9c.jpg"
