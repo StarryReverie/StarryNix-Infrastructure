@@ -47,6 +47,7 @@ inputs.nixpkgs.lib.nixosSystem {
           (flakeRoot + /modules/home/nix-maid/gtk)
           (flakeRoot + /modules/home/nix-maid/helix)
           (flakeRoot + /modules/home/nix-maid/niri)
+          (flakeRoot + /modules/home/nix-maid/qt)
           ./home/nix-maid/kanshi.nix
           ./home/nix-maid/niri.nix
         ];
