@@ -1,80 +1,178 @@
 * {
-    font-family: monospace;
-    font-weight: 500;
-    font-size: 14px;
-
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 15px;
     border-radius: 10px;
     text-shadow: none;
-
     transition-property: background;
     transition-duration: 0.2s;
 }
 
 window#waybar {
-    background-color: transparent;
+    background: #0F0F17;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+tooltip {
+    background: #171717;
+    color: #A1BDCE;
+    font-size: 13px;
+    border-radius: 7px;
+    border: 2px solid #101a24;
 }
 
-#workspaces {
-    margin-top: 6px;
-    background: rgba(16, 20, 24, 0.5);
-    transition: none;
-  font-size: 12px;
+#custom-notification {
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 17px;
+    color: #A1BDCE;
+    margin: 2px 0px 0px 0px;
 }
 
-#workspaces button {
+#custom-menu {
+    color: #E8EDF0;
+    background: rgba(23, 23, 23, 0.0);
+    margin: 0px 0px 0px 0px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+#custom-spacer {
+    opacity: 0.0;
+}
+
+#tray {
+    color: #A1BDCE;
+    font-family: "Martian Mono";
+    background-color: rgba(16, 20, 24, 0.0);
+    padding-right: 4px;
+}
+
+#niri-window,
+window {
+    color: #A1BDCE;
+    font-family: "Martian Mono";
+    background-color: rgba(16, 20, 24, 0.0);
+}
+
+#custom-mpris-controls,
+#custom-mpris-prev,
+#custom-mpris-next,
+#custom-mpris-metadata {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    animation: repeat;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        color: #4a4a4a;
+    }
+}
+
+#backlight {
+    color: #2096C0;
+    background: rgba(23, 23, 23, 0.0);
+    font-weight: normal;
+    font-size: 19px;
+    margin: 1px 0px 0px 0px;
+    padding-left: 0px;
+    padding-right: 2px;
+}
+
+#clock {
+    color: #A1BDCE;
+    font-size: 15px;
+    font-weight: 900;
+    font-family: "JetBrains Mono Nerd Font";
+    background: rgba(23, 23, 23, 0.0);
+    opacity: 1;
+    margin: 3px 0px 0px 0px;
+    padding-left: 10px;
+    padding-right: 10px;
     border: none;
-    padding: 0 6px;
+}
+
+#pulseaudio {
+    font-weight: normal;
+    font-size: 18px;
+    color: #6F8FDB;
+    background: rgba(22, 19, 32, 0.0);
+    opacity: 1;
+    margin: 0px 0px 0px 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#cpu {
+    font-weight: normal;
+    font-size: 22px;
+    color: #915CAF;
+}
+
+#memory {
+    font-weight: normal;
+    font-size: 22px;
+    color: #E4C9AF;
+}
+
+#network {
+    color: #A1BDCE;
+    font-weight: normal;
+    font-size: 19px;
+    padding-right: 0px;
+    padding-left: 4px;
+}
+
+#custom-l_end,
+#custom-r_end {
+    color: #a6d189;
+}
+
+#custom-padd {
+    color: #a6d189;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: #A1BDCE;
     background-color: transparent;
-    color: #ffffff;
+    box-shadow: none;
+    margin-right: 7px;
 }
 
-#workspaces button:hover {
-    background: rgba(255, 255, 255, 0.5);
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    margin-top: -3px;
+    min-width: 90px;
+    min-height: 10px;
+    margin-bottom: -4px;
+    border-radius: 8px;
+    background: #343434;
 }
 
-#workspaces button.active {
-    background: #faf9f5;
-    color: #000000;
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 8px;
+    background-color: #2096C0;
 }
 
-#workspaces button.active:hover {
-    background: #faf9f5;
+#custom-r_end {
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 1px;
+    padding-right: 3px;
 }
 
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
-#tray,
-#mpris,
-#custom-mpris-metadata,
-#custom-mpris-progress,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#network,
-#bluetooth,
-#idle_inhibitor,
-#wireplumber,
-#pulseaudio,
-#backlight,
-#battery,
-#clock,
-#mode,
-#window {
-    margin-top: 6px;
-    padding: 0 12px;
-    color: #ffffff;
+#custom-l_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 1px;
+    padding-left: 3px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -85,54 +183,4 @@ window#waybar.hidden {
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > * {
     margin-right: 16px;
-}
-
-#tray {
-    background-color: rgba(16, 20, 24, 0.5);
-}
-
-/* Styles for the MPRIS module */
-#custom-mpris-metadata,
-#custom-mpris-progress,
-#mpris {
-    background-color: #87ddff;
-    color: #000000;
-}
-
-/* Styles for the monitors group */
-#cpu,
-#memory,
-#disk,
-#temperature {
-    background-color: #b0f5e5;
-    color: #000000;
-}
-
-/* Styles for the connections group */
-#network,
-#bluetooth {
-    background-color: #FFEAAA;
-    color: #000000;
-}
-
-/* Styles for the control panel module */
-#idle_inhibitor,
-#wireplumber,
-#pulseaudio,
-#backlight,
-#battery {
-    background-color: #FE968B;
-    color: #000000;
-}
-
-/* Styles for the clock */
-#clock {
-    background-color: #eefff1;
-    color: #000000;
-}
-
-#window {
-    font-weight: 400;
-    background-color: #cbecff;
-    color: #000000;
 }
