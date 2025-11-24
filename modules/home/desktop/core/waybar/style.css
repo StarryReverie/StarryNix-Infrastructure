@@ -43,7 +43,7 @@ tooltip {
 
 #tray {
     color: #A1BDCE;
-    font-family: "Martian Mono";
+    font-family: "Martian Mono", monospace;
     background-color: rgba(16, 20, 24, 0.0);
     padding-right: 4px;
 }
@@ -51,7 +51,7 @@ tooltip {
 #niri-window,
 window {
     color: #A1BDCE;
-    font-family: "Martian Mono";
+    font-family: "Martian Mono", monospace;
     background-color: rgba(16, 20, 24, 0.0);
 }
 
