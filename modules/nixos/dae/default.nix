@@ -85,7 +85,7 @@ in
       serviceConfig.LoadCredential = [
         "subscriptions.dae:${cfg.subscriptionFile}"
       ]
-      ++ (if cfg.forwardDns then [ "dns.dae:${./dns.dae}" ] else [ "dns.dae:/dev/null"]);
+      ++ (if cfg.forwardDns then [ "dns.dae:${./dns.dae}" ] else [ "dns.dae:/dev/null" ]);
     };
   };
 }
