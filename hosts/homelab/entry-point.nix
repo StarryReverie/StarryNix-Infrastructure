@@ -32,6 +32,7 @@ inputs.nixpkgs.lib.nixosSystem {
     (flakeRoot + /modules/nixos/nix)
     (flakeRoot + /modules/nixos/openssh)
     (flakeRoot + /modules/nixos/secret)
+    (flakeRoot + /modules/nixos/wireless)
     ./nixos/hardware.nix
     ./nixos/networking.nix
     ./nixos/service.nix
