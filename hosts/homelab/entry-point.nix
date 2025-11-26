@@ -29,6 +29,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
     # NixOS modules
     (flakeRoot + /modules/nixos/dae)
+    (flakeRoot + /modules/nixos/networking)
     (flakeRoot + /modules/nixos/nix)
     (flakeRoot + /modules/nixos/openssh)
     (flakeRoot + /modules/nixos/secret)
