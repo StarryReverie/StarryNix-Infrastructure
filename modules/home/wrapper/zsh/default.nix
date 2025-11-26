@@ -45,7 +45,7 @@
     settings.zsh.profileContent = lib.mkMerge [
       ''
         emulate sh
-        source ~/.profile
+        [ -f ~/.profile ] && source ~/.profile
         emulate zsh
       ''
     ];
