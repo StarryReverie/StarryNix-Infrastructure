@@ -9,7 +9,7 @@
 
   services.openssh.settings = {
     PasswordAuthentication = false;
-    PermitRootLogin = "no";
+    PermitRootLogin = "prohibit-password";
     PermitTunnel = false;
     KbdInteractiveAuthentication = false;
     X11Forwarding = false;
