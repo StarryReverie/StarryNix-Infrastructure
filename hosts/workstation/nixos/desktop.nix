@@ -9,7 +9,6 @@
   services.displayManager.ly.enable = true;
 
   environment.systemPackages = with pkgs; [
-    rofi
     keepassxc
     nautilus
     dconf-editor
@@ -21,5 +20,6 @@
     pulse.enable = true;
   };
 
+  services.tailscale.enable = true;
   programs.firefox.enable = true;
 }

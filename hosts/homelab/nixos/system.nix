@@ -12,6 +12,10 @@
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  users.users.root.openssh.authorizedKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBHhBWBm0pl855WnAlKB6567DR3fzAWPYAbYI4YxmYFu starryreverie@starrynix-workstation"
+  ];
+
   users.users.${constants.username} = {
     isNormalUser = true;
     shell = config.wrapping.packages.zsh;
