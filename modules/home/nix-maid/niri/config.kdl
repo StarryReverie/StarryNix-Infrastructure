@@ -94,6 +94,7 @@ binds {
     Mod+Q hotkey-overlay-title="Open Terminal" { spawn "alacritty" "msg" "create-window"; }
     Mod+W hotkey-overlay-title="Open Web Browser" { spawn "firefox"; }
     Mod+Space hotkey-overlay-title="Open Launcher" { spawn "rofi" "-show" "drun"; }
+    Mod+V hotkey-overlay-title="Open Clipboard Selector" { spawn "clipboard-select" "--copy" "rofi" "-dmenu" "-p" "Clipboard"; }
     Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "swaylock"; }
 
     // Screenshot
@@ -188,5 +189,5 @@ binds {
     Mod+Shift+U { switch-focus-between-floating-and-tiling; }
 
     // Tab
-    Mod+V { toggle-column-tabbed-display; }
+    Mod+T { toggle-column-tabbed-display; }
 }

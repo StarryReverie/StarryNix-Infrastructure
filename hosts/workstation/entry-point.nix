@@ -45,6 +45,7 @@ inputs.nixpkgs.lib.nixosSystem {
         imports = [
           (flakeRoot + /modules/home/wrapper/system-options.nix)
 
+          (flakeRoot + /modules/home/nix-maid/clipboard)
           (flakeRoot + /modules/home/nix-maid/direnv)
           (flakeRoot + /modules/home/nix-maid/environment)
           (flakeRoot + /modules/home/nix-maid/gtk)

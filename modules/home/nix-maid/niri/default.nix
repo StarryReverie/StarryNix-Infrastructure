@@ -35,5 +35,12 @@ in
       partOf = [ "niri.service" ];
       after = [ "niri.service" ];
     };
+
+    systemd.services.clipboard = {
+      script = "${lib.getExe' pkgs.wl-clipboard "wl-paste"} --watch ${lib.getExe pkgs.cliphist} store";
+      wantedBy = [ "niri.service" ];
+      partOf = [ "niri.service" ];
+      after = [ "niri.service" ];
+    };
   };
 }
