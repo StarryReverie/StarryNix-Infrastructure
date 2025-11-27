@@ -9,7 +9,7 @@
     users.users = lib.mkOption {
       type = lib.types.attrsOf (
         lib.types.submodule (
-          { config, ... }:
+          { name, ... }:
           {
             options = {
               homeSessionVariables = lib.mkOption {
@@ -23,14 +23,14 @@
               };
             };
 
-            config = lib.mkDefault {
+            config = {
               maid.file.home.".profile".text = ''
                 source <(${pkgs.systemd}/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
               '';
 
               maid.file.xdg_config."environment.d/60-maid-session-vars.conf".text =
                 let
-                  vars = config.homeSessionVariables;
+                  vars = config.users.users.${name}.homeSessionVariables;
                   varEntries = lib.attrsets.mapAttrsToList (k: v: "${k}=${v}") vars;
                   varFileContent = builtins.concatStringsSep "\n" varEntries;
                 in
