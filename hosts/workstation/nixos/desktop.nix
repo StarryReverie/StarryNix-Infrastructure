@@ -9,10 +9,19 @@
   services.displayManager.ly.enable = true;
 
   environment.systemPackages = with pkgs; [
-    keepassxc
     nautilus
-    dconf-editor
+    papers
+    newsflash
+    loupe
+    showtime
+    eartag
     amberol
+    mousai
+    gnome-clocks
+    gnome-calendar
+    eyedropper
+    keepassxc
+    dconf-editor
   ];
 
   services.pipewire = {
