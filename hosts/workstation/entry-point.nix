@@ -51,6 +51,7 @@ inputs.nixpkgs.lib.nixosSystem {
           (flakeRoot + /modules/home/nix-maid/environment)
           (flakeRoot + /modules/home/nix-maid/gtk)
           (flakeRoot + /modules/home/nix-maid/helix)
+          (flakeRoot + /modules/home/nix-maid/hyprlock)
           (flakeRoot + /modules/home/nix-maid/niri)
           (flakeRoot + /modules/home/nix-maid/qt)
           (flakeRoot + /modules/home/nix-maid/xdg)

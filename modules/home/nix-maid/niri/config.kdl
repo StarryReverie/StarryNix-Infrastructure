@@ -95,7 +95,7 @@ binds {
     Mod+W hotkey-overlay-title="Open Web Browser" { spawn "firefox"; }
     Mod+Space hotkey-overlay-title="Open Launcher" { spawn "rofi" "-show" "drun"; }
     Mod+V hotkey-overlay-title="Open Clipboard Selector" { spawn "clipboard-select" "--copy" "rofi" "-dmenu" "-p" "Clipboard"; }
-    Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "swaylock"; }
+    Mod+Shift+L hotkey-overlay-title="Lock Screen" { spawn "hyprlock"; }
 
     // Screenshot
     Mod+S { screenshot; }
