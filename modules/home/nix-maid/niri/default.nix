@@ -47,5 +47,13 @@ in
       partOf = [ "niri.service" ];
       after = [ "niri.service" ];
     };
+
+    systemd.services.waybar = {
+      serviceConfig.ExecStart = "${lib.getExe config.wrapping.packages.waybar or pkgs.waybar}";
+      path = [ (config.wrapping.packages.rofi or pkgs.rofi) ];
+      wantedBy = [ "niri.service" ];
+      partOf = [ "niri.service" ];
+      after = [ "niri.service" ];
+    };
   };
 }

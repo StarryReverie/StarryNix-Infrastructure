@@ -1,0 +1,138 @@
+{
+    "layer": "top",
+    "margin": "0 6 0 6",
+    "position": "top",
+    "reload_style_on_change": true,
+
+    "modules-left": [
+        "custom/launcher",
+        "clock",
+        "idle_inhibitor",
+        "custom/lock",
+        "tray",
+    ],
+    "modules-right": [
+        "network",
+        "battery",
+        "bluetooth",
+        "wireplumber",
+        "backlight",
+        "memory",
+        "cpu",
+    ],
+
+    "custom/launcher": {
+        "interval": "once",
+        "format": " 󱄅  Applications ",
+        "tooltip": false,
+        "on-click": "rofi -show drun",
+    },
+    "clock": {
+        "interval": 1,
+        "timezone": "Asia/Shanghai",
+        "format": " {:%B %d - %H:%M} ",
+        "tooltip": true,
+        "tooltip-format": "Date:     {:%Y-%m-%d\nWeekday:  %A\nTimezone: %Z\nTime:     %H:%M:%S}",
+    },
+    "idle_inhibitor": {
+        "interval": "once",
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " 󰐨 ",
+            "deactivated": "  ",
+        },
+        "tooltip": true,
+        "tooltip-format-activated": "Mode: Presentation",
+        "tooltip-format-deactivated": "Mode: Auto-suspend",
+    },
+    "custom/lock": {
+        "interval": "once",
+        "format": "  ",
+        "on-click": "hyprlock",
+        "tooltip": false,
+    },
+    "tray": {
+        "icon-size": 16,
+        "show-passive-items": true,
+        "spacing": 6,
+    },
+
+    "network": {
+        "interval": 10,
+        "format-wifi": " {icon} {essid} ",
+        "format-ethernet": "   Ethernet ",
+        "format-linked": " 󱘖 {ifname} (No IP) ",
+        "format-disconnected": "  Disconnected ",
+        "format-alt": " {icon} {signalStrength}% ",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥"],
+        "tooltip": true,
+        "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}    <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
+    },
+    "battery": {
+	      "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15,
+        },
+        "format": " {icon} {capacity}% ",
+        "format-charging": " 󱐋 {capacity}% ",
+        "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
+        "tooltip": true,
+        "tooltip-format-full": "Capacity: {capacity}%\nPower:    {power} W\nStatus:   Full",
+        "tooltip-format-charging": "Capacity: {capacity}%\nPower:    {power} W\nStatus:   Charging\nEstimate: {timeTo}",
+        "tooltip-format-discharging": "Capacity: {capacity}%\nPower:    {power} W\nStatus:   Discharging\nEstimate: {timeTo}",
+    },
+    "bluetooth": {
+	      "interval": 60,
+        "format": "  {status} ",
+        "format-connected": "  {num_connections} connected ",
+        "tooltip": true,
+        "tooltip-format-disabled": "Controller: {controller_alias}\nAddress: {controller_address}\nStatus: Disabled",
+        "tooltip-format-off": "Controller: {controller_alias}\nAddress: {controller_address}\nStatus: Off",
+        "tooltip-format-on": "Controller: {controller_alias}\nAddress: {controller_address}\nStatus: On\n\nNo Connection",
+        "tooltip-format-connected": "Controller: {controller_alias}\nAddress: {controller_address}\nStatus: Connected\n\nConnections:{device_enumerate}",
+        "tooltip-format-enumerate-connected": "\n- Device:  {device_alias}\n  Address: {device_address}",
+        "tooltip-format-enumerate-connected": "\n- Device:  {device_alias}\n  Address: {device_address}\n  Battery: {device_battery_percentage}%",
+    },
+    "wireplumber": {
+	      "interval": 60,
+        "format": " {icon} {volume}% ",
+        "format-muted": " 󰝟 Muted ",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "hands-free": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "󰕿 ",
+                "󰖀 ",
+                "󰕾 "
+            ]
+        },
+        "max-volume": 100,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "helvum",
+        "tooltip": true,
+        "tooltip-format": "Node:   {node_name}\nVolume: {volume}%"
+    },
+    "backlight": {
+	      "interval": 60,
+        "format": " {icon} {percent}% ",
+        "tooltip": true,
+        "tooltip-format": "Brightness: {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"],
+    },
+    "memory": {
+	      "interval": 10,
+        "format": "  {percentage}% ",
+        "tooltip": true,
+        "tooltip-format": "Percentage:    {percentage}%\nRAM Total:     {total:0.1f} GiB\nRAM Available: {avail:0.1f} GiB\nRAM Used:      {used:0.1f} GiB\nSwap Used:     {swapUsed:0.1f} GiB",
+    },
+    "cpu": {
+	      "interval": 10,
+        "format": "  {usage}% ",
+        "tooltip": true,
+    },
+}

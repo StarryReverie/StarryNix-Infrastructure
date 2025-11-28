@@ -1,0 +1,88 @@
+* {
+    font-family: "Symbols Nerd Font Mono", monospace;
+    font-size: 12px;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0px;
+    border: none;
+    font-weight: 600;
+}
+
+#waybar {
+    background-color: transparent;
+}
+
+#custom-launcher,
+#clock,
+#idle_inhibitor,
+#custom-lock,
+#tray,
+#network,
+#battery,
+#bluetooth,
+#wireplumber,
+#backlight,
+#memory,
+#cpu {
+    border-radius: 4px;
+    margin: 4px 2px 0px 2px;
+    padding: 2px;
+    color: #181825;
+}
+
+#custom-launcher {
+    color: white;
+    background-color: #5f92e4;
+}
+
+#clock {
+    background-color: #eeeeee;
+}
+
+#idle_inhibitor {
+    background-color: #2dbae4;
+}
+
+#custom-lock {
+    background-color: #fa61b6;
+}
+
+#tray {
+    background-color: #444444;
+    border-width: 0px;
+}
+
+#network {
+    background-color: #fab387;
+}
+
+#battery {
+    background-color: #cba6f7;
+}
+
+#bluetooth {
+    background-color: #f9e2af;
+}
+
+#wireplumber {
+    background-color: #89dceb;
+}
+
+#backlight {
+    background-color: #a6a3a1;
+}
+
+#memory {
+    background-color: #f7768e;
+}
+
+#cpu {
+    background-color: #f38ba8;
+}
+
+tooltip {
+    border-radius: 8px;
+    padding: 2px;
+    background-color: #131822;
+    color: #c0c0c0;
+}
