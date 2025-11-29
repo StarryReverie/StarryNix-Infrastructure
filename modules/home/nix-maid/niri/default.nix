@@ -11,6 +11,7 @@ in
 {
   users.users.${constants.username}.maid = {
     packages = with pkgs; [
+      xwayland-satellite
       brightnessctl
       playerctl
     ];

@@ -19,6 +19,10 @@ environment {
     XDG_SESSION_DESKTOP "niri"
 }
 
+xwayland-satellite {
+    path "xwayland-satellite"
+}
+
 input {
     keyboard {
         numlock
