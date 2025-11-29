@@ -51,7 +51,6 @@
     };
 
     homeSessionVariables = {
-      GDK_BACKEND = "wayland,x11,*";
       GTK_THEME = "Orchis-Dark";
       XCURSOR_THEME = "Vimix-cursors";
     };

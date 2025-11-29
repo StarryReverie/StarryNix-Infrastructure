@@ -31,7 +31,6 @@
     };
 
     homeSessionVariables = {
-      QT_QPA_PLATFORM = "wayland;xcb";
       QT_QPA_PLATFORMTHEME = "qt6ct:qt5ct";
       QT_STYLE_OVERRIDE = "kvantum-dark";
     };

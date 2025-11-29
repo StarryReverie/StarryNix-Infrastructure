@@ -9,11 +9,14 @@ hotkey-overlay {
 }
 
 environment {
-    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-
+    // Toolkit backend preference should be set after the compositor starts,
+    // otherwise wayland environment may not be ready for apps.
+    GDK_BACKEND "wayland,x11,*"
+    QT_QPA_PLATFORM "wayland;xcb"
     SDL_VIDEODRIVER "wayland"
-
     CLUTTER_BACKEND "wayland"
+
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
 
     XDG_CURRENT_DESKTOP "niri"
     XDG_SESSION_DESKTOP "niri"
