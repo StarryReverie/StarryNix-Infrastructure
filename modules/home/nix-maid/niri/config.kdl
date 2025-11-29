@@ -1,4 +1,5 @@
 spawn-sh-at-startup "alacritty --daemon"
+spawn-sh-at-startup "fcitx5"
 
 prefer-no-csd
 screenshot-path "~/userdata/pictures/screenshots/%Y-%m-%dT%H-%M-%S.png"

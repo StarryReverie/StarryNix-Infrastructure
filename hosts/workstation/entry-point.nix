@@ -27,6 +27,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
     # NixOS modules
     (flakeRoot + /modules/nixos/dae)
+    (flakeRoot + /modules/nixos/fcitx5)
     (flakeRoot + /modules/nixos/firefox)
     (flakeRoot + /modules/nixos/font)
     (flakeRoot + /modules/nixos/networking)
