@@ -11,8 +11,11 @@
   environment.systemPackages = with pkgs; [
     nautilus
     papers
+    textpieces
     newsflash
     loupe
+    curtail
+    switcheroo
     showtime
     eartag
     amberol
@@ -21,7 +24,9 @@
     gnome-calendar
     eyedropper
     keepassxc
+    lx-music-desktop
     dconf-editor
+    qq
   ];
 
   services.pipewire = {
