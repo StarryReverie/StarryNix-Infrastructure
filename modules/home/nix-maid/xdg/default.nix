@@ -15,8 +15,8 @@ let
     XDG_PICTURES_DIR = "$HOME/userdata/pictures";
     XDG_VIDEOS_DIR = "$HOME/userdata/videos";
     XDG_TEMPLATES_DIR = "$HOME/userdata/templates";
-    XDG_PUBLICSHARE_DIR = "$HOME/tmp/public";
-    XDG_DOWNLOAD_DIR = "$HOME/tmp/downloads";
+    XDG_PUBLICSHARE_DIR = "$HOME/public";
+    XDG_DOWNLOAD_DIR = "$HOME/downloads";
   };
 in
 {
