@@ -66,6 +66,10 @@
   services.fstrim.enable = true;
 
   swapDevices = [ ];
+  zramSwap.enable = true;
+  zramSwap.memoryPercent = 200;
+
+  boot.tmp.useTmpfs = true;
 
   services.xserver.videoDrivers = [
     "modesetting"
