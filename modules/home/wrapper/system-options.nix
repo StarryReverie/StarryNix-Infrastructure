@@ -16,6 +16,12 @@ in
         description = "The Nixpkgs package set";
       };
 
+      specialArgs = lib.mkOption {
+        type = lib.types.attrsOf lib.types.raw;
+        description = "Special arguments to pass to the wrapper-manager module";
+        default = { };
+      };
+
       modules = lib.mkOption {
         type = lib.types.listOf lib.types.raw;
         description = "Modules of wrapper definitions";
@@ -39,7 +45,7 @@ in
   config = {
     wrapping = {
       evaluation = inputs.wrapper-manager.lib {
-        inherit (cfg) pkgs;
+        inherit (cfg) pkgs specialArgs;
         modules = [ { wrappers = { }; } ] ++ cfg.modules;
       };
 

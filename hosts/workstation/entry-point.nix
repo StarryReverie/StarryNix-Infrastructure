@@ -61,7 +61,7 @@ inputs.nixpkgs.lib.nixosSystem {
         ];
 
         wrapping = {
-          inherit pkgs;
+          inherit pkgs specialArgs;
           modules = [
             (flakeRoot + /modules/home/wrapper/alacritty)
             (flakeRoot + /modules/home/wrapper/atuin)
@@ -78,6 +78,7 @@ inputs.nixpkgs.lib.nixosSystem {
             (flakeRoot + /modules/home/wrapper/ripgrep)
             (flakeRoot + /modules/home/wrapper/rofi)
             (flakeRoot + /modules/home/wrapper/waybar)
+            (flakeRoot + /modules/home/wrapper/wpaperd)
             (flakeRoot + /modules/home/wrapper/yazi)
             (flakeRoot + /modules/home/wrapper/zellij)
             (flakeRoot + /modules/home/wrapper/zoxide)

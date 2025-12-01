@@ -25,12 +25,13 @@ in
       after = [ "niri.service" ];
     };
 
-    systemd.services.swaybg = {
-      serviceConfig.ExecStart = "${lib.getExe pkgs.swaybg} -i /home/${constants.username}/userdata/pictures/wallpapers/2/b5757011b2a24502b9d82b99d0056a9c.jpg";
+    systemd.services.wpaperd = {
+      serviceConfig.ExecStart = "${lib.getExe' (config.wrapping.packages.wpaperd or pkgs.wpaperd) "wpaperd"}";
       wantedBy = [ "niri.service" ];
       partOf = [ "niri.service" ];
       after = [
         "niri.service"
+        "xdg-desktop-portal.service"
         cfg.systemd.services.kanshi.name
       ];
     };

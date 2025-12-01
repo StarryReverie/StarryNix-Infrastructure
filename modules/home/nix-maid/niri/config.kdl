@@ -92,7 +92,7 @@ window-rule {
 }
 
 layer-rule {
-    match namespace="^wallpaper$"
+    match namespace="^wpaperd-.*"
     place-within-backdrop true
 }
 
