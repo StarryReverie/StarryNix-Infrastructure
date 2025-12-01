@@ -42,7 +42,13 @@
     };
 
     starrynix-derivations = {
-      url = "github:StarryReverie/StarryNix-Derivations";
+      url = "github:StarryReverie/StarryNix-Derivations/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
+    starrynix-resources = {
+      url = "github:StarryReverie/StarryNix-Resources/master";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };

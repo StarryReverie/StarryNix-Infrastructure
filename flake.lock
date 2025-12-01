@@ -151,6 +151,19 @@
         "type": "github"
       }
     },
+    "flake-compat_3": {
+      "locked": {
+        "lastModified": 1751685974,
+        "narHash": "sha256-NKw96t+BgHIYzHUjkTK95FqYRVKB8DHpVhefWSz/kTw=",
+        "rev": "549f2762aebeff29a2e5ece7a7dc0f955281a1d1",
+        "type": "tarball",
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/flake-compat/archive/549f2762aebeff29a2e5ece7a7dc0f955281a1d1.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://git.lix.systems/lix-project/flake-compat/archive/main.tar.gz"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -349,6 +362,7 @@
         "nix-maid": "nix-maid",
         "nixpkgs": "nixpkgs",
         "starrynix-derivations": "starrynix-derivations",
+        "starrynix-resources": "starrynix-resources",
         "wrapper-manager": "wrapper-manager"
       }
     },
@@ -378,16 +392,42 @@
         ]
       },
       "locked": {
-        "lastModified": 1763656182,
-        "narHash": "sha256-DxZqFVrTyVDi/zLi7/YLKlScOePUpToPIv6+oshxx+c=",
+        "lastModified": 1764482343,
+        "narHash": "sha256-woZsu2uga4FYtUlIW/6j/rN5moXTIu8dQgupn8IyQ0U=",
         "owner": "StarryReverie",
         "repo": "StarryNix-Derivations",
-        "rev": "9b605b307c46009346850e737c1e96935f122645",
+        "rev": "4ebba1ca62d777712bd406a1ef53b4fc9b71b922",
         "type": "github"
       },
       "original": {
         "owner": "StarryReverie",
+        "ref": "master",
         "repo": "StarryNix-Derivations",
+        "type": "github"
+      }
+    },
+    "starrynix-resources": {
+      "inputs": {
+        "flake-compat": "flake-compat_3",
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1764592956,
+        "narHash": "sha256-r5GdkQjoqnhiTX8s/VvXjQ0YQiZtYVN62X86K4Qx1Ks=",
+        "owner": "StarryReverie",
+        "repo": "StarryNix-Resources",
+        "rev": "ff145103f51bdf6f02861e4b38ddf1182a49930e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "StarryReverie",
+        "ref": "master",
+        "repo": "StarryNix-Resources",
         "type": "github"
       }
     },
