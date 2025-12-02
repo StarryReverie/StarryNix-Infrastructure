@@ -33,6 +33,7 @@ inputs.nixpkgs.lib.nixosSystem {
     (flakeRoot + /modules/nixos/font)
     (flakeRoot + /modules/nixos/networking)
     (flakeRoot + /modules/nixos/nix)
+    (flakeRoot + /modules/nixos/pipewire)
     (flakeRoot + /modules/nixos/openssh)
     (flakeRoot + /modules/nixos/secret)
     (flakeRoot + /modules/nixos/wireless)
