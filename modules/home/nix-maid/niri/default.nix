@@ -98,7 +98,10 @@ in
       serviceConfig.ExecStart = "${lib.getExe pkgs.sway-audio-idle-inhibit}";
       wantedBy = [ "niri.service" ];
       partOf = [ "niri.service" ];
-      after = [ "niri.service" ];
+      after = [
+        "niri.service"
+        cfg.systemd.services.swayidle.name
+      ];
     };
   };
 }
