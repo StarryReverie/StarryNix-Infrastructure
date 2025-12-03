@@ -141,7 +141,7 @@
     # disable GIO as a potential proxy bypass vector
     "network.gio.supported-protocols" = "";
     # enable DNS-over-HTTPS (DoH)
-    "network.trr.mode" = 3;
+    "network.trr.mode" = 0;
     # set DoH provider
     # user_pref("network.trr.uri", "https://example.dns");
     # user_pref("network.trr.custom_uri", "https://example.dns");
