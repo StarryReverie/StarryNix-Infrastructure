@@ -52,6 +52,7 @@ inputs.nixpkgs.lib.nixosSystem {
           (flakeRoot + /modules/home/nix-maid/clipboard)
           (flakeRoot + /modules/home/nix-maid/direnv)
           (flakeRoot + /modules/home/nix-maid/environment)
+          (flakeRoot + /modules/home/nix-maid/github-copilot-cli)
           (flakeRoot + /modules/home/nix-maid/gtk-theme)
           (flakeRoot + /modules/home/nix-maid/helix)
           (flakeRoot + /modules/home/nix-maid/hyprlock)
