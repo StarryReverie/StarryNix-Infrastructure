@@ -9,20 +9,21 @@ let
   copilotSandboxCore = pkgs.buildFHSEnvBubblewrap {
     name = "copilot-sandbox-core";
 
-    targetPkgs = p: with p; [
-      github-copilot-cli
+    targetPkgs =
+      p: with p; [
+        github-copilot-cli
 
-      coreutils-full
-      binutils
-      findutils
-      file
-      procps
-      gnutar
-      gzip
-      xz
-      unzip
-      jq
-    ];
+        coreutils-full
+        binutils
+        findutils
+        file
+        procps
+        gnutar
+        gzip
+        xz
+        unzip
+        jq
+      ];
 
     runScript = "copilot";
 
@@ -35,12 +36,26 @@ let
     chdirToPwd = false;
 
     extraBwrapArgs = [
-      "--bind" "$COPILOT_PERSISTENCE_DIR" "/persistence"
-      "--bind" "$COPILOT_WORKSPACE_DIR" "/workspace"
-      "--chdir" "/workspace"
+      "--bind"
+      "$COPILOT_PERSISTENCE_DIR"
+      "/persistence"
+
+      "--bind"
+      "$COPILOT_WORKSPACE_DIR"
+      "/workspace"
+
+      "--chdir"
+      "/workspace"
+
       "--clearenv"
-      "--setenv" "COLORTERM" "truecolor"
-      "--setenv" "HOME" "/persistence"
+
+      "--setenv"
+      "COLORTERM"
+      "truecolor"
+
+      "--setenv"
+      "HOME"
+      "/persistence"
     ];
   };
 
