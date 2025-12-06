@@ -5,7 +5,7 @@
   ...
 }:
 let
-  difftasticExecutable = lib.getExe (config.wrappers.difftastic.wrapped or pkgs.difftastic);
+  difftasticExecutable = lib.getExe pkgs.difftastic;
 in
 {
   settings.git.config = {

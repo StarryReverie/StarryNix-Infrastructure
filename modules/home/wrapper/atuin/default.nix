@@ -5,7 +5,7 @@
   ...
 }:
 let
-  atuinExecutable = lib.getExe (config.wrappers.atuin.wrapped or pkgs.atuin);
+  atuinExecutable = lib.getExe config.wrappers.atuin.wrapped;
 
   configFile = pkgs.writers.writeTOML "atuin-config.toml" {
     update_check = false;

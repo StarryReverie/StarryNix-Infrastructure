@@ -25,10 +25,10 @@
   };
 
   wrappers.yazi.pathAdd = [
-    (config.wrappers.fd.wrapped or pkgs.fd)
-    (config.wrappers.fzf.wrapped or pkgs.fzf)
-    (config.wrappers.ripgrep.wrapped or pkgs.ripgrep)
-    (config.wrappers.zoxide.wrapped or pkgs.zoxide)
+    config.wrappers.fd.wrapped
+    config.wrappers.fzf.wrapped
+    config.wrappers.ripgrep.wrapped
+    pkgs.zoxide
     pkgs.jq
   ];
 

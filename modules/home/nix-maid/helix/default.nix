@@ -18,7 +18,7 @@
     };
 
     homeSessionVariables = rec {
-      EDITOR = lib.getExe (config.wrapping.packages.helix or pkgs.helix);
+      EDITOR = lib.getExe pkgs.helix;
       VISUAL = EDITOR;
     };
   };

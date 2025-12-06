@@ -5,7 +5,7 @@
   ...
 }:
 let
-  direnvExecutable = lib.getExe (config.wrappers.direnv.wrapped or pkgs.direnv);
+  direnvExecutable = lib.getExe pkgs.direnv;
 in
 {
   settings.zsh.rcContent = ''

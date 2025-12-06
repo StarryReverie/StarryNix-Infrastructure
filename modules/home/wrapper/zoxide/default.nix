@@ -5,7 +5,7 @@
   ...
 }:
 let
-  zoxideExecutable = lib.getExe (config.wrappers.zoxide.wrapped or pkgs.zoxide);
+  zoxideExecutable = lib.getExe pkgs.zoxide;
 in
 {
   settings.zsh.rcContent = ''
