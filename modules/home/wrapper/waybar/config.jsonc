@@ -20,6 +20,7 @@
         "backlight",
         "memory",
         "cpu",
+        "custom/notification",
     ],
 
     "custom/launcher": {
@@ -146,5 +147,12 @@
 	      "interval": 10,
         "format": "  {usage}% ",
         "tooltip": true,
+    },
+    "custom/notification": {
+        "interval": "once",
+        "tooltip": false,
+        "format": " 󱅫 ",
+        "on-click": "swaync-client --toggle-panel --skip-wait",
+        "on-click-right": "swaync-client --toggle-dnd --skip-wait",
     },
 }

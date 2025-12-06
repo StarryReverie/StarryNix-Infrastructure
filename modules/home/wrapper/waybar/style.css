@@ -24,7 +24,8 @@
 #wireplumber,
 #backlight,
 #memory,
-#cpu {
+#cpu,
+#custom-notification {
     border-radius: 4px;
     margin: 4px 2px 0px 2px;
     padding: 2px;
@@ -83,6 +84,10 @@
 
 #cpu {
     background-color: #f38ba8;
+}
+
+#custom-notification {
+    background-color: #d7d6d5;
 }
 
 tooltip {

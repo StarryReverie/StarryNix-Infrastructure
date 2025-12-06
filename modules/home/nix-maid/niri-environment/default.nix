@@ -89,6 +89,7 @@ in
       path = [
         (config.wrapping.packages.rofi or pkgs.rofi)
         (config.wrapping.packages.wpaperd or pkgs.wpaperd)
+        (config.wrapping.packages.swaync or pkgs.swaynotificationcenter)
         pkgs.hyprlock
       ]
       ++ (lib.optionals config.services.pipewire.wireplumber.enable [
