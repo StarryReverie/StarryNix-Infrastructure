@@ -6,6 +6,10 @@
   ...
 }:
 {
+  imports = [
+    ./profiles.nix
+  ];
+
   networking.networkmanager = {
     enable = true;
     wifi.powersave = true;
