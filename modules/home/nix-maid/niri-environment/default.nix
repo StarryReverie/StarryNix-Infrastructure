@@ -103,7 +103,7 @@ in
     };
 
     systemd.services.swayidle = {
-      script =
+      serviceConfig.ExecStart =
         let
           lockCommand = "${lib.getExe pkgs.hyprlock}";
           lockGracefullyCommand = "${lib.getExe pkgs.hyprlock} --grace 5";
@@ -111,17 +111,17 @@ in
           monitorsOnCommand = "${lib.getExe pkgs.niri} msg action power-on-monitors";
           suspendCommand = "${lib.getExe' pkgs.systemd "systemctl"} suspend";
         in
-        ''
-          ${lib.getExe pkgs.swayidle} \
-            timeout 180 ${lib.escapeShellArg lockGracefullyCommand} \
-            timeout 185 ${lib.escapeShellArg monitorsOffCommand} \
-            timeout 300 ${lib.escapeShellArg suspendCommand} \
-            resume ${lib.escapeShellArg monitorsOnCommand} \
-            before-sleep ${lib.escapeShellArg "${monitorsOffCommand}; ${lockCommand}"} \
-            after-resume ${lib.escapeShellArg monitorsOnCommand} \
-            lock ${lib.escapeShellArg "${monitorsOffCommand}; ${lockCommand}"} \
-            unlock ${lib.escapeShellArg monitorsOnCommand}
-        '';
+        builtins.concatStringsSep " " [
+          "${lib.getExe pkgs.swayidle}"
+          "timeout 180 ${lib.escapeShellArg lockGracefullyCommand}"
+          "timeout 185 ${lib.escapeShellArg monitorsOffCommand}"
+          "timeout 300 ${lib.escapeShellArg suspendCommand}"
+          "resume ${lib.escapeShellArg monitorsOnCommand}"
+          "before-sleep ${lib.escapeShellArg "${monitorsOffCommand}; ${lockCommand}"}"
+          "after-resume ${lib.escapeShellArg monitorsOnCommand}"
+          "lock ${lib.escapeShellArg "${monitorsOffCommand}; ${lockCommand}"}"
+          "unlock ${lib.escapeShellArg monitorsOnCommand}"
+        ];
       wantedBy = [ "niri.service" ];
       partOf = [ "niri.service" ];
       after = [ "niri.service" ];
