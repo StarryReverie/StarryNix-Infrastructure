@@ -35,8 +35,6 @@
   };
 
   programs.firefox.preferences = {
-    "browser.download.open_pdf_attachments_inline" = true;
-
     # STARTUP
 
     # set startup page
