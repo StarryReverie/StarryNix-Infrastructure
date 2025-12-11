@@ -38,6 +38,7 @@ inputs.nixpkgs.lib.nixosSystem {
     (flakeRoot + /modules/nixos/pipewire)
     (flakeRoot + /modules/nixos/openssh)
     (flakeRoot + /modules/nixos/secret)
+    (flakeRoot + /modules/nixos/waydroid)
     (flakeRoot + /modules/nixos/wireless)
     ./nixos/desktop.nix
     ./nixos/hardware.nix
