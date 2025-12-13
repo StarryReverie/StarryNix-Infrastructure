@@ -15,7 +15,6 @@ in
       xwayland-satellite
       brightnessctl
       playerctl
-      config.wrapping.packages.swaync
 
       # System
       dconf-editor
@@ -70,7 +69,7 @@ in
     };
 
     systemd.services.swaync = {
-      serviceConfig.ExecStart = "${lib.getExe config.wrapping.packages.swaync}";
+      serviceConfig.ExecStart = "${lib.getExe pkgs.swaynotificationcenter}";
       wantedBy = [ "niri.service" ];
       partOf = [ "niri.service" ];
       after = [ "niri.service" ];
@@ -85,12 +84,12 @@ in
 
     systemd.services.waybar = {
       serviceConfig.ExecStart = "${lib.getExe pkgs.waybar}";
-      path = [
-        config.wrapping.packages.swaync
-        pkgs.hyprlock
-        pkgs.rofi
-        pkgs.wpaperd
-      ]
+      path = (with pkgs; [
+        swaynotificationcenter
+        hyprlock
+        rofi
+        wpaperd
+      ])
       ++ (lib.optionals config.services.pipewire.wireplumber.enable [
         pkgs.wireplumber
       ])
