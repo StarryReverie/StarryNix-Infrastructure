@@ -1,0 +1,28 @@
+enter_accept = true
+inline_height = 15
+show_help = false
+style = "compact"
+update_check = false
+workspaces = true
+
+common_prefix = [
+  "sudo"
+]
+
+common_subcommands = [
+  "nix",
+  "cargo",
+  "git",
+  "./gradlew",
+  "./mvnw",
+  "systemctl",
+  "sudo",
+]
+
+history_filter = [
+  "^\\\\.*",
+  "^git reset.*",
+  "^rm.*",
+  "^sudo rm.*",
+  "^ .*"
+]
