@@ -61,6 +61,7 @@ inputs.nixpkgs.lib.nixosSystem {
           (flakeRoot + /modules/home/nix-maid/eza)
           (flakeRoot + /modules/home/nix-maid/fd)
           (flakeRoot + /modules/home/nix-maid/fzf)
+          (flakeRoot + /modules/home/nix-maid/git)
           (flakeRoot + /modules/home/nix-maid/github-copilot-cli)
           (flakeRoot + /modules/home/nix-maid/gtk-theme)
           (flakeRoot + /modules/home/nix-maid/helix)

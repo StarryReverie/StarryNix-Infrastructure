@@ -54,6 +54,7 @@ inputs.nixpkgs.lib.nixosSystem {
           (flakeRoot + /modules/home/nix-maid/eza)
           (flakeRoot + /modules/home/nix-maid/fd)
           (flakeRoot + /modules/home/nix-maid/fzf)
+          (flakeRoot + /modules/home/nix-maid/git)
           (flakeRoot + /modules/home/nix-maid/helix)
           (flakeRoot + /modules/home/nix-maid/lazygit)
           (flakeRoot + /modules/home/nix-maid/ripgrep)
