@@ -3,6 +3,7 @@
   lib,
   pkgs,
   inputs,
+  constants,
   ...
 }:
 let
@@ -20,11 +21,9 @@ let
   };
 in
 {
-  wrappers.wpaperd.basePackage = pkgs.wpaperd;
+  users.users.${constants.username}.maid = {
+    packages = with pkgs; [ wpaperd ];
 
-  wrappers.wpaperd.programs.wpaperd = {
-    prependFlags = [ "--config=${configFile}" ];
+    file.xdg_config."wpaperd/config.toml".source = configFile;
   };
-
-  wrappers.wpaperd.programs.wpaperctl = { };
 }

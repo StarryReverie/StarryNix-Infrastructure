@@ -59,7 +59,7 @@ in
     };
 
     systemd.services.wpaperd = {
-      serviceConfig.ExecStart = "${lib.getExe' config.wrapping.packages.wpaperd "wpaperd"}";
+      serviceConfig.ExecStart = "${lib.getExe' pkgs.wpaperd "wpaperd"}";
       wantedBy = [ "niri.service" ];
       partOf = [ "niri.service" ];
       after = [
@@ -86,10 +86,10 @@ in
     systemd.services.waybar = {
       serviceConfig.ExecStart = "${lib.getExe config.wrapping.packages.waybar}";
       path = [
-        config.wrapping.packages.wpaperd
         config.wrapping.packages.swaync
         pkgs.hyprlock
         pkgs.rofi
+        pkgs.wpaperd
       ]
       ++ (lib.optionals config.services.pipewire.wireplumber.enable [
         pkgs.wireplumber
