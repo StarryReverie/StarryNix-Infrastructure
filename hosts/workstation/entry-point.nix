@@ -52,6 +52,7 @@ inputs.nixpkgs.lib.nixosSystem {
         imports = [
           (flakeRoot + /modules/home/wrapper/system-options.nix)
 
+          (flakeRoot + /modules/home/nix-maid/alacritty)
           (flakeRoot + /modules/home/nix-maid/clipboard)
           (flakeRoot + /modules/home/nix-maid/direnv)
           (flakeRoot + /modules/home/nix-maid/environment)
@@ -71,7 +72,6 @@ inputs.nixpkgs.lib.nixosSystem {
         wrapping = {
           inherit pkgs specialArgs;
           modules = [
-            (flakeRoot + /modules/home/wrapper/alacritty)
             (flakeRoot + /modules/home/wrapper/atuin)
             (flakeRoot + /modules/home/wrapper/bat)
             (flakeRoot + /modules/home/wrapper/difftastic)
