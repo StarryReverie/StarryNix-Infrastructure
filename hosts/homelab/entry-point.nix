@@ -56,6 +56,7 @@ inputs.nixpkgs.lib.nixosSystem {
           (flakeRoot + /modules/home/nix-maid/fzf)
           (flakeRoot + /modules/home/nix-maid/helix)
           (flakeRoot + /modules/home/nix-maid/lazygit)
+          (flakeRoot + /modules/home/nix-maid/ripgrep)
           (flakeRoot + /modules/home/nix-maid/yazi)
           (flakeRoot + /modules/home/nix-maid/zellij)
           (flakeRoot + /modules/home/nix-maid/zoxide)
@@ -68,7 +69,6 @@ inputs.nixpkgs.lib.nixosSystem {
             (flakeRoot + /modules/home/wrapper/difftastic)
             (flakeRoot + /modules/home/wrapper/fastfetch)
             (flakeRoot + /modules/home/wrapper/git)
-            (flakeRoot + /modules/home/wrapper/ripgrep)
             (flakeRoot + /modules/home/wrapper/zsh)
           ];
         };
