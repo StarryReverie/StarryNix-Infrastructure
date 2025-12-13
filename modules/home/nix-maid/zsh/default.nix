@@ -83,19 +83,19 @@ let
                 HISTFILE="$HOME/.zsh_history"
 
                 enabled_opts=(
-                  HIST_FCNTL_LOCK HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY
+                    HIST_FCNTL_LOCK HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY
                 )
                 for opt in "''${enabled_opts[@]}"; do
-                  setopt "$opt"
+                    setopt "$opt"
                 done
                 unset opt enabled_opts
 
                 disabled_opts=(
-                  APPEND_HISTORY EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_FIND_NO_DUPS
-                  HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS
+                    APPEND_HISTORY EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_FIND_NO_DUPS
+                    HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS
                 )
                 for opt in "''${disabled_opts[@]}"; do
-                  unsetopt "$opt"
+                    unsetopt "$opt"
                 done
                 unset opt disabled_opts
               ''
@@ -108,13 +108,20 @@ let
 
               ''
                 # Zsh completions
-                autoload -U compinit && compinit
+                autoload -Uz compinit
+                autoload -Uz zrecompile
+                compdump_file=$HOME/.zcompdump
+                if [[ -s $compdump_file(#qN.mh+24) && (! -s "$compdump_file.zwc" || "$compdump_file" -nt "$compdump_file.zwc") ]]; then
+                    compinit -i -d $compdump_file
+                    zrecompile $compdump_file
+                fi
+                compinit -C -d $compdump_file
               ''
 
               (lib.mkOrder 520 ''
                 # Completion Libraries
                 for profile in ''${(z)NIX_PROFILES}; do
-                  fpath+=($profile/share/zsh/site-functions $profile/share/zsh/$ZSH_VERSION/functions $profile/share/zsh/vendor-completions)
+                    fpath+=($profile/share/zsh/site-functions $profile/share/zsh/$ZSH_VERSION/functions $profile/share/zsh/vendor-completions)
                 done
               '')
 
