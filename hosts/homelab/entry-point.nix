@@ -53,6 +53,7 @@ inputs.nixpkgs.lib.nixosSystem {
           (flakeRoot + /modules/home/nix-maid/direnv)
           (flakeRoot + /modules/home/nix-maid/environment)
           (flakeRoot + /modules/home/nix-maid/eza)
+          (flakeRoot + /modules/home/nix-maid/fastfetch)
           (flakeRoot + /modules/home/nix-maid/fd)
           (flakeRoot + /modules/home/nix-maid/fzf)
           (flakeRoot + /modules/home/nix-maid/git)
