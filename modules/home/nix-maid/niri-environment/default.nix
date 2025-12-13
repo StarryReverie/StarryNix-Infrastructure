@@ -84,7 +84,7 @@ in
     };
 
     systemd.services.waybar = {
-      serviceConfig.ExecStart = "${lib.getExe config.wrapping.packages.waybar}";
+      serviceConfig.ExecStart = "${lib.getExe pkgs.waybar}";
       path = [
         config.wrapping.packages.swaync
         pkgs.hyprlock
