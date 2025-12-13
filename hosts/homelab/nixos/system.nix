@@ -18,7 +18,7 @@
 
   users.users.${constants.username} = {
     isNormalUser = true;
-    shell = config.wrapping.packages.zsh;
+    shell = pkgs.zsh;
     extraGroups = [ "wheel" ];
 
     packages =
@@ -34,6 +34,8 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBHhBWBm0pl855WnAlKB6567DR3fzAWPYAbYI4YxmYFu starryreverie@starrynix-workstation"
     ];
   };
+
+  programs.zsh.enable = true;
 
   age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN1iflX8DYwoguHB2BDxLy+eAcdBX+gTHEGqGNBFdvs/";
 

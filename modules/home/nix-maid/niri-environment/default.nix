@@ -84,18 +84,19 @@ in
 
     systemd.services.waybar = {
       serviceConfig.ExecStart = "${lib.getExe pkgs.waybar}";
-      path = (with pkgs; [
-        swaynotificationcenter
-        hyprlock
-        rofi
-        wpaperd
-      ])
-      ++ (lib.optionals config.services.pipewire.wireplumber.enable [
-        pkgs.wireplumber
-      ])
-      ++ (lib.optionals config.hardware.bluetooth.enable [
-        pkgs.blueman
-      ]);
+      path =
+        (with pkgs; [
+          swaynotificationcenter
+          hyprlock
+          rofi
+          wpaperd
+        ])
+        ++ (lib.optionals config.services.pipewire.wireplumber.enable [
+          pkgs.wireplumber
+        ])
+        ++ (lib.optionals config.hardware.bluetooth.enable [
+          pkgs.blueman
+        ]);
       wantedBy = [ "niri.service" ];
       partOf = [ "niri.service" ];
       after = [ "niri.service" ];

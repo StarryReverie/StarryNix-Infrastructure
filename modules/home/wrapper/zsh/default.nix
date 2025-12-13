@@ -115,40 +115,5 @@
         (builtins.concatStringsSep "\n")
       ])
     ];
-
-    wrappers.zsh.basePackage = pkgs.zsh;
-
-    wrappers.zsh.env = {
-      ZDOTDIR.value =
-        let
-          zshProfileFile = pkgs.writeTextDir ".zprofile" config.settings.zsh.profileContent;
-
-          zshRcFile = pkgs.writeTextDir ".zshrc" config.settings.zsh.rcContent;
-
-          zshEnvFile =
-            let
-              makeEnvironment = { name, value }: "export ${name}=${lib.escapeShellArg value}";
-              environmentCommands = builtins.map makeEnvironment (
-                lib.attrsToList config.settings.zsh.environment
-              );
-              zshenvContent = builtins.concatStringsSep "\n" environmentCommands;
-            in
-            pkgs.writeTextDir ".zshenv" zshenvContent;
-
-          configDirectory = pkgs.symlinkJoin {
-            name = "zsh-config-directory";
-            paths = [
-              zshProfileFile
-              zshRcFile
-              zshEnvFile
-            ];
-          };
-        in
-        configDirectory;
-    };
-
-    wrappers.zsh.pathAdd = [
-      pkgs.nix-zsh-completions
-    ];
   };
 }

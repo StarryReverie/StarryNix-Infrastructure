@@ -14,7 +14,7 @@
 
   users.users.${constants.username} = {
     isNormalUser = true;
-    shell = config.wrapping.packages.zsh;
+    shell = pkgs.zsh;
     extraGroups = [ "wheel" ];
 
     packages =
@@ -26,6 +26,8 @@
       ])
       ++ (builtins.attrValues config.wrapping.packages);
   };
+
+  programs.zsh.enable = true;
 
   services.openssh.enable = true;
 
