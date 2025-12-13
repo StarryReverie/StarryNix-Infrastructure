@@ -47,6 +47,7 @@ inputs.nixpkgs.lib.nixosSystem {
         imports = [
           (flakeRoot + /modules/home/wrapper/system-options.nix)
 
+          (flakeRoot + /modules/home/nix-maid/bat)
           (flakeRoot + /modules/home/nix-maid/direnv)
           (flakeRoot + /modules/home/nix-maid/environment)
           (flakeRoot + /modules/home/nix-maid/helix)
@@ -56,7 +57,6 @@ inputs.nixpkgs.lib.nixosSystem {
           inherit pkgs;
           modules = [
             (flakeRoot + /modules/home/wrapper/atuin)
-            (flakeRoot + /modules/home/wrapper/bat)
             (flakeRoot + /modules/home/wrapper/difftastic)
             (flakeRoot + /modules/home/wrapper/direnv)
             (flakeRoot + /modules/home/wrapper/eza)
