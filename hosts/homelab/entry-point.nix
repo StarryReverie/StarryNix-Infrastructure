@@ -50,6 +50,7 @@ inputs.nixpkgs.lib.nixosSystem {
           (flakeRoot + /modules/home/nix-maid/bat)
           (flakeRoot + /modules/home/nix-maid/direnv)
           (flakeRoot + /modules/home/nix-maid/environment)
+          (flakeRoot + /modules/home/nix-maid/fd)
           (flakeRoot + /modules/home/nix-maid/helix)
           (flakeRoot + /modules/home/nix-maid/lazygit)
         ];
@@ -62,7 +63,6 @@ inputs.nixpkgs.lib.nixosSystem {
             (flakeRoot + /modules/home/wrapper/direnv)
             (flakeRoot + /modules/home/wrapper/eza)
             (flakeRoot + /modules/home/wrapper/fastfetch)
-            (flakeRoot + /modules/home/wrapper/fd)
             (flakeRoot + /modules/home/wrapper/fzf)
             (flakeRoot + /modules/home/wrapper/git)
             (flakeRoot + /modules/home/wrapper/ripgrep)

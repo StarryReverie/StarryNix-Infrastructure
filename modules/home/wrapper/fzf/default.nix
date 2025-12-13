@@ -5,7 +5,7 @@
   ...
 }:
 let
-  fdExecutable = lib.getExe config.wrappers.fd.wrapped;
+  fdExecutable = pkgs.fd;
   fzfExecutable = lib.getExe config.wrappers.fzf.wrapped;
 in
 {
