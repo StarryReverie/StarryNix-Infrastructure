@@ -64,7 +64,6 @@ inputs.nixpkgs.lib.nixosSystem {
           inherit pkgs;
           modules = [
             (flakeRoot + /modules/home/wrapper/difftastic)
-            (flakeRoot + /modules/home/wrapper/direnv)
             (flakeRoot + /modules/home/wrapper/eza)
             (flakeRoot + /modules/home/wrapper/fastfetch)
             (flakeRoot + /modules/home/wrapper/fzf)
