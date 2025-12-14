@@ -14,7 +14,7 @@
 
     custom.zsh = {
       rcContent = ''
-        # Atuin integration
+        # ===== Atuin integration
         eval "$(${lib.getExe pkgs.atuin} init zsh)"
       '';
     };

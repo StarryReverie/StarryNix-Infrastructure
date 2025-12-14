@@ -24,7 +24,7 @@
 
     custom.zsh = {
       rcContent = ''
-        # Yazi integration
+        # ===== Yazi integration
         function dk() {
             local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
             ${lib.getExe pkgs.yazi} "$@" --cwd-file="$tmp"

@@ -12,7 +12,7 @@
 
     custom.zsh = {
       rcContent = ''
-        # Zoxide integration
+        # ===== Zoxide integration
         eval "$(${lib.getExe pkgs.zoxide} init zsh --cmd cd)"
       '';
     };

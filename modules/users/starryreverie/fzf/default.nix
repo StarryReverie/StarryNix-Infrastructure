@@ -23,7 +23,7 @@
       };
 
       rcContent = ''
-        # Fzf integration
+        # ===== Fzf integration
         function _fzf_compgen_path() {
             eval "fd ."
         }
