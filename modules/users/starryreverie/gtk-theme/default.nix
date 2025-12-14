@@ -49,9 +49,11 @@
       '';
     };
 
-    homeSessionVariables = {
-      GTK_THEME = "Orchis-Dark";
-      XCURSOR_THEME = "Vimix-cursors";
+    custom.environment = {
+      sessionVariables = {
+        GTK_THEME = "Orchis-Dark";
+        XCURSOR_THEME = "Vimix-cursors";
+      };
     };
   };
 }

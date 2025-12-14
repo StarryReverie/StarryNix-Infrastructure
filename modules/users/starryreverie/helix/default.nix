@@ -16,9 +16,11 @@
         ./themes/tokyo-night-storm-transparent.toml;
     };
 
-    homeSessionVariables = rec {
-      EDITOR = lib.getExe pkgs.helix;
-      VISUAL = EDITOR;
+    custom.environment = {
+      sessionVariables = rec {
+        EDITOR = lib.getExe pkgs.helix;
+        VISUAL = EDITOR;
+      };
     };
   };
 }

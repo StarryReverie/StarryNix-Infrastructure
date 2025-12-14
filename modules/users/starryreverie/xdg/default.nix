@@ -20,7 +20,9 @@ let
 in
 {
   users.users.starryreverie = {
-    homeSessionVariables = directories;
+    custom.environment = {
+      sessionVariables = directories;
+    };
 
     maid = {
       file.xdg_config."user-dirs.dirs".text =

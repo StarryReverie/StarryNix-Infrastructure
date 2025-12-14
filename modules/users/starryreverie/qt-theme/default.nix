@@ -29,9 +29,11 @@
         };
     };
 
-    homeSessionVariables = {
-      QT_QPA_PLATFORMTHEME = "qt6ct:qt5ct";
-      QT_STYLE_OVERRIDE = "kvantum-dark";
+    custom.environment = {
+      sessionVariables = {
+        QT_QPA_PLATFORMTHEME = "qt6ct:qt5ct";
+        QT_STYLE_OVERRIDE = "kvantum-dark";
+      };
     };
   };
 }
