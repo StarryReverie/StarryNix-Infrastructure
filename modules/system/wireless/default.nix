@@ -11,7 +11,6 @@
 
   networking.networkmanager = {
     enable = true;
-    wifi.powersave = true;
 
     unmanaged = [
       "type:tun"

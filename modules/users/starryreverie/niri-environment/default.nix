@@ -129,6 +129,7 @@ in
 
     systemd.services.sway-audio-idle-inhibit = {
       serviceConfig.ExecStart = "${lib.getExe pkgs.sway-audio-idle-inhibit}";
+      serviceConfig.Restart = "on-failure";
       wantedBy = [ "niri.service" ];
       partOf = [ "niri.service" ];
       after = [
