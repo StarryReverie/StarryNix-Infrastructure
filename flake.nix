@@ -98,7 +98,7 @@
           devShells.default = pkgs.mkShellNoCC {
             packages = [
               inputs.agenix-rekey.packages.${system}.default
-              inputs.colmena.packages.${system}.colmena
+              pkgs.colmena
               pkgs.nil
               pkgs.nixfmt
               pkgs.nixfmt-tree
@@ -121,7 +121,10 @@
           in
           (builtins.mapAttrs (name: value: { imports = value._module.args.modules; }) conf)
           // {
-            meta.nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
+            meta.nixpkgs = import inputs.nixpkgs {
+              system = "x86_64-linux";
+              overlays = inputs.nixpkgs.lib.attrsets.attrValues self.overlays;
+            };
             meta.nodeNixpkgs = builtins.mapAttrs (name: value: value.pkgs) conf;
             meta.nodeSpecialArgs = builtins.mapAttrs (name: value: value._module.specialArgs) conf;
           };
