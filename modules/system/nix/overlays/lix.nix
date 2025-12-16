@@ -1,11 +1,5 @@
 inputs:
 (final: prev: {
-  inherit (final.lixPackageSets.latest)
-    nixpkgs-review
-    nix-eval-jobs
-    nix-fast-build
-    ;
-
   colmena = (inputs.colmena.overlays.default final prev).colmena.override {
     nix-eval-jobs = final.lixPackageSets.latest.nix-eval-jobs;
   };
@@ -15,6 +9,10 @@ inputs:
   };
 
   nix-direnv = prev.nix-direnv.override {
+    nix = final.lixPackageSets.latest.lix;
+  };
+
+  nixpkgs-review = prev.nixpkgs-review.override {
     nix = final.lixPackageSets.latest.lix;
   };
 
