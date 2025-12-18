@@ -1,10 +1,5 @@
-{
-  inputs,
-  constants,
-  ...
-}@specialArgs:
+{ inputs, ... }@specialArgs:
 inputs.nixpkgs.lib.nixosSystem {
-  inherit (constants) system;
   inherit specialArgs;
 
   extraModules = [

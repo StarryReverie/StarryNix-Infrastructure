@@ -1,11 +1,5 @@
-{
-  inputs,
-  constants,
-  flakeRoot,
-  ...
-}@specialArgs:
+{ inputs, flakeRoot, ... }@specialArgs:
 inputs.nixpkgs.lib.nixosSystem {
-  inherit (constants) system;
   inherit specialArgs;
 
   extraModules = [
@@ -17,7 +11,7 @@ inputs.nixpkgs.lib.nixosSystem {
     {
       deployment.allowLocalDeployment = true;
       deployment.buildOnTarget = true;
-      deployment.targetHost = "${constants.hostname}.tail931dca.ts.net";
+      deployment.targetHost = "starrynix-homelab.tail931dca.ts.net";
       deployment.tags = [ "server" ];
     }
 

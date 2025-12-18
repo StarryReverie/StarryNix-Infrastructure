@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  constants,
   flakeRoot,
   ...
 }:
@@ -33,7 +32,10 @@ in
     ./networking.nix
   ];
 
-  networking.hostName = constants.hostname;
+  nixpkgs.hostPlatform = "x86_64-linux";
+  networking.hostName = "starrynix-workstation";
+  system.stateVersion = "25.11";
+
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -45,6 +47,4 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     "electron-36.9.5"
   ];
-
-  system.stateVersion = "25.11";
 }

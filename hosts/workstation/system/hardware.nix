@@ -3,7 +3,6 @@
   lib,
   pkgs,
   modulesPath,
-  constants,
   ...
 }:
 {
@@ -134,6 +133,5 @@
     };
   };
 
-  nixpkgs.hostPlatform = lib.mkDefault constants.system;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

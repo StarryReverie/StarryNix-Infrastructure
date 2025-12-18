@@ -2,8 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
-  constants,
   flakeRoot,
   ...
 }:
@@ -26,11 +24,13 @@ in
     ./service.nix
   ];
 
-  networking.hostName = constants.hostname;
+  nixpkgs.hostPlatform = "x86_64-linux";
+  networking.hostName = "starrynix-homelab";
+  system.stateVersion = "25.11";
+
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "en_US.UTF-8";
 
   age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN1iflX8DYwoguHB2BDxLy+eAcdBX+gTHEGqGNBFdvs/";
 
-  system.stateVersion = "25.11";
 }
