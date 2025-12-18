@@ -88,6 +88,13 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"^lx-music-desktop$"#
+    // Needs to set "Start in fullscreen mode" in this app at the same time
+    open-fullscreen false
+    open-floating false
+}
+
+window-rule {
     draw-border-with-background false
     geometry-corner-radius 8
     clip-to-geometry true
@@ -102,6 +109,7 @@ binds {
     //! Applications
     // Frequently used applications
     Mod+Q hotkey-overlay-title="Open Terminal" { spawn "alacritty" "msg" "create-window"; }
+    Mod+E hotkey-overlay-title="Open File Manager" { spawn "nautilus"; }
     Mod+W hotkey-overlay-title="Open Web Browser" { spawn "firefox"; }
     Mod+Space hotkey-overlay-title="Open Launcher" { spawn "rofi" "-show" "drun"; }
     Mod+V hotkey-overlay-title="Open Clipboard Selector" { spawn "clipboard-select" "--copy" "rofi" "-dmenu" "-p" "Clipboard"; }
