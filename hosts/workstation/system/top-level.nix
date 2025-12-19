@@ -23,7 +23,6 @@ in
     (systemModuleRoot + /pipewire)
     (systemModuleRoot + /openssh)
     (systemModuleRoot + /secret)
-    (systemModuleRoot + /waydroid)
     (systemModuleRoot + /wireless)
 
     # Host-specific system modules
