@@ -9,19 +9,18 @@ This project tries to conform the design philosophy below:
 - Prefer simpler solution
     - Conventional NixOS modules design principles may not be as necessary as in Nixpkgs.
         - Try to replace `*.enable` with simpler (un)commenting `imports = [ ... ]`, if applicable.
-    - Duplication is preferred over the DRY principle if the resulting code is less and more concise. 
+    - Duplication is preferred over the DRY principle if the resulting code is less and more concise.
     - Make abstraction only if there is a true need for polymorphism and changeable configurations.
 - Prioritize maintainability
     - Write easy-to-read code and configurations.
         - Make use of `let ... in ...` expressions and variable binding to explicitly assign meaning to variables.
-        - Add examples to self-definied NixOS options.
+        - Add examples to self-defined NixOS options.
     - Avoid Nixpkgs Overlays to eliminate implicit control-flows and unexpected overrides.
     - Add assertions to NixOS modules to ensure custom invarants.
     - Centralize related configurations and separate orthogonal configurations.
 
 ### Repository Structure
 
-- `docs`: Documentations.
 - `hosts`: Configurations of all hosts running NixOS or NixOS-like system.
     - `homelab`: Main server and hypervisor for `microvm.nix` nodes.
     - `workstation`: Main workstation for everyday life.
@@ -45,7 +44,7 @@ This project tries to conform the design philosophy below:
         - `main`: Main node of Jupyter Lab.
     - `dns`: DNS server
         - `main`: The entry point of DNS service, with ad-filtering support.
-        - `recursive`: DNS caching server using Unbound. 
+        - `recursive`: DNS caching server using Unbound.
     - `registry.nix`: Node manifest and core metadata management.
 - `secrets`: Secret management of the infrastructure.
     - `identities`: Encrypted identities of secrets.
