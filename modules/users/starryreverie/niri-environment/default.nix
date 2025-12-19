@@ -137,5 +137,15 @@ in
         cfg.systemd.services.swayidle.name
       ];
     };
+
+    systemd.services.polkit-authentication-agent = {
+      serviceConfig.ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      wantedBy = [ "niri.service" ];
+      partOf = [ "niri.service" ];
+      after = [
+        "niri.service"
+        "xdg-desktop-portal.service"
+      ];
+    };
   };
 }
