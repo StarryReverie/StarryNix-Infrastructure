@@ -10,6 +10,6 @@
   services.displayManager.ly.x11Support = false;
   services.displayManager.ly.settings = {
     animation = "matrix";
-    session_log = ".local/state/ly/session.log";
+    session_log = ".local/state/ly-session.log";
   };
 }
