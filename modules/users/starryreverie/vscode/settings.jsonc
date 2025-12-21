@@ -46,5 +46,8 @@
                 "command": ["nixfmt"]
             }
         }
-    }
+    },
+    "nix.hiddenLanguageServerErrors": [
+        "textDocument/documentSymbol"
+    ]
 }
