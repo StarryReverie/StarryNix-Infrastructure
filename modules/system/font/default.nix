@@ -13,8 +13,9 @@
     libertinus
     noto-fonts-cjk-serif-static
 
-    source-code-pro
     cascadia-code
+    maple-mono.NL-NF-CN-unhinted
+    source-code-pro
 
     nerd-fonts.symbols-only
     noto-fonts-color-emoji
