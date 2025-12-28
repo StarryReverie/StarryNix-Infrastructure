@@ -209,11 +209,11 @@
         "spectrum": "spectrum"
       },
       "locked": {
-        "lastModified": 1766005889,
-        "narHash": "sha256-UCFkQ37BKDmPEHDkW1BaqJo6AZFoVcogtuyxTg4/a8M=",
+        "lastModified": 1766664413,
+        "narHash": "sha256-zP/5t+ZDVSjflXalMu8aN5vCb2HuoNMRGeP3FzLKJOM=",
         "owner": "microvm-nix",
         "repo": "microvm.nix",
-        "rev": "bb9e99bdb3662354299605cc1a75a2b1a86bd29a",
+        "rev": "a4c90d904703096b51abcb5d09417d98604c5f30",
         "type": "github"
       },
       "original": {
@@ -262,11 +262,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1765779637,
-        "narHash": "sha256-KJ2wa/BLSrTqDjbfyNx70ov/HdgNBCBBSQP3BIzKnv4=",
+        "lastModified": 1766651565,
+        "narHash": "sha256-QEhk0eXgyIqTpJ/ehZKg9IKS7EtlWxF3N7DXy42zPfU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1306659b587dc277866c7b69eb97e5f07864d8c4",
+        "rev": "3e2499d5539c16d0d173ba53552a4ff8547f4539",
         "type": "github"
       },
       "original": {
@@ -347,11 +347,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764661203,
-        "narHash": "sha256-tb4xSdiuAqSzOgqj2MiE9HNmXS2U4uvTqQ44rP1/P90=",
+        "lastModified": 1766150908,
+        "narHash": "sha256-p58SbCvWkp9drxSE1hOAsODlF++2SIajXeVlMyWFagY=",
         "owner": "StarryReverie",
         "repo": "StarryNix-Derivations",
-        "rev": "b00a6ae99096e8194128a4aff5e62c1ac9de4519",
+        "rev": "aecc25def93a5b4b57373c5f0d4b05978cd49537",
         "type": "github"
       },
       "original": {
