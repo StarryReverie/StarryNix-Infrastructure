@@ -18,6 +18,7 @@ in
     (systemModuleRoot + /nix)
     (systemModuleRoot + /openssh)
     (systemModuleRoot + /secret)
+    (systemModuleRoot + /user-management)
     (systemModuleRoot + /wireless)
 
     # Host-specific system modules
