@@ -301,6 +301,22 @@
         "type": "github"
       }
     },
+    "preservation": {
+      "locked": {
+        "lastModified": 1757436102,
+        "narHash": "sha256-mMI9IanU+Xw+pVogD2oT0I2kTmvz2Un/Apc5+CwUpEY=",
+        "owner": "nix-community",
+        "repo": "preservation",
+        "rev": "93416f4614ad2dfed5b0dcf12f27e57d27a5ab11",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "main",
+        "repo": "preservation",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -312,6 +328,7 @@
         "microvm": "microvm",
         "nix-maid": "nix-maid",
         "nixpkgs": "nixpkgs",
+        "preservation": "preservation",
         "starrynix-derivations": "starrynix-derivations",
         "starrynix-resources": "starrynix-resources",
         "systems": "systems",

@@ -17,6 +17,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
     # External modules
     inputs.nix-maid.nixosModules.default
+    inputs.preservation.nixosModules.default
 
     # StarryNix-Infrastructure
     (flakeRoot + /modules/system/starrynix-infrastructure/host)

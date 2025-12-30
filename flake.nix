@@ -51,6 +51,10 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
+    preservation = {
+      url = "github:nix-community/preservation/main";
+    };
+
     starrynix-derivations = {
       url = "github:StarryReverie/StarryNix-Derivations/master";
       inputs.nixpkgs.follows = "nixpkgs";

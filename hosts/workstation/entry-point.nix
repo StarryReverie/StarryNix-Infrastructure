@@ -18,6 +18,7 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.agenix-rekey.nixosModules.default
     inputs.agenix.nixosModules.default
     inputs.nix-maid.nixosModules.default
+    inputs.preservation.nixosModules.default
 
     # Local modules
     ./system/top-level.nix
