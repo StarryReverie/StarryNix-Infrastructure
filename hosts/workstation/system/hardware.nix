@@ -31,36 +31,45 @@
   boot.loader.systemd-boot.enable = true;
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/256963eb-3128-441d-aa10-00be2b96b61f";
-    fsType = "btrfs";
-    options = [ "subvol=@rootfs,compress=zstd,noatime" ];
+    device = "tmpfs";
+    fsType = "tmpfs";
+    options = [ "mode=755,noatime" ];
   };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/256963eb-3128-441d-aa10-00be2b96b61f";
-    fsType = "btrfs";
-    options = [ "subvol=@home,compress=zstd,noatime" ];
-  };
-
-  fileSystems."/var" = {
-    device = "/dev/disk/by-uuid/256963eb-3128-441d-aa10-00be2b96b61f";
-    fsType = "btrfs";
-    options = [ "subvol=@var,compress=zstd,noatime" ];
+  fileSystems."/efi" = {
+    device = "/dev/disk/by-uuid/6E4C-A5ED";
+    fsType = "vfat";
+    options = [ "fmask=0022,dmask=0022" ];
   };
 
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/256963eb-3128-441d-aa10-00be2b96b61f";
     fsType = "btrfs";
     options = [ "subvol=@nix,compress=zstd,noatime" ];
+    neededForBoot = true;
   };
 
-  fileSystems."/efi" = {
-    device = "/dev/disk/by-uuid/6E4C-A5ED";
-    fsType = "vfat";
-    options = [
-      "fmask=0022"
-      "dmask=0022"
-    ];
+  fileSystems."/nix/persistence" = {
+    device = "/dev/disk/by-uuid/256963eb-3128-441d-aa10-00be2b96b61f";
+    fsType = "btrfs";
+    options = [ "subvol=@rootfs,compress=zstd,noatime" ];
+    depends = [ "/nix" ];
+    neededForBoot = true;
+  };
+
+  fileSystems."/nix/persistence/home" = {
+    device = "/dev/disk/by-uuid/256963eb-3128-441d-aa10-00be2b96b61f";
+    fsType = "btrfs";
+    options = [ "subvol=@home,compress=zstd,noatime" ];
+    depends = [ "/nix/persistence" ];
+  };
+
+  fileSystems."/nix/persistence/var" = {
+    device = "/dev/disk/by-uuid/256963eb-3128-441d-aa10-00be2b96b61f";
+    fsType = "btrfs";
+    options = [ "subvol=@var,compress=zstd,noatime" ];
+    depends = [ "/nix/persistence" ];
+    neededForBoot = true;
   };
 
   services.fstrim.enable = true;
