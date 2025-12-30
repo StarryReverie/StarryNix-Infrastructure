@@ -18,6 +18,7 @@ in
     (systemModuleRoot + /nix)
     (systemModuleRoot + /openssh)
     (systemModuleRoot + /secret)
+    (systemModuleRoot + /tailscale)
     (systemModuleRoot + /user-management)
     (systemModuleRoot + /wireless)
 

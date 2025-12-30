@@ -26,6 +26,7 @@ in
     (systemModuleRoot + /preservation)
     (systemModuleRoot + /openssh)
     (systemModuleRoot + /secret)
+    (systemModuleRoot + /tailscale)
     (systemModuleRoot + /user-management)
     (systemModuleRoot + /wireless)
 
