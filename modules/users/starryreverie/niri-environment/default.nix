@@ -45,7 +45,6 @@ in
 
       # Communication
       telegram-desktop
-      qq
     ];
 
     file.xdg_config."niri/config.kdl".text = lib.mkAfter (builtins.readFile ./config.kdl);

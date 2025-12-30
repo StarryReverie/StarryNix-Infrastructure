@@ -30,6 +30,7 @@ in
     (userModuleRoot + /lazygit)
     (userModuleRoot + /niri-environment)
     (userModuleRoot + /password)
+    (userModuleRoot + /qq)
     (userModuleRoot + /qt-theme)
     (userModuleRoot + /ripgrep)
     (userModuleRoot + /rofi)
