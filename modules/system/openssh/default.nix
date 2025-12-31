@@ -34,6 +34,10 @@
   };
 
   preservation.preserveAt."/nix/persistence" = {
+    directories = [
+      "/var/lib/fail2ban"
+    ];
+
     files = [
       {
         file = "/etc/ssh/ssh_host_rsa_key";
