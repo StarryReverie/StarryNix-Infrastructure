@@ -20,15 +20,7 @@
         "vm"
 
         ".cache"
-        ".config/fcitx5"
-        ".config/keepassxc"
-        ".config/lx-music-desktop"
-        ".local/share/TelegramDesktop"
         ".local/share/Trash"
-        ".local/share/containers"
-        ".local/share/fcitx5"
-        ".local/state/wireplumber"
-        ".mozilla"
 
         # Workaround for nix-maid: If tmpfs as root is enabled, all
         # configurations managed by nix-maid need to be set up from

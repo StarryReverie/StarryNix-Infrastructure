@@ -15,8 +15,6 @@ in
     (systemModuleRoot + /container)
     (systemModuleRoot + /dae)
     (systemModuleRoot + /distrobox)
-    (systemModuleRoot + /fcitx5)
-    (systemModuleRoot + /firefox)
     (systemModuleRoot + /font)
     (systemModuleRoot + /initrd)
     (systemModuleRoot + /ly)

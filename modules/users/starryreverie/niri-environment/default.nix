@@ -33,7 +33,6 @@ in
       # Media
       amberol
       eartag
-      lx-music-desktop
       mousai
       showtime
 
@@ -41,10 +40,6 @@ in
       eyedropper
       gnome-calendar
       gnome-clocks
-      keepassxc
-
-      # Communication
-      telegram-desktop
     ];
 
     file.xdg_config."niri/config.kdl".text = lib.mkAfter (builtins.readFile ./config.kdl);
