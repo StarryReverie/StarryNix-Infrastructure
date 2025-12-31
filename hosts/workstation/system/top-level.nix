@@ -15,6 +15,7 @@ in
     (systemModuleRoot + /container)
     (systemModuleRoot + /dae)
     (systemModuleRoot + /distrobox)
+    (systemModuleRoot + /etc-overlay)
     (systemModuleRoot + /font)
     (systemModuleRoot + /initrd)
     (systemModuleRoot + /ly)
