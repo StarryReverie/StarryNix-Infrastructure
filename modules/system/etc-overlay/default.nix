@@ -11,7 +11,7 @@
 
   assertions = lib.singleton {
     assertion = config.system.etc.overlay.enable -> config.preservation.enable;
-    message =  ''
+    message = ''
       Content in the old `/etc` will be ignored after etc overlay is enabled.
       Preservation should be enabled to link or bind-mount essential files (e.g.
       SSH keys) from a persistent storage to `/etc`.
