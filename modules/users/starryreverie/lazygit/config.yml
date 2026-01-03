@@ -6,6 +6,10 @@ gui:
 git:
   pagers:
     - externalDiffCommand: difft --color=always
+  log:
+    order: default
+  branchLogCmd: git log --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
+
 update:
   method: never
 disableStartupPopups: true
