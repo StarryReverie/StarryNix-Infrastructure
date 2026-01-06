@@ -16,6 +16,7 @@ in
     (systemModuleRoot + /dae)
     (systemModuleRoot + /distrobox)
     (systemModuleRoot + /etc-overlay)
+    (systemModuleRoot + /fhs-compatibility)
     (systemModuleRoot + /font)
     (systemModuleRoot + /initrd)
     (systemModuleRoot + /ly)
