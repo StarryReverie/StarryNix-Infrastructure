@@ -176,23 +176,21 @@
 
               colmenaNodeConfigurations = (self.colmenaHive.introspect (x: x)).nodes;
 
-              flattenedNodeConfigurations = (
-                lib.attrsets.listToAttrs (
-                  lib.lists.flatten (
-                    lib.attrsets.mapAttrsToList (
-                      clusterName: cluster:
-                      lib.attrsets.mapAttrsToList (nodeName: node: {
-                        name = "${clusterName}-${nodeName}";
-                        value = node.nixosSystem;
-                      }) cluster
-                    ) self.nodeConfigurations
-                  )
-                )
-              );
+              microvmNodeConfigurations = lib.pipe self.nodeConfigurations [
+                (lib.attrsets.mapAttrsToList (
+                  clusterName: cluster:
+                  lib.attrsets.mapAttrsToList (nodeName: node: {
+                    name = "${clusterName}-${nodeName}";
+                    value = node.nixosSystem;
+                  }) cluster
+                ))
+                lib.lists.flatten
+                lib.attrsets.listToAttrs
+              ];
             in
             lib.mergeAttrsList [
               colmenaNodeConfigurations
-              flattenedNodeConfigurations
+              microvmNodeConfigurations
             ];
         };
       };

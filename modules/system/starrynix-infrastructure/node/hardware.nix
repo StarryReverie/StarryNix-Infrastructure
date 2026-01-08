@@ -34,12 +34,11 @@ in
 
     microvm.binScripts.virtiofsd-run =
       let
-        makeCreateDirectoryCommand =
-          name: "mkdir -p /var/lib/microvms/${config.networking.hostName}/${name}";
-        stateNames = lib.attrsets.mapAttrsToList (_: state: state.name) cfg.states;
-        createDirectoryCommands = builtins.concatStringsSep "\n" (
-          lib.lists.map makeCreateDirectoryCommand stateNames
-        );
+        createDirectoryCommands = lib.pipe cfg.states [
+          (lib.attrsets.mapAttrsToList (_: state: state.name))
+          (lib.lists.map (name: "mkdir -p /var/lib/microvms/${config.networking.hostName}/${name}"))
+          (builtins.concatStringsSep "\n")
+        ];
       in
       lib.mkBefore createDirectoryCommands;
   };

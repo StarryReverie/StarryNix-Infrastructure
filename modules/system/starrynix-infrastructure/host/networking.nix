@@ -57,15 +57,17 @@ in
     networking.nftables.enable = lib.mkIf hostCfg.networking.configureFirewall true;
 
     networking.firewall.allowedTCPPorts = lib.mkIf hostCfg.networking.configureFirewall (
-      lib.lists.map (cfg: cfg.sourcePort) (
-        lib.lists.filter (cfg: cfg.protocol == "tcp") hostCfg.networking.forwardPorts
-      )
+      lib.pipe hostCfg.networking.forwardPorts [
+        (lib.lists.filter (cfg: cfg.protocol == "tcp"))
+        (lib.lists.map (cfg: cfg.sourcePort))
+      ]
     );
 
     networking.firewall.allowedUDPPorts = lib.mkIf hostCfg.networking.configureFirewall (
-      lib.lists.map (cfg: cfg.sourcePort) (
-        lib.lists.filter (cfg: cfg.protocol == "udp") hostCfg.networking.forwardPorts
-      )
+      lib.pipe hostCfg.networking.forwardPorts [
+        (lib.lists.filter (cfg: cfg.protocol == "udp"))
+        (lib.lists.map (cfg: cfg.sourcePort))
+      ]
     );
 
     networking.nftables.tables =
@@ -77,7 +79,11 @@ in
         (
           let
             makeInterfaceElements =
-              list: builtins.concatStringsSep ", " (lib.lists.map (name: "\"${name}\"") list);
+              list:
+              lib.pipe list [
+                (lib.lists.map (name: "\"${name}\""))
+                (builtins.concatStringsSep ", ")
+              ];
             internalInterfaceElements = makeInterfaceElements hostCfg.networking.internalInterfaces;
             externalInterfaceElements = makeInterfaceElements hostCfg.networking.externalInterfaces;
 
@@ -90,9 +96,10 @@ in
                 destinationPort = builtins.toString cfg.destinationPort;
               in
               "${cfg.protocol} . ${sourcePort} : ${destinationIpv4Address} . ${destinationPort}";
-            forwardPortElements = builtins.concatStringsSep ",\n" (
-              lib.lists.map mapForwardPortElement hostCfg.networking.forwardPorts
-            );
+            forwardPortElements = lib.pipe hostCfg.networking.forwardPorts [
+              (lib.lists.map mapForwardPortElement)
+              (builtins.concatStringsSep ",\n")
+            ];
           in
           {
             "starrynix-infrastructure-nat" = {

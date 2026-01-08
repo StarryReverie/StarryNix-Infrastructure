@@ -43,11 +43,11 @@ let
       };
       mapCluster = cluster: lib.attrsets.mapAttrsToList (name: node: mapNode cluster node) cluster.nodes;
     in
-    lib.attrsets.listToAttrs (
-      lib.lists.flatten (
-        lib.attrsets.mapAttrsToList (name: cluster: mapCluster cluster) enabledClustersCfg
-      )
-    );
+    lib.pipe enabledClustersCfg [
+      (lib.attrsets.mapAttrsToList (name: cluster: mapCluster cluster))
+      lib.lists.flatten
+      lib.attrsets.listToAttrs
+    ];
 in
 {
   config = {
