@@ -20,6 +20,7 @@ let
 in
 {
   imports = [
+    ./mime-applications.nix
     ./user-directories.nix
   ];
 
