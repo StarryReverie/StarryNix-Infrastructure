@@ -25,3 +25,8 @@ dirs  = []
 files = []
 exts  = []
 conds = []
+
+[indicator]
+  [indicator.padding]
+  open = "█"
+  close = "█"
