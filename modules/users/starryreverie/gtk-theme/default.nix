@@ -13,11 +13,13 @@
         vimix-cursors
       ];
 
-      dconf.settings = {
-        "/org/gnome/desktop/interface/gtk-theme" = "Orchis-Dark";
-        "/org/gnome/desktop/interface/icon-theme" = "Reversal-dark";
-        "/org/gnome/desktop/interface/cursor-theme" = "Vimix-cursors";
-        "/org/gnome/desktop/interface/color-scheme" = "prefer-dark";
+      gsettings.settings = {
+        org.gnome.desktop.interface = {
+          gtk-theme = "Orchis-Dark";
+          icon-theme = "Reversal-dark";
+          cursor-theme = "Vimix-cursors";
+          color-scheme = "prefer-dark";
+        };
       };
 
       file.home.".gtkrc-2.0".text = ''
