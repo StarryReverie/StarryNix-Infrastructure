@@ -14,7 +14,6 @@
 
       directories = [
         ".cache"
-        ".local/share/Trash"
 
         # Workaround for nix-maid: If tmpfs as root is enabled, all
         # configurations managed by nix-maid need to be set up from
@@ -28,6 +27,12 @@
         ".config/user-tmpfiles.d"
         ".local/state/nix-maid"
 
+        # Trash should be accessed via a symlink. Nautilus is incompatible with
+        # a bind-mounted trash.
+        {
+          directory = ".local/share/Trash";
+          how = "symlink";
+        }
         {
           directory = ".ssh";
           mode = "0700";
