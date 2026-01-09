@@ -17,7 +17,6 @@
             "--no-git"
             "--group-directories-first"
             "--binary"
-            "--group"
             "--time-style=long-iso"
           ];
 
