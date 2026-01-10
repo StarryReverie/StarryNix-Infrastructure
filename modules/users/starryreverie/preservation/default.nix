@@ -14,6 +14,7 @@
 
       directories = [
         ".cache"
+        ".local/state/nix-maid"
 
         {
           directory = ".local/share/Trash";

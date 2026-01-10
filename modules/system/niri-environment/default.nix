@@ -41,6 +41,7 @@
     wantedBy = [ "graphical-session.target" ];
     after = [ "graphical-session.target" ];
     serviceConfig.Type = "oneshot";
+    serviceConfig.ExecStartPre = "${lib.getExe' pkgs.systemd "systemctl"} --user daemon-reload";
     serviceConfig.ExecStart = "${lib.getExe' pkgs.systemd "systemctl"} --user restart maid-activation.service";
     serviceConfig.RemainAfterExit = true;
   };
