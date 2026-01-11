@@ -13,6 +13,7 @@
   users.users.starryreverie = {
     custom.zsh = {
       enable = true;
+      alwaysSourceProfile = true;
 
       rcContent = lib.mkMerge [
         ''

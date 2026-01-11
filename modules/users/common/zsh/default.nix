@@ -47,6 +47,16 @@ let
             EDITOR = "hx";
           };
         };
+
+        alwaysSourceProfile = lib.mkOption {
+          type = lib.types.bool;
+          description = ''
+            Always try to source `.zprofile` in a interative shell, no matter
+            whether it is a login shell or not
+          '';
+          default = false;
+          example = true;
+        };
       };
 
       config =
@@ -57,6 +67,14 @@ let
         {
           custom.zsh = {
             profileContent = lib.mkMerge [
+              (lib.mkOrder 300 ''
+                # ===== Prevent `.zprofile` from being sourced again
+                if [ -n "$__ZPROFILE_SOURCED" ]; then
+                  return
+                fi
+                export __ZPROFILE_SOURCED=1
+              '')
+
               ''
                 # ===== Load `.profile`
                 # Do as what `sh` and `bash` do, ensuring more consistent UX.
@@ -66,60 +84,68 @@ let
               ''
             ];
 
-            rcContent = lib.mkMerge [
-              ''
-                # ===== History
-                HISTSIZE="10000"
-                SAVEHIST="10000"
-                HISTFILE="$HOME/.zsh_history"
+            rcContent = lib.mkMerge (
+              [
+                ''
+                  # ===== History
+                  HISTSIZE="10000"
+                  SAVEHIST="10000"
+                  HISTFILE="$HOME/.zsh_history"
 
-                enabled_opts=(
-                    HIST_FCNTL_LOCK HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY
-                )
-                for opt in "''${enabled_opts[@]}"; do
-                    setopt "$opt"
-                done
-                unset opt enabled_opts
+                  enabled_opts=(
+                      HIST_FCNTL_LOCK HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY
+                  )
+                  for opt in "''${enabled_opts[@]}"; do
+                      setopt "$opt"
+                  done
+                  unset opt enabled_opts
 
-                disabled_opts=(
-                    APPEND_HISTORY EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_FIND_NO_DUPS
-                    HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS
-                )
-                for opt in "''${disabled_opts[@]}"; do
-                    unsetopt "$opt"
-                done
-                unset opt disabled_opts
-              ''
+                  disabled_opts=(
+                      APPEND_HISTORY EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_FIND_NO_DUPS
+                      HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS
+                  )
+                  for opt in "''${disabled_opts[@]}"; do
+                      unsetopt "$opt"
+                  done
+                  unset opt disabled_opts
+                ''
 
-              (lib.mkOrder 520 ''
-                # ===== Completion libraries
-                for profile in ''${(z)NIX_PROFILES}; do
-                    fpath+=($profile/share/zsh/site-functions $profile/share/zsh/$ZSH_VERSION/functions $profile/share/zsh/vendor-completions)
-                done
-              '')
+                (lib.mkOrder 520 ''
+                  # ===== Completion libraries
+                  for profile in ''${(z)NIX_PROFILES}; do
+                      fpath+=($profile/share/zsh/site-functions $profile/share/zsh/$ZSH_VERSION/functions $profile/share/zsh/vendor-completions)
+                  done
+                '')
 
-              ''
-                # ===== Zsh completions
-                autoload -Uz compinit
-                autoload -Uz zrecompile
-                compdump_file=$HOME/.zcompdump
-                if [[ -s $compdump_file(#qN.mh+24) && (! -s "$compdump_file.zwc" || "$compdump_file" -nt "$compdump_file.zwc") ]]; then
-                    compinit -i -d $compdump_file
-                    zrecompile $compdump_file
-                fi
-                compinit -C -d $compdump_file
-              ''
+                ''
+                  # ===== Zsh completions
+                  autoload -Uz compinit
+                  autoload -Uz zrecompile
+                  compdump_file=$HOME/.zcompdump
+                  if [[ -s $compdump_file(#qN.mh+24) && (! -s "$compdump_file.zwc" || "$compdump_file" -nt "$compdump_file.zwc") ]]; then
+                      compinit -i -d $compdump_file
+                      zrecompile $compdump_file
+                  fi
+                  compinit -C -d $compdump_file
+                ''
 
-              ''
-                # ===== Shell aliases
-                ${
-                  (lib.pipe (lib.attrsToList customCfg.shellAliases) [
-                    (builtins.map ({ name, value }: "alias -- ${name}=${lib.escapeShellArg value}"))
-                    (builtins.concatStringsSep "\n")
-                  ])
-                }
-              ''
-            ];
+                ''
+                  # ===== Shell aliases
+                  ${
+                    (lib.pipe (lib.attrsToList customCfg.shellAliases) [
+                      (builtins.map ({ name, value }: "alias -- ${name}=${lib.escapeShellArg value}"))
+                      (builtins.concatStringsSep "\n")
+                    ])
+                  }
+                ''
+              ]
+              ++ lib.optionals customCfg.alwaysSourceProfile [
+                (lib.mkOrder 300 ''
+                  profile_path=''${ZDOTDIR:-$HOME}/.zprofile
+                  [ -f $profile_path ] && source $profile_path
+                '')
+              ]
+            );
           };
 
           maid = lib.mkIf customCfg.enable {
