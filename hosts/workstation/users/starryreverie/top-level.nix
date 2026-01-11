@@ -32,6 +32,7 @@ in
     (userModuleRoot + /keepassxc)
     (userModuleRoot + /lazygit)
     (userModuleRoot + /lx-music-desktop)
+    (userModuleRoot + /mpd-ecosystem)
     (userModuleRoot + /niri-environment)
     (userModuleRoot + /password)
     (userModuleRoot + /pipewire)
