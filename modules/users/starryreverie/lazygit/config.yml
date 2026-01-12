@@ -9,6 +9,7 @@ git:
   log:
     order: default
   branchLogCmd: git log --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
+  fetchAll: false
 
 update:
   method: never
