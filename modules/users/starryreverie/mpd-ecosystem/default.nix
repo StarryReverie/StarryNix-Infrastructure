@@ -35,7 +35,40 @@
       daemon = {
         musicDirectory = "$XDG_MUSIC_DIR/library";
         playlistDirectory = "$XDG_MUSIC_DIR/playlists";
+        extraConfig = ''
+          playlist_plugin {
+            name "m3u"
+            enabled "true"
+          }
+
+          restore_paused "yes"
+        ''
+        + lib.optionalString config.services.pipewire.enable ''
+          audio_output {
+            type "pipewire"
+            name "PipeWire Output"
+          }
+        '';
       };
+    };
+
+    maid = {
+      gsettings.settings = {
+        io.github.htkhiem.Euphonica = {
+          client.mpd-use-unix-socket = true;
+          client.mpd-unix-socket = "/run/user/${builtins.toString config.users.users.starryreverie.uid}/mpd/socket";
+          ui.use-visualizer = false;
+        };
+      };
+    };
+  };
+
+  preservation.preserveAt."/nix/persistence" = {
+    users.starryreverie = {
+      directories = [
+        ".local/share/mpd"
+        ".local/state/mpd"
+      ];
     };
   };
 }
