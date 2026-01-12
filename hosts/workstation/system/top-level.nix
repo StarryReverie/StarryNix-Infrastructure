@@ -14,6 +14,7 @@ in
     (systemModuleRoot + /bluetooth)
     (systemModuleRoot + /container)
     (systemModuleRoot + /dae)
+    (systemModuleRoot + /dconf)
     (systemModuleRoot + /distrobox)
     (systemModuleRoot + /etc-overlay)
     (systemModuleRoot + /fhs-compatibility)
