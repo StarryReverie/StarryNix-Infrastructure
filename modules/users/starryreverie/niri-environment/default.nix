@@ -49,6 +49,7 @@ in
 
     systemd.services.kanshi = {
       serviceConfig.ExecStart = "${lib.getExe pkgs.kanshi}";
+      serviceConfig.Slice = "session.slice";
       wantedBy = [ "niri-session.target" ];
       partOf = [ "niri-session.target" ];
       after = [ "niri-session.target" ];
@@ -56,6 +57,7 @@ in
 
     systemd.services.wpaperd = {
       serviceConfig.ExecStart = "${lib.getExe' pkgs.wpaperd "wpaperd"}";
+      serviceConfig.Slice = "session.slice";
       wantedBy = [ "niri-session.target" ];
       partOf = [ "niri-session.target" ];
       after = [
@@ -66,6 +68,7 @@ in
 
     systemd.services.swaync = {
       serviceConfig.ExecStart = "${lib.getExe pkgs.swaynotificationcenter}";
+      serviceConfig.Slice = "session.slice";
       wantedBy = [ "niri-session.target" ];
       partOf = [ "niri-session.target" ];
       after = [ "niri-session.target" ];
@@ -73,6 +76,7 @@ in
 
     systemd.services.clipboard = {
       script = "${lib.getExe' pkgs.wl-clipboard "wl-paste"} --watch ${lib.getExe pkgs.cliphist} store";
+      serviceConfig.Slice = "session.slice";
       wantedBy = [ "niri-session.target" ];
       partOf = [ "niri-session.target" ];
       after = [ "niri-session.target" ];
@@ -80,6 +84,7 @@ in
 
     systemd.services.waybar = {
       serviceConfig.ExecStart = "${lib.getExe pkgs.waybar}";
+      serviceConfig.Slice = "session.slice";
       path =
         (with pkgs; [
           swaynotificationcenter
@@ -118,6 +123,7 @@ in
           "lock ${lib.escapeShellArg "${monitorsOffCommand}; ${lockCommand}"}"
           "unlock ${lib.escapeShellArg monitorsOnCommand}"
         ];
+      serviceConfig.Slice = "session.slice";
       wantedBy = [ "niri-session.target" ];
       partOf = [ "niri-session.target" ];
       after = [ "niri-session.target" ];
@@ -126,6 +132,7 @@ in
     systemd.services.sway-audio-idle-inhibit = {
       serviceConfig.ExecStart = "${lib.getExe pkgs.sway-audio-idle-inhibit}";
       serviceConfig.Restart = "on-failure";
+      serviceConfig.Slice = "session.slice";
       wantedBy = [ "niri-session.target" ];
       partOf = [ "niri-session.target" ];
       after = [
@@ -136,6 +143,7 @@ in
 
     systemd.services.polkit-authentication-agent = {
       serviceConfig.ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      serviceConfig.Slice = "session.slice";
       wantedBy = [ "niri-session.target" ];
       partOf = [ "niri-session.target" ];
       after = [ "niri-session.target" ];
@@ -143,6 +151,7 @@ in
 
     systemd.services.alacritty = {
       serviceConfig.ExecStart = "${lib.getExe pkgs.alacritty} --daemon";
+      serviceConfig.Slice = "session.slice";
       environment = lib.mkForce { };
       wantedBy = [ "niri-session.target" ];
       partOf = [ "niri-session.target" ];
