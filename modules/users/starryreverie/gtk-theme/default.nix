@@ -8,37 +8,38 @@
   users.users.starryreverie = {
     maid = {
       packages = with pkgs; [
-        orchis-theme
+        adw-gtk3
+        gnome-themes-extra
         reversal-icon-theme
         vimix-cursors
       ];
 
       gsettings.settings = {
         org.gnome.desktop.interface = {
-          gtk-theme = "Orchis-Dark";
+          gtk-theme = "adw-gtk3-dark";
           icon-theme = "Reversal-dark";
           cursor-theme = "Vimix-cursors";
           color-scheme = "prefer-dark";
         };
       };
 
-      file.home.".gtkrc-2.0".text = ''
-        gtk-theme-name="Orchis-Dark"
-        gtk-icon-theme-name="Reversal-dark"
-        gtk-cursor-theme-name="Vimix-cursors"
-      '';
-
       file.xdg_config."gtk-3.0/settings.ini".text = ''
         [Settings]
-        gtk-theme-name = Orchis-Dark
+        gtk-theme-name = adw-gtk3-dark
         gtk-icon-theme-name = Reversal-dark
         gtk-cursor-theme-name = Vimix-cursors
         gtk-application-prefer-dark-theme = true
       '';
 
+      file.xdg_config."gtk-4.0/assets".source =
+        pkgs.adw-gtk3 + /share/themes/adw-gtk3-dark/gtk-4.0/assets;
+      file.xdg_config."gtk-4.0/gtk.css".source =
+        pkgs.adw-gtk3 + /share/themes/adw-gtk3-dark/gtk-4.0/gtk.css;
+      file.xdg_config."gtk-4.0/gtk-dark.css".source =
+        pkgs.adw-gtk3 + /share/themes/adw-gtk3-dark/gtk-4.0/gtk-dark.css;
       file.xdg_config."gtk-4.0/settings.ini".text = ''
         [Settings]
-        gtk-theme-name = Orchis-Dark
+        gtk-theme-name = adw-gtk3-dark
         gtk-icon-theme-name = Reversal-dark
         gtk-cursor-theme-name = Vimix-cursors
         gtk-application-prefer-dark-theme = true
@@ -53,7 +54,6 @@
 
     custom.environment = {
       sessionVariables = {
-        GTK_THEME = "Orchis-Dark";
         XCURSOR_THEME = "Vimix-cursors";
       };
     };
