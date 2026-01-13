@@ -113,7 +113,7 @@
       flake = {
         lib = import ./lib inputs;
 
-        overlays = import ./modules/system/nix/overlays/all-overlays.nix inputs;
+        overlays = import ./modules/system/core/nix/overlays/all-overlays.nix inputs;
 
         colmenaHive = inputs.colmena.lib.makeHive self.colmenaArg;
 

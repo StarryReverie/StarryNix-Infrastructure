@@ -7,12 +7,12 @@
 }:
 {
   # Requires the corresponding system module
-  imports = [ (flakeRoot + /modules/system/pipewire) ];
+  imports = [ (flakeRoot + /modules/system/virtualization/container) ];
 
-  config = lib.mkIf config.services.pipewire.enable {
+  config = lib.mkIf config.virtualisation.podman.enable {
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {
-        directories = [ ".local/state/wireplumber" ];
+        directories = [ ".local/share/containers" ];
       };
     };
   };

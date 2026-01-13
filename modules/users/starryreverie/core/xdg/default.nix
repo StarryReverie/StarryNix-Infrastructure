@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    (flakeRoot + /modules/users/common/xdg)
+    (flakeRoot + /modules/users/common/core/xdg)
   ];
 
   users.users.starryreverie = {

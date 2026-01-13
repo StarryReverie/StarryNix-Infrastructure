@@ -7,12 +7,12 @@
 }:
 {
   # Requires the corresponding system module
-  imports = [ (flakeRoot + /modules/system/container) ];
+  imports = [ (flakeRoot + /modules/system/applications/firefox) ];
 
-  config = lib.mkIf config.virtualisation.podman.enable {
+  config = lib.mkIf config.programs.firefox.enable {
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {
-        directories = [ ".local/share/containers" ];
+        directories = [ ".mozilla" ];
       };
     };
   };

@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    (flakeRoot + /modules/users/common/environment)
+    (flakeRoot + /modules/users/common/core/environment)
   ];
 
   users.users.starryreverie = {

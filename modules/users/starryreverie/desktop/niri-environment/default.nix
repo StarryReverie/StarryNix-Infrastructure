@@ -10,7 +10,7 @@ let
 in
 {
   # Requires the corresponding system module
-  imports = [ (flakeRoot + /modules/system/niri-environment) ];
+  imports = [ (flakeRoot + /modules/system/desktop/niri-environment) ];
 
   users.users.starryreverie.maid = {
     packages = with pkgs; [

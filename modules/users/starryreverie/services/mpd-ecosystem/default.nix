@@ -8,7 +8,7 @@
 }:
 {
   imports = [
-    (flakeRoot + /modules/users/common/mpd-ecosystem)
+    (flakeRoot + /modules/users/common/services/mpd-ecosystem)
   ];
 
   users.users.starryreverie = {

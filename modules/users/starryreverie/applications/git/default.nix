@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    (flakeRoot + /modules/users/common/git)
+    (flakeRoot + /modules/users/common/applications/git)
   ];
 
   users.users.starryreverie = {

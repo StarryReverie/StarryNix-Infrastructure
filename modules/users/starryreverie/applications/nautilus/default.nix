@@ -7,7 +7,7 @@
 }:
 {
   # Requires the corresponding system module
-  imports = [ (flakeRoot + /modules/system/nautilus) ];
+  imports = [ (flakeRoot + /modules/system/applications/nautilus) ];
 
   users.users.starryreverie.maid = {
     gsettings.settings = {

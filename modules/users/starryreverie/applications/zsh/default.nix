@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    (flakeRoot + /modules/users/common/zsh)
+    (flakeRoot + /modules/users/common/applications/zsh)
   ];
 
   users.users.starryreverie = {

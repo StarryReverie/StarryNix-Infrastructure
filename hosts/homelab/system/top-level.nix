@@ -11,18 +11,18 @@ in
 {
   imports = [
     # Common system modules
-    (systemModuleRoot + /dae)
-    (systemModuleRoot + /etc-overlay)
-    (systemModuleRoot + /initrd)
-    (systemModuleRoot + /ly)
-    (systemModuleRoot + /networking)
-    (systemModuleRoot + /nix)
-    (systemModuleRoot + /openssh)
-    (systemModuleRoot + /preservation)
-    (systemModuleRoot + /secret)
-    (systemModuleRoot + /tailscale)
-    (systemModuleRoot + /user-management)
-    (systemModuleRoot + /wireless)
+    (systemModuleRoot + /core/etc-overlay)
+    (systemModuleRoot + /core/initrd)
+    (systemModuleRoot + /core/nix)
+    (systemModuleRoot + /core/preservation)
+    (systemModuleRoot + /core/user-management)
+    (systemModuleRoot + /hardware/networking)
+    (systemModuleRoot + /hardware/wireless)
+    (systemModuleRoot + /security/secret)
+    (systemModuleRoot + /services/dae)
+    (systemModuleRoot + /services/ly)
+    (systemModuleRoot + /services/openssh)
+    (systemModuleRoot + /services/tailscale)
 
     # Host-specific system modules
     ./hardware.nix
