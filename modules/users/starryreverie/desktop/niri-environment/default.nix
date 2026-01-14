@@ -23,6 +23,9 @@ in
       # System
       dconf-editor
 
+      # Files
+      file-roller
+
       # Documents
       newsflash
       papers
