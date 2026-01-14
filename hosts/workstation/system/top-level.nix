@@ -20,6 +20,7 @@ in
     (systemModuleRoot + /desktop/font)
     (systemModuleRoot + /desktop/niri-environment)
     (systemModuleRoot + /hardware/bluetooth)
+    (systemModuleRoot + /hardware/keyd)
     (systemModuleRoot + /hardware/networking)
     (systemModuleRoot + /hardware/pipewire)
     (systemModuleRoot + /hardware/wireless)
