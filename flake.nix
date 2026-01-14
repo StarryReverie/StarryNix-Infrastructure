@@ -91,16 +91,12 @@
 
       imports = [
         ./modules/flake/overlays
+        ./modules/flake/packages
       ];
 
       perSystem =
         { system, pkgs, ... }:
         {
-          _module.args.pkgs = import inputs.nixpkgs {
-            inherit system;
-            overlays = inputs.nixpkgs.lib.attrsets.attrValues self.overlays;
-          };
-
           devShells.default = pkgs.mkShellNoCC {
             packages = [
               inputs.agenix-rekey.packages.${system}.default
@@ -125,10 +121,8 @@
           in
           (builtins.mapAttrs (name: value: { imports = value._module.args.modules; }) conf)
           // {
-            meta.nixpkgs = import inputs.nixpkgs {
-              system = "x86_64-linux";
-              overlays = inputs.nixpkgs.lib.attrsets.attrValues self.overlays;
-            };
+            # `meta.nixpkgs` is actually useless, but `lib` is needed for colmena
+            meta.nixpkgs = { inherit (inputs.nixpkgs) lib; };
             meta.nodeNixpkgs = builtins.mapAttrs (name: value: value.pkgs) conf;
             meta.nodeSpecialArgs = builtins.mapAttrs (name: value: value._module.specialArgs) conf;
           };
