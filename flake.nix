@@ -89,6 +89,10 @@
         "aarch64-linux"
       ];
 
+      imports = [
+        ./modules/flake/overlays
+      ];
+
       perSystem =
         { system, pkgs, ... }:
         {
@@ -112,8 +116,6 @@
 
       flake = {
         lib = import ./lib inputs;
-
-        overlays = import ./modules/system/core/nix/overlays/all-overlays.nix inputs;
 
         colmenaHive = inputs.colmena.lib.makeHive self.colmenaArg;
 
