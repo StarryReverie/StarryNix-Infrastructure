@@ -27,6 +27,7 @@ in
     (systemModuleRoot + /services/tailscale)
 
     # Host-specific system modules
+    ./disko-config.nix
     ./hardware.nix
     ./networking.nix
     ./service.nix

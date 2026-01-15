@@ -30,43 +30,10 @@
 
   boot.loader.systemd-boot.enable = true;
 
-  fileSystems."/" = {
-    device = "tmpfs";
-    fsType = "tmpfs";
-    options = [ "mode=755,noatime" ];
-  };
-
-  fileSystems."/efi" = {
-    device = "/dev/disk/by-uuid/7BEB-AB12";
-    fsType = "vfat";
-    options = [ "fmask=0077,dmask=0077" ];
-  };
-
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/9f829809-7a87-42c4-aca1-fc9ada0709de";
-    fsType = "btrfs";
-    options = [ "subvol=@nix,compress=zstd,noatime" ];
-    neededForBoot = true;
-  };
-
-  fileSystems."/nix/persistence" = {
-    device = "/dev/disk/by-uuid/9f829809-7a87-42c4-aca1-fc9ada0709de";
-    fsType = "btrfs";
-    options = [ "subvol=@rootfs,compress=zstd,noatime" ];
-    depends = [ "/nix" ];
-    neededForBoot = true;
-  };
-
-  fileSystems."/nix/persistence/home" = {
-    device = "/dev/disk/by-uuid/9f829809-7a87-42c4-aca1-fc9ada0709de";
-    fsType = "btrfs";
-    options = [ "subvol=@home,compress=zstd,noatime" ];
-    depends = [ "/nix/persistence" ];
-  };
-
   swapDevices = [
     { device = "/dev/disk/by-uuid/fd164910-91cf-4216-9605-d9f2248bb0cb"; }
   ];
+  zramSwap.enable = true;
 
   services.fstrim.enable = true;
 
@@ -82,8 +49,6 @@
     packages = with pkgs; [ terminus_font ];
     font = "${pkgs.terminus_font}/share/consolefonts/ter-d24b.psf.gz";
   };
-
-  zramSwap.enable = true;
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
