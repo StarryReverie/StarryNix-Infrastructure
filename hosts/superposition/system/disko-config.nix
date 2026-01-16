@@ -16,10 +16,7 @@
         format = "vfat";
         device = "/dev/disk/by-uuid/6E4C-A5ED";
         mountpoint = "/efi";
-        mountOptions = [
-          "fmask=0077"
-          "dmask=0077"
-        ];
+        mountOptions = [ "fmask=0077,dmask=0077" ];
       };
     };
 
@@ -34,40 +31,22 @@
 
         subvolumes."@nix" = {
           mountpoint = "/nix";
-          mountOptions = [
-            "compress=zstd"
-            "noatime"
-            "x-initrd.mount"
-          ];
+          mountOptions = [ "compress=zstd,noatime" ];
         };
 
         subvolumes."@rootfs" = {
           mountpoint = "/nix/persistence";
-          mountOptions = [
-            "compress=zstd"
-            "noatime"
-            "x-initrd.mount"
-            "x-systemd.requires-mounts-for=/sysroot/nix"
-          ];
+          mountOptions = [ "compress=zstd,noatime" ];
         };
 
         subvolumes."@home" = {
           mountpoint = "/nix/persistence/home";
-          mountOptions = [
-            "compress=zstd"
-            "noatime"
-            "x-systemd.requires-mounts-for=/nix/persistence"
-          ];
+          mountOptions = [ "compress=zstd,noatime" ];
         };
 
         subvolumes."@var" = {
           mountpoint = "/nix/persistence/var";
-          mountOptions = [
-            "compress=zstd"
-            "noatime"
-            "x-initrd.mount"
-            "x-systemd.requires-mounts-for=/sysroot/nix/persistence"
-          ];
+          mountOptions = [ "compress=zstd,noatime" ];
         };
       };
     };
@@ -75,9 +54,26 @@
 
   disko.devices.nodev."/" = {
     fsType = "tmpfs";
-    mountOptions = [
-      "mode=755"
-      "noatime"
-    ];
+    mountOptions = [ "mode=755,noatime" ];
+  };
+
+  # Disko can't configure extra mount options properly. Some critical effects
+  # are applied only if these options are set in `fileSystems.<name>`.
+  fileSystems."/nix" = {
+    neededForBoot = true;
+  };
+
+  fileSystems."/nix/persistence" = {
+    depends = [ "/nix" ];
+    neededForBoot = true;
+  };
+
+  fileSystems."/nix/persistence/home" = {
+    depends = [ "/nix/persistence" ];
+  };
+
+  fileSystems."/nix/persistence/var" = {
+    depends = [ "/nix/persistence" ];
+    neededForBoot = true;
   };
 }
