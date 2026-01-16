@@ -34,7 +34,7 @@ in
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
-  networking.hostName = "starrynix-homelab";
+  networking.hostName = "topological";
   system.stateVersion = "25.11";
 
   time.timeZone = "Asia/Shanghai";

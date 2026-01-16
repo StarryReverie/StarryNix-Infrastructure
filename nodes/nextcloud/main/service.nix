@@ -35,7 +35,7 @@ in
     };
 
     settings = {
-      trusted_domains = [ "starrynix-homelab" ];
+      trusted_domains = [ "topological" ];
       trusted_proxies = [ nodeCfg.clusterInformation.gatewayIpv4Address ];
       log_type = "systemd";
 

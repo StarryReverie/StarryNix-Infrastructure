@@ -11,7 +11,7 @@ inputs.nixpkgs.lib.nixosSystem {
     {
       deployment.allowLocalDeployment = true;
       deployment.buildOnTarget = true;
-      deployment.targetHost = "starrynix-homelab.tail931dca.ts.net";
+      deployment.targetHost = "topological.tail931dca.ts.net";
       deployment.tags = [ "server" ];
     }
 

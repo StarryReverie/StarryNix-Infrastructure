@@ -15,7 +15,7 @@
         };
     in
     {
-      "homelab" = importHost (flakeRoot + /hosts/homelab/entry-point.nix);
+      "topological" = importHost (flakeRoot + /hosts/topological/entry-point.nix);
       "workstation" = importHost (flakeRoot + /hosts/workstation/entry-point.nix);
     };
 }
