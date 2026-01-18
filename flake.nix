@@ -43,6 +43,10 @@
       inputs.systems.follows = "systems";
     };
 
+    flakey-profile = {
+      url = "github:lf-/flakey-profile/main";
+    };
+
     microvm = {
       url = "github:microvm-nix/microvm.nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
