@@ -101,6 +101,7 @@
         ./modules/flake/nixos
         ./modules/flake/overlays
         ./modules/flake/packages
+        ./modules/flake/profiles
       ];
 
       _module.args = {
