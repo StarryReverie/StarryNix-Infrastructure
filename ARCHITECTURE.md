@@ -114,7 +114,7 @@ These abstractions hide raw `microvm.nix` and NixOS options from `nixpkgs` behin
     inputs.self.lib.makeNodeEntryPoint inputs.nixpkgs.lib specialArgs {
       modules = [
         (flakeRoot + /modules/system/starrynix-infrastructure/node)
-        (flakeRoot + /nodes/registry.nix)
+        (flakeRoot + /inventory/nodes/registry.nix)
         ./service.nix
         ./system.nix
       ];

@@ -22,7 +22,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
     # StarryNix-Infrastructure
     (flakeRoot + /modules/system/starrynix-infrastructure/host)
-    (flakeRoot + /nodes/registry.nix)
+    (flakeRoot + /inventory/nodes/registry.nix)
 
     # Local modules
     ./system/top-level.nix

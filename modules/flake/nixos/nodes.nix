@@ -14,7 +14,7 @@
           inherit inputs flakeRoot nodeConstants;
         };
       makeNodeEntry = cluster: node: {
-        ${cluster}.${node} = importNode (flakeRoot + /nodes/${cluster}/${node}/entry-point.nix) {
+        ${cluster}.${node} = importNode (flakeRoot + /inventory/nodes/${cluster}/${node}/entry-point.nix) {
           inherit cluster node;
         };
       };

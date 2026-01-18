@@ -46,8 +46,8 @@
           "main".sshKey = {
             mount = true;
             type = "ed25519";
-            publicKeyFile = flakeRoot + /nodes/jellyfin/main/ssh-keys/ed25519.pub;
-            encryptedPrivateKeyFile = flakeRoot + /nodes/jellyfin/main/ssh-keys/ed25519.age;
+            publicKeyFile = flakeRoot + /inventory/nodes/jellyfin/main/ssh-keys/ed25519.pub;
+            encryptedPrivateKeyFile = flakeRoot + /inventory/nodes/jellyfin/main/ssh-keys/ed25519.age;
           };
         };
 
@@ -55,22 +55,22 @@
           "main".sshKey = {
             mount = true;
             type = "ed25519";
-            publicKeyFile = flakeRoot + /nodes/nextcloud/main/ssh-keys/ed25519.pub;
-            encryptedPrivateKeyFile = flakeRoot + /nodes/nextcloud/main/ssh-keys/ed25519.age;
+            publicKeyFile = flakeRoot + /inventory/nodes/nextcloud/main/ssh-keys/ed25519.pub;
+            encryptedPrivateKeyFile = flakeRoot + /inventory/nodes/nextcloud/main/ssh-keys/ed25519.age;
           };
 
           "storage".sshKey = {
             mount = true;
             type = "ed25519";
-            publicKeyFile = flakeRoot + /nodes/nextcloud/storage/ssh-keys/ed25519.pub;
-            encryptedPrivateKeyFile = flakeRoot + /nodes/nextcloud/storage/ssh-keys/ed25519.age;
+            publicKeyFile = flakeRoot + /inventory/nodes/nextcloud/storage/ssh-keys/ed25519.pub;
+            encryptedPrivateKeyFile = flakeRoot + /inventory/nodes/nextcloud/storage/ssh-keys/ed25519.age;
           };
 
           "cache".sshKey = {
             mount = true;
             type = "ed25519";
-            publicKeyFile = flakeRoot + /nodes/nextcloud/cache/ssh-keys/ed25519.pub;
-            encryptedPrivateKeyFile = flakeRoot + /nodes/nextcloud/cache/ssh-keys/ed25519.age;
+            publicKeyFile = flakeRoot + /inventory/nodes/nextcloud/cache/ssh-keys/ed25519.pub;
+            encryptedPrivateKeyFile = flakeRoot + /inventory/nodes/nextcloud/cache/ssh-keys/ed25519.age;
           };
         };
 
@@ -78,8 +78,8 @@
           "main".sshKey = {
             mount = true;
             type = "ed25519";
-            publicKeyFile = flakeRoot + /nodes/searxng/main/ssh-keys/ed25519.pub;
-            encryptedPrivateKeyFile = flakeRoot + /nodes/searxng/main/ssh-keys/ed25519.age;
+            publicKeyFile = flakeRoot + /inventory/nodes/searxng/main/ssh-keys/ed25519.pub;
+            encryptedPrivateKeyFile = flakeRoot + /inventory/nodes/searxng/main/ssh-keys/ed25519.age;
           };
         };
 
@@ -87,8 +87,8 @@
           "main".sshKey = {
             mount = true;
             type = "ed25519";
-            publicKeyFile = flakeRoot + /nodes/jupyter/main/ssh-keys/ed25519.pub;
-            encryptedPrivateKeyFile = flakeRoot + /nodes/jupyter/main/ssh-keys/ed25519.age;
+            publicKeyFile = flakeRoot + /inventory/nodes/jupyter/main/ssh-keys/ed25519.pub;
+            encryptedPrivateKeyFile = flakeRoot + /inventory/nodes/jupyter/main/ssh-keys/ed25519.age;
           };
         };
 
@@ -96,15 +96,15 @@
           "main".sshKey = {
             mount = true;
             type = "ed25519";
-            publicKeyFile = flakeRoot + /nodes/dns/main/ssh-keys/ed25519.pub;
-            encryptedPrivateKeyFile = flakeRoot + /nodes/dns/main/ssh-keys/ed25519.age;
+            publicKeyFile = flakeRoot + /inventory/nodes/dns/main/ssh-keys/ed25519.pub;
+            encryptedPrivateKeyFile = flakeRoot + /inventory/nodes/dns/main/ssh-keys/ed25519.age;
           };
 
           "recursive".sshKey = {
             mount = true;
             type = "ed25519";
-            publicKeyFile = flakeRoot + /nodes/dns/recursive/ssh-keys/ed25519.pub;
-            encryptedPrivateKeyFile = flakeRoot + /nodes/dns/recursive/ssh-keys/ed25519.age;
+            publicKeyFile = flakeRoot + /inventory/nodes/dns/recursive/ssh-keys/ed25519.pub;
+            encryptedPrivateKeyFile = flakeRoot + /inventory/nodes/dns/recursive/ssh-keys/ed25519.age;
           };
         };
       };
