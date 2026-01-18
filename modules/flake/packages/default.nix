@@ -1,16 +1,19 @@
 {
   config,
   inputs,
-  withSystem,
+  self,
   ...
 }:
+let
+  nixpkgs-lib = inputs.nixpkgs.lib;
+in
 {
   perSystem =
     { system, ... }:
     {
       _module.args.pkgs = import inputs.nixpkgs {
         inherit system;
-        overlays = inputs.nixpkgs.lib.attrsets.attrValues config.flake.overlays;
+        overlays = nixpkgs-lib.attrsets.attrValues config.flake.overlays;
         config = {
           allowUnfree = true;
         };

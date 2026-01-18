@@ -1,10 +1,12 @@
 {
   config,
   inputs,
-  withSystem,
-  lib,
+  self,
   ...
 }:
+let
+  nixpkgs-lib = inputs.nixpkgs.lib;
+in
 {
   imports = [
     ./profiles
@@ -12,13 +14,13 @@
     ./make-node-entry-point.nix
   ];
 
-  options.flake.lib = lib.mkOption {
-    type = (lib.types.attrsOf lib.types.anything) // {
+  options.flake.lib = nixpkgs-lib.mkOption {
+    type = (nixpkgs-lib.types.attrsOf nixpkgs-lib.types.anything) // {
       merge =
         loc: defs:
-        lib.pipe defs [
-          (lib.lists.map ({ value, ... }: value))
-          (lib.attrsets.foldAttrs lib.attrsets.recursiveUpdate { })
+        nixpkgs-lib.pipe defs [
+          (nixpkgs-lib.lists.map ({ value, ... }: value))
+          (nixpkgs-lib.attrsets.foldAttrs nixpkgs-lib.attrsets.recursiveUpdate { })
         ];
     };
   };

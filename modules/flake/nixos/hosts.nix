@@ -1,21 +1,21 @@
 {
   config,
   inputs,
-  withSystem,
+  self,
   flakeRoot,
   ...
 }:
 {
   flake.nixosConfigurations =
     let
-      importHost =
+      importApplyHost =
         entryPoint:
         import entryPoint {
           inherit inputs flakeRoot;
         };
     in
     {
-      "superposition" = importHost (flakeRoot + /inventory/hosts/superposition/entry-point.nix);
-      "topological" = importHost (flakeRoot + /inventory/hosts/topological/entry-point.nix);
+      "superposition" = importApplyHost (flakeRoot + /inventory/hosts/superposition/entry-point.nix);
+      "topological" = importApplyHost (flakeRoot + /inventory/hosts/topological/entry-point.nix);
     };
 }

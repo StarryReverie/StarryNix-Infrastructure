@@ -1,9 +1,12 @@
 {
   config,
   inputs,
-  withSystem,
+  self,
   ...
 }:
+let
+  nixpkgs-lib = inputs.nixpkgs.lib;
+in
 {
   flake.lib = {
     makeNodeEntryPoint =
@@ -15,7 +18,7 @@
           imports = modules;
         };
 
-        nixosSystem = inputs.nixpkgs.lib.nixosSystem {
+        nixosSystem = nixpkgs-lib.nixosSystem {
           inherit specialArgs modules;
         };
       };

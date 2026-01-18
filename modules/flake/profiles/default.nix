@@ -1,7 +1,6 @@
 {
   config,
   inputs,
-  withSystem,
   self,
   flakeRoot,
   ...

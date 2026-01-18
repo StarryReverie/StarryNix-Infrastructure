@@ -1,8 +1,9 @@
 {
   config,
   inputs,
-  withSystem,
+  self,
   flakeRoot,
+  withSystem,
   ...
 }:
 let

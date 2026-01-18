@@ -1,10 +1,13 @@
 {
   config,
   inputs,
-  withSystem,
+  self,
   flakeRoot,
   ...
 }:
+let
+  nixpkgs-lib = inputs.nixpkgs.lib;
+in
 {
   flake.nodeConfigurations =
     let
@@ -19,7 +22,7 @@
         };
       };
     in
-    inputs.nixpkgs.lib.foldAttrs inputs.nixpkgs.lib.recursiveUpdate { } [
+    nixpkgs-lib.foldAttrs nixpkgs-lib.recursiveUpdate { } [
       (makeNodeEntry "jellyfin" "main")
       (makeNodeEntry "nextcloud" "main")
       (makeNodeEntry "nextcloud" "storage")
