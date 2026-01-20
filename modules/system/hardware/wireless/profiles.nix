@@ -39,5 +39,30 @@
         addr-gen-mode = "default";
       };
     };
+
+    profiles."ChinaNet-1202-5G" = {
+      connection = {
+        id = "ChinaNet-1202-5G";
+        type = "wifi";
+      };
+      wifi = {
+        mode = "infrastructure";
+        ssid = "ChinaNet-1202-5G";
+      };
+      wifi-security = {
+        key-mgmt = "wpa-psk";
+        auth-alg = "open";
+        psk = "$PASSWORD_CHINANET_1202_5G";
+      };
+      ipv4 = {
+        method = "auto";
+        ignore-auto-dns = true;
+      };
+      ipv6 = {
+        method = "auto";
+        ignore-auto-dns = true;
+        addr-gen-mode = "default";
+      };
+    };
   };
 }
