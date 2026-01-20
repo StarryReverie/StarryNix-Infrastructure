@@ -5,7 +5,7 @@
   ...
 }:
 let
-  nixpkgs-lib = inputs.nixpkgs-lib;
+  nixpkgs-lib = inputs.nixpkgs.lib;
 in
 {
   flake.agenix-rekey = inputs.agenix-rekey.configure {
