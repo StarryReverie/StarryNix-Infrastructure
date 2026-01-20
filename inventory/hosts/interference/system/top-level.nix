@@ -27,6 +27,7 @@ in
     ./disk-config.nix
     ./hardware.nix
     ./networking.nix
+    ./services.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
