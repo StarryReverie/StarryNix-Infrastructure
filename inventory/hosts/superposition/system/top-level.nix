@@ -23,6 +23,7 @@ in
     (systemModuleRoot + /hardware/keyd)
     (systemModuleRoot + /hardware/networking)
     (systemModuleRoot + /hardware/pipewire)
+    (systemModuleRoot + /hardware/tlp)
     (systemModuleRoot + /hardware/wireless)
     (systemModuleRoot + /hardware/zram-swap)
     (systemModuleRoot + /security/fail2ban)
