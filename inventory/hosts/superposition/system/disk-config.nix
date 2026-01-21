@@ -78,4 +78,8 @@
   };
 
   swapDevices = [ ];
+
+  services.fstrim.enable = true;
+
+  boot.tmp.useTmpfs = true;
 }

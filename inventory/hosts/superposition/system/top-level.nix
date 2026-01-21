@@ -40,7 +40,6 @@ in
     # Host-specific system modules
     ./disk-config.nix
     ./hardware.nix
-    ./networking.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";

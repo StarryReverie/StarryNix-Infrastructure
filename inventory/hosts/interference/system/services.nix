@@ -5,10 +5,13 @@
   ...
 }:
 {
-  services.openssh = {
-    ports = [
-      22
-      2222
-    ];
-  };
+  config = lib.mkMerge [
+    # OpenSSH
+    {
+      services.openssh.ports = [
+        22
+        2222
+      ];
+    }
+  ];
 }

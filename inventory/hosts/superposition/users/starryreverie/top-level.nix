@@ -56,9 +56,8 @@ in
     (userModuleRoot + /services/mpd-ecosystem)
 
     # Host-specific user modules
-    ./kanshi.nix
-    ./niri-environment.nix
-    ./preservation.nix
+    ./core.nix
+    ./desktop.nix
   ];
 
   users.users.starryreverie = {

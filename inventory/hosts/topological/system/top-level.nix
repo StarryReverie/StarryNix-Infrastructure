@@ -29,7 +29,6 @@ in
     # Host-specific system modules
     ./disk-config.nix
     ./hardware.nix
-    ./networking.nix
     ./service.nix
   ];
 
