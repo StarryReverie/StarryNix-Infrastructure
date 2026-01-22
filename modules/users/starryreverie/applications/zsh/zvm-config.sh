@@ -1,3 +1,6 @@
+typeset -g ZVM_MODE_RPROMPT=""
+typeset -g ZVM_RPROMPT_ENABLED=1
+
 function zvm_config() {
     ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
     ZVM_HISTORY_KEYBINDING_SEARCH=
@@ -42,26 +45,47 @@ function zvm_after_lazy_keybindings() {
     zvm_bindkey viins '^[l' forward-char
 }
 
+function zvm_custom_accept_line() {
+    ZVM_RPROMPT_ENABLED=0
+    RPROMPT=''
+    zle reset-prompt
+    zle .accept-line
+}
+
+function zvm_precmd_restore_rprompt() {
+    ZVM_RPROMPT_ENABLED=1
+    RPROMPT="${ZVM_MODE_RPROMPT}"
+}
+
 function zvm_after_select_vi_mode() {
     case $ZVM_MODE in
         $ZVM_MODE_NORMAL)
-            RPROMPT="%(?..%?)%f %F{blue}NORMAL"
+            ZVM_MODE_RPROMPT="%(?..%?)%f %F{blue}NORMAL"
             ;;
         $ZVM_MODE_INSERT)
-            RPROMPT="%(?..%?)%f %F{green}INSERT"
+            ZVM_MODE_RPROMPT="%(?..%?)%f %F{green}INSERT"
             ;;
         $ZVM_MODE_VISUAL)
-            RPROMPT="%(?..%?)%f %F{magenta}VISUAL"
+            ZVM_MODE_RPROMPT="%(?..%?)%f %F{magenta}VISUAL"
             ;;
         $ZVM_MODE_VISUAL_LINE)
-            RPROMPT="%(?..%?)%f %F{magenta}V-LINE"
+            ZVM_MODE_RPROMPT="%(?..%?)%f %F{magenta}V-LINE"
             ;;
         $ZVM_MODE_REPLACE)
-            RPROMPT="%(?..%?)%f %F{yellow}REPLAC"
+            ZVM_MODE_RPROMPT="%(?..%?)%f %F{yellow}REPLAC"
             ;;
     esac
+    if [[ $ZVM_RPROMPT_ENABLED -eq 1 ]]; then
+        RPROMPT="${ZVM_MODE_RPROMPT}"
+    fi
 }
 
 function zvm_after_init() {
     zvm_after_select_vi_mode
+
+    autoload -U add-zsh-hook
+    add-zsh-hook precmd zvm_precmd_restore_rprompt
+
+    zle -N zvm_custom_accept_line
+    bindkey '^M' zvm_custom_accept_line
 }
