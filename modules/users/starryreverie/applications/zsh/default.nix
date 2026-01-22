@@ -32,6 +32,12 @@
           ZSH_AUTOSUGGEST_STRATEGY=(history)
         ''
 
+        (lib.mkOrder 1100 ''
+          # ===== Zsh-vi-mode
+          source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+          source ${./zvm-config.sh}
+        '')
+
         (lib.mkOrder 1200 ''
           # ===== Zsh syntax highlighting
           # It should be loaded after all other widgets have been loaded.
