@@ -21,22 +21,6 @@
       boot.loader.systemd-boot.enable = true;
     }
 
-    # Graphics
-    {
-      services.xserver.videoDrivers = [
-        "modesetting"
-      ];
-
-      hardware.graphics = {
-        enable = true;
-        extraPackages = with pkgs; [
-          libva
-          intel-media-driver
-          linux-firmware
-        ];
-      };
-    }
-
     # Initrd
     {
       boot.initrd.availableKernelModules = [

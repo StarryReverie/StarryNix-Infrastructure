@@ -20,6 +20,7 @@ in
     (systemModuleRoot + /desktop/font)
     (systemModuleRoot + /desktop/niri-environment)
     (systemModuleRoot + /hardware/bluetooth)
+    (systemModuleRoot + /hardware/intel-graphics)
     (systemModuleRoot + /hardware/keyd)
     (systemModuleRoot + /hardware/networking)
     (systemModuleRoot + /hardware/nvidia-graphics)
