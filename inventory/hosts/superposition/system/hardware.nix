@@ -25,7 +25,6 @@
     {
       services.xserver.videoDrivers = [
         "modesetting"
-        "nvidia"
       ];
 
       hardware.graphics = {
@@ -35,29 +34,6 @@
           intel-media-driver
           linux-firmware
         ];
-      };
-
-      hardware.nvidia = {
-        open = false;
-        nvidiaSettings = false;
-        modesetting.enable = true;
-
-        prime = {
-          offload = {
-            enable = true;
-            enableOffloadCmd = true;
-          };
-
-          intelBusId = "PCI:0:2:0";
-          nvidiaBusId = "PCI:1:0:0";
-        };
-
-        powerManagement = {
-          enable = true;
-          finegrained = true;
-        };
-
-        dynamicBoost.enable = true;
       };
     }
 
@@ -77,7 +53,6 @@
     # Kernel
     {
       boot.kernelModules = [ "kvm-intel" ];
-      boot.blacklistedKernelModules = [ "nouveau" ];
       boot.extraModulePackages = [ ];
     }
 
@@ -86,6 +61,19 @@
       services.dae = {
         wanInterfaces = [ "wlo1" ];
         forwardDns = true;
+      };
+    }
+
+    # NVIDIA Graphics
+    {
+      custom.nvidia = {
+        enable = true;
+        prime = "offload";
+      };
+
+      hardware.nvidia.prime = {
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
       };
     }
   ];

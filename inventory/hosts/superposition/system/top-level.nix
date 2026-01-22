@@ -22,6 +22,7 @@ in
     (systemModuleRoot + /hardware/bluetooth)
     (systemModuleRoot + /hardware/keyd)
     (systemModuleRoot + /hardware/networking)
+    (systemModuleRoot + /hardware/nvidia-graphics)
     (systemModuleRoot + /hardware/pipewire)
     (systemModuleRoot + /hardware/tlp)
     (systemModuleRoot + /hardware/wireless)
