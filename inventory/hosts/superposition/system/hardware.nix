@@ -42,9 +42,18 @@
 
     # Networking
     {
+      services.dae.enable = lib.mkForce false;
       services.dae = {
         wanInterfaces = [ "wlo1" ];
         forwardDns = true;
+      };
+
+      networking.firewall.trustedInterfaces = [ "Meta" "Mihomo" ];
+
+      programs.clash-verge = {
+        enable = true;
+        serviceMode = true;
+        tunMode = true;
       };
     }
 
