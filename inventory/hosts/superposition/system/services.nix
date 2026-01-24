@@ -10,7 +10,6 @@
       custom.services.transparent-proxy = {
         enable = true;
         wanInterfaces = [ "wlo1" ];
-        # forwardDns = true;
       };
     }
   ];

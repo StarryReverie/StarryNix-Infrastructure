@@ -7,16 +7,6 @@
 }:
 {
   config = lib.mkMerge [
-    # Transparent Proxy
-    {
-      custom.services.transparent-proxy = {
-        enable = true;
-        wanInterfaces = [ "wlp3s0" ];
-        lanInterfaces = config.starrynix-infrastructure.host.networking.internalInterfaces;
-        forwardDns = false;
-      };
-    }
-
     # StarryNix-Infrastructure
     {
       starrynix-infrastructure.host = {
@@ -81,6 +71,15 @@
         directories = [
           "/var/lib/microvms"
         ];
+      };
+    }
+
+    # Transparent Proxy
+    {
+      custom.services.transparent-proxy = {
+        enable = true;
+        wanInterfaces = [ "wlp3s0" ];
+        lanInterfaces = config.starrynix-infrastructure.host.networking.internalInterfaces;
       };
     }
   ];

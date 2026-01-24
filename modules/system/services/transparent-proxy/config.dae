@@ -1,7 +1,3 @@
-include {
-    @dnsFile@
-}
-
 node {
     mihomo: 'socks://localhost:7890'
 }

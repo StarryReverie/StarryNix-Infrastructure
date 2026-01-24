@@ -31,12 +31,6 @@ in
       default = [ ];
     };
 
-    forwardDns = lib.mkOption {
-      type = lib.types.bool;
-      description = "Whether to forward all DNS queries over proxies";
-      default = true;
-    };
-
     configFile = lib.mkOption {
       type = lib.types.path;
       description = "Path to mihomo's configuration file";
@@ -60,14 +54,7 @@ in
             "lan_interface: ${lib.strings.concatStringsSep "," customCfg.lanInterfaces}"
           else
             "";
-
-        dnsFile = "dns.dae";
       };
-    };
-
-    systemd.services.dae = {
-      serviceConfig.LoadCredential =
-        if customCfg.forwardDns then [ "dns.dae:${./dns.dae}" ] else [ "dns.dae:/dev/null" ];
     };
 
     services.mihomo = {
