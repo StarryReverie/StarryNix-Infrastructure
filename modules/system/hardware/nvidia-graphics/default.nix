@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  customCfg = config.custom.hardware.nvidia-graphics;
+in
 {
   options.custom.hardware.nvidia-graphics = {
     enable = lib.mkOption {
@@ -25,49 +28,45 @@
     };
   };
 
-  config =
-    let
-      cfg = config.custom.hardware.nvidia-graphics;
-    in
-    lib.mkMerge [
-      (lib.mkIf cfg.enable {
-        services.xserver.videoDrivers = [ "nvidia" ];
+  config = lib.mkMerge [
+    (lib.mkIf customCfg.enable {
+      services.xserver.videoDrivers = [ "nvidia" ];
 
-        boot.blacklistedKernelModules = [ "nouveau" ];
+      boot.blacklistedKernelModules = [ "nouveau" ];
 
-        hardware.graphics = {
+      hardware.graphics = {
+        enable = true;
+        extraPackages = with pkgs; [
+          linux-firmware
+        ];
+      };
+
+      hardware.nvidia = {
+        open = false;
+        nvidiaSettings = false;
+        modesetting.enable = true;
+        powerManagement.enable = true;
+        dynamicBoost.enable = true;
+      };
+    })
+
+    (lib.mkIf (customCfg.enable && customCfg.prime == "offload") {
+      hardware.nvidia = {
+        prime.offload = {
           enable = true;
-          extraPackages = with pkgs; [
-            linux-firmware
-          ];
+          enableOffloadCmd = true;
         };
 
-        hardware.nvidia = {
-          open = false;
-          nvidiaSettings = false;
-          modesetting.enable = true;
-          powerManagement.enable = true;
-          dynamicBoost.enable = true;
-        };
-      })
+        powerManagement.finegrained = true;
+      };
+    })
 
-      (lib.mkIf (cfg.enable && cfg.prime == "offload") {
-        hardware.nvidia = {
-          prime.offload = {
-            enable = true;
-            enableOffloadCmd = true;
-          };
-
-          powerManagement.finegrained = true;
+    (lib.mkIf (customCfg.enable && customCfg.prime == "sync") {
+      hardware.nvidia = {
+        prime.sync = {
+          enable = true;
         };
-      })
-
-      (lib.mkIf (cfg.enable && cfg.prime == "sync") {
-        hardware.nvidia = {
-          prime.sync = {
-            enable = true;
-          };
-        };
-      })
-    ];
+      };
+    })
+  ];
 }

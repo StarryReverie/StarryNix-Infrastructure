@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.custom.services.transparent-proxy;
+  customCfg = config.custom.services.transparent-proxy;
 in
 {
   options.custom.services.transparent-proxy = {
@@ -44,20 +44,20 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf customCfg.enable {
     services.dae = {
       enable = true;
 
       configFile = pkgs.replaceVars ./config.dae {
         wanInterface =
-          if (lib.lists.length cfg.wanInterfaces) != 0 then
-            "wan_interface: ${lib.strings.concatStringsSep "," cfg.wanInterfaces}"
+          if (lib.lists.length customCfg.wanInterfaces) != 0 then
+            "wan_interface: ${lib.strings.concatStringsSep "," customCfg.wanInterfaces}"
           else
             "wan_interface: auto";
 
         lanInterface =
-          if (lib.lists.length cfg.lanInterfaces) != 0 then
-            "lan_interface: ${lib.strings.concatStringsSep "," cfg.lanInterfaces}"
+          if (lib.lists.length customCfg.lanInterfaces) != 0 then
+            "lan_interface: ${lib.strings.concatStringsSep "," customCfg.lanInterfaces}"
           else
             "";
 
@@ -67,7 +67,7 @@ in
 
     systemd.services.dae = {
       serviceConfig.LoadCredential =
-        if cfg.forwardDns then [ "dns.dae:${./dns.dae}" ] else [ "dns.dae:/dev/null" ];
+        if customCfg.forwardDns then [ "dns.dae:${./dns.dae}" ] else [ "dns.dae:/dev/null" ];
     };
 
     services.mihomo = {
