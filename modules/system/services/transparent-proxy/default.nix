@@ -77,5 +77,11 @@ in
     };
 
     age.secrets."mihomo-bootstrap.yaml".rekeyFile = ./mihomo-bootstrap.yaml.age;
+
+    preservation.preserveAt."/nix/persistence" = {
+      directories = [
+        "/var/lib/private/mihomo"
+      ];
+    };
   };
 }
