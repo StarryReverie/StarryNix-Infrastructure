@@ -6,10 +6,6 @@
   ...
 }:
 {
-  imports = [
-    ./overlays.nix
-  ];
-
   nix.package = pkgs.lixPackageSets.latest.lix;
 
   nix.settings.experimental-features = [
@@ -48,4 +44,6 @@
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
   environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
   nix.settings.nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
+
+  nixpkgs.overlays = lib.attrsets.attrValues inputs.self.overlays;
 }
