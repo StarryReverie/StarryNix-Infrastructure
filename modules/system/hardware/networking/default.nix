@@ -8,7 +8,7 @@
   systemd.network.enable = true;
   networking.useNetworkd = true;
 
-  networking.nameservers = [
+  networking.nameservers = lib.mkDefault [
     "1.1.1.1"
     "8.8.8.8"
   ];
