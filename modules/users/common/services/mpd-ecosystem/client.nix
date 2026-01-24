@@ -7,6 +7,10 @@
 let
   customMpdEcosystemSubmodule =
     { name, ... }:
+    let
+      selfCfg = config.users.users.${name};
+      customCfg = selfCfg.custom.services.mpd-ecosystem;
+    in
     {
       options.custom.services.mpd-ecosystem.client = {
         packages = lib.mkOption {
@@ -17,22 +21,15 @@ let
         };
       };
 
-      config =
-        let
-          selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.services.mpd-ecosystem;
-        in
-        {
-          maid = lib.mkIf customCfg.enable {
-            packages = customCfg.client.packages;
-          };
+      config = lib.mkIf customCfg.enable {
+        maid = {
+          packages = customCfg.client.packages;
         };
+      };
     };
 in
 {
-  options = {
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemSubmodule);
   };
 }

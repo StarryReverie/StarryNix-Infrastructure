@@ -7,6 +7,10 @@
 let
   customEnvironmentSubmodule =
     { name, ... }:
+    let
+      selfCfg = config.users.users.${name};
+      customCfg = selfCfg.custom.core.environment;
+    in
     {
       options.custom.core.environment = {
         enable = lib.mkOption {
@@ -30,32 +34,25 @@ let
         };
       };
 
-      config =
-        let
-          selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.core.environment;
-        in
-        {
-          maid = lib.mkIf customCfg.enable {
-            file.home.".profile".text = ''
-              source <(${pkgs.systemd}/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
-            '';
+      config = {
+        maid = lib.mkIf customCfg.enable {
+          file.home.".profile".text = ''
+            source <(${pkgs.systemd}/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
+          '';
 
-            file.xdg_config."environment.d/60-custom-session-vars.conf".text =
-              let
-                vars = customCfg.sessionVariables;
-                varEntries = lib.attrsets.mapAttrsToList (k: v: "${k}=${v}") vars;
-                varFileContent = builtins.concatStringsSep "\n" varEntries;
-              in
-              varFileContent;
-          };
+          file.xdg_config."environment.d/60-custom-session-vars.conf".text =
+            let
+              vars = customCfg.sessionVariables;
+              varEntries = lib.attrsets.mapAttrsToList (k: v: "${k}=${v}") vars;
+              varFileContent = builtins.concatStringsSep "\n" varEntries;
+            in
+            varFileContent;
         };
+      };
     };
 in
 {
-  options = {
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customEnvironmentSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customEnvironmentSubmodule);
   };
 }

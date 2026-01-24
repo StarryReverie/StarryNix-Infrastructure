@@ -7,6 +7,10 @@
 let
   customXdgSubmodule =
     { name, ... }:
+    let
+      selfCfg = config.users.users.${name};
+      customCfg = selfCfg.custom.core.xdg;
+    in
     {
       options.custom.core.xdg.userDirectories = {
         desktop = lib.mkOption {
@@ -68,9 +72,6 @@ let
 
       config =
         let
-          selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.core.xdg;
-
           userDirectoryVars = {
             XDG_DESKTOP_DIR = customCfg.userDirectories.desktop;
             XDG_DOCUMENTS_DIR = customCfg.userDirectories.documents;
@@ -112,9 +113,7 @@ let
     };
 in
 {
-  options = {
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customXdgSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customXdgSubmodule);
   };
 }

@@ -27,9 +27,7 @@ in
     ./daemon.nix
   ];
 
-  options = {
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemSubmodule);
   };
 }

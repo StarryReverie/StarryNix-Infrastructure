@@ -7,6 +7,10 @@
 let
   customMpdEcosystemSubmodule =
     { name, ... }:
+    let
+      selfCfg = config.users.users.${name};
+      customCfg = selfCfg.custom.services.mpd-ecosystem;
+    in
     {
       options.custom.services.mpd-ecosystem.daemon = {
         package = lib.mkPackageOption pkgs "mpd" { };
@@ -44,61 +48,55 @@ let
         };
       };
 
-      config =
-        let
-          selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.services.mpd-ecosystem;
-        in
-        {
-          maid = lib.mkIf customCfg.enable {
-            systemd.services.mpd =
-              let
-                mpdConfigFile = pkgs.writeText "mpd.conf" ''
-                  music_directory "${customCfg.daemon.musicDirectory}"
-                  playlist_directory "${customCfg.daemon.playlistDirectory}"
-                  db_file "$HOME/.local/share/mpd/db"
-                  state_file "$HOME/.local/state/mpd/state"
-                  sticker_file "$HOME/.local/share/mpd/sticker"
+      config = {
+        maid = lib.mkIf customCfg.enable {
+          systemd.services.mpd =
+            let
+              mpdConfigFile = pkgs.writeText "mpd.conf" ''
+                music_directory "${customCfg.daemon.musicDirectory}"
+                playlist_directory "${customCfg.daemon.playlistDirectory}"
+                db_file "$HOME/.local/share/mpd/db"
+                state_file "$HOME/.local/state/mpd/state"
+                sticker_file "$HOME/.local/share/mpd/sticker"
 
-                  ${customCfg.daemon.extraConfig}
-                '';
+                ${customCfg.daemon.extraConfig}
+              '';
 
-                mpdPreStart = pkgs.writeShellScriptBin "mpd-pre-start" ''
-                  mkdir -p ${customCfg.daemon.musicDirectory}
-                  mkdir -p ${customCfg.daemon.playlistDirectory}
-                  # Unfortunately, MPD doesn't support `$XDG_DATA_HOME` and
-                  # `$XDG_STATE_HOME`, but hardcoded `$HOME/.local/share` and
-                  # `$HOME/.local/state` shouldn't be a significant problem, as
-                  # the default is unlikely to be changed.
-                  mkdir -p $HOME/.local/share/mpd
-                  mkdir -p $HOME/.local/state/mpd
-                '';
-              in
-              {
-                requires = [ "mpd.socket" ];
-                after = [
-                  "mpd.socket"
-                  "sound.target"
-                ];
-                serviceConfig.Type = "notify";
-                serviceConfig.ExecStartPre = "${lib.getExe mpdPreStart}";
-                serviceConfig.ExecStart = "${lib.getExe customCfg.daemon.package} --no-daemon ${mpdConfigFile}";
-              };
-
-            systemd.sockets.mpd = {
-              wantedBy = [ "sockets.target" ];
-              listenStreams = [ "%t/mpd/socket" ];
-              socketConfig.Backlog = 5;
-              socketConfig.KeepAlive = true;
+              mpdPreStart = pkgs.writeShellScriptBin "mpd-pre-start" ''
+                mkdir -p ${customCfg.daemon.musicDirectory}
+                mkdir -p ${customCfg.daemon.playlistDirectory}
+                # Unfortunately, MPD doesn't support `$XDG_DATA_HOME` and
+                # `$XDG_STATE_HOME`, but hardcoded `$HOME/.local/share` and
+                # `$HOME/.local/state` shouldn't be a significant problem, as
+                # the default is unlikely to be changed.
+                mkdir -p $HOME/.local/share/mpd
+                mkdir -p $HOME/.local/state/mpd
+              '';
+            in
+            {
+              requires = [ "mpd.socket" ];
+              after = [
+                "mpd.socket"
+                "sound.target"
+              ];
+              serviceConfig.Type = "notify";
+              serviceConfig.ExecStartPre = "${lib.getExe mpdPreStart}";
+              serviceConfig.ExecStart = "${lib.getExe customCfg.daemon.package} --no-daemon ${mpdConfigFile}";
             };
+
+          systemd.sockets.mpd = {
+            wantedBy = [ "sockets.target" ];
+            listenStreams = [ "%t/mpd/socket" ];
+            socketConfig.Backlog = 5;
+            socketConfig.KeepAlive = true;
           };
         };
+      };
     };
 in
 {
-  options = {
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemSubmodule);
   };
+
 }

@@ -7,6 +7,10 @@
 let
   customGitSubmodule =
     { name, ... }:
+    let
+      userCfg = config.users.users.${name};
+      customCfg = userCfg.custom.applications.git;
+    in
     {
       options.custom.applications.git = {
         enable = lib.mkOption {
@@ -29,24 +33,17 @@ let
         };
       };
 
-      config =
-        let
-          userCfg = config.users.users.${name};
-          customCfg = userCfg.custom.applications.git;
-        in
-        {
-          maid = lib.mkIf customCfg.enable {
-            packages = with pkgs; [ git ];
+      config = {
+        maid = lib.mkIf customCfg.enable {
+          packages = with pkgs; [ git ];
 
-            file.home.".gitconfig".text = lib.generators.toGitINI customCfg.config;
-          };
+          file.home.".gitconfig".text = lib.generators.toGitINI customCfg.config;
         };
+      };
     };
 in
 {
-  options = {
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customGitSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customGitSubmodule);
   };
 }

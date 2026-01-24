@@ -7,6 +7,10 @@
 let
   customXdgSubmodule =
     { name, ... }:
+    let
+      selfCfg = config.users.users.${name};
+      customCfg = selfCfg.custom.core.xdg;
+    in
     {
       options.custom.core.xdg.mimeApplications = {
         default = lib.mkOption {
@@ -41,50 +45,43 @@ let
         };
       };
 
-      config =
-        let
-          selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.core.xdg;
-        in
-        lib.mkIf customCfg.enable {
-          maid = {
-            file.xdg_config."mimeapps.list".text =
-              let
-                defaultAppsContent = lib.pipe customCfg.mimeApplications.default [
-                  (lib.mapAttrsToList (mime: app: "${mime}=${app}"))
-                  (builtins.concatStringsSep "\n")
-                ];
+      config = lib.mkIf customCfg.enable {
+        maid = {
+          file.xdg_config."mimeapps.list".text =
+            let
+              defaultAppsContent = lib.pipe customCfg.mimeApplications.default [
+                (lib.mapAttrsToList (mime: app: "${mime}=${app}"))
+                (builtins.concatStringsSep "\n")
+              ];
 
-                addedAppsContent = lib.pipe customCfg.mimeApplications.added [
-                  (lib.mapAttrsToList (mime: apps: "${mime}=${builtins.concatStringsSep ";" apps}"))
-                  (builtins.concatStringsSep "\n")
-                ];
+              addedAppsContent = lib.pipe customCfg.mimeApplications.added [
+                (lib.mapAttrsToList (mime: apps: "${mime}=${builtins.concatStringsSep ";" apps}"))
+                (builtins.concatStringsSep "\n")
+              ];
 
-                removedAppsContent = lib.pipe customCfg.mimeApplications.removed [
-                  (lib.mapAttrsToList (mime: apps: "${mime}=${builtins.concatStringsSep ";" apps}"))
-                  (builtins.concatStringsSep "\n")
-                ];
+              removedAppsContent = lib.pipe customCfg.mimeApplications.removed [
+                (lib.mapAttrsToList (mime: apps: "${mime}=${builtins.concatStringsSep ";" apps}"))
+                (builtins.concatStringsSep "\n")
+              ];
 
-                fileContent = ''
-                  [Default Applications]
-                  ${defaultAppsContent}
+              fileContent = ''
+                [Default Applications]
+                ${defaultAppsContent}
 
-                  [Added Applications]
-                  ${addedAppsContent}
+                [Added Applications]
+                ${addedAppsContent}
 
-                  [Removed Applications]
-                  ${removedAppsContent}
-                '';
-              in
-              fileContent;
-          };
+                [Removed Applications]
+                ${removedAppsContent}
+              '';
+            in
+            fileContent;
         };
+      };
     };
 in
 {
-  options = {
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customXdgSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customXdgSubmodule);
   };
 }

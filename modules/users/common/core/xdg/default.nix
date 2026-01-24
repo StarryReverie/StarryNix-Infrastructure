@@ -24,9 +24,7 @@ in
     ./user-directories.nix
   ];
 
-  options = {
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customXdgSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customXdgSubmodule);
   };
 }
