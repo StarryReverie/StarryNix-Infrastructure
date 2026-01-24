@@ -10,7 +10,7 @@
       packages = with pkgs; [ zoxide ];
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       rcContent = ''
         # ===== Zoxide integration
         eval "$(${lib.getExe pkgs.zoxide} init zsh --cmd cd)"

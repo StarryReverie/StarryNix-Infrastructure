@@ -8,7 +8,7 @@ let
   customMpdEcosystemSubmodule =
     { name, ... }:
     {
-      options.custom.mpd-ecosystem = {
+      options.custom.services.mpd-ecosystem = {
         enable = lib.mkOption {
           type = lib.types.bool;
           description = ''

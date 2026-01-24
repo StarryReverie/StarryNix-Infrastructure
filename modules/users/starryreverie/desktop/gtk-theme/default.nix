@@ -52,7 +52,7 @@
       '';
     };
 
-    custom.environment = {
+    custom.core.environment = {
       sessionVariables = {
         XCURSOR_THEME = "Vimix-cursors";
       };

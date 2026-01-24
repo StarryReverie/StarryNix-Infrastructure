@@ -30,7 +30,7 @@
       ];
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       shellAliases = {
         ls = "eza";
         la = "eza --all --all";

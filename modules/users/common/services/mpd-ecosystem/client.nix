@@ -8,7 +8,7 @@ let
   customMpdEcosystemSubmodule =
     { name, ... }:
     {
-      options.custom.mpd-ecosystem.client = {
+      options.custom.services.mpd-ecosystem.client = {
         packages = lib.mkOption {
           type = lib.types.listOf lib.types.package;
           description = "MPD clients to be added to `$PATH`";
@@ -20,7 +20,7 @@ let
       config =
         let
           selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.mpd-ecosystem;
+          customCfg = selfCfg.custom.services.mpd-ecosystem;
         in
         {
           maid = lib.mkIf customCfg.enable {

@@ -8,7 +8,7 @@ let
   customMpdEcosystemSubmodule =
     { name, ... }:
     {
-      options.custom.mpd-ecosystem.daemon = {
+      options.custom.services.mpd-ecosystem.daemon = {
         package = lib.mkPackageOption pkgs "mpd" { };
 
         musicDirectory = lib.mkOption {
@@ -47,7 +47,7 @@ let
       config =
         let
           selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.mpd-ecosystem;
+          customCfg = selfCfg.custom.services.mpd-ecosystem;
         in
         {
           maid = lib.mkIf customCfg.enable {

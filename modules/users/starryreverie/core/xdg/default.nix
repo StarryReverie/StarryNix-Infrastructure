@@ -11,7 +11,7 @@
   ];
 
   users.users.starryreverie = {
-    custom.xdg = {
+    custom.core.xdg = {
       enable = true;
 
       userDirectories = {

@@ -8,7 +8,7 @@ let
   customXdgSubmodule =
     { name, ... }:
     {
-      options.custom.xdg.userDirectories = {
+      options.custom.core.xdg.userDirectories = {
         desktop = lib.mkOption {
           type = lib.types.nullOr lib.types.str;
           description = "Path to the desktop directory";
@@ -69,7 +69,7 @@ let
       config =
         let
           selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.xdg;
+          customCfg = selfCfg.custom.core.xdg;
 
           userDirectoryVars = {
             XDG_DESKTOP_DIR = customCfg.userDirectories.desktop;
@@ -83,7 +83,7 @@ let
           };
         in
         lib.mkIf customCfg.enable {
-          custom.environment = {
+          custom.core.environment = {
             sessionVariables = userDirectoryVars;
           };
 

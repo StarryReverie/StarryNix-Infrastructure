@@ -12,7 +12,7 @@
       file.xdg_config."lazygit/config.yml".source = ./config.yml;
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       shellAliases = {
         lg = "lazygit";
       };

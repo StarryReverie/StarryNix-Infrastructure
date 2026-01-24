@@ -10,7 +10,7 @@
       packages = with pkgs; [ fastfetchMinimal ];
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       shellAliases = {
         ff = "fastfetch";
       };

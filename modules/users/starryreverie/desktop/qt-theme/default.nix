@@ -43,7 +43,7 @@
         };
     };
 
-    custom.environment = {
+    custom.core.environment = {
       sessionVariables = {
         QT_QPA_PLATFORMTHEME = "qt6ct:qt5ct";
       };

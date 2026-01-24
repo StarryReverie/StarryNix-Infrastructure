@@ -8,7 +8,7 @@ let
   customXdgSubmodule =
     { name, ... }:
     {
-      options.custom.xdg = {
+      options.custom.core.xdg = {
         enable = lib.mkOption {
           type = lib.types.bool;
           description = "Whether to enable XDG settings";

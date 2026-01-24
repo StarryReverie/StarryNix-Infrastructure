@@ -11,7 +11,7 @@
   ];
 
   users.users.starryreverie = {
-    custom.environment = {
+    custom.core.environment = {
       enable = true;
     };
   };

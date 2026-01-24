@@ -8,7 +8,7 @@ let
   customZshSubmodule =
     { name, ... }:
     {
-      options.custom.zsh = {
+      options.custom.applications.zsh = {
         enable = lib.mkOption {
           type = lib.types.bool;
           description = "Whether to enable zsh";
@@ -62,10 +62,10 @@ let
       config =
         let
           selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.zsh;
+          customCfg = selfCfg.custom.applications.zsh;
         in
         {
-          custom.zsh = {
+          custom.applications.zsh = {
             profileContent = lib.mkMerge [
               (lib.mkOrder 300 ''
                 # ===== Prevent `.zprofile` from being sourced again

@@ -11,7 +11,7 @@
   ];
 
   users.users.starryreverie = {
-    custom.zsh = {
+    custom.applications.zsh = {
       enable = true;
       alwaysSourceProfile = true;
 

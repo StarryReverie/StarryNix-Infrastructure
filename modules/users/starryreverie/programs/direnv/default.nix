@@ -22,7 +22,7 @@ in
       file.xdg_config."direnv/lib/nix-direnv.sh".source = "${pkgs.nix-direnv}/share/nix-direnv/direnvrc";
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       rcContent = ''
         # ===== Direnv integration
         eval "$(${lib.getExe pkgs.direnv} hook zsh)"

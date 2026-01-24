@@ -10,7 +10,7 @@
       packages = with pkgs; [ fzf ];
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       environment = {
         FZF_DEFAULT_OPTS = builtins.concatStringsSep " " [
           "--ansi"

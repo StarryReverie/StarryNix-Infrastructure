@@ -13,7 +13,7 @@
       file.xdg_config."zellij/layouts".source = ./layouts;
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       shellAliases = {
         zj = "zellij";
         zd = "zellij --layout development";

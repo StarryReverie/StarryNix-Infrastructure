@@ -11,7 +11,7 @@
   ];
 
   users.users.starryreverie = {
-    custom.git = {
+    custom.applications.git = {
       enable = true;
 
       config = {
@@ -23,7 +23,7 @@
       };
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       shellAliases = {
         ga = "git add . && git status";
         gd = "git diff HEAD";

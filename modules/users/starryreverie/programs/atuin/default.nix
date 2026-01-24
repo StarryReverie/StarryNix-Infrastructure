@@ -12,7 +12,7 @@
       file.xdg_config."atuin/config.toml".source = ./config.toml;
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       rcContent = ''
         # ===== Atuin integration
         eval "$(${lib.getExe pkgs.atuin} init zsh)"

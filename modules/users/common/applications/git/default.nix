@@ -8,7 +8,7 @@ let
   customGitSubmodule =
     { name, ... }:
     {
-      options.custom.git = {
+      options.custom.applications.git = {
         enable = lib.mkOption {
           type = lib.types.bool;
           description = "Whether to enable git";
@@ -32,7 +32,7 @@ let
       config =
         let
           userCfg = config.users.users.${name};
-          customCfg = userCfg.custom.git;
+          customCfg = userCfg.custom.applications.git;
         in
         {
           maid = lib.mkIf customCfg.enable {

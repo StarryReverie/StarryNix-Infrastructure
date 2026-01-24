@@ -12,7 +12,7 @@
   ];
 
   users.users.starryreverie = {
-    custom.mpd-ecosystem = {
+    custom.services.mpd-ecosystem = {
       enable = true;
 
       client = {

@@ -22,7 +22,7 @@
       };
     };
 
-    custom.zsh = {
+    custom.applications.zsh = {
       rcContent = ''
         # ===== Yazi integration
         function dk() {

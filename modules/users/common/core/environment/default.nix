@@ -8,7 +8,7 @@ let
   customEnvironmentSubmodule =
     { name, ... }:
     {
-      options.custom.environment = {
+      options.custom.core.environment = {
         enable = lib.mkOption {
           type = lib.types.bool;
           description = "Whether to enable environment-related settings";
@@ -33,7 +33,7 @@ let
       config =
         let
           selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.environment;
+          customCfg = selfCfg.custom.core.environment;
         in
         {
           maid = lib.mkIf customCfg.enable {

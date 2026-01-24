@@ -8,7 +8,7 @@ let
   customXdgSubmodule =
     { name, ... }:
     {
-      options.custom.xdg.mimeApplications = {
+      options.custom.core.xdg.mimeApplications = {
         default = lib.mkOption {
           type = lib.types.attrsOf lib.types.str;
           description = "Default applications for each MIME types";
@@ -44,7 +44,7 @@ let
       config =
         let
           selfCfg = config.users.users.${name};
-          customCfg = selfCfg.custom.xdg;
+          customCfg = selfCfg.custom.core.xdg;
         in
         lib.mkIf customCfg.enable {
           maid = {
