@@ -39,6 +39,7 @@ in
     (mkEntry "applications" "lx-music-desktop")
     (mkEntry "applications" "mpv")
     (mkEntry "applications" "nautilus")
+    (mkEntry "applications" "opencode")
     (mkEntry "applications" "qq")
     (mkEntry "applications" "resources")
     (mkEntry "applications" "telegram-desktop")

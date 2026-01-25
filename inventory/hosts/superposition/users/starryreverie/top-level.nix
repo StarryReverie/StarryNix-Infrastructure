@@ -21,6 +21,7 @@ in
     (userModuleRoot + /applications/lx-music-desktop)
     (userModuleRoot + /applications/mpv)
     (userModuleRoot + /applications/nautilus)
+    (userModuleRoot + /applications/opencode)
     (userModuleRoot + /applications/qq)
     (userModuleRoot + /applications/resources)
     (userModuleRoot + /applications/telegram-desktop)
