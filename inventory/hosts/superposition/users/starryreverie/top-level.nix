@@ -85,4 +85,27 @@ in
   };
 
   programs.zsh.enable = true;
+
+  custom.users.starryreverie = {
+    applications = {
+      alacritty.enable = true;
+      firefox.enable = true;
+      git.enable = true;
+      github-copilot-cli.enable = true;
+      helix.enable = true;
+      keepassxc.enable = true;
+      lazygit.enable = true;
+      lx-music-desktop.enable = true;
+      mpv.enable = true;
+      nautilus.enable = true;
+      opencode.enable = true;
+      qq.enable = true;
+      resources.enable = true;
+      telegram-desktop.enable = true;
+      vscode.enable = true;
+      yazi.enable = true;
+      zellij.enable = true;
+      zsh.enable = true;
+    };
+  };
 }

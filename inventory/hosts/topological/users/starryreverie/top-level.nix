@@ -60,4 +60,15 @@ in
   };
 
   programs.zsh.enable = true;
+
+  custom.users.starryreverie = {
+    applications = {
+      git.enable = true;
+      helix.enable = true;
+      lazygit.enable = true;
+      yazi.enable = true;
+      zellij.enable = true;
+      zsh.enable = true;
+    };
+  };
 }

@@ -4,14 +4,20 @@
   pkgs,
   ...
 }:
+let
+  selfCfg = config.custom.users.starryreverie;
+  customCfg = selfCfg.applications.lx-music-desktop;
+in
 {
-  users.users.starryreverie.maid = {
-    packages = with pkgs; [ lx-music-desktop ];
-  };
+  config = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = {
+      packages = with pkgs; [ lx-music-desktop ];
+    };
 
-  preservation.preserveAt."/nix/persistence" = {
-    users.starryreverie = {
-      directories = [ ".config/lx-music-desktop" ];
+    preservation.preserveAt."/nix/persistence" = {
+      users.starryreverie = {
+        directories = [ ".config/lx-music-desktop" ];
+      };
     };
   };
 }

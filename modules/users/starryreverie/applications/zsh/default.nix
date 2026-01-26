@@ -5,61 +5,66 @@
   flakeRoot,
   ...
 }:
+let
+  selfCfg = config.custom.users.starryreverie;
+  customCfg = selfCfg.applications.zsh;
+in
 {
   imports = [
     (flakeRoot + /modules/users/common/applications/zsh)
   ];
 
-  custom.users.starryreverie = {
-    applications.zsh = {
-      enable = true;
-      alwaysSourceProfile = true;
+  config = {
+    custom.users.starryreverie = {
+      applications.zsh = lib.mkIf customCfg.enable {
+        alwaysSourceProfile = true;
 
-      rcContent = lib.mkMerge [
-        ''
-          # ===== Prompt style
-          source ${./short-cwd.sh}
-          source ${./get-cwd-git-branch.sh}
-          setopt prompt_subst
-          export PS1='%{%F{226}%}%n%{%F{220}%}@%{%F{214}%}%m%{%F{red}%}$(get-cwd-git-branch) %{%F{45}%}$(short-cwd) %{%F{white}%}($(date +%H:%M))
-          %{%f%}> '
-          export RPROMPT="%F{red}%(?..%?)%f"
-        ''
+        rcContent = lib.mkMerge [
+          ''
+            # ===== Prompt style
+            source ${./short-cwd.sh}
+            source ${./get-cwd-git-branch.sh}
+            setopt prompt_subst
+            export PS1='%{%F{226}%}%n%{%F{220}%}@%{%F{214}%}%m%{%F{red}%}$(get-cwd-git-branch) %{%F{45}%}$(short-cwd) %{%F{white}%}($(date +%H:%M))
+            %{%f%}> '
+            export RPROMPT="%F{red}%(?..%?)%f"
+          ''
 
-        ''
-          # ===== Zsh autosuggestions
-          source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-          ZSH_AUTOSUGGEST_STRATEGY=(history)
-        ''
+          ''
+            # ===== Zsh autosuggestions
+            source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+            ZSH_AUTOSUGGEST_STRATEGY=(history)
+          ''
 
-        (lib.mkOrder 1100 ''
-          # ===== Zsh-vi-mode
-          source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-          source ${./zvm-config.sh}
-        '')
+          (lib.mkOrder 1100 ''
+            # ===== Zsh-vi-mode
+            source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+            source ${./zvm-config.sh}
+          '')
 
-        (lib.mkOrder 1200 ''
-          # ===== Zsh syntax highlighting
-          # It should be loaded after all other widgets have been loaded.
-          source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-          ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
-        '')
-      ];
+          (lib.mkOrder 1200 ''
+            # ===== Zsh syntax highlighting
+            # It should be loaded after all other widgets have been loaded.
+            source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+            ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
+          '')
+        ];
+      };
     };
-  };
 
-  preservation.preserveAt."/nix/persistence" = {
-    users.starryreverie = {
-      files = [
-        {
-          file = ".zcompdump";
-          how = "symlink";
-        }
-        {
-          file = ".zsh_history";
-          how = "symlink";
-        }
-      ];
+    preservation.preserveAt."/nix/persistence" = lib.mkIf customCfg.enable {
+      users.starryreverie = {
+        files = [
+          {
+            file = ".zcompdump";
+            how = "symlink";
+          }
+          {
+            file = ".zsh_history";
+            how = "symlink";
+          }
+        ];
+      };
     };
   };
 }

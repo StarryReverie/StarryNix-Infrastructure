@@ -55,5 +55,11 @@ in
 
   age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIKkfLJ1nNXoIFe33/puw/m/8ytPQhD7TYoTD2WCCl88";
 
+  custom.system = {
+    applications = {
+      firefox.enable = true;
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
 }

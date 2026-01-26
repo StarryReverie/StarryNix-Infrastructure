@@ -4,10 +4,16 @@
   pkgs,
   ...
 }:
+let
+  selfCfg = config.custom.users.starryreverie;
+  customCfg = selfCfg.applications.alacritty;
+in
 {
-  users.users.starryreverie.maid = {
-    packages = with pkgs; [ alacritty ];
+  config = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = {
+      packages = with pkgs; [ alacritty ];
 
-    file.xdg_config."alacritty/alacritty.toml".source = ./alacritty.toml;
+      file.xdg_config."alacritty/alacritty.toml".source = ./alacritty.toml;
+    };
   };
 }

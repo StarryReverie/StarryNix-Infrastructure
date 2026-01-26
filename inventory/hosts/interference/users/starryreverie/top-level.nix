@@ -52,4 +52,12 @@ in
   };
 
   programs.zsh.enable = true;
+
+  custom.users.starryreverie = {
+    applications = {
+      git.enable = true;
+      helix.enable = true;
+      zsh.enable = true;
+    };
+  };
 }

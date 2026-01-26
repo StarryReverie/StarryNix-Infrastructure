@@ -5,6 +5,10 @@
   ...
 }:
 let
+  selfCfg = config.custom.users.starryreverie;
+  customCfg = selfCfg.applications.github-copilot-cli;
+in
+let
   copilotSandboxCore = pkgs.buildFHSEnvBubblewrap {
     name = "copilot-sandbox-core";
 
@@ -178,13 +182,15 @@ let
   '';
 in
 {
-  users.users.starryreverie.maid = {
-    packages = [ copilotSandboxRunner ];
-  };
+  config = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = {
+      packages = [ copilotSandboxRunner ];
+    };
 
-  preservation.preserveAt."/nix/persistence" = {
-    users.starryreverie = {
-      directories = [ ".local/state/github-copilot-cli" ];
+    preservation.preserveAt."/nix/persistence" = {
+      users.starryreverie = {
+        directories = [ ".local/state/github-copilot-cli" ];
+      };
     };
   };
 }
