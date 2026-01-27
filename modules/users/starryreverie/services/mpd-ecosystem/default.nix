@@ -11,10 +11,6 @@ let
   customCfg = selfCfg.services.mpd-ecosystem;
 in
 {
-  imports = [
-    (flakeRoot + /modules/users/common/services/mpd-ecosystem)
-  ];
-
   config = {
     custom.users.starryreverie = {
       services.mpd-ecosystem = lib.mkIf customCfg.enable {

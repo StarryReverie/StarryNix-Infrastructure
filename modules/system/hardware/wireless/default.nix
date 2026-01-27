@@ -8,8 +8,6 @@ let
   customCfg = config.custom.system.hardware.wireless;
 in
 {
-  imports = [ ./profiles.nix ];
-
   config = lib.mkIf customCfg.enable {
     networking.networkmanager = {
       enable = true;

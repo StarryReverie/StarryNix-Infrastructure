@@ -10,10 +10,6 @@ let
   customCfg = selfCfg.core.xdg;
 in
 {
-  imports = [
-    (flakeRoot + /modules/users/common/core/xdg)
-  ];
-
   config = {
     custom.users.starryreverie = {
       core.xdg = lib.mkIf customCfg.enable {

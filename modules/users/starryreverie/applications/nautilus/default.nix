@@ -10,9 +10,6 @@ let
   customCfg = selfCfg.applications.nautilus;
 in
 {
-  # Requires the corresponding system module
-  imports = [ (flakeRoot + /modules/system/applications/nautilus) ];
-
   config = lib.mkIf customCfg.enable {
     users.users.starryreverie.maid = {
       gsettings.settings = {

@@ -22,8 +22,7 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.preservation.nixosModules.default
 
     # Local modules
-    (flakeRoot + /modules/system)
-    (flakeRoot + /modules/users/common)
+    (flakeRoot + /modules/nixos-modules.nix)
     ./system/top-level.nix
     ./users/starryreverie/top-level.nix
   ];

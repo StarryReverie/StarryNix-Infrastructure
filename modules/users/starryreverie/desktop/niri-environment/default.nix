@@ -12,9 +12,6 @@ let
   maidCfg = config.users.users.starryreverie.maid;
 in
 {
-  # Requires the corresponding system module
-  imports = [ (flakeRoot + /modules/system/desktop/niri-environment) ];
-
   config = lib.mkIf customCfg.enable {
     users.users.starryreverie.maid = {
       packages = with pkgs; [

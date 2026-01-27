@@ -10,10 +10,6 @@ let
   customCfg = selfCfg.applications.git;
 in
 {
-  imports = [
-    (flakeRoot + /modules/users/common/applications/git)
-  ];
-
   config = {
     custom.users.starryreverie = {
       applications.git = lib.mkIf customCfg.enable {

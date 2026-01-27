@@ -2,35 +2,9 @@
   config,
   lib,
   pkgs,
-  flakeRoot,
   ...
 }:
-let
-  userModuleRoot = flakeRoot + /modules/users/starryreverie;
-in
 {
-  imports = [
-    # Common user modules
-    (userModuleRoot + /core/environment)
-    (userModuleRoot + /applications/git)
-    (userModuleRoot + /applications/helix)
-    (userModuleRoot + /applications/lazygit)
-    (userModuleRoot + /applications/yazi)
-    (userModuleRoot + /applications/zellij)
-    (userModuleRoot + /applications/zsh)
-    (userModuleRoot + /security/password)
-    (userModuleRoot + /programs/atuin)
-    (userModuleRoot + /programs/bat)
-    (userModuleRoot + /programs/difftastic)
-    (userModuleRoot + /programs/direnv)
-    (userModuleRoot + /programs/eza)
-    (userModuleRoot + /programs/fastfetch)
-    (userModuleRoot + /programs/fd)
-    (userModuleRoot + /programs/fzf)
-    (userModuleRoot + /programs/ripgrep)
-    (userModuleRoot + /programs/zoxide)
-  ];
-
   users.users.starryreverie = {
     uid = 1000;
     group = config.users.groups.starryreverie.name;

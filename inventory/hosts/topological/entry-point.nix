@@ -25,8 +25,7 @@ inputs.nixpkgs.lib.nixosSystem {
     (flakeRoot + /inventory/nodes/registry.nix)
 
     # Local modules
-    (flakeRoot + /modules/system)
-    (flakeRoot + /modules/users/common)
+    (flakeRoot + /modules/nixos-modules.nix)
     ./system/top-level.nix
     ./users/root/top-level.nix
     ./users/starryreverie/top-level.nix

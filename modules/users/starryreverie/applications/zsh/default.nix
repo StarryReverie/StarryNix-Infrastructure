@@ -10,10 +10,6 @@ let
   customCfg = selfCfg.applications.zsh;
 in
 {
-  imports = [
-    (flakeRoot + /modules/users/common/applications/zsh)
-  ];
-
   config = {
     custom.users.starryreverie = {
       applications.zsh = lib.mkIf customCfg.enable {

@@ -8,11 +8,6 @@ let
   customCfg = config.custom.system.applications.firefox;
 in
 {
-  imports = [
-    ./extensions.nix
-    ./security.nix
-  ];
-
   config = lib.mkIf customCfg.enable {
     programs.firefox.enable = true;
 

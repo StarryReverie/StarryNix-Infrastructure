@@ -10,9 +10,6 @@ let
   customCfg = selfCfg.desktop.fcitx5;
 in
 {
-  # Requires the corresponding system module
-  imports = [ (flakeRoot + /modules/system/desktop/fcitx5) ];
-
   config = lib.mkIf customCfg.enable {
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {

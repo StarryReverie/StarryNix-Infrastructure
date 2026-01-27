@@ -6,9 +6,6 @@
   ...
 }:
 {
-  # Requires the corresponding system module
-  imports = [ (flakeRoot + /modules/system/applications/firefox) ];
-
   config = lib.mkIf config.programs.firefox.enable {
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {

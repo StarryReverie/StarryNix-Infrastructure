@@ -2,32 +2,10 @@
   config,
   lib,
   pkgs,
-  flakeRoot,
   ...
 }:
-let
-  systemModuleRoot = flakeRoot + /modules/system;
-in
 {
   imports = [
-    # Common system modules
-    (systemModuleRoot + /core/etc-overlay)
-    (systemModuleRoot + /core/initrd)
-    (systemModuleRoot + /core/nix)
-    (systemModuleRoot + /core/preservation)
-    (systemModuleRoot + /core/user-management)
-    (systemModuleRoot + /hardware/networking)
-    (systemModuleRoot + /hardware/wireless)
-    (systemModuleRoot + /hardware/zram-swap)
-    (systemModuleRoot + /security/fail2ban)
-    (systemModuleRoot + /security/secret)
-    (systemModuleRoot + /security/sudo)
-    (systemModuleRoot + /services/dnsproxy)
-    (systemModuleRoot + /services/openssh)
-    (systemModuleRoot + /services/tailscale)
-    (systemModuleRoot + /services/transparent-proxy)
-
-    # Host-specific system modules
     ./disk-config.nix
     ./hardware.nix
     ./service.nix
