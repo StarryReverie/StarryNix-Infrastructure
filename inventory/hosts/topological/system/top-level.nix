@@ -50,5 +50,10 @@ in
       preservation.enable = true;
       user-management.enable = true;
     };
+    security = {
+      fail2ban.enable = true;
+      secret.enable = true;
+      sudo.enable = true;
+    };
   };
 }

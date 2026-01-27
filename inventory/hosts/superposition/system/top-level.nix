@@ -67,6 +67,11 @@ in
       user-management.enable = true;
       fhs-compatibility.enable = true;
     };
+    security = {
+      fail2ban.enable = true;
+      secret.enable = true;
+      sudo.enable = true;
+    };
   };
 
   nixpkgs.config.allowUnfree = true;

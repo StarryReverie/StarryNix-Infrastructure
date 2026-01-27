@@ -73,5 +73,8 @@ in
     core = {
       environment.enable = true;
     };
+    security = {
+      password.enable = true;
+    };
   };
 }

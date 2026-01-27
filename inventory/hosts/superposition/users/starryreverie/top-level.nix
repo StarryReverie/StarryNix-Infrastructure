@@ -112,5 +112,8 @@ in
       environment.enable = true;
       xdg.enable = true;
     };
+    security = {
+      password.enable = true;
+    };
   };
 }
