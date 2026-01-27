@@ -53,13 +53,11 @@ let
     };
 in
 {
-  options = {
-    custom.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customEnvironmentSubmodule);
-    };
+  options.custom.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customEnvironmentSubmodule);
+  };
 
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customEnvironmentEffectSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customEnvironmentEffectSubmodule);
   };
 }

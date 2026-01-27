@@ -44,13 +44,11 @@ let
     };
 in
 {
-  options = {
-    custom.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customGitSubmodule);
-    };
+  options.custom.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customGitSubmodule);
+  };
 
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customGitEffectSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customGitEffectSubmodule);
   };
 }

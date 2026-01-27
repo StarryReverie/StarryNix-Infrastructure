@@ -89,13 +89,11 @@ let
     };
 in
 {
-  options = {
-    custom.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customXdgSubmodule);
-    };
+  options.custom.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customXdgSubmodule);
+  };
 
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customXdgEffectSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customXdgEffectSubmodule);
   };
 }

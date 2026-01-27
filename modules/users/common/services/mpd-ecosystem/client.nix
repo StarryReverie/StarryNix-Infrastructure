@@ -37,13 +37,11 @@ let
     };
 in
 {
-  options = {
-    custom.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemSubmodule);
-    };
+  options.custom.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemSubmodule);
+  };
 
-    users.users = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemEffectSubmodule);
-    };
+  options.users.users = lib.mkOption {
+    type = lib.types.attrsOf (lib.types.submodule customMpdEcosystemEffectSubmodule);
   };
 }
