@@ -95,6 +95,10 @@ in
       tailscale.enable = true;
       transparent-proxy.enable = true;
     };
+    virtualization = {
+      container.enable = true;
+      distrobox.enable = true;
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
