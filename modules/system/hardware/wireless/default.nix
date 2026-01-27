@@ -4,22 +4,25 @@
   pkgs,
   ...
 }:
+let
+  customCfg = config.custom.system.hardware.wireless;
+in
 {
-  imports = [
-    ./profiles.nix
-  ];
+  imports = [ ./profiles.nix ];
 
-  networking.networkmanager = {
-    enable = true;
+  config = lib.mkIf customCfg.enable {
+    networking.networkmanager = {
+      enable = true;
 
-    unmanaged = [
-      "type:tun"
-      "type:loopback"
-      "type:ethernet"
-      "type:bridge"
-      "type:bond"
-    ];
+      unmanaged = [
+        "type:tun"
+        "type:loopback"
+        "type:ethernet"
+        "type:bridge"
+        "type:bond"
+      ];
+    };
+
+    systemd.network.wait-online.enable = false;
   };
-
-  systemd.network.wait-online.enable = false;
 }

@@ -47,6 +47,10 @@ in
       preservation.enable = true;
       user-management.enable = true;
     };
+    hardware = {
+      networking.enable = true;
+      zram-swap.enable = true;
+    };
     security = {
       fail2ban.enable = true;
       secret.enable = true;

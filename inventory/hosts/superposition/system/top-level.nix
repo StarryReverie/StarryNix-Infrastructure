@@ -67,6 +67,17 @@ in
       user-management.enable = true;
       fhs-compatibility.enable = true;
     };
+    hardware = {
+      bluetooth.enable = true;
+      intel-graphics.enable = true;
+      keyd.enable = true;
+      networking.enable = true;
+      nvidia-graphics.enable = true;
+      pipewire.enable = true;
+      tlp.enable = true;
+      wireless.enable = true;
+      zram-swap.enable = true;
+    };
     security = {
       fail2ban.enable = true;
       secret.enable = true;

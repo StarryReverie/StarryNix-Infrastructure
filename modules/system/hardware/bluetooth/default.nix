@@ -4,45 +4,50 @@
   pkgs,
   ...
 }:
+let
+  customCfg = config.custom.system.hardware.bluetooth;
+in
 {
-  hardware.bluetooth = {
-    enable = true;
-    settings = {
-      General = {
-        Experimental = true;
+  config = lib.mkIf customCfg.enable {
+    hardware.bluetooth = {
+      enable = true;
+      settings = {
+        General = {
+          Experimental = true;
+        };
       };
     };
-  };
 
-  systemd.user.services.bluetooth-mpris-proxy = {
-    description = "MPRIS controlling proxy for bluetooth connections";
-    after = [
-      "network.target"
-      "sound.target"
-    ];
-    wantedBy = [ "default.target" ];
-    serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-  };
-
-  services.pipewire.wireplumber.extraConfig."10-bluez" = {
-    "monitor.bluez.properties" = {
-      "bluez5.enable-sbc-xq" = true;
-      "bluez5.enable-msbc" = true;
-      "bluez5.enable-hw-volume" = true;
-      "bluez5.roles" = [
-        "hsp_hs"
-        "hsp_ag"
-        "hfp_hf"
-        "hfp_ag"
+    systemd.user.services.bluetooth-mpris-proxy = {
+      description = "MPRIS controlling proxy for bluetooth connections";
+      after = [
+        "network.target"
+        "sound.target"
       ];
+      wantedBy = [ "default.target" ];
+      serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
     };
-  };
 
-  services.blueman.enable = true;
+    services.pipewire.wireplumber.extraConfig."10-bluez" = {
+      "monitor.bluez.properties" = {
+        "bluez5.enable-sbc-xq" = true;
+        "bluez5.enable-msbc" = true;
+        "bluez5.enable-hw-volume" = true;
+        "bluez5.roles" = [
+          "hsp_hs"
+          "hsp_ag"
+          "hfp_hf"
+          "hfp_ag"
+        ];
+      };
+    };
 
-  systemd.user.units."app-blueman@autostart.service".enable = false;
+    services.blueman.enable = true;
 
-  preservation.preserveAt."/nix/persistence" = {
-    directories = [ "/var/lib/bluetooth" ];
+    systemd.user.units."app-blueman@autostart.service".enable = false;
+
+    preservation.preserveAt."/nix/persistence" = {
+      directories = [ "/var/lib/bluetooth" ];
+    };
   };
 }

@@ -4,7 +4,12 @@
   pkgs,
   ...
 }:
+let
+  customCfg = config.custom.system.hardware.zram-swap;
+in
 {
-  zramSwap.enable = true;
-  zramSwap.memoryPercent = 200;
+  config = lib.mkIf customCfg.enable {
+    zramSwap.enable = true;
+    zramSwap.memoryPercent = 200;
+  };
 }

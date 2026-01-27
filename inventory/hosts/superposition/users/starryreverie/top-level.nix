@@ -112,6 +112,9 @@ in
       environment.enable = true;
       xdg.enable = true;
     };
+    hardware = {
+      pipewire.enable = true;
+    };
     programs = {
       atuin.enable = true;
       bat.enable = true;
