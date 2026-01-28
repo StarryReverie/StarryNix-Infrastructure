@@ -150,12 +150,9 @@ let
     in
     {
       config = lib.mkIf (customCfg.enable or false) {
-        maid = {
-          packages = with pkgs; [
-            nix-zsh-completions
-            zsh
-          ];
+        shell = pkgs.zsh;
 
+        maid = {
           file.home.".zprofile".text = customCfg.profileContent;
           file.home.".zshrc".text = customCfg.rcContent;
 
