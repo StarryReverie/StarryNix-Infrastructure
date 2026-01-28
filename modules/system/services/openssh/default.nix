@@ -14,15 +14,17 @@ in
     services.openssh.settings = {
       PasswordAuthentication = false;
       PermitRootLogin = "prohibit-password";
-      PermitTunnel = false;
       KbdInteractiveAuthentication = false;
-      X11Forwarding = false;
       MaxAuthTries = 3;
       TCPKeepAlive = false;
+      PermitTunnel = false;
+      X11Forwarding = false;
       AllowTcpForwarding = false;
-      AllowAgentForwarding = false;
+      AllowAgentForwarding = true;
       LogLevel = "VERBOSE";
     };
+
+    security.pam.sshAgentAuth.enable = true;
 
     preservation.preserveAt."/nix/persistence" = {
       files = [

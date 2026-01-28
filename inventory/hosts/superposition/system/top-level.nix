@@ -58,6 +58,7 @@
       dnsproxy.enable = true;
       ly.enable = true;
       openssh.enable = true;
+      ssh-agent.enable = true;
       tailscale.enable = true;
       transparent-proxy.enable = true;
     };
