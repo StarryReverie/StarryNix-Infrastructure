@@ -150,6 +150,11 @@ binds {
     Mod+K { focus-window-or-workspace-down; }
     Mod+I { focus-window-or-workspace-up; }
 
+    Alt+WheelScrollUp   cooldown-ms=100 { focus-column-left; }
+    Alt+WheelScrollDown cooldown-ms=100 { focus-column-right; }
+    Mod+WheelScrollUp   cooldown-ms=200 { focus-window-or-workspace-up; }
+    Mod+WheelScrollDown cooldown-ms=200 { focus-window-or-workspace-down; }
+
     // Workspace focus
     Mod+Shift+I { focus-workspace-up; }
     Mod+Shift+K { focus-workspace-down; }
