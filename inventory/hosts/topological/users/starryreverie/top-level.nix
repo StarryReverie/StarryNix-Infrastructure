@@ -9,13 +9,7 @@
     uid = 1000;
     group = config.users.groups.starryreverie.name;
     isNormalUser = true;
-
-    extraGroups = [
-      "wheel"
-    ]
-    ++ lib.optionals config.networking.networkmanager.enable [
-      "networkmanager"
-    ];
+    extraGroups = [ "wheel" ];
 
     packages = with pkgs; [
       htop
@@ -43,6 +37,9 @@
     };
     core = {
       environment.enable = true;
+    };
+    hardware = {
+      wireless.enable = true;
     };
     programs = {
       atuin.enable = true;
