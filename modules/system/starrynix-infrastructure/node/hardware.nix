@@ -13,7 +13,7 @@ in
 
     networking.hostName = lib.mkDefault cfg.nodeInformation.hostName;
 
-    microvm.hypervisor = lib.mkDefault "crosvm";
+    microvm.hypervisor = lib.mkDefault "qemu";
     microvm.balloon = lib.mkDefault true;
     microvm.vsock.cid = lib.mkDefault (1000 * cfg.clusterInformation.index + cfg.nodeInformation.index);
 
