@@ -32,7 +32,6 @@
       alacritty.enable = true;
       firefox.enable = true;
       git.enable = true;
-      github-copilot-cli.enable = true;
       helix.enable = true;
       keepassxc.enable = true;
       lazygit.enable = true;
