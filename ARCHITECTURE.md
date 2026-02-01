@@ -7,8 +7,8 @@
 This project tries to conform the design philosophy below:
 
 - Prefer simpler solution
-    - Conventional NixOS modules design principles may not be as necessary as in Nixpkgs.
-        - Try to replace `*.enable` with simpler (un)commenting `imports = [ ... ]`, if applicable.
+    - Use enable options instead of conditional imports to tweak features for each host.
+        - The conditional imports method seems simple at first, but it doesn't scale well when cross-referencing are largely involved.
     - Duplication is preferred over the DRY principle if the resulting code is less and more concise.
     - Make abstraction only if there is a true need for polymorphism and changeable configurations.
 - Prioritize maintainability
