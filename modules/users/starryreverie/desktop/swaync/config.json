@@ -1,44 +1,44 @@
 {
-    "positionX": "right",
-    "positionY": "top",
-    "cssPriority": "user",
-    "control-center-width": 350,
-    "fit-to-screen": true,
+  "positionX": "right",
+  "positionY": "top",
+  "cssPriority": "user",
+  "control-center-width": 350,
+  "fit-to-screen": true,
 
-    "notification-window-width": 400,
-    "notification-icon-size": 100,
-    "notification-body-image-height": 500,
-    "notification-body-image-width": 500,
-    "notification-inline-replies": false,
-    "notification-2fa-action": false,
+  "notification-window-width": 400,
+  "notification-icon-size": 100,
+  "notification-body-image-height": 500,
+  "notification-body-image-width": 500,
+  "notification-inline-replies": false,
+  "notification-2fa-action": false,
 
-    "timeout": 4,
-    "timeout-low": 4,
-    "timeout-critical": 6,
+  "timeout": 4,
+  "timeout-low": 4,
+  "timeout-critical": 6,
 
-    "keyboard-shortcuts": true,
-    "image-visibility": "when-available",
-    "transition-time": 200,
-    "hide-on-clear": false,
-    "hide-on-action": false,
-    "script-fail-notify": true,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+  "script-fail-notify": true,
 
-    "widgets": [
-        "mpris",
-        "dnd",
-        "notifications"
-    ],
+  "widgets": [
+    "mpris",
+    "dnd",
+    "notifications"
+  ],
 
-    "widget-config": {
-        "dnd": {
-            "text": "Do not disturb"
-        },
+  "widget-config": {
+    "dnd": {
+      "text": "Do not disturb"
+    },
 
-        "mpris": {
-            "image-size": 110,
-            "image-radius": 12,
-            "autohide": false,
-            "blacklist": [ "mpris.MediaPlayer2.playerctld"]
-        }
+    "mpris": {
+      "image-size": 110,
+      "image-radius": 12,
+      "autohide": false,
+      "blacklist": [ "mpris.MediaPlayer2.playerctld"]
     }
+  }
 }

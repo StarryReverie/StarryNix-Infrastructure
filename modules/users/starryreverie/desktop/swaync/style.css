@@ -1,184 +1,184 @@
-@define-color background     #0e0e0e;
-@define-color text           #acb0d0;
-@define-color text-alt       #787c99;
+@define-color background #0e0e0e;
+@define-color text #acb0d0;
+@define-color text-alt #787c99;
 @define-color background-alt #1d1d1d;
-@define-color selected       alpha(@text-alt, .4);
-@define-color hover          alpha(@selected, .4);
-@define-color urgent         @text-alt;
+@define-color selected alpha(@text-alt, .4);
+@define-color hover alpha(@selected, .4);
+@define-color urgent @text-alt;
 
 * {
-    color: @text;
-    all: unset;
-    font-size: 0.95rem;
-    font-family: sans-serif;
-    transition: 200ms;
-    font-weight: 700;
+  color: @text;
+  all: unset;
+  font-size: 0.95rem;
+  font-family: sans-serif;
+  transition: 200ms;
+  font-weight: 700;
 }
 
 .notification {
-    padding: 0 5px;
-    border-radius: 8px;
-    border: 2px solid @background;
-    color: @text;
+  padding: 0 5px;
+  border-radius: 8px;
+  border: 2px solid @background;
+  color: @text;
 }
 
 .notification-background {
-    background: @background;
-    box-shadow: none;
-    border-radius: 8px;
-    margin: 8px;
+  background: @background;
+  box-shadow: none;
+  border-radius: 8px;
+  margin: 8px;
 }
 
 .notification-row .inline-reply-entry {
-    padding: 5px 10px;
-    background: @background-alt;
-    border-radius: 8px;
+  padding: 5px 10px;
+  background: @background-alt;
+  border-radius: 8px;
 }
 
 .notification-row .inline-reply-button {
-    padding: 5px 10px;
-    border-radius: 8px;
-    background: @hover;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: @hover;
 }
 
 .notification-row .inline-reply .inline-reply-button:hover {
-    background: @selected;
+  background: @selected;
 }
 
 .notification .notification-content {
-    margin: 10px;
+  margin: 10px;
 }
 
 .notification-content .text-box {
-    margin: 0 0 0 15px;
+  margin: 0 0 0 15px;
 }
 
 .notification-content .time {
-    font-size: 0.95rem;
-    padding: 2px 0;
-    font-weight: 800;
+  font-size: 0.95rem;
+  padding: 2px 0;
+  font-weight: 800;
 }
 
 .notification .summary {
-    font-weight: 800;
-    margin-bottom: 2px;
-    padding: 2px 0;
-    font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+  padding: 2px 0;
+  font-size: 1rem;
 }
 
 .notification .body {
-    color: @text-alt;
-    font-size: 0.8rem;
+  color: @text-alt;
+  font-size: 0.8rem;
 }
 
 .notification.critical {
-    border-color: @urgent;
+  border-color: @urgent;
 }
 
 .notification.low progress,
 .notification.normal progress,
 .notification.critical progress {
-    background: @selected;
+  background: @selected;
 }
 
 .notification-background .close-button {
-    margin: 6px;
-    padding: 2px;
-    border-radius: 8px;
-    background: transparent;
+  margin: 6px;
+  padding: 2px;
+  border-radius: 8px;
+  background: transparent;
 }
 
 .notification-background .close-button:hover {
-    background: @hover;
+  background: @hover;
 }
 
 .notification > *:last-child > * {
-    min-height: 3.2em;
+  min-height: 3.2em;
 }
 
 .notification > *:last-child > * .notification-action {
-    background: @hover;
-    margin: 0 6px 9px 6px;
-    border-radius: 8px;
+  background: @hover;
+  margin: 0 6px 9px 6px;
+  border-radius: 8px;
 }
 
 .notification > *:last-child > * .notification-action:hover {
-    background: @selected;
+  background: @selected;
 }
 
 .notification > *:last-child > * .notification-action:active {
-    background: @selected;
+  background: @selected;
 }
 
 .control-center {
-    background: @background;
-    border-radius: 8px;
-    margin: 5px;
-    padding: 12px;
+  background: @background;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 12px;
 }
 
 .control-center .notification-background {
-    background: @background-alt;
-    margin: 7px 0;
+  background: @background-alt;
+  margin: 7px 0;
 }
 
 /* I dont want to see close buttons in notification center */
 .control-center .notification-background .close-button,
 .notification-group-close-button{
-    opacity: 0;
+  opacity: 0;
 }
 
 /* Notifications expanded-group */
 .notification-group {
-    margin: 0px 8px;
+  margin: 0px 8px;
 }
 
 .notification-group-headers {
-    font-weight: bold;
-    color: @text;
+  font-weight: bold;
+  color: @text;
 }
 
 .notification-group-headers > label {
-    margin: 0 3px;
-    font-size: 1rem;
+  margin: 0 3px;
+  font-size: 1rem;
 }
 
 .notification-group-icon {
-    color: @text;
+  color: @text;
 }
 
 .notification-group-collapse-button,
 .notification-group-close-all-button {
-    background: transparent;
-    color: @text;
-    margin: 4px; 
-    border-radius: 8px;
-    padding: 4px;
+  background: transparent;
+  color: @text;
+  margin: 4px;
+  border-radius: 8px;
+  padding: 4px;
 }
 
 /* Do not disturb */
 .widget-dnd {
-    padding: 8px 14px; 
-    border-radius: 8px;
-    margin: 5px 0;
-    color: @text;
-    background: @background-alt;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin: 5px 0;
+  color: @text;
+  background: @background-alt;
 }
 
 .widget-dnd > label {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .widget-dnd switch {
-    background: @hover;
-    border-radius: 8px;
-    box-shadow: none;
-    padding: 2px;
+  background: @hover;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 2px;
 }
 
 .widget-dnd switch slider {
-    background: @text;
-    border-radius: 8px;
+  background: @text;
+  border-radius: 8px;
 }
 
 .widget-dnd switch:hover,
@@ -186,70 +186,70 @@
 .control-center .notification-group-collapse-button:hover,
 .control-center .notification-group-close-all-button:hover
 {
-    background: @hover;
+  background: @hover;
 }
 
 .widget-mpris {
-    background: @background-alt;
-    border-radius: 8px;
-    margin: 5px 0;
-    padding: 0 10px; 
+  background: @background-alt;
+  border-radius: 8px;
+  margin: 5px 0;
+  padding: 0 10px;
 }
 
 .mpris-overlay {
-    background: @background-alt;
+  background: @background-alt;
 }
 
 .widget-mpris-player {
-    background: @background-alt;
-    color: @text;
-    margin: 0 5px;
-    padding: 10px 0 15px; 
+  background: @background-alt;
+  color: @text;
+  margin: 0 5px;
+  padding: 10px 0 15px;
 }
 
 /* Control buttons for mpris widget */
 .widget-mpris-player .image-button:hover {
-    border-radius: 8px;
-    background: @hover;
+  border-radius: 8px;
+  background: @hover;
 }
 
 .widget-mpris-player button {
-    padding: 5px;
-    margin: 0 2.5px;
+  padding: 5px;
+  margin: 0 2.5px;
 }
 
 .widget-mpris-player .mpris-overlay > box:last-child {
-    border-radius: 8px;
-    padding: 0 5px;
-    background: alpha(@hover, .3);
+  border-radius: 8px;
+  padding: 0 5px;
+  background: alpha(@hover, .3);
 }
 
 .widget-mpris-album-art {
-    border-radius: 8px;
-    margin: 4px 2px;
+  border-radius: 8px;
+  margin: 4px 2px;
 }
 
 .widget-mpris-title,
 .widget-mpris-subtitle {
-    font-weight: 700;
-    margin: 0 3px;
-} 
+  font-weight: 700;
+  margin: 0 3px;
+}
 
 .widget-mpris-title {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
- 
+
 .widget-mpris-subtitle {
-    font-size: 0.9rem;
-    color: @text-alt;
+  font-size: 0.9rem;
+  color: @text-alt;
 }
 
 /* Change color for plaseholder when no notifications */
 .control-center-list-placeholder {
-    color: @text;
+  color: @text;
 }
 
 /* Avoid 'annoying' backgroud */
-.blank-window {    
-    background: transparent;    
+.blank-window {
+  background: transparent;
 }

@@ -1,53 +1,53 @@
 {
-    // Theme
-    "workbench.colorTheme": "One Dark Vivid",
-    "editor.fontFamily": "monospace",
+  // Theme
+  "workbench.colorTheme": "One Dark Vivid",
+  "editor.fontFamily": "monospace",
 
-    // UI
-    "window.dialogStyle": "custom",
-    "window.menuBarVisibility": "compact",
-    "window.menuStyle": "custom",
-    "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "never",
-    "window.controlsStyle": "hidden",
+  // UI
+  "window.dialogStyle": "custom",
+  "window.menuBarVisibility": "compact",
+  "window.menuStyle": "custom",
+  "window.titleBarStyle": "native",
+  "window.customTitleBarVisibility": "never",
+  "window.controlsStyle": "hidden",
 
-    "editor.stickyScroll.scrollWithEditor": false,
-    "editor.stickyScroll.enabled": false,
-    "terminal.integrated.stickyScroll.enabled": false,
-    "workbench.tree.enableStickyScroll": false,
+  "editor.stickyScroll.scrollWithEditor": false,
+  "editor.stickyScroll.enabled": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "workbench.tree.enableStickyScroll": false,
 
-    "editor.smoothScrolling": true,
-    "terminal.integrated.smoothScrolling": true,
-    "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
 
-    "editor.inertialScroll": true,
+  "editor.inertialScroll": true,
 
-    "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "relative",
 
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.cursorSurroundingLines": 5,
-    "terminal.integrated.cursorBlinking": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSurroundingLines": 5,
+  "terminal.integrated.cursorBlinking": true,
 
-    "editor.mouseWheelZoom": true,
+  "editor.mouseWheelZoom": true,
 
-    // Extension: Git
-    "git.allowForcePush": true,
-    "git.confirmSync": false,
+  // Extension: Git
+  "git.allowForcePush": true,
+  "git.confirmSync": false,
 
-    // Extension: Nix IDE
-    "nix.enableLanguageServer": true,
-    "nix.serverSettings": {
-        "nil": {
-            "diagnostics": {
-                "ignored": ["unused_binding", "unused_with"]
-            },
-            "formatting": {
-                "command": ["nixfmt"]
-            }
-        }
-    },
-    "nix.hiddenLanguageServerErrors": [
-        "textDocument/documentSymbol"
-    ]
+  // Extension: Nix IDE
+  "nix.enableLanguageServer": true,
+  "nix.serverSettings": {
+    "nil": {
+      "diagnostics": {
+        "ignored": ["unused_binding", "unused_with"]
+      },
+      "formatting": {
+        "command": ["nixfmt"]
+      }
+    }
+  },
+  "nix.hiddenLanguageServerErrors": [
+    "textDocument/documentSymbol"
+  ]
 }

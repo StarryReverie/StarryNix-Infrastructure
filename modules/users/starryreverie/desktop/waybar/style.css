@@ -1,15 +1,15 @@
 * {
-    font-family: "Symbols Nerd Font Mono", monospace;
-    font-size: 12px;
-    border-radius: 0;
-    min-height: 0;
-    margin: 0px;
-    border: none;
-    font-weight: 600;
+  font-family: "Symbols Nerd Font Mono", monospace;
+  font-size: 12px;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0px;
+  border: none;
+  font-weight: 600;
 }
 
 #waybar {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #custom-launcher,
@@ -26,15 +26,15 @@
 #memory,
 #cpu,
 #custom-notification {
-    border-radius: 4px;
-    margin: 4px 2px 0px 2px;
-    padding: 2px;
-    color: #b6bad6;
+  border-radius: 4px;
+  margin: 4px 2px 0px 2px;
+  padding: 2px;
+  color: #b6bad6;
 }
 
 #custom-launcher {
-    color: white;
-    background-color: #5f92e4;
+  color: white;
+  background-color: #5f92e4;
 }
 
 #clock,
@@ -50,12 +50,12 @@
 #memory,
 #cpu,
 #custom-notification {
-    background-color: #131822;
+  background-color: #131822;
 }
 
 tooltip {
-    border-radius: 0px;
-    padding: 2px;
-    background-color: #131822;
-    color: #b6bad6;
+  border-radius: 0px;
+  padding: 2px;
+  background-color: #131822;
+  color: #b6bad6;
 }
