@@ -99,7 +99,11 @@
         "aarch64-linux"
       ];
 
-      imports = [ ./modules/flake-modules.nix ];
+      imports = [
+        (inputs.nixpkgs.lib.modules.importApply ./modules/flake-modules.nix {
+          inherit (inputs) import-tree;
+        })
+      ];
 
       _module.args = {
         flakeRoot = ./.;

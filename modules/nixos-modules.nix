@@ -2,29 +2,14 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 {
-  imports =
-    let
-      searchedModuleRoots = [
-        ./system
-        ./users
-      ];
-      excludedModuleRoots = [
-        ./system/starrynix-infrastructure
-      ];
-    in
-    lib.pipe searchedModuleRoots [
-      (lib.lists.map lib.filesystem.listFilesRecursive)
-      lib.lists.flatten
-      (lib.lists.map builtins.toString)
-      (lib.lists.filter (lib.strings.hasSuffix ".nix"))
-      (lib.lists.filter (
-        p:
-        lib.lists.all (excluded: !(lib.strings.hasPrefix excluded p)) (
-          lib.lists.map builtins.toString excludedModuleRoots
-        )
-      ))
-    ];
+  imports = lib.pipe (inputs.import-tree.withLib lib) [
+    (it: it.addPath ./system)
+    (it: it.addPath ./users)
+    (it: it.filterNot (lib.hasInfix "starrynix-infrastructure"))
+    (it: it.files)
+  ];
 }
