@@ -28,6 +28,7 @@
     };
     desktop = {
       font.enable = true;
+      desktop-essentials.enable = true;
       niri-environment.enable = true;
     };
     hardware = {

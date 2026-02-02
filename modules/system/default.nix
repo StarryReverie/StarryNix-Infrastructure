@@ -57,6 +57,7 @@ in
     (mkEntry "core" "user-management")
     (mkEntry "core" "xdg")
     (mkEntry "desktop" "clipboard")
+    (mkEntry "desktop" "desktop-essentials")
     (mkEntry "desktop" "fcitx5")
     (mkEntry "desktop" "font")
     (mkEntry "desktop" "gtk-theme")
