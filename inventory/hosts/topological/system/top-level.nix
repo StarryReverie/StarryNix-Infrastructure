@@ -16,9 +16,9 @@
 
   custom.system = {
     core = {
-      nix.enable = true;
       etc-overlay.enable = true;
       initrd.enable = true;
+      nix.enable = true;
       preservation.enable = true;
       user-management.enable = true;
     };

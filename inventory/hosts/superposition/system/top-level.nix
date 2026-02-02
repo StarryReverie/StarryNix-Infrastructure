@@ -20,12 +20,12 @@
       firefox.enable = true;
     };
     core = {
-      nix.enable = true;
       etc-overlay.enable = true;
+      fhs-compatibility.enable = true;
       initrd.enable = true;
+      nix.enable = true;
       preservation.enable = true;
       user-management.enable = true;
-      fhs-compatibility.enable = true;
     };
     desktop = {
       font.enable = true;
