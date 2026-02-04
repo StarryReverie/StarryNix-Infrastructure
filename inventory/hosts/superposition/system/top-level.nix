@@ -30,6 +30,7 @@
       font.enable = true;
       desktop-essentials.enable = true;
       niri-environment.enable = true;
+      wayfire-environment.enable = true;
     };
     hardware = {
       bluetooth.enable = true;
