@@ -36,6 +36,8 @@ in
       systemd.user.services."wayfire" = {
         description = "A customizable, extendable and lightweight environment without sacrificing its appearance";
         serviceConfig.ExecStart = "${pkgs.wayfire}/bin/wayfire";
+        serviceConfig.Type = "notify";
+        serviceConfig.NotifyAccess = "all";
         serviceConfig.Slice = "session.slice";
         environment = lib.mkForce { };
         bindsTo = [

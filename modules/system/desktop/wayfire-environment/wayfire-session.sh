@@ -30,8 +30,9 @@ systemctl --user import-environment
 if hash dbus-update-activation-environment 2>/dev/null; then
   dbus-update-activation-environment --all
 fi
+systemctl --user set-environment WAYFIRE_CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/wayfire/wayfire.ini"
 
 systemctl --user --wait start wayfire.service
 
 systemctl --user start --job-mode=replace-irreversibly wayfire-shutdown.target
-systemctl --user unset-environment WAYLAND_DISPLAY DISPLAY XAUTHORITY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
+systemctl --user unset-environment WAYLAND_DISPLAY DISPLAY XAUTHORITY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP WAYFIRE_CONFIG_FILE
