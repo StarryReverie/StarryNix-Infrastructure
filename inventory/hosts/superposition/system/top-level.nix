@@ -27,8 +27,8 @@
       user-management.enable = true;
     };
     desktop = {
-      font.enable = true;
       desktop-essentials.enable = true;
+      font.enable = true;
       niri-environment.enable = true;
       wayfire-environment.enable = true;
     };

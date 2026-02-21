@@ -60,6 +60,7 @@ in
     (mkEntry "desktop" "desktop-essentials")
     (mkEntry "desktop" "fcitx5")
     (mkEntry "desktop" "font")
+    (mkEntry "desktop" "gnome-environment")
     (mkEntry "desktop" "gtk-theme")
     (mkEntry "desktop" "hyprlock")
     (mkEntry "desktop" "niri-environment")

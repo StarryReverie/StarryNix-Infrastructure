@@ -22,6 +22,11 @@
       preservation.enable = true;
       user-management.enable = true;
     };
+    desktop = {
+      desktop-essentials.enable = true;
+      font.enable = true;
+      gnome-environment.enable = true;
+    };
     hardware = {
       networking.enable = true;
       wireless.enable = true;
@@ -33,6 +38,7 @@
       sudo.enable = true;
     };
     services = {
+      dconf.enable = true;
       dnsproxy.enable = true;
       openssh.enable = true;
       gdm.enable = true;
