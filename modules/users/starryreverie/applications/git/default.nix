@@ -13,7 +13,7 @@ in
   config = {
     custom.users.starryreverie = {
       applications.git = lib.mkIf customCfg.enable {
-        config = {
+        settings = {
           user.name = "Justin Chen";
           user.email = "42143810+StarryReverie@users.noreply.github.com";
 

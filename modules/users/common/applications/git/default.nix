@@ -13,8 +13,8 @@ let
     in
     {
       options.applications.git = {
-        config = lib.mkOption {
-          type = lib.types.attrsOf lib.types.anything;
+        settings = lib.mkOption {
+          type = lib.types.submodule { freeformType = lib.types.anything; };
           description = "Configurations in `.gitconfig`";
           default = { };
           example = {
@@ -38,7 +38,7 @@ let
         maid = {
           packages = with pkgs; [ git ];
 
-          file.home.".gitconfig".text = lib.generators.toGitINI customCfg.config;
+          file.home.".gitconfig".text = lib.generators.toGitINI customCfg.settings;
         };
       };
     };

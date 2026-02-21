@@ -12,7 +12,7 @@ in
   config = {
     custom.users.starryreverie = {
       applications.git = lib.mkIf customCfg.enable {
-        config =
+        settings =
           let
             difftasticExecutable = lib.getExe pkgs.difftastic;
           in
