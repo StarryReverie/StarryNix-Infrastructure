@@ -7,13 +7,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.services.mpd-ecosystem;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.services.mpd-ecosystem or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      services.mpd-ecosystem = lib.mkIf customCfg.enable {
+      services.mpd-ecosystem = lib.mkIf (customCfg.enable or false) {
         client = {
           packages = [
             (pkgs.writeShellScriptBin "mpc" ''
@@ -52,7 +52,7 @@ in
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       gsettings.settings = {
         io.github.htkhiem.Euphonica = {
           client.mpd-use-unix-socket = true;
@@ -62,7 +62,7 @@ in
       };
     };
 
-    preservation.preserveAt."/nix/persistence" = lib.mkIf customCfg.enable {
+    preservation.preserveAt."/nix/persistence" = lib.mkIf (customCfg.enable or false) {
       users.starryreverie = {
         directories = [
           ".local/share/mpd"

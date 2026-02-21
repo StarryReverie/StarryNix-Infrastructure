@@ -6,11 +6,11 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.desktop.fcitx5;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.desktop.fcitx5 or { };
 in
 {
-  config = lib.mkIf customCfg.enable {
+  config = lib.mkIf (customCfg.enable or false) {
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {
         directories = [

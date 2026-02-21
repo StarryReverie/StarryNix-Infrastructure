@@ -2,16 +2,15 @@
   config,
   lib,
   pkgs,
-  flakeRoot,
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.firefox;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.firefox or { };
 in
 {
   config = lib.mkMerge [
-    (lib.mkIf customCfg.enable {
+    (lib.mkIf (customCfg.enable or false) {
       preservation.preserveAt."/nix/persistence" = {
         users.starryreverie = {
           directories = [ ".config/mozilla/firefox" ];
@@ -26,7 +25,7 @@ in
       };
     })
 
-    (lib.mkIf (customCfg.enable && selfCfg.applications.keepassxc.enable) {
+    (lib.mkIf ((customCfg.enable or false) && (selfCfg.applications.keepassxc.enable or false)) {
       users.users.starryreverie.maid = {
         file.xdg_config."mozilla/firefox/native-messaging-hosts/org.keepassxc.keepassxc_browser.json".source =
           pkgs.replaceVars ./native-messaging-hosts-keepassxc.json {

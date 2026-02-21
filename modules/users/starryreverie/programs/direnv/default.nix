@@ -5,8 +5,8 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.programs.direnv;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.programs.direnv or { };
 in
 let
   configFile = pkgs.writers.writeTOML "direnv.toml" {
@@ -19,7 +19,7 @@ in
 {
   config = {
     custom.users.starryreverie = {
-      applications.zsh = lib.mkIf customCfg.enable {
+      applications.zsh = lib.mkIf (customCfg.enable or false) {
         rcContent = ''
           # ===== Direnv integration
           eval "$(${lib.getExe pkgs.direnv} hook zsh)"
@@ -27,7 +27,7 @@ in
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = [ pkgs.direnv ];
 
       file.xdg_config."direnv/direnv.toml".source = configFile;
@@ -35,7 +35,7 @@ in
       file.xdg_config."direnv/lib/nix-direnv.sh".source = "${pkgs.nix-direnv}/share/nix-direnv/direnvrc";
     };
 
-    preservation.preserveAt."/nix/persistence" = lib.mkIf customCfg.enable {
+    preservation.preserveAt."/nix/persistence" = lib.mkIf (customCfg.enable or false) {
       users.starryreverie = {
         directories = [ ".local/share/direnv" ];
       };

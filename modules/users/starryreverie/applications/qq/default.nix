@@ -6,11 +6,11 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.qq;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.qq or { };
 in
 {
-  config = lib.mkIf customCfg.enable {
+  config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
       packages = [
         (inputs.wrapper-manager.lib.wrapWith pkgs {

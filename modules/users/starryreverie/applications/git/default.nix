@@ -6,13 +6,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.git;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.git or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      applications.git = lib.mkIf customCfg.enable {
+      applications.git = lib.mkIf (customCfg.enable or false) {
         settings = {
           user.name = "Justin Chen";
           user.email = "42143810+StarryReverie@users.noreply.github.com";
@@ -22,7 +22,7 @@ in
         };
       };
 
-      applications.zsh = lib.mkIf customCfg.enable {
+      applications.zsh = lib.mkIf (customCfg.enable or false) {
         shellAliases = {
           ga = "git add . && git status";
           gd = "git diff HEAD";

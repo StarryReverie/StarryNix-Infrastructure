@@ -5,13 +5,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.programs.fzf;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.programs.fzf or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      applications.zsh = lib.mkIf customCfg.enable {
+      applications.zsh = lib.mkIf (customCfg.enable or false) {
         environment = {
           FZF_DEFAULT_OPTS = lib.strings.concatStringsSep " " [
             "--ansi"
@@ -38,7 +38,7 @@ in
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = with pkgs; [ fzf ];
     };
   };

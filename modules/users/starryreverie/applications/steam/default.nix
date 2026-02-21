@@ -5,11 +5,11 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.steam;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.steam or { };
 in
 {
-  config = lib.mkIf customCfg.enable {
+  config = lib.mkIf (customCfg.enable or false) {
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {
         directories = [

@@ -5,13 +5,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.programs.difftastic;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.programs.difftastic or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      applications.git = lib.mkIf customCfg.enable {
+      applications.git = lib.mkIf (customCfg.enable or false) {
         settings =
           let
             difftasticExecutable = lib.getExe pkgs.difftastic;
@@ -29,7 +29,7 @@ in
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = with pkgs; [ difftastic ];
     };
   };

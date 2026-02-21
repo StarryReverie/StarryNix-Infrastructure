@@ -6,13 +6,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.zsh;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.zsh or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      applications.zsh = lib.mkIf customCfg.enable {
+      applications.zsh = lib.mkIf (customCfg.enable or false) {
         alwaysSourceProfile = true;
 
         rcContent = lib.mkMerge [
@@ -48,7 +48,7 @@ in
       };
     };
 
-    preservation.preserveAt."/nix/persistence" = lib.mkIf customCfg.enable {
+    preservation.preserveAt."/nix/persistence" = lib.mkIf (customCfg.enable or false) {
       users.starryreverie = {
         files = [
           {

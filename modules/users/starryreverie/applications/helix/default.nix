@@ -5,13 +5,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.helix;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.helix or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      core.environment = lib.mkIf customCfg.enable {
+      core.environment = lib.mkIf (customCfg.enable or false) {
         sessionVariables = rec {
           EDITOR = lib.getExe pkgs.helix;
           VISUAL = EDITOR;
@@ -19,7 +19,7 @@ in
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = with pkgs; [ helix ];
 
       file.xdg_config."helix/config.toml".source = ./config.toml;

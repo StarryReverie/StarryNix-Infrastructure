@@ -6,8 +6,8 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.desktop.wpaperd;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.desktop.wpaperd or { };
 in
 let
   resourcesPkgs = inputs.starrynix-resources.legacyPackages.${pkgs.stdenv.hostPlatform.system};
@@ -24,7 +24,7 @@ let
   };
 in
 {
-  config = lib.mkIf customCfg.enable {
+  config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
       packages = with pkgs; [ wpaperd ];
 

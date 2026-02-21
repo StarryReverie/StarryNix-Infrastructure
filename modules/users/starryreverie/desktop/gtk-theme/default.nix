@@ -5,20 +5,20 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.desktop.gtk-theme;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.desktop.gtk-theme or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      core.environment = lib.mkIf customCfg.enable {
+      core.environment = lib.mkIf (customCfg.enable or false) {
         sessionVariables = {
           XCURSOR_THEME = "Vimix-cursors";
         };
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = with pkgs; [
         adw-gtk3
         gnome-themes-extra

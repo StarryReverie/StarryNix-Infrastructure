@@ -6,13 +6,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.programs.eza;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.programs.eza or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      applications.zsh = lib.mkIf customCfg.enable {
+      applications.zsh = lib.mkIf (customCfg.enable or false) {
         shellAliases = {
           ls = "eza";
           la = "eza --all --all";
@@ -23,7 +23,7 @@ in
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = [
         (inputs.wrapper-manager.lib.wrapWith pkgs {
           basePackage = pkgs.eza;

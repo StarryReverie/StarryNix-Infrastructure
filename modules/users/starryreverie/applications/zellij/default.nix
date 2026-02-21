@@ -5,13 +5,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.zellij;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.zellij or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      applications.zsh = lib.mkIf customCfg.enable {
+      applications.zsh = lib.mkIf (customCfg.enable or false) {
         shellAliases = {
           zj = "zellij";
           zd = "zellij --layout development";
@@ -29,7 +29,7 @@ in
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = with pkgs; [ zellij ];
 
       file.xdg_config."zellij/config.kdl".source = ./config.kdl;

@@ -6,11 +6,11 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.virtualization.container;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.virtualization.container or { };
 in
 {
-  config = lib.mkIf customCfg.enable {
+  config = lib.mkIf (customCfg.enable or false) {
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {
         directories = [ ".local/share/containers" ];

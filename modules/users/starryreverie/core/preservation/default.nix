@@ -5,11 +5,11 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.core.preservation;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.core.preservation or { };
 in
 {
-  config = lib.mkIf customCfg.enable {
+  config = lib.mkIf (customCfg.enable or false) {
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {
         commonMountOptions = [

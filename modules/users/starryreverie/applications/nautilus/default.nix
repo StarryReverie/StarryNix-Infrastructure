@@ -6,11 +6,11 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.nautilus;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.nautilus or { };
 in
 {
-  config = lib.mkIf customCfg.enable {
+  config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
       gsettings.settings = {
         org.gnome.nautilus = {

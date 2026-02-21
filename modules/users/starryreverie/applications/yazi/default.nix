@@ -5,13 +5,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.yazi;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.yazi or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      applications.zsh = lib.mkIf customCfg.enable {
+      applications.zsh = lib.mkIf (customCfg.enable or false) {
         rcContent = ''
           # ===== Yazi integration
           function dk() {
@@ -25,7 +25,7 @@ in
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = with pkgs; [ yazi ];
 
       file.xdg_config."yazi/yazi.toml".source = ./yazi.toml;

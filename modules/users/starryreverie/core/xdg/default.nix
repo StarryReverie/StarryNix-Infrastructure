@@ -2,17 +2,16 @@
   config,
   lib,
   pkgs,
-  flakeRoot,
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.core.xdg;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.core.xdg or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      core.xdg = lib.mkIf customCfg.enable {
+      core.xdg = lib.mkIf (customCfg.enable or false) {
         userDirectories = {
           desktop = "$HOME/desktop";
           documents = "$HOME/userdata/documents";

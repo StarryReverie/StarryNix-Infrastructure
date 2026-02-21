@@ -5,11 +5,11 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.applications.lx-music-desktop;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.applications.lx-music-desktop or { };
 in
 {
-  config = lib.mkIf customCfg.enable {
+  config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
       packages = with pkgs; [ lx-music-desktop ];
     };

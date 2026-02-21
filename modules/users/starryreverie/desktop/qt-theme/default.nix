@@ -6,20 +6,20 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie;
-  customCfg = selfCfg.desktop.qt-theme;
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.desktop.qt-theme or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      core.environment = lib.mkIf customCfg.enable {
+      core.environment = lib.mkIf (customCfg.enable or false) {
         sessionVariables = {
           QT_QPA_PLATFORMTHEME = "qt6ct:qt5ct";
         };
       };
     };
 
-    users.users.starryreverie.maid = lib.mkIf customCfg.enable {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = with pkgs; [
         libsForQt5.qt5ct
         libsForQt5.qtstyleplugin-kvantum

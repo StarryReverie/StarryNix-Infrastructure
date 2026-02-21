@@ -15,14 +15,14 @@ let
       options.applications.zsh = {
         profileContent = lib.mkOption {
           type = lib.types.lines;
-          description = "Zsh scripts to be added to `.zprofile`, concatenated by `\n`";
+          description = "Zsh scripts to be added to `.zprofile`, concatenated by `\\n`";
           default = "";
           example = "source /path/to/my/script.sh";
         };
 
         rcContent = lib.mkOption {
           type = lib.types.lines;
-          description = "Zsh scripts to be added to `.zshrc`, concatenated by `\n`";
+          description = "Zsh scripts to be added to `.zshrc`, concatenated by `\\n`";
           default = "";
           example = "source /path/to/my/script.sh";
         };
