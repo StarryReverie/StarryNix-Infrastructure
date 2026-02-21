@@ -37,5 +37,8 @@
     security = {
       password.enable = true;
     };
+    services = {
+      dconf.enable = true;
+    };
   };
 }
