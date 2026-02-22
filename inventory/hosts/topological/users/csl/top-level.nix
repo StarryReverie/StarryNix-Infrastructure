@@ -6,6 +6,7 @@
 }:
 {
   users.users.csl = {
+    enable = true;
     uid = 1001;
     group = config.users.groups.csl.name;
     isNormalUser = true;

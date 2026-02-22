@@ -6,6 +6,7 @@
 }:
 {
   users.users.starryreverie = {
+    enable = true;
     uid = 1000;
     group = config.users.groups.starryreverie.name;
     isNormalUser = true;
