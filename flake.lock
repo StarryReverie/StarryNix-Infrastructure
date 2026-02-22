@@ -330,9 +330,6 @@
     },
     "pre-commit-hooks": {
       "inputs": {
-        "flake-compat": [
-          "flake-compat"
-        ],
         "gitignore": "gitignore",
         "nixpkgs": [
           "agenix-rekey",

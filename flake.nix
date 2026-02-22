@@ -13,7 +13,6 @@
       url = "github:oddlama/agenix-rekey/main";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.pre-commit-hooks.inputs.flake-compat.follows = "flake-compat";
     };
 
     colmena = {
