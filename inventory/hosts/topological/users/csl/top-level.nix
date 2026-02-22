@@ -22,6 +22,7 @@
     };
     core = {
       environment.enable = true;
+      localization.enable = true;
       preservation.enable = true;
       xdg.enable = true;
     };
