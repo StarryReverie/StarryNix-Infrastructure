@@ -33,42 +33,29 @@ let
         };
       };
 
-      config = lib.mkIf customCfg.enable {
-        core.environment = {
-          sessionVariables = {
-            LANG = customCfg.mainLocale;
-            LANGUAGE = "${customCfg.mainLocale}:${config.i18n.defaultLocale}:en:C";
+      config = lib.mkMerge [
+        (lib.mkIf (customCfg.enable && !customCfg.ttyForceDefaultLocale) {
+          core.environment = {
+            sessionVariables = {
+              LANG = customCfg.mainLocale;
+              LANGUAGE = "${customCfg.mainLocale}:${config.i18n.defaultLocale}:en:C";
+            };
           };
-        };
-      };
-    };
+        })
 
-  customLocalizationEffectSubmodule =
-    { name, ... }:
-    let
-      selfCfg = config.custom.users.${name} or { };
-      customCfg = selfCfg.core.localization or { };
-    in
-    {
-      config = lib.mkIf ((customCfg.enable or false) && customCfg.ttyForceDefaultLocale) {
-        maid = {
-          file.home.".profile".text = lib.mkAfter ''
-            if [[ "''${XDG_SESSION_TYPE:-tty}" == "tty" ]]; then
-              # Revert localization settings to default for tty sessions
-              unset LANGUAGE
-              source /etc/locale.conf
-            fi
-          '';
-        };
-      };
+        (lib.mkIf (customCfg.enable && customCfg.ttyForceDefaultLocale) {
+          core.environment = {
+            graphicalSessionVariables = {
+              LANG = customCfg.mainLocale;
+              LANGUAGE = "${customCfg.mainLocale}:${config.i18n.defaultLocale}:en:C";
+            };
+          };
+        })
+      ];
     };
 in
 {
   options.custom.users = lib.mkOption {
     type = lib.types.attrsOf (lib.types.submodule customLocalizationSubmodule);
-  };
-
-  options.users.users = lib.mkOption {
-    type = lib.types.attrsOf (lib.types.submodule customLocalizationEffectSubmodule);
   };
 }
