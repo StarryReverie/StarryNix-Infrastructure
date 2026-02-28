@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  flakeRoot,
   ...
 }:
 let
@@ -45,6 +44,22 @@ in
             ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
           '')
         ];
+
+        shellAliases = {
+          sy = "sudo systemctl";
+          sys = "sudo systemctl start";
+          syt = "sudo systemctl stop";
+          syr = "sudo systemctl restart";
+          syst = "sudo systemctl status";
+          syl = "journalctl -xeu";
+
+          syu = "systemctl --user";
+          syus = "systemctl --user start";
+          syut = "systemctl --user stop";
+          syur = "systemctl --user restart";
+          syust = "systemctl --user status";
+          syul = "journalctl --user -xeu";
+        };
       };
     };
 
