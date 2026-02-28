@@ -67,10 +67,6 @@ in
       users.starryreverie = {
         files = [
           {
-            file = ".zcompdump";
-            how = "symlink";
-          }
-          {
             file = ".zsh_history";
             how = "symlink";
           }
