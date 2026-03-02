@@ -57,7 +57,6 @@
       rofi.enable = true;
       swaync.enable = true;
       waybar.enable = true;
-      wayfire-environment.enable = true;
       wpaperd.enable = true;
     };
     hardware = {
