@@ -50,7 +50,7 @@ in
           sys = "sudo systemctl start";
           syt = "sudo systemctl stop";
           syr = "sudo systemctl restart";
-          syst = "sudo systemctl status";
+          syst = "systemctl status";
           syl = "journalctl -xeu";
 
           syu = "systemctl --user";
