@@ -7,7 +7,7 @@
 {
   flake.overlays = {
     lix = final: prev: {
-      ragenix = prev.nil.override {
+      ragenix = prev.ragenix.override {
         nix = final.lixPackageSets.latest.lix;
       };
     };
