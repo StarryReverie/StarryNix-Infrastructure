@@ -51,8 +51,6 @@ in
     environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
     nix.settings.nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
 
-    nixpkgs.overlays = lib.attrsets.attrValues inputs.self.overlays;
-
     system.nixos.revision = inputs.nixpkgs.rev or inputs.nixpkgs.dirtyRev or null;
     system.nixos.versionSuffix =
       if inputs.nixpkgs ? lastModifiedDate && inputs.nixpkgs ? shortRev then

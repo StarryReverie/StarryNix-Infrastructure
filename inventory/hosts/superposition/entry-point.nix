@@ -1,4 +1,5 @@
 { inputs, flakeRoot, ... }@specialArgs:
+injectedModules:
 inputs.nixpkgs.lib.nixosSystem {
   inherit specialArgs;
 
@@ -6,7 +7,7 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.colmena.nixosModules.deploymentOptions
   ];
 
-  modules = [
+  modules = injectedModules ++ [
     # Colmena metadata
     {
       deployment.allowLocalDeployment = true;
