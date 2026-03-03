@@ -10,17 +10,7 @@
     uid = 1000;
     group = config.users.groups.starryreverie.name;
     isNormalUser = true;
-
-    extraGroups = [
-      "wheel"
-    ]
-    ++ lib.optionals config.networking.networkmanager.enable [
-      "networkmanager"
-    ];
-
-    packages = with pkgs; [
-      htop
-    ];
+    extraGroups = [ "wheel" ];
 
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBHhBWBm0pl855WnAlKB6567DR3fzAWPYAbYI4YxmYFu starryreverie@superposition"
@@ -36,6 +26,7 @@
     applications = {
       git.enable = true;
       helix.enable = true;
+      htop.enable = true;
       zsh.enable = true;
     };
     core = {

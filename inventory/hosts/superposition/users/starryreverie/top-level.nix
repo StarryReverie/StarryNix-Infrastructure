@@ -13,7 +13,6 @@
     extraGroups = [ "wheel" ];
 
     packages = with pkgs; [
-      htop
       nixpkgs-review
     ];
   };
@@ -28,6 +27,7 @@
       firefox.enable = true;
       git.enable = true;
       helix.enable = true;
+      htop.enable = true;
       keepassxc.enable = true;
       lazygit.enable = true;
       lx-music-desktop.enable = true;
