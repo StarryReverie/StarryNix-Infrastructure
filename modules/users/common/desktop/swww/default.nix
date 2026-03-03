@@ -54,7 +54,11 @@ let
 
             function show_image() {
               original_image="$1"
-              ${pkgs.swww}/bin/swww img --namespace "@original" "$original_image"
+              # Showing wallpaper may fail right after the startup of the daemon
+              while true; do
+                ${pkgs.swww}/bin/swww img --namespace "@original" "$original_image" && break
+                sleep 0.25
+              done
 
               blurred_image="$tmp_dir/blurred-$(basename $original_image)"
               ${pkgs.imagemagick}/bin/magick "$original_image" -blur 0x7 "$blurred_image"
