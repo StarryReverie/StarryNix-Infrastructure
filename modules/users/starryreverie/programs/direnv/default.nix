@@ -32,7 +32,8 @@ in
 
       file.xdg_config."direnv/direnv.toml".source = configFile;
       file.xdg_config."direnv/direnvrc".source = ./direnv-stdlib.sh;
-      file.xdg_config."direnv/lib/nix-direnv.sh".source = "${pkgs.nix-direnv}/share/nix-direnv/direnvrc";
+      file.xdg_config."direnv/lib/nix-direnv.sh".source =
+        "${pkgs.lixPackageSets.latest.nix-direnv}/share/nix-direnv/direnvrc";
     };
 
     preservation.preserveAt."/nix/persistence" = lib.mkIf (customCfg.enable or false) {
