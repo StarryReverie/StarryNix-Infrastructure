@@ -13,7 +13,27 @@ in
     {
       _module.args.pkgs = import inputs.nixpkgs {
         inherit system;
-        overlays = nixpkgs-lib.attrsets.attrValues config.flake.overlays;
+
+        overlays = (nixpkgs-lib.attrsets.attrValues config.flake.overlays) ++ [
+          (final: prev: {
+            pkgsExternal =
+              let
+                mkPackageSet =
+                  flake:
+                  if flake.legacyPackages.${system} or { } != { } then
+                    flake.legacyPackages.${system}
+                  else
+                    flake.packages.${system} or { };
+
+                externalPackageSet = nixpkgs-lib.pipe inputs [
+                  (nixpkgs-lib.attrsets.mapAttrs (name: flake: mkPackageSet flake))
+                  (nixpkgs-lib.attrsets.filterAttrs (name: flakePkgs: flakePkgs != { }))
+                ];
+              in
+              externalPackageSet;
+          })
+        ];
+
         config = {
           allowUnfree = true;
         };

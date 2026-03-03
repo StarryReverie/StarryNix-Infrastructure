@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 let
@@ -16,7 +15,7 @@ in
 
       file.xdg_config."hypr/hyprlock.conf".source =
         let
-          resourcesPkgs = inputs.starrynix-resources.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+          resourcesPkgs = pkgs.pkgsExternal.starrynix-resources;
           wallpaperPackage = resourcesPkgs.wallpaperPackages.minimalism;
         in
         pkgs.replaceVars ./hyprlock.conf {

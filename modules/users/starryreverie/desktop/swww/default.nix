@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 let
@@ -15,7 +14,7 @@ in
       desktop.swww = lib.mkIf (customCfg.enable or false) {
         wallpaperPath =
           let
-            resourcesPkgs = inputs.starrynix-resources.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+            resourcesPkgs = pkgs.pkgsExternal.starrynix-resources;
             wallpaperPackage = resourcesPkgs.wallpaperPackages.anime-girls;
             wallpaperPath = "${wallpaperPackage.wallpaperDir}/haowallpaper-17799466375433600.jpg";
           in

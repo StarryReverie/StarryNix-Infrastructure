@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 let
@@ -10,7 +9,7 @@ let
   customCfg = selfCfg.desktop.wpaperd or { };
 in
 let
-  resourcesPkgs = inputs.starrynix-resources.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+  resourcesPkgs = pkgs.pkgsExternal.starrynix-resources;
   wallpaperPackage = resourcesPkgs.wallpaperPackages.anime-girls;
 
   configFile = pkgs.writers.writeTOML "wpaperd-config.toml" {
