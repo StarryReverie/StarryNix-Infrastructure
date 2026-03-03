@@ -92,6 +92,7 @@ in
     (mkEntry "programs" "fd")
     (mkEntry "programs" "fzf")
     (mkEntry "programs" "nil")
+    (mkEntry "programs" "nixpkgs-review")
     (mkEntry "programs" "ripgrep")
     (mkEntry "programs" "zoxide")
     (mkEntry "security" "fail2ban")

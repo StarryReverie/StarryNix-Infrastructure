@@ -11,10 +11,6 @@
     group = config.users.groups.starryreverie.name;
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-
-    packages = with pkgs; [
-      nixpkgs-review
-    ];
   };
 
   users.groups.starryreverie = {
@@ -74,6 +70,7 @@
       fd.enable = true;
       fzf.enable = true;
       nil.enable = true;
+      nixpkgs-review.enable = true;
       ripgrep.enable = true;
       zoxide.enable = true;
     };
