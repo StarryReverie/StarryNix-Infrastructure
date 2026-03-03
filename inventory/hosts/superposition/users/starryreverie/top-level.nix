@@ -58,7 +58,6 @@
       swaync.enable = true;
       swww.enable = true;
       waybar.enable = true;
-      wpaperd.enable = true;
     };
     hardware = {
       pipewire.enable = true;

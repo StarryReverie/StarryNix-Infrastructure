@@ -54,8 +54,8 @@ in
         after = [ "wayfire-session.target" ];
       };
 
-      systemd.services."wayfire-wpaperd" = {
-        serviceConfig.ExecStart = "${lib.getExe' pkgs.wpaperd "wpaperd"}";
+      systemd.services."wayfire-swww" = {
+        serviceConfig.ExecStart = "${lib.getExe selfCfg.desktop.swww.managerPackage}";
         serviceConfig.Slice = "session.slice";
         wantedBy = [ "wayfire-session.target" ];
         partOf = [ "wayfire-session.target" ];

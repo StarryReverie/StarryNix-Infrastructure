@@ -57,8 +57,8 @@ in
         after = [ "niri-session.target" ];
       };
 
-      systemd.services."niri-wpaperd" = {
-        serviceConfig.ExecStart = "${lib.getExe' pkgs.wpaperd "wpaperd"}";
+      systemd.services."niri-swww" = {
+        serviceConfig.ExecStart = "${lib.getExe selfCfg.desktop.swww.managerPackage}";
         serviceConfig.Slice = "session.slice";
         wantedBy = [ "niri-session.target" ];
         partOf = [ "niri-session.target" ];

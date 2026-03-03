@@ -104,7 +104,7 @@ window-rule {
 }
 
 layer-rule {
-    match namespace="^wpaperd-.*"
+    match namespace="^swww-daemon@blurred$"
     place-within-backdrop true
 }
 
