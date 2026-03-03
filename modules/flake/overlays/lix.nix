@@ -7,10 +7,6 @@
 {
   flake.overlays = {
     lix = final: prev: {
-      colmena = (inputs.colmena.overlays.default final prev).colmena.override {
-        nix-eval-jobs = final.lixPackageSets.latest.nix-eval-jobs;
-      };
-
       nix-direnv = prev.nix-direnv.override {
         nix = final.lixPackageSets.latest.lix;
       };

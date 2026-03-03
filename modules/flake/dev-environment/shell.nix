@@ -11,7 +11,6 @@
       devShells.default = pkgs.mkShellNoCC {
         packages = [
           inputs.agenix-rekey.packages.${system}.default
-          pkgs.colmena
           pkgs.nixfmt
           pkgs.nixfmt-tree
         ];
