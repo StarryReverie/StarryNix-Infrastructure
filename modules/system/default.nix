@@ -68,6 +68,7 @@ in
     (mkEntry "desktop" "qt-theme")
     (mkEntry "desktop" "rofi")
     (mkEntry "desktop" "swaync")
+    (mkEntry "desktop" "swww")
     (mkEntry "desktop" "waybar")
     (mkEntry "desktop" "wayfire-environment")
     (mkEntry "desktop" "wpaperd")

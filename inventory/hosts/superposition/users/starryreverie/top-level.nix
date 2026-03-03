@@ -56,6 +56,7 @@
       qt-theme.enable = true;
       rofi.enable = true;
       swaync.enable = true;
+      swww.enable = true;
       waybar.enable = true;
       wpaperd.enable = true;
     };
