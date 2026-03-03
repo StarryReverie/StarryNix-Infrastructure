@@ -12,7 +12,6 @@
         packages = [
           inputs.agenix-rekey.packages.${system}.default
           pkgs.colmena
-          pkgs.nil
           pkgs.nixfmt
           pkgs.nixfmt-tree
         ];

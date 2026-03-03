@@ -11,10 +11,6 @@
         nix-eval-jobs = final.lixPackageSets.latest.nix-eval-jobs;
       };
 
-      nil = prev.nil.override {
-        nix = final.lixPackageSets.latest.lix;
-      };
-
       nix-direnv = prev.nix-direnv.override {
         nix = final.lixPackageSets.latest.lix;
       };

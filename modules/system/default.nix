@@ -90,6 +90,7 @@ in
     (mkEntry "programs" "fastfetch")
     (mkEntry "programs" "fd")
     (mkEntry "programs" "fzf")
+    (mkEntry "programs" "nil")
     (mkEntry "programs" "ripgrep")
     (mkEntry "programs" "zoxide")
     (mkEntry "security" "fail2ban")

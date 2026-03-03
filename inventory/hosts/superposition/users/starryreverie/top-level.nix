@@ -72,6 +72,7 @@
       fastfetch.enable = true;
       fd.enable = true;
       fzf.enable = true;
+      nil.enable = true;
       ripgrep.enable = true;
       zoxide.enable = true;
     };
