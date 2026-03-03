@@ -13,6 +13,7 @@
       url = "github:oddlama/agenix-rekey/main";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.pre-commit-hooks.follows = "git-hooks";
     };
 
     colmena = {
@@ -44,6 +45,12 @@
 
     flakey-profile = {
       url = "github:lf-/flakey-profile/main";
+    };
+
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix/master";
+      inputs.flake-compat.follows = "flake-compat";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     import-tree = {
