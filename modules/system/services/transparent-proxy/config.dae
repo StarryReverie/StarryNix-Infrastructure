@@ -32,10 +32,26 @@ group {
     }
 }
 
+dns {
+    upstream {
+        aliyun: 'tcp+udp://223.5.5.5'
+    }
+    routing {
+        request {
+            qname(geosite:cn) -> aliyun
+            fallback: asis
+        }
+        response {
+            fallback: accept
+        }
+    }
+}
+
 routing {
     pname(NetworkManager) -> direct
     pname(systemd-networkd) -> direct
     pname(mihomo) -> direct
+    pname(dnsproxy) -> must_direct
 
     dip(224.0.0.0/3, 'ff00::/8') -> direct
     dip(geoip:private) -> direct
