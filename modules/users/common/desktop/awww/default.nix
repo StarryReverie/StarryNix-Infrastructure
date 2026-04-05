@@ -5,14 +5,14 @@
   ...
 }:
 let
-  customSwwwSubmodule =
+  customAwwwSubmodule =
     { name, ... }:
     let
       selfCfg = config.custom.users.${name};
-      customCfg = selfCfg.desktop.swww;
+      customCfg = selfCfg.desktop.awww;
     in
     {
-      options.desktop.swww = {
+      options.desktop.awww = {
         wallpaperPath = lib.mkOption {
           type = lib.types.str;
           description = "Path to the wallpaper file or directory";
@@ -32,7 +32,7 @@ let
         managerPackage = lib.mkOption {
           type = lib.types.package;
           description = ''
-            The manager that spawns `swww-daemon` and periodically changing the wallpaper in the
+            The manager that spawns `awww-daemon` and periodically changing the wallpaper in the
             background. (readonly)
           '';
           readOnly = true;
@@ -40,16 +40,16 @@ let
       };
 
       config = lib.mkIf customCfg.enable {
-        desktop.swww = {
-          managerPackage = pkgs.writeShellScriptBin "swww-manager" ''
-            ${pkgs.swww}/bin/swww-daemon --no-cache &
-            trap "pkill swww-daemon" EXIT
+        desktop.awww = {
+          managerPackage = pkgs.writeShellScriptBin "awww-manager" ''
+            ${pkgs.awww}/bin/awww-daemon --no-cache &
+            trap "pkill awww-daemon" EXIT
 
             function show_image() {
               original_image="$1"
               # Showing wallpaper may fail right after the startup of the daemon
               while true; do
-                ${pkgs.swww}/bin/swww img "$original_image" && break
+                ${pkgs.awww}/bin/awww img "$original_image" && break
                 sleep 0.25
               done
             }
@@ -74,6 +74,6 @@ let
 in
 {
   options.custom.users = lib.mkOption {
-    type = lib.types.attrsOf (lib.types.submodule customSwwwSubmodule);
+    type = lib.types.attrsOf (lib.types.submodule customAwwwSubmodule);
   };
 }

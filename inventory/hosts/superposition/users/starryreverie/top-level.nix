@@ -53,7 +53,7 @@
       qt-theme.enable = true;
       rofi.enable = true;
       swaync.enable = true;
-      swww.enable = true;
+      awww.enable = true;
       waybar.enable = true;
     };
     hardware = {
