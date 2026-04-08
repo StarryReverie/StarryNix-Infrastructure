@@ -25,6 +25,6 @@ inputs.nixpkgs.lib.nixosSystem {
 
     # Local modules
     (flakeRoot + /modules/nixos-modules.nix)
-    (inputs.import-tree.matchNot "([^/]*/)*entry-point\.nix" ./.)
+    (inputs.import-tree.matchNot "([^/]*/)*entry-point.nix" ./.)
   ];
 }
