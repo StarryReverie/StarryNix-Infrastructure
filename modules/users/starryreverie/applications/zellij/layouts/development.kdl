@@ -3,8 +3,8 @@ layout {
         plugin location="zellij:tab-bar"
     }
     pane split_direction="vertical" {
-        pane name="Files" size="20%" {
-            plugin location="zellij:strider"
+        pane name="OpenCode" size="30%" {
+            command "opencode"
         }
         pane {
             pane size="80%" stacked=true {
