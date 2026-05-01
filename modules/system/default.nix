@@ -80,6 +80,7 @@ in
     (mkEntry "hardware" "networking")
     (mkEntry "hardware" "nvidia-graphics")
     (mkEntry "hardware" "pipewire")
+    (mkEntry "hardware" "scx-scheduler")
     (mkEntry "hardware" "tlp")
     (mkEntry "hardware" "wireless")
     (mkEntry "hardware" "zram-swap")

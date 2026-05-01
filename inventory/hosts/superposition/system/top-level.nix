@@ -38,6 +38,7 @@
       networking.enable = true;
       nvidia-graphics.enable = true;
       pipewire.enable = true;
+      scx-scheduler.enable = true;
       tlp.enable = true;
       wireless.enable = true;
       zram-swap.enable = true;
