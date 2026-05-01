@@ -115,6 +115,17 @@ layer-rule {
     place-within-backdrop true
 }
 
+layer-rule {
+    match namespace="^waybar$"
+    opacity 0.85
+    popups {
+        opacity 0.85
+        background-effect {
+            blur true
+        }
+    }
+}
+
 binds {
     //! Applications
     // Frequently used applications
