@@ -20,6 +20,7 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.disko.nixosModules.default
     inputs.nix-maid.nixosModules.default
     inputs.preservation.nixosModules.default
+    inputs.selector4nix.nixosModules.default
 
     # StarryNix-Infrastructure
     (flakeRoot + /modules/system/starrynix-infrastructure/host)
