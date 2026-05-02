@@ -387,10 +387,66 @@
         "nix-maid": "nix-maid",
         "nixpkgs": "nixpkgs",
         "preservation": "preservation",
+        "rust-overlay": "rust-overlay",
+        "selector4nix": "selector4nix",
         "starrynix-derivations": "starrynix-derivations",
         "starrynix-resources": "starrynix-resources",
         "systems": "systems",
         "wrapper-manager": "wrapper-manager"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777691680,
+        "narHash": "sha256-sdCAzrPAaKu+yo7L2pWddy5PN6U9bO++WEWc1zcr7aQ=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "4757db4358c77c1cbe878fa5990e6ea88d82f6b5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "ref": "master",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "selector4nix": {
+      "inputs": {
+        "flake-compat": [
+          "flake-compat"
+        ],
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "import-tree": [
+          "import-tree"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": [
+          "rust-overlay"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777714336,
+        "narHash": "sha256-5q2YoeOpZmVPNhpbeYydbJAMM6xzfTcDWsr1W8a9djY=",
+        "owner": "StarryReverie",
+        "repo": "selector4nix",
+        "rev": "3f638ef48fb47cf82fbae979381c2932da2b694c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "StarryReverie",
+        "ref": "master",
+        "repo": "selector4nix",
+        "type": "github"
       }
     },
     "spectrum": {
