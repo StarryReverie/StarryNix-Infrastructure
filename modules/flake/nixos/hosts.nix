@@ -44,6 +44,7 @@ in
             inputs.disko.nixosModules.default
             inputs.nix-maid.nixosModules.default
             inputs.preservation.nixosModules.default
+            inputs.selector4nix.nixosModules.default
           ];
         in
         (import entryPoint) specialArgs injectedModules;

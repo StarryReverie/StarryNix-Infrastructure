@@ -107,6 +107,7 @@ in
     (mkEntry "services" "ly")
     (mkEntry "services" "mpd-ecosystem")
     (mkEntry "services" "openssh")
+    (mkEntry "services" "selector4nix")
     (mkEntry "services" "ssh-agent")
     (mkEntry "services" "tailscale")
     (mkEntry "services" "transparent-proxy")
