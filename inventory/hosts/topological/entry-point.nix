@@ -16,11 +16,6 @@ inputs.nixpkgs.lib.nixosSystem {
       deployment.tags = [ "server" ];
     }
 
-    # External modules
-    inputs.disko.nixosModules.default
-    inputs.nix-maid.nixosModules.default
-    inputs.preservation.nixosModules.default
-
     # StarryNix-Infrastructure
     (flakeRoot + /modules/system/starrynix-infrastructure/host)
     (flakeRoot + /inventory/nodes/registry.nix)
