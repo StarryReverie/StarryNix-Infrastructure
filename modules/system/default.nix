@@ -93,6 +93,7 @@ in
     (mkEntry "programs" "fastfetch")
     (mkEntry "programs" "fd")
     (mkEntry "programs" "fzf")
+    (mkEntry "programs" "glow")
     (mkEntry "programs" "nil")
     (mkEntry "programs" "nixpkgs-review")
     (mkEntry "programs" "ripgrep")
