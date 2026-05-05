@@ -69,6 +69,7 @@
       eza.enable = true;
       fastfetch.enable = true;
       fd.enable = true;
+      glow.enable = true;
       fzf.enable = true;
       nil.enable = true;
       nixpkgs-review.enable = true;
