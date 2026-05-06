@@ -18,9 +18,6 @@ in
         ip = "127.0.0.1";
         port = 5496;
       };
-      network = {
-        max_concurrent_requests = 24;
-      };
       substituters = [
         {
           url = "https://cache.nixos.org/";
@@ -37,6 +34,10 @@ in
         {
           url = "https://mirror.sjtu.edu.cn/nix-channels/store/";
           priority = 45;
+        }
+        {
+          url = "https://colmena.cachix.org/";
+          priority = 40;
         }
         {
           url = "https://nix-community.cachix.org/";
