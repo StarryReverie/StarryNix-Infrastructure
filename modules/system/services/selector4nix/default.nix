@@ -11,7 +11,7 @@ in
   config = lib.mkIf customCfg.enable {
     services.selector4nix.enable = true;
 
-    services.selector4nix.configureSubstituter = true;
+    services.selector4nix.configureSubstituter = "overwrite";
 
     services.selector4nix.settings = {
       server = {
