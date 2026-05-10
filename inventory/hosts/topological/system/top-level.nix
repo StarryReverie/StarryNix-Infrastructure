@@ -29,6 +29,7 @@
     };
     hardware = {
       networking.enable = true;
+      oom-killer.enable = true;
       wireless.enable = true;
       zram-swap.enable = true;
     };

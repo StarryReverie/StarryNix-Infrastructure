@@ -24,6 +24,7 @@
     };
     hardware = {
       networking.enable = true;
+      oom-killer.enable = true;
       zram-swap.enable = true;
     };
     security = {

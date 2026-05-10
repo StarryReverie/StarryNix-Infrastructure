@@ -37,6 +37,7 @@
       keyd.enable = true;
       networking.enable = true;
       nvidia-graphics.enable = true;
+      oom-killer.enable = true;
       pipewire.enable = true;
       scx-scheduler.enable = true;
       tlp.enable = true;
