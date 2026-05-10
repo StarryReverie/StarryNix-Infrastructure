@@ -79,6 +79,7 @@ in
     (mkEntry "hardware" "keyd")
     (mkEntry "hardware" "networking")
     (mkEntry "hardware" "nvidia-graphics")
+    (mkEntry "hardware" "oom-killer")
     (mkEntry "hardware" "pipewire")
     (mkEntry "hardware" "scx-scheduler")
     (mkEntry "hardware" "tlp")
