@@ -1,0 +1,93 @@
+[
+  // Cursor Navigation
+  {
+    "key": "alt+j",
+    "command": "cursorLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "cursorRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+i",
+    "command": "cursorUp",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "cursorDown",
+    "when": "editorTextFocus"
+  },
+
+  // Selection Navigation
+  {
+    "key": "shift+alt+j",
+    "command": "cursorLeftSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "cursorRightSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+i",
+    "command": "cursorUpSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "cursorDownSelect",
+    "when": "editorTextFocus"
+  },
+
+  // Cursor Navigation by Word
+  {
+    "key": "ctrl+alt+j",
+    "command": "cursorWordLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "cursorWordEndRight",
+    "when": "editorTextFocus"
+  },
+
+  // Selection Navigation by Word
+  {
+    "key": "ctrl+shift+alt+j",
+    "command": "cursorWordLeftSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+l",
+    "command": "cursorWordEndRightSelect",
+    "when": "editorTextFocus"
+  },
+
+  // View Navigation
+  {
+    "key": "ctrl+alt+i",
+    "command": "scrollLineUp",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "scrollLineDown",
+    "when": "editorTextFocus"
+  },
+
+  // Multi-cursor Operation
+  {
+    "key": "ctrl+shift+alt+i",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+k",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  }
+]

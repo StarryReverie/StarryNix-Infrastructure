@@ -44,6 +44,7 @@ in
       ];
 
       file.xdg_config."VSCodium/User/settings.json".source = ./settings.jsonc;
+      file.xdg_config."VSCodium/User/keybindings.json".source = ./keybindings.jsonc;
     };
 
     preservation.preserveAt."/nix/persistence" = {
