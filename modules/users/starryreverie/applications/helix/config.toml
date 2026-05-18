@@ -10,6 +10,7 @@ insert-final-newline = true
 line-number = "relative"
 text-width = 165
 true-color = true
+jump-label-alphabet = "fdsajklghrewcxuiom"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -80,6 +81,8 @@ i = "move_line_up"
 j = "move_char_left"
 k = "move_line_down"
 x = "@miw"
+";" = "goto_word"
+"'" = "collapse_selection"
 
 [keys.normal.Z]
 I = ["scroll_up", "scroll_up", "scroll_up", "scroll_up", "scroll_up"]
@@ -136,6 +139,8 @@ i = "extend_line_up"
 j = "extend_char_left"
 k = "extend_line_down"
 x = ["move_prev_word_end", "move_next_word_start", "trim_selections"]
+";" = "extend_to_word"
+"'" = "collapse_selection"
 
 [keys.select.Z]
 I = ["scroll_up", "scroll_up", "scroll_up", "scroll_up", "scroll_up"]
