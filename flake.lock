@@ -435,11 +435,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779075825,
-        "narHash": "sha256-Dx8NfelWH6P0SRMosQ8UV+xeccZ3oXwFYCFtfHc0jyM=",
+        "lastModified": 1779264060,
+        "narHash": "sha256-gsWbItf/5VjraCl1cUuWvpysooXypnSFLSfrLSxr4qo=",
         "owner": "StarryReverie",
         "repo": "selector4nix",
-        "rev": "039151e6c455a8c1d6ef2bdfcd04264670f66c94",
+        "rev": "c9172bd7c265de5e73cd7e7237d105fb480bfa42",
         "type": "github"
       },
       "original": {
