@@ -18,6 +18,12 @@ in
         ip = "127.0.0.1";
         port = 5496;
       };
+      cache = {
+        nar_info_lookup_capacity = 8192;
+        nar_info_lookup_ttl_secs = 86400;
+        nar_location_capacity = 8192;
+        nar_location_ttl_secs = 86400;
+      };
       substituters = [
         {
           url = "https://cache.nixos.org/";
