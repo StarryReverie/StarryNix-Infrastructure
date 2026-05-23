@@ -17,18 +17,14 @@ in
           basePackage = pkgs.vscode-with-extensions.override {
             vscode = pkgs.vscodium;
             vscodeExtensions = with pkgs.vscode-extensions; [
-              charliermarsh.ruff
               davidanson.vscode-markdownlint
               editorconfig.editorconfig
               jeff-hykin.better-nix-syntax
               jnoortheen.nix-ide
               mechatroner.rainbow-csv
               mkhl.direnv
-              ms-pyright.pyright
-              ms-python.python
               mskelton.one-dark-theme
               myriad-dreamin.tinymist
-              rust-lang.rust-analyzer
               tamasfe.even-better-toml
               tekumara.typos-vscode
               timonwong.shellcheck
