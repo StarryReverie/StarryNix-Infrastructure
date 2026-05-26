@@ -418,28 +418,19 @@
     },
     "selector4nix": {
       "inputs": {
-        "flake-compat": [
-          "flake-compat"
-        ],
         "flake-parts": [
           "flake-parts"
         ],
-        "import-tree": [
-          "import-tree"
-        ],
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "rust-overlay": [
-          "rust-overlay"
         ]
       },
       "locked": {
-        "lastModified": 1779718632,
-        "narHash": "sha256-P24ZvUcvO4PLcizdVqVGtW/28zCoWie2otXRnYTLE/I=",
+        "lastModified": 1779785866,
+        "narHash": "sha256-C/hTEXwkKP2FofG1X6nqOW9aF47z4ME0v0O9O7Ut59I=",
         "owner": "StarryReverie",
         "repo": "selector4nix",
-        "rev": "4b79148bedb01b40f0074e4c5466d2f103b2a962",
+        "rev": "3463469e31ebf9513600d75e782cfe0fec0c046f",
         "type": "github"
       },
       "original": {

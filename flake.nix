@@ -81,11 +81,8 @@
 
     selector4nix = {
       url = "github:StarryReverie/selector4nix/master";
-      inputs.flake-compat.follows = "flake-compat";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.import-tree.follows = "import-tree";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.rust-overlay.follows = "rust-overlay";
     };
 
     starrynix-derivations = {
