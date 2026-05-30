@@ -33,6 +33,7 @@
       qq.enable = true;
       resources.enable = true;
       splayer.enable = true;
+      steam.enable = true;
       telegram-desktop.enable = true;
       vscode.enable = true;
       yazi.enable = true;
