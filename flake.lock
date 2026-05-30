@@ -496,11 +496,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768388111,
-        "narHash": "sha256-RAgPp87LQmkKDduJ2Nif2Lp7EDa+81qqsgtWyGGXuKs=",
+        "lastModified": 1780158954,
+        "narHash": "sha256-zLwlVqxFVVsI/lXbPr3/+Ix9gsWUD4ddtqTy4uRFO3M=",
         "owner": "StarryReverie",
         "repo": "StarryNix-Resources",
-        "rev": "2c6d292d0dfb54b2dd98d5e49fd3fce34bbec1ad",
+        "rev": "7f6a466b5226a90abb6e7d4b5e83be3793f1b0b2",
         "type": "github"
       },
       "original": {
