@@ -30,6 +30,7 @@ in
   options.custom.system = lib.attrsets.foldAttrs lib.attrsets.recursiveUpdate { } [
     (mkEntry "applications" "alacritty")
     (mkEntry "applications" "bottles")
+    (mkEntry "applications" "cava")
     (mkEntry "applications" "firefox")
     (mkEntry "applications" "git")
     (mkEntry "applications" "github-copilot-cli")
