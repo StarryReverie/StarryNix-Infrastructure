@@ -20,6 +20,7 @@
   custom.users.starryreverie = {
     applications = {
       alacritty.enable = true;
+      cava.enable = true;
       firefox.enable = true;
       git.enable = true;
       helix.enable = true;
