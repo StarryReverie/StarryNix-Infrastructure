@@ -12,6 +12,7 @@ in
     services.selector4nix.enable = true;
 
     services.selector4nix.configureSubstituter = "overwrite";
+    services.selector4nix.enablePersistentCaching = true;
 
     services.selector4nix.settings = {
       server = {
@@ -31,15 +32,15 @@ in
         }
         {
           url = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store/";
-          priority = 45;
+          priority = 60;
         }
         {
           url = "https://mirrors.ustc.edu.cn/nix-channels/store/";
-          priority = 45;
+          priority = 50;
         }
         {
           url = "https://mirror.sjtu.edu.cn/nix-channels/store/";
-          priority = 45;
+          priority = 50;
         }
         {
           url = "https://colmena.cachix.org/";

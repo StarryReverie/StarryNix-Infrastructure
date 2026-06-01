@@ -38,6 +38,7 @@ in
           allowUnfree = true;
 
           permittedInsecurePackages = [
+            "electron-39.8.10"
             "minio-2025-10-15T17-29-55Z"
           ];
         };
