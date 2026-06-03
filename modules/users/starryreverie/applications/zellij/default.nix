@@ -15,6 +15,7 @@ in
         shellAliases = {
           zj = "zellij";
           zd = "zellij --layout development";
+          zm = "zellij --layout music";
         };
 
         rcContent = ''

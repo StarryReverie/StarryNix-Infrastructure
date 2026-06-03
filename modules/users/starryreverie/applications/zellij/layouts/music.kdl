@@ -1,0 +1,11 @@
+layout {
+    pane split_direction="vertical" {
+        pane size="70%" focus=true {
+            command "ncmpcpp"
+        }
+        pane name="Cava" {
+            command "sh"
+            args "-c" "cava"
+        }
+    }
+}
