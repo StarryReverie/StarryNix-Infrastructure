@@ -19,11 +19,11 @@
       firefox.enable = true;
     };
     core = {
+      ephemeralRootfs.enable = true;
       etc-overlay.enable = true;
       fhs-compatibility.enable = true;
       initrd.enable = true;
       nix.enable = true;
-      preservation.enable = true;
       user-management.enable = true;
     };
     desktop = {

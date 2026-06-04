@@ -43,7 +43,7 @@
     };
     core = {
       environment.enable = true;
-      preservation.enable = true;
+      ephemeralRootfs.enable = true;
       xdg.enable = true;
     };
     desktop = {

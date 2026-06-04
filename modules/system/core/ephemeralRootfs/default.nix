@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.core.preservation;
+  customCfg = config.custom.system.core.ephemeralRootfs;
 in
 {
   config = lib.mkIf customCfg.enable {

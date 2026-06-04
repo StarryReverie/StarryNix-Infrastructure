@@ -5,13 +5,13 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.core.preservation or { };
+  selfCfg = config.custom.users.csl or { };
+  customCfg = selfCfg.core.ephemeralRootfs or { };
 in
 {
   config = lib.mkIf (customCfg.enable or false) {
     preservation.preserveAt."/nix/persistence" = {
-      users.starryreverie = {
+      users.csl = {
         commonMountOptions = [
           "x-gdu.hide"
           "x-gvfs-hide"

@@ -23,8 +23,8 @@
     };
     core = {
       environment.enable = true;
+      ephemeralRootfs.enable = true;
       localization.enable = true;
-      preservation.enable = true;
       xdg.enable = true;
     };
     desktop = {
