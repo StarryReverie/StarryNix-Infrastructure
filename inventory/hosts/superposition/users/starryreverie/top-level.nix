@@ -48,9 +48,9 @@
     };
     desktop = {
       clipboard.enable = true;
-      fcitx5.enable = true;
       gtk-theme.enable = true;
       hyprlock.enable = true;
+      inputMethod.enable = true;
       niri-environment.enable = true;
       qt-theme.enable = true;
       rofi.enable = true;

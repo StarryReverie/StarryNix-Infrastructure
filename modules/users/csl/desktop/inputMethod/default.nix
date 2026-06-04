@@ -2,17 +2,16 @@
   config,
   lib,
   pkgs,
-  flakeRoot,
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.desktop.fcitx5 or { };
+  selfCfg = config.custom.users.csl or { };
+  customCfg = selfCfg.desktop.inputMethod or { };
 in
 {
   config = lib.mkIf (customCfg.enable or false) {
     preservation.preserveAt."/nix/persistence" = {
-      users.starryreverie = {
+      users.csl = {
         directories = [
           ".config/fcitx5"
           ".local/share/fcitx5"

@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.desktop.fcitx5;
+  customCfg = config.custom.system.desktop.inputMethod;
 in
 {
   config = lib.mkIf customCfg.enable {

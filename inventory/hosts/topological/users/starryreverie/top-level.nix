@@ -43,7 +43,7 @@
       xdg.enable = true;
     };
     desktop = {
-      fcitx5.enable = true;
+      inputMethod.enable = true;
     };
     hardware = {
       pipewire.enable = true;

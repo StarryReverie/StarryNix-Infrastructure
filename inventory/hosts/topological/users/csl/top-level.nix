@@ -28,8 +28,8 @@
       xdg.enable = true;
     };
     desktop = {
-      fcitx5.enable = true;
       gtk-theme.enable = true;
+      inputMethod.enable = true;
       qt-theme.enable = true;
     };
     hardware = {
