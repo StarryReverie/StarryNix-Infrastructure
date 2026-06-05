@@ -53,7 +53,7 @@ in
     (mkEntry "applications" "zsh")
     (mkEntry "core" "environment")
     (mkEntry "core" "ephemeralRootfs")
-    (mkEntry "core" "etc-overlay")
+    (mkEntry "core" "etcOverlay")
     (mkEntry "core" "fhs-compatibility")
     (mkEntry "core" "initrd")
     (mkEntry "core" "localization")

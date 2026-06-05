@@ -20,7 +20,7 @@
     };
     core = {
       ephemeralRootfs.enable = true;
-      etc-overlay.enable = true;
+      etcOverlay.enable = true;
       fhs-compatibility.enable = true;
       initrd.enable = true;
       nix.enable = true;

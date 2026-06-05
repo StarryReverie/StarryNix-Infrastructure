@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.core.etc-overlay;
+  customCfg = config.custom.system.core.etcOverlay;
 in
 {
   config = lib.mkIf customCfg.enable {

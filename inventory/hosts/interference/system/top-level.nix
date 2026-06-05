@@ -17,7 +17,7 @@
   custom.system = {
     core = {
       ephemeralRootfs.enable = true;
-      etc-overlay.enable = true;
+      etcOverlay.enable = true;
       initrd.enable = true;
       nix.enable = true;
       user-management.enable = true;
