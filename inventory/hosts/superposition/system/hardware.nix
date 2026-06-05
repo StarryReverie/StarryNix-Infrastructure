@@ -53,7 +53,7 @@
 
     # NVIDIA Graphics
     {
-      custom.system.hardware.nvidia-graphics = {
+      custom.system.hardware.graphicsDriver-nvidia = {
         prime = "offload";
       };
 
