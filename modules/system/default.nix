@@ -107,7 +107,7 @@ in
     (mkEntry "services" "dnsproxy")
     (mkEntry "services" "gdm")
     (mkEntry "services" "ly")
-    (mkEntry "services" "mpd-ecosystem")
+    (mkEntry "services" "mpd")
     (mkEntry "services" "openssh")
     (mkEntry "services" "selector4nix")
     (mkEntry "services" "ssh-agent")

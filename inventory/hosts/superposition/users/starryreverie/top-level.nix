@@ -82,7 +82,7 @@
       password.enable = true;
     };
     services = {
-      mpd-ecosystem.enable = true;
+      mpd.enable = true;
     };
     virtualization = {
       container.enable = true;

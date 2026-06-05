@@ -9,10 +9,10 @@ let
     { name, ... }:
     let
       selfCfg = config.custom.users.${name};
-      customCfg = selfCfg.services.mpd-ecosystem;
+      customCfg = selfCfg.services.mpd;
     in
     {
-      options.services.mpd-ecosystem.client = {
+      options.services.mpd.client = {
         packages = lib.mkOption {
           type = lib.types.listOf lib.types.package;
           description = "MPD clients to be added to `$PATH`";
@@ -26,7 +26,7 @@ let
     { name, ... }:
     let
       selfCfg = config.custom.users.${name} or { };
-      customCfg = selfCfg.services.mpd-ecosystem or { };
+      customCfg = selfCfg.services.mpd or { };
     in
     {
       config = lib.mkIf (customCfg.enable or false) {

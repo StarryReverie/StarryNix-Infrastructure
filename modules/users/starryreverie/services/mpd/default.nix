@@ -8,12 +8,12 @@
 }:
 let
   selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.services.mpd-ecosystem or { };
+  customCfg = selfCfg.services.mpd or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      services.mpd-ecosystem = lib.mkIf (customCfg.enable or false) {
+      services.mpd = lib.mkIf (customCfg.enable or false) {
         client = {
           packages =
             let

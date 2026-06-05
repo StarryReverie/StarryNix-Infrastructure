@@ -9,10 +9,10 @@ let
     { name, ... }:
     let
       selfCfg = config.custom.users.${name};
-      customCfg = selfCfg.services.mpd-ecosystem;
+      customCfg = selfCfg.services.mpd;
     in
     {
-      options.services.mpd-ecosystem.daemon = {
+      options.services.mpd.daemon = {
         package = lib.mkPackageOption pkgs "mpd" { };
 
         musicDirectory = lib.mkOption {
@@ -53,7 +53,7 @@ let
     { name, ... }:
     let
       selfCfg = config.custom.users.${name} or { };
-      customCfg = selfCfg.services.mpd-ecosystem or { };
+      customCfg = selfCfg.services.mpd or { };
     in
     {
       config = lib.mkIf (customCfg.enable or false) {
