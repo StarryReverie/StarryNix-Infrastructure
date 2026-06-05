@@ -33,12 +33,12 @@
     };
     hardware = {
       bluetooth.enable = true;
+      cpuScheduler.enable = true;
       graphicsDriver-intel.enable = true;
       graphicsDriver-nvidia.enable = true;
       keyMapper.enable = true;
       networking.enable = true;
       oomKiller.enable = true;
-      scx-scheduler.enable = true;
       sound.enable = true;
       tlp.enable = true;
       wireless.enable = true;

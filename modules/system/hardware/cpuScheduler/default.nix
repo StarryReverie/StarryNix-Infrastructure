@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.hardware.scx-scheduler;
+  customCfg = config.custom.system.hardware.cpuScheduler;
 in
 {
   config = lib.mkIf customCfg.enable {
