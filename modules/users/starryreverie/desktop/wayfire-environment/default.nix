@@ -65,7 +65,7 @@ in
         ];
       };
 
-      systemd.services."wayfire-swaync" = {
+      systemd.services."wayfire-notification" = {
         serviceConfig.ExecStart = "${lib.getExe pkgs.swaynotificationcenter}";
         serviceConfig.Slice = "session.slice";
         wantedBy = [ "wayfire-session.target" ];

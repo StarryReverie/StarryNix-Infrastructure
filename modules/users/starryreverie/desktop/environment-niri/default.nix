@@ -68,7 +68,7 @@ in
         ];
       };
 
-      systemd.services."niri-swaync" = {
+      systemd.services."niri-notification" = {
         serviceConfig.ExecStart = "${lib.getExe pkgs.swaynotificationcenter}";
         serviceConfig.Slice = "session.slice";
         wantedBy = [ "niri-session.target" ];

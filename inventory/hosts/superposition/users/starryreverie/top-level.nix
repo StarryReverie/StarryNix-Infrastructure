@@ -52,7 +52,7 @@
       inputMethod.enable = true;
       launcher.enable = true;
       screenLocker.enable = true;
-      swaync.enable = true;
+      notification.enable = true;
       theme-gtk.enable = true;
       theme-qt.enable = true;
       wallpaper.enable = true;

@@ -6,7 +6,7 @@
 }:
 let
   selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.desktop.swaync or { };
+  customCfg = selfCfg.desktop.notification or { };
 in
 {
   config = lib.mkIf (customCfg.enable or false) {
