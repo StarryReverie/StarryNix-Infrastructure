@@ -6,12 +6,12 @@
   ...
 }:
 let
-  selfCfg = config.custom.users.csl or { };
-  customCfg = selfCfg.desktop.qt-theme or { };
+  selfCfg = config.custom.users.starryreverie or { };
+  customCfg = selfCfg.desktop.theme-qt or { };
 in
 {
   config = {
-    custom.users.csl = {
+    custom.users.starryreverie = {
       core.environment = lib.mkIf (customCfg.enable or false) {
         sessionVariables = {
           QT_QPA_PLATFORMTHEME = "qt6ct:qt5ct";
@@ -19,7 +19,7 @@ in
       };
     };
 
-    users.users.csl.maid = lib.mkIf (customCfg.enable or false) {
+    users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       packages = with pkgs; [
         libsForQt5.qt5ct
         libsForQt5.qtstyleplugin-kvantum
@@ -49,14 +49,14 @@ in
 
           "qt5ct/qt5ct.conf".source = pkgs.replaceVars ./qt5ct.conf {
             colorSchemePath = pkgs.libsForQt5.qt5ct + /share/qt5ct/colors/darker.conf;
-            iconTheme = "Adwaita";
+            iconTheme = "Reversal-dark";
             style = "kvantum-dark";
             font = "Open Sans";
           };
 
           "qt6ct/qt6ct.conf".source = pkgs.replaceVars ./qt6ct.conf {
             colorSchemePath = pkgs.kdePackages.qt6ct + /share/qt6ct/colors/darker.conf;
-            iconTheme = "Adwaita";
+            iconTheme = "Reversal-dark";
             style = "kvantum-dark";
             font = "Open Sans";
           };
