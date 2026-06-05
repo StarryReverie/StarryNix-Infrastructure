@@ -58,7 +58,7 @@ in
     (mkEntry "core" "initrd")
     (mkEntry "core" "localization")
     (mkEntry "core" "nix")
-    (mkEntry "core" "user-management")
+    (mkEntry "core" "userManagement")
     (mkEntry "core" "xdg")
     (mkEntry "desktop" "awww")
     (mkEntry "desktop" "clipboard")

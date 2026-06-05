@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.core.user-management;
+  customCfg = config.custom.system.core.userManagement;
 in
 {
   config = lib.mkIf customCfg.enable {

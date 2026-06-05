@@ -20,7 +20,7 @@
       etcOverlay.enable = true;
       initrd.enable = true;
       nix.enable = true;
-      user-management.enable = true;
+      userManagement.enable = true;
     };
     desktop = {
       desktop-essentials.enable = true;
