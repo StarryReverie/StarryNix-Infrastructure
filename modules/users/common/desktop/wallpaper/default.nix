@@ -5,14 +5,14 @@
   ...
 }:
 let
-  customAwwwSubmodule =
+  customWallpaperSubmodule =
     { name, ... }:
     let
       selfCfg = config.custom.users.${name};
-      customCfg = selfCfg.desktop.awww;
+      customCfg = selfCfg.desktop.wallpaper;
     in
     {
-      options.desktop.awww = {
+      options.desktop.wallpaper = {
         wallpaperPath = lib.mkOption {
           type = lib.types.str;
           description = "Path to the wallpaper file or directory";
@@ -40,7 +40,7 @@ let
       };
 
       config = lib.mkIf customCfg.enable {
-        desktop.awww = {
+        desktop.wallpaper = {
           managerPackage = pkgs.writeShellScriptBin "awww-manager" ''
             ${pkgs.awww}/bin/awww-daemon --no-cache &
             trap "pkill awww-daemon" EXIT
@@ -74,6 +74,6 @@ let
 in
 {
   options.custom.users = lib.mkOption {
-    type = lib.types.attrsOf (lib.types.submodule customAwwwSubmodule);
+    type = lib.types.attrsOf (lib.types.submodule customWallpaperSubmodule);
   };
 }

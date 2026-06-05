@@ -6,12 +6,12 @@
 }:
 let
   selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.desktop.awww or { };
+  customCfg = selfCfg.desktop.wallpaper or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      desktop.awww = lib.mkIf (customCfg.enable or false) {
+      desktop.wallpaper = lib.mkIf (customCfg.enable or false) {
         wallpaperPath =
           let
             resourcesPkgs = pkgs.pkgsExternal.starrynix-resources;
