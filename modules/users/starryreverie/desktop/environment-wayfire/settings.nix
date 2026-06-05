@@ -6,12 +6,12 @@
 }:
 let
   selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.desktop.wayfire-environment or { };
+  customCfg = selfCfg.desktop.environment-wayfire or { };
 in
 {
   config = {
     custom.users.starryreverie = {
-      desktop.wayfire-environment = {
+      desktop.environment-wayfire = {
         settings = lib.mkIf (customCfg.enable or false) {
           core = {
             close_top_view = "<super> KEY_X";

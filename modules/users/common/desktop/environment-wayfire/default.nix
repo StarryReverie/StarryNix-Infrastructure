@@ -11,10 +11,10 @@ let
     { name, ... }:
     let
       selfCfg = config.custom.users.${name};
-      customCfg = selfCfg.desktop.wayfire-environment;
+      customCfg = selfCfg.desktop.environment-wayfire;
     in
     {
-      options.desktop.wayfire-environment = {
+      options.desktop.environment-wayfire = {
         settings = lib.mkOption {
           type = lib.types.submodule { freeformType = settingsFormat.type; };
           description = "Content of `wayfire.ini`";
@@ -29,7 +29,7 @@ let
       };
 
       config = {
-        desktop.wayfire-environment = {
+        desktop.environment-wayfire = {
           settings = {
             autostart = lib.mkIf customCfg.enable {
               "00_environment" =
@@ -45,7 +45,7 @@ let
     { name, ... }:
     let
       selfCfg = config.custom.users.${name} or { };
-      customCfg = selfCfg.desktop.wayfire-environment or { };
+      customCfg = selfCfg.desktop.environment-wayfire or { };
     in
     {
       config = lib.mkIf (customCfg.enable or false) {

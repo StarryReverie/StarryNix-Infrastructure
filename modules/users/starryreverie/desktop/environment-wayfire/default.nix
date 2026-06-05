@@ -6,7 +6,7 @@
 }:
 let
   selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.desktop.wayfire-environment or { };
+  customCfg = selfCfg.desktop.environment-wayfire or { };
 
   maidCfg = config.users.users.starryreverie.maid;
 in

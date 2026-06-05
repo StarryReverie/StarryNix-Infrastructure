@@ -6,7 +6,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.desktop.wayfire-environment;
+  customCfg = config.custom.system.desktop.environment-wayfire;
 in
 {
   config = lib.mkMerge [
