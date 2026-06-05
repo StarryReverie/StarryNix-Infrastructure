@@ -38,8 +38,8 @@
       keyMapper.enable = true;
       networking.enable = true;
       oomKiller.enable = true;
-      pipewire.enable = true;
       scx-scheduler.enable = true;
+      sound.enable = true;
       tlp.enable = true;
       wireless.enable = true;
       zram-swap.enable = true;

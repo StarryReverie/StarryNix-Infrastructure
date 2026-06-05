@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.hardware.pipewire;
+  customCfg = config.custom.system.hardware.sound;
 in
 {
   config = lib.mkIf customCfg.enable {

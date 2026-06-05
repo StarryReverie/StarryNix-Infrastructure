@@ -2,17 +2,16 @@
   config,
   lib,
   pkgs,
-  flakeRoot,
   ...
 }:
 let
-  selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.hardware.pipewire or { };
+  selfCfg = config.custom.users.csl or { };
+  customCfg = selfCfg.hardware.sound or { };
 in
 {
   config = lib.mkIf (customCfg.enable or false) {
     preservation.preserveAt."/nix/persistence" = {
-      users.starryreverie = {
+      users.csl = {
         directories = [ ".local/state/wireplumber" ];
       };
     };

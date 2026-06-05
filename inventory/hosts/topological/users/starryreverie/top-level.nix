@@ -46,7 +46,7 @@
       inputMethod.enable = true;
     };
     hardware = {
-      pipewire.enable = true;
+      sound.enable = true;
       wireless.enable = true;
     };
     programs = {
