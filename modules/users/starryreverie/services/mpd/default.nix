@@ -2,8 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
-  flakeRoot,
   ...
 }:
 let
@@ -55,6 +53,8 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
+      file.xdg_config.".config/ncmpcpp/config".source = ./config.ini;
+
       gsettings.settings = {
         io.github.htkhiem.Euphonica = {
           client.mpd-use-unix-socket = true;
