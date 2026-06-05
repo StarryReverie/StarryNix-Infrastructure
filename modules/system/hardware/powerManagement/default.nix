@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.hardware.tlp;
+  customCfg = config.custom.system.hardware.powerManagement;
 in
 {
   config = lib.mkIf customCfg.enable {
