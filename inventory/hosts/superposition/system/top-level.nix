@@ -37,7 +37,7 @@
       graphicsDriver-nvidia.enable = true;
       keyMapper.enable = true;
       networking.enable = true;
-      oom-killer.enable = true;
+      oomKiller.enable = true;
       pipewire.enable = true;
       scx-scheduler.enable = true;
       tlp.enable = true;

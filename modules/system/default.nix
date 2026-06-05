@@ -79,7 +79,7 @@ in
     (mkEntry "hardware" "graphicsDriver-nvidia")
     (mkEntry "hardware" "keyMapper")
     (mkEntry "hardware" "networking")
-    (mkEntry "hardware" "oom-killer")
+    (mkEntry "hardware" "oomKiller")
     (mkEntry "hardware" "pipewire")
     (mkEntry "hardware" "scx-scheduler")
     (mkEntry "hardware" "tlp")

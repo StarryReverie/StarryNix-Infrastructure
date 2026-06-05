@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.hardware.oom-killer;
+  customCfg = config.custom.system.hardware.oomKiller;
 in
 {
   config = lib.mkIf customCfg.enable {

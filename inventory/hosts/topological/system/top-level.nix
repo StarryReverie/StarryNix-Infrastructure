@@ -30,7 +30,7 @@
     hardware = {
       graphicsDriver-intel.enable = true;
       networking.enable = true;
-      oom-killer.enable = true;
+      oomKiller.enable = true;
       wireless.enable = true;
       zram-swap.enable = true;
     };
