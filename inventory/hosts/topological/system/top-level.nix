@@ -28,6 +28,7 @@
       environment-gnome.enable = true;
     };
     hardware = {
+      graphicsDriver-intel.enable = true;
       networking.enable = true;
       oom-killer.enable = true;
       wireless.enable = true;

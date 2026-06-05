@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.hardware.intel-graphics;
+  customCfg = config.custom.system.hardware.graphicsDriver-intel;
 in
 {
   config = lib.mkIf customCfg.enable {

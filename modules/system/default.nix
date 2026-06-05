@@ -75,7 +75,7 @@ in
     (mkEntry "desktop" "theme-qt")
     (mkEntry "desktop" "wallpaper")
     (mkEntry "hardware" "bluetooth")
-    (mkEntry "hardware" "intel-graphics")
+    (mkEntry "hardware" "graphicsDriver-intel")
     (mkEntry "hardware" "keyd")
     (mkEntry "hardware" "networking")
     (mkEntry "hardware" "nvidia-graphics")

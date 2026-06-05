@@ -33,7 +33,7 @@
     };
     hardware = {
       bluetooth.enable = true;
-      intel-graphics.enable = true;
+      graphicsDriver-intel.enable = true;
       keyd.enable = true;
       networking.enable = true;
       nvidia-graphics.enable = true;
