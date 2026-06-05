@@ -64,7 +64,7 @@ in
     (mkEntry "desktop" "desktopEssentials")
     (mkEntry "desktop" "environment-gnome")
     (mkEntry "desktop" "font")
-    (mkEntry "desktop" "gtk-theme")
+    (mkEntry "desktop" "theme-gtk")
     (mkEntry "desktop" "hyprlock")
     (mkEntry "desktop" "inputMethod")
     (mkEntry "desktop" "niri-environment")

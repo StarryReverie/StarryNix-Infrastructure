@@ -28,9 +28,9 @@
       xdg.enable = true;
     };
     desktop = {
-      gtk-theme.enable = true;
       inputMethod.enable = true;
       qt-theme.enable = true;
+      theme-gtk.enable = true;
     };
     hardware = {
       pipewire.enable = true;
