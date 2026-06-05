@@ -25,7 +25,7 @@
     hardware = {
       networking.enable = true;
       oomKiller.enable = true;
-      zram-swap.enable = true;
+      zramSwap.enable = true;
     };
     security = {
       fail2ban.enable = true;

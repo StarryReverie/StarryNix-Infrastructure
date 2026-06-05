@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.hardware.zram-swap;
+  customCfg = config.custom.system.hardware.zramSwap;
 in
 {
   config = lib.mkIf customCfg.enable {

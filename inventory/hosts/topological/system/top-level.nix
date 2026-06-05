@@ -32,7 +32,7 @@
       networking.enable = true;
       oomKiller.enable = true;
       wireless.enable = true;
-      zram-swap.enable = true;
+      zramSwap.enable = true;
     };
     security = {
       fail2ban.enable = true;

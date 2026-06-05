@@ -84,7 +84,7 @@ in
     (mkEntry "hardware" "powerManagement")
     (mkEntry "hardware" "sound")
     (mkEntry "hardware" "wireless")
-    (mkEntry "hardware" "zram-swap")
+    (mkEntry "hardware" "zramSwap")
     (mkEntry "programs" "atuin")
     (mkEntry "programs" "bat")
     (mkEntry "programs" "colmena")

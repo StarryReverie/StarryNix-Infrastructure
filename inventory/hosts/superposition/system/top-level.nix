@@ -42,7 +42,7 @@
       powerManagement.enable = true;
       sound.enable = true;
       wireless.enable = true;
-      zram-swap.enable = true;
+      zramSwap.enable = true;
     };
     security = {
       fail2ban.enable = true;
