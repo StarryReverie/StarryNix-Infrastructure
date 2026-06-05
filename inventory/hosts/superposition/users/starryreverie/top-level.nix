@@ -48,11 +48,11 @@
     };
     desktop = {
       clipboard.enable = true;
-      hyprlock.enable = true;
       inputMethod.enable = true;
       niri-environment.enable = true;
       qt-theme.enable = true;
       rofi.enable = true;
+      screenLocker.enable = true;
       swaync.enable = true;
       theme-gtk.enable = true;
       wallpaper.enable = true;

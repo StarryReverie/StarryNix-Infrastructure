@@ -6,7 +6,7 @@
 }:
 let
   selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.desktop.hyprlock or { };
+  customCfg = selfCfg.desktop.screenLocker or { };
 in
 {
   config = lib.mkIf (customCfg.enable or false) {

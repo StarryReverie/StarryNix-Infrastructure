@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.desktop.hyprlock;
+  customCfg = config.custom.system.desktop.screenLocker;
 in
 {
   config = lib.mkIf customCfg.enable {
