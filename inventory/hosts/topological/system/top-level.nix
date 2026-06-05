@@ -25,7 +25,7 @@
     desktop = {
       desktopEssentials.enable = true;
       font.enable = true;
-      gnome-environment.enable = true;
+      environment-gnome.enable = true;
     };
     hardware = {
       networking.enable = true;

@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.desktop.gnome-environment;
+  customCfg = config.custom.system.desktop.environment-gnome;
 in
 {
   config = lib.mkIf customCfg.enable {
