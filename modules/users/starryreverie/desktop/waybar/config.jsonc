@@ -39,7 +39,7 @@
   "custom/wallpaper": {
     "interval": "once",
     "format": "  ",
-    "on-click": "wpaperctl next",
+    "on-click": "true",
     "tooltip": false
   },
   "idle_inhibitor": {

@@ -89,7 +89,6 @@ in
             swaynotificationcenter
             hyprlock
             rofi
-            wpaperd
           ])
           ++ (lib.optionals config.services.pipewire.wireplumber.enable [
             pkgs.wireplumber

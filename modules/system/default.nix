@@ -74,7 +74,6 @@ in
     (mkEntry "desktop" "swaync")
     (mkEntry "desktop" "waybar")
     (mkEntry "desktop" "wayfire-environment")
-    (mkEntry "desktop" "wpaperd")
     (mkEntry "hardware" "bluetooth")
     (mkEntry "hardware" "intel-graphics")
     (mkEntry "hardware" "keyd")
