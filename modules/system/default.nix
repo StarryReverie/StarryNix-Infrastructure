@@ -54,7 +54,7 @@ in
     (mkEntry "core" "environment")
     (mkEntry "core" "ephemeralRootfs")
     (mkEntry "core" "etcOverlay")
-    (mkEntry "core" "fhs-compatibility")
+    (mkEntry "core" "fhsCompatibility")
     (mkEntry "core" "initrd")
     (mkEntry "core" "localization")
     (mkEntry "core" "nix")

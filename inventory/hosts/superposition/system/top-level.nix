@@ -21,7 +21,7 @@
     core = {
       ephemeralRootfs.enable = true;
       etcOverlay.enable = true;
-      fhs-compatibility.enable = true;
+      fhsCompatibility.enable = true;
       initrd.enable = true;
       nix.enable = true;
       user-management.enable = true;

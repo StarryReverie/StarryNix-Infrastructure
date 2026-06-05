@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.core.fhs-compatibility;
+  customCfg = config.custom.system.core.fhsCompatibility;
 in
 {
   config = lib.mkIf customCfg.enable {
