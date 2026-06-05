@@ -110,7 +110,7 @@ in
     (mkEntry "services" "mpd")
     (mkEntry "services" "openssh")
     (mkEntry "services" "selector4nix")
-    (mkEntry "services" "ssh-agent")
+    (mkEntry "services" "sshAgent")
     (mkEntry "services" "tailscale")
     (mkEntry "services" "transparent-proxy")
     (mkEntry "virtualization" "container")

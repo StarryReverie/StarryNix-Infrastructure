@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.services.ssh-agent;
+  customCfg = config.custom.system.services.sshAgent;
 in
 {
   config = lib.mkIf customCfg.enable {

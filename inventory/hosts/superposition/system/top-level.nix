@@ -55,7 +55,7 @@
       ly.enable = true;
       openssh.enable = true;
       selector4nix.enable = true;
-      ssh-agent.enable = true;
+      sshAgent.enable = true;
       tailscale.enable = true;
       transparent-proxy.enable = true;
     };
