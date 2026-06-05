@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.desktop.niri-environment;
+  customCfg = config.custom.system.desktop.environment-niri;
 in
 {
   config = lib.mkIf customCfg.enable {

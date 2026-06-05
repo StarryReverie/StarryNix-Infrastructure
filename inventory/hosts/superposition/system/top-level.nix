@@ -28,8 +28,8 @@
     };
     desktop = {
       desktopEssentials.enable = true;
+      environment-niri.enable = true;
       font.enable = true;
-      niri-environment.enable = true;
     };
     hardware = {
       bluetooth.enable = true;

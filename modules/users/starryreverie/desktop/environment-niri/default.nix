@@ -6,7 +6,7 @@
 }:
 let
   selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.desktop.niri-environment or { };
+  customCfg = selfCfg.desktop.environment-niri or { };
 
   maidCfg = config.users.users.starryreverie.maid;
 in

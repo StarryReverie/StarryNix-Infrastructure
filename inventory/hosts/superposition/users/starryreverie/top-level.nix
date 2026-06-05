@@ -48,8 +48,8 @@
     };
     desktop = {
       clipboard.enable = true;
+      environment-niri.enable = true;
       inputMethod.enable = true;
-      niri-environment.enable = true;
       qt-theme.enable = true;
       rofi.enable = true;
       screenLocker.enable = true;
