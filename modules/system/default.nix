@@ -112,7 +112,7 @@ in
     (mkEntry "services" "selector4nix")
     (mkEntry "services" "sshAgent")
     (mkEntry "services" "tailscale")
-    (mkEntry "services" "transparent-proxy")
+    (mkEntry "services" "transparentProxy")
     (mkEntry "virtualization" "container")
     (mkEntry "virtualization" "distrobox")
     (mkEntry "virtualization" "libvirt")

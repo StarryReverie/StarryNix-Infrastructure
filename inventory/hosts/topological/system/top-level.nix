@@ -45,7 +45,7 @@
       openssh.enable = true;
       gdm.enable = true;
       tailscale.enable = true;
-      transparent-proxy.enable = true;
+      transparentProxy.enable = true;
     };
   };
 }

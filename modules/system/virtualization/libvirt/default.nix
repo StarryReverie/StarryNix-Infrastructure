@@ -22,7 +22,7 @@ in
 
     networking.firewall.trustedInterfaces = [ "virbr0" ];
 
-    custom.system.services.transparent-proxy = {
+    custom.system.services.transparentProxy = {
       lanInterfaces = [ "virbr0" ];
     };
 

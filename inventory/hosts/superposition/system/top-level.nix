@@ -57,7 +57,7 @@
       selector4nix.enable = true;
       sshAgent.enable = true;
       tailscale.enable = true;
-      transparent-proxy.enable = true;
+      transparentProxy.enable = true;
     };
     virtualization = {
       container.enable = true;

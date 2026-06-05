@@ -44,7 +44,7 @@
 
     # Transparent Proxy
     {
-      custom.system.services.transparent-proxy = {
+      custom.system.services.transparentProxy = {
         wanInterfaces = [ "wlp3s0" ];
         lanInterfaces = config.starrynix-infrastructure.host.networking.internalInterfaces;
       };

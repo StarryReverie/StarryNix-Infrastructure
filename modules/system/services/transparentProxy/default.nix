@@ -5,10 +5,10 @@
   ...
 }:
 let
-  customCfg = config.custom.system.services.transparent-proxy;
+  customCfg = config.custom.system.services.transparentProxy;
 in
 {
-  options.custom.system.services.transparent-proxy = {
+  options.custom.system.services.transparentProxy = {
     wanInterfaces = lib.mkOption {
       type = lib.types.listOf lib.types.str;
       description = ''

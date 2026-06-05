@@ -7,7 +7,7 @@
 {
   config = lib.mkMerge [
     {
-      custom.system.services.transparent-proxy = {
+      custom.system.services.transparentProxy = {
         wanInterfaces = [ "wlo1" ];
       };
     }
