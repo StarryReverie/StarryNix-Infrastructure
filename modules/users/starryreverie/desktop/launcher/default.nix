@@ -6,7 +6,7 @@
 }:
 let
   selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.desktop.rofi or { };
+  customCfg = selfCfg.desktop.launcher or { };
 in
 {
   config = lib.mkIf (customCfg.enable or false) {

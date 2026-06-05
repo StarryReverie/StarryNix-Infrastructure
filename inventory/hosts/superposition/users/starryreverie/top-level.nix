@@ -50,7 +50,7 @@
       clipboard.enable = true;
       environment-niri.enable = true;
       inputMethod.enable = true;
-      rofi.enable = true;
+      launcher.enable = true;
       screenLocker.enable = true;
       swaync.enable = true;
       theme-gtk.enable = true;

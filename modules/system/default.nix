@@ -66,7 +66,7 @@ in
     (mkEntry "desktop" "environment-niri")
     (mkEntry "desktop" "font")
     (mkEntry "desktop" "inputMethod")
-    (mkEntry "desktop" "rofi")
+    (mkEntry "desktop" "launcher")
     (mkEntry "desktop" "screenLocker")
     (mkEntry "desktop" "swaync")
     (mkEntry "desktop" "theme-gtk")
