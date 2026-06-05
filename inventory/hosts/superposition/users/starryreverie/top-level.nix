@@ -51,12 +51,12 @@
       environment-niri.enable = true;
       inputMethod.enable = true;
       launcher.enable = true;
-      screenLocker.enable = true;
       notification.enable = true;
+      screenLocker.enable = true;
+      taskbar.enable = true;
       theme-gtk.enable = true;
       theme-qt.enable = true;
       wallpaper.enable = true;
-      waybar.enable = true;
     };
     hardware = {
       pipewire.enable = true;

@@ -81,7 +81,7 @@ in
         after = [ "wayfire-session.target" ];
       };
 
-      systemd.services."wayfire-waybar" = {
+      systemd.services."wayfire-taskbar" = {
         serviceConfig.ExecStart = "${lib.getExe pkgs.waybar}";
         serviceConfig.Slice = "session.slice";
         path =

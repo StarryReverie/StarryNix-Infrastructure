@@ -6,7 +6,7 @@
 }:
 let
   selfCfg = config.custom.users.starryreverie or { };
-  customCfg = selfCfg.desktop.waybar or { };
+  customCfg = selfCfg.desktop.taskbar or { };
 in
 {
   config = lib.mkIf (customCfg.enable or false) {

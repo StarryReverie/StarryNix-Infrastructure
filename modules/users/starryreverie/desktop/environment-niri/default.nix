@@ -84,7 +84,7 @@ in
         after = [ "niri-session.target" ];
       };
 
-      systemd.services."niri-waybar" = {
+      systemd.services."niri-taskbar" = {
         serviceConfig.ExecStart = "${lib.getExe pkgs.waybar}";
         serviceConfig.Slice = "session.slice";
         path =
