@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.hardware.keyd;
+  customCfg = config.custom.system.hardware.keyMapper;
 in
 {
   config = lib.mkIf customCfg.enable {

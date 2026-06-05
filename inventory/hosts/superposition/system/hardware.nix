@@ -40,7 +40,7 @@
       boot.extraModulePackages = [ ];
     }
 
-    # Keyd
+    # Key Mapper
     {
       # Keyd ignores mice by default. Specific mouse device ID must be added explicitly.
       services.keyd.keyboards.default.ids = [

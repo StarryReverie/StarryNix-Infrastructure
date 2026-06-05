@@ -76,7 +76,7 @@ in
     (mkEntry "desktop" "wallpaper")
     (mkEntry "hardware" "bluetooth")
     (mkEntry "hardware" "graphicsDriver-intel")
-    (mkEntry "hardware" "keyd")
+    (mkEntry "hardware" "keyMapper")
     (mkEntry "hardware" "networking")
     (mkEntry "hardware" "nvidia-graphics")
     (mkEntry "hardware" "oom-killer")

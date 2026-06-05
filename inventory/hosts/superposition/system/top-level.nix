@@ -34,7 +34,7 @@
     hardware = {
       bluetooth.enable = true;
       graphicsDriver-intel.enable = true;
-      keyd.enable = true;
+      keyMapper.enable = true;
       networking.enable = true;
       nvidia-graphics.enable = true;
       oom-killer.enable = true;
