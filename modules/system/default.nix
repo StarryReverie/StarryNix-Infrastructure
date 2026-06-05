@@ -62,7 +62,7 @@ in
     (mkEntry "core" "xdg")
     (mkEntry "desktop" "awww")
     (mkEntry "desktop" "clipboard")
-    (mkEntry "desktop" "desktop-essentials")
+    (mkEntry "desktop" "desktopEssentials")
     (mkEntry "desktop" "font")
     (mkEntry "desktop" "gnome-environment")
     (mkEntry "desktop" "gtk-theme")

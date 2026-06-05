@@ -5,7 +5,7 @@
   ...
 }:
 let
-  customCfg = config.custom.system.desktop.desktop-essentials;
+  customCfg = config.custom.system.desktop.desktopEssentials;
 in
 {
   config = lib.mkIf customCfg.enable {

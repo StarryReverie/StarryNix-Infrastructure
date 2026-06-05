@@ -27,7 +27,7 @@
       userManagement.enable = true;
     };
     desktop = {
-      desktop-essentials.enable = true;
+      desktopEssentials.enable = true;
       font.enable = true;
       niri-environment.enable = true;
     };
