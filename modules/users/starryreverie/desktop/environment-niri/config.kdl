@@ -82,6 +82,14 @@ window-rule {
 }
 
 window-rule {
+    match is-floating=true
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
