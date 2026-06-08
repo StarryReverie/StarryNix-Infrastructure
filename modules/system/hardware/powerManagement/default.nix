@@ -9,7 +9,7 @@ let
 in
 {
   config = lib.mkIf customCfg.enable {
-    services.tlp.enable = true;
+    services.tlp.enable = !config.services.power-profiles-daemon.enable;
 
     services.tlp.settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "powersave";

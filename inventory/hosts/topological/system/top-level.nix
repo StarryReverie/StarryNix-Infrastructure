@@ -31,6 +31,7 @@
       graphicsDriver-intel.enable = true;
       networking.enable = true;
       oomKiller.enable = true;
+      powerManagement.enable = true;
       wireless.enable = true;
       zramSwap.enable = true;
     };
