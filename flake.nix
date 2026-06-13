@@ -80,11 +80,6 @@
       url = "github:nix-community/preservation/main";
     };
 
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     selector4nix = {
       url = "github:StarryReverie/selector4nix/master";
       inputs.flake-parts.follows = "flake-parts";
