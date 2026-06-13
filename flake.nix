@@ -62,6 +62,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nclock-background = {
+      url = "github:StarryReverie/nclock-background/main";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-maid = {
       url = "github:viperML/nix-maid/master";
     };

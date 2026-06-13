@@ -302,6 +302,30 @@
         "type": "github"
       }
     },
+    "nclock-background": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1781324951,
+        "narHash": "sha256-6xJkFYlyoGWi0lSAsUBjtOFUmlbBRxG+cMoUHG9BTbU=",
+        "owner": "StarryReverie",
+        "repo": "nclock-background",
+        "rev": "4884d2c7bbba43327b8f84bd38b7b6cead5c25db",
+        "type": "github"
+      },
+      "original": {
+        "owner": "StarryReverie",
+        "ref": "main",
+        "repo": "nclock-background",
+        "type": "github"
+      }
+    },
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
@@ -384,6 +408,7 @@
         "git-hooks": "git-hooks",
         "import-tree": "import-tree",
         "microvm": "microvm",
+        "nclock-background": "nclock-background",
         "nix-maid": "nix-maid",
         "nixpkgs": "nixpkgs",
         "preservation": "preservation",

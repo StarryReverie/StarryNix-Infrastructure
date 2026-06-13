@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -107,17 +108,25 @@ in
       systemd.services."niri-swayidle" = {
         serviceConfig.ExecStart =
           let
+            screensaverPackage = inputs.nclock-background.packages.${pkgs.stdenv.hostPlatform.system}.nclock-screensaver;
+
             lockCommand = "${lib.getExe pkgs.hyprlock}";
-            lockGracefullyCommand = "${lib.getExe pkgs.hyprlock} --grace 5";
+            screensaverCommand = lib.strings.concatStringsSep " " [
+              "${lib.getExe screensaverPackage}"
+              "--grace-period-secs 30"
+              "--maximum-period-secs 900"
+              "--wallpaper-cmd 'nclock-background --exit-delay-ms 2000'"
+              "--locker-cmd '${lib.escapeShellArg lockCommand}'"
+            ];
             monitorsOffCommand = "${lib.getExe pkgs.niri} msg action power-off-monitors";
             monitorsOnCommand = "${lib.getExe pkgs.niri} msg action power-on-monitors";
             suspendCommand = "${lib.getExe' pkgs.systemd "systemctl"} suspend";
           in
           lib.strings.concatStringsSep " " [
             "${lib.getExe pkgs.swayidle}"
-            "timeout 180 ${lib.escapeShellArg lockGracefullyCommand}"
-            "timeout 185 ${lib.escapeShellArg monitorsOffCommand}"
-            "timeout 300 ${lib.escapeShellArg suspendCommand}"
+            "timeout 180 ${lib.escapeShellArg screensaverCommand}"
+            "timeout 1085 ${lib.escapeShellArg monitorsOffCommand}"
+            "timeout 1200 ${lib.escapeShellArg suspendCommand}"
             "resume ${lib.escapeShellArg monitorsOnCommand}"
             "before-sleep ${lib.escapeShellArg "${monitorsOffCommand}; ${lockCommand}"}"
             "after-resume ${lib.escapeShellArg monitorsOnCommand}"
