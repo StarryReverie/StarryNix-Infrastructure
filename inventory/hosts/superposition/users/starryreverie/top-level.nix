@@ -31,6 +31,7 @@
       mpv.enable = true;
       nautilus.enable = true;
       opencode.enable = true;
+      osu-lazer.enable = true;
       qq.enable = true;
       resources.enable = true;
       splayer.enable = true;
