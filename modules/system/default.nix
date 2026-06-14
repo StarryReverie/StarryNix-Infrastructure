@@ -36,6 +36,7 @@ in
     (mkEntry "applications" "github-copilot-cli")
     (mkEntry "applications" "helix")
     (mkEntry "applications" "htop")
+    (mkEntry "applications" "idea")
     (mkEntry "applications" "keepassxc")
     (mkEntry "applications" "lazygit")
     (mkEntry "applications" "lx-music-desktop")
