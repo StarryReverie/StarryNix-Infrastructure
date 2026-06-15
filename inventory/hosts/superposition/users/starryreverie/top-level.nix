@@ -60,6 +60,10 @@
       theme-qt.enable = true;
       wallpaper.enable = true;
     };
+    development = {
+      java.enable = true;
+      rust.enable = true;
+    };
     hardware = {
       sound.enable = true;
       wireless.enable = true;
