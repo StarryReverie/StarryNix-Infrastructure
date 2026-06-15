@@ -108,7 +108,8 @@ in
       systemd.services."niri-swayidle" = {
         serviceConfig.ExecStart =
           let
-            screensaverPackage = inputs.nclock-background.packages.${pkgs.stdenv.hostPlatform.system}.nclock-screensaver;
+            screensaverPackage =
+              inputs.nclock-background.packages.${pkgs.stdenv.hostPlatform.system}.nclock-screensaver;
 
             lockCommand = "${lib.getExe pkgs.hyprlock}";
             screensaverCommand = lib.strings.concatStringsSep " " [

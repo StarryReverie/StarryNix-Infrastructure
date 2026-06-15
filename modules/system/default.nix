@@ -76,6 +76,7 @@ in
     (mkEntry "desktop" "theme-gtk")
     (mkEntry "desktop" "theme-qt")
     (mkEntry "desktop" "wallpaper")
+    (mkEntry "development" "java")
     (mkEntry "hardware" "bluetooth")
     (mkEntry "hardware" "cpuScheduler")
     (mkEntry "hardware" "graphicsDriver-intel")
