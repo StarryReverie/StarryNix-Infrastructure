@@ -1,5 +1,6 @@
 enter_accept = true
 inline_height = 15
+invert = true
 show_help = false
 style = "compact"
 search_mode = "fulltext"

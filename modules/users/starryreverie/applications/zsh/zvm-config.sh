@@ -4,6 +4,7 @@ typeset -g ZVM_RPROMPT_ENABLED=1
 function zvm_config() {
   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
   ZVM_HISTORY_KEYBINDING_SEARCH=
+  ZVM_INIT_MODE=sourcing
 }
 
 function zvm_h_to_insert_widget() {

@@ -33,8 +33,8 @@ in
 
           (lib.mkOrder 1100 ''
             # ===== Zsh-vi-mode
-            source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
             source ${./zvm-config.sh}
+            source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
           '')
 
           (lib.mkOrder 1200 ''
