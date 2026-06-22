@@ -21,6 +21,7 @@
     applications = {
       alacritty.enable = true;
       cava.enable = true;
+      easyeffects.enable = true;
       firefox.enable = true;
       git.enable = true;
       helix.enable = true;
