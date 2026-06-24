@@ -45,6 +45,7 @@ in
     (mkEntry "applications" "nautilus")
     (mkEntry "applications" "opencode")
     (mkEntry "applications" "osu-lazer")
+    (mkEntry "applications" "prismlauncher")
     (mkEntry "applications" "qq")
     (mkEntry "applications" "resources")
     (mkEntry "applications" "splayer")

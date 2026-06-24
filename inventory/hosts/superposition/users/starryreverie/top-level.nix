@@ -34,6 +34,7 @@
       nautilus.enable = true;
       opencode.enable = true;
       osu-lazer.enable = true;
+      prismlauncher.enable = true;
       qq.enable = true;
       resources.enable = true;
       splayer.enable = true;
