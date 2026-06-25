@@ -53,10 +53,10 @@ in
     services.mihomo = {
       enable = true;
       webui = pkgs.metacubexd;
-      configFile = config.age.secrets."mihomo-bootstrap.yaml".path;
+      configFile = config.age.secrets."mihomo.yaml".path;
     };
 
-    age.secrets."mihomo-bootstrap.yaml".rekeyFile = ./mihomo-bootstrap.yaml.age;
+    age.secrets."mihomo.yaml".rekeyFile = ./mihomo.yaml.age;
 
     preservation.preserveAt."/nix/persistence" = {
       directories = [
