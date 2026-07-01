@@ -39,6 +39,7 @@ in
 
           permittedInsecurePackages = [
             "minio-2025-10-15T17-29-55Z"
+            "pnpm-10.29.2"
           ];
         };
       };
