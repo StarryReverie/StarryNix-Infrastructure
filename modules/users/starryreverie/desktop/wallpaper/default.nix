@@ -15,8 +15,8 @@ in
         wallpaperPath =
           let
             resourcesPkgs = pkgs.pkgsExternal.starrynix-resources;
-            wallpaperPackage = resourcesPkgs.wallpaperPackages.anime-girls;
-            wallpaperPath = "${wallpaperPackage.wallpaperDir}/unknown-zhuangfangyi.jpg";
+            wallpaperPackage = resourcesPkgs.wallpaperPackages.minimalism;
+            wallpaperPath = "${wallpaperPackage.wallpaperDir}/wallhaven-4xk9e3.jpg";
           in
           wallpaperPath;
       };
