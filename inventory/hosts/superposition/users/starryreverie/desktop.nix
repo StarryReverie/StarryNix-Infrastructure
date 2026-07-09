@@ -9,11 +9,11 @@
     # Niri Environment
     {
       users.users.starryreverie.maid = {
-        file.xdg_config."niri/config.kdl".text = lib.mkBefore ''
-          debug {
-              render-drm-device "/dev/dri/renderD129"
-          }
-        '';
+        # file.xdg_config."niri/config.kdl".text = lib.mkBefore ''
+        #   debug {
+        #       render-drm-device "/dev/dri/renderD129"
+        #   }
+        # '';
 
         file.xdg_config."kanshi/config".text = ''
           profile {
