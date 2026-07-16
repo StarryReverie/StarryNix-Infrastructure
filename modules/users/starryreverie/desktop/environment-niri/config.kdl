@@ -221,6 +221,10 @@ binds {
 
     // Tab
     Mod+T { toggle-column-tabbed-display; }
+
+    // Monitor
+    Mod+P       { power-off-monitors; }
+    Mod+Shift+P { power-on-monitors; }
 }
 
 recent-windows {
