@@ -26,7 +26,6 @@
       git.enable = true;
       helix.enable = true;
       htop.enable = true;
-      idea.enable = true;
       keepassxc.enable = true;
       lazygit.enable = true;
       lx-music-desktop.enable = true;
@@ -63,7 +62,6 @@
       wallpaper.enable = true;
     };
     development = {
-      java.enable = true;
       rust.enable = true;
     };
     hardware = {
