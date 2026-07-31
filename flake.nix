@@ -73,7 +73,7 @@
     };
 
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/master";
+      url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
     preservation = {
