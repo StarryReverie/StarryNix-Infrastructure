@@ -17,19 +17,31 @@ in
           basePackage = pkgs.vscode-with-extensions.override {
             vscode = pkgs.vscodium;
             vscodeExtensions = with pkgs.vscode-extensions; [
-              davidanson.vscode-markdownlint
+              # General
               editorconfig.editorconfig
-              jeff-hykin.better-nix-syntax
-              jnoortheen.nix-ide
-              mechatroner.rainbow-csv
               mkhl.direnv
               mskelton.one-dark-theme
-              myriad-dreamin.tinymist
               tamasfe.even-better-toml
               tekumara.typos-vscode
-              timonwong.shellcheck
               usernamehw.errorlens
               yzhang.dictionary-completion
+
+              # Nix
+              jeff-hykin.better-nix-syntax
+              jnoortheen.nix-ide
+
+              # Frontend
+              bradlc.vscode-tailwindcss
+              prettier.prettier-vscode
+              samuelcolvin.jinjahtml
+
+              # Typography
+              davidanson.vscode-markdownlint
+              myriad-dreamin.tinymist
+
+              # Misc
+              timonwong.shellcheck
+              mechatroner.rainbow-csv
             ];
           };
 
