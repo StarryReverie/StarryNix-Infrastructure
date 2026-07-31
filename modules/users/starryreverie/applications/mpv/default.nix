@@ -17,6 +17,7 @@ in
             mpris
             uosc
           ];
+          youtubeSupport = false;
         })
       ];
 
