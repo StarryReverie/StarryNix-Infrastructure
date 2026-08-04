@@ -4,6 +4,7 @@
   inputs = {
     agenix = {
       url = "github:ryantm/agenix/main";
+      inputs.darwin.follows = "";
       inputs.home-manager.follows = "";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.systems.follows = "systems";
@@ -20,6 +21,7 @@
       url = "github:zhaofengli/colmena/main";
       inputs.flake-compat.follows = "flake-compat";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nix-github-actions.follows = "";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.stable.follows = "";
     };
@@ -60,6 +62,7 @@
     microvm = {
       url = "github:microvm-nix/microvm.nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.spectrum.follows = "";
     };
 
     nclock-background = {
