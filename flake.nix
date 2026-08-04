@@ -26,6 +26,10 @@
       inputs.stable.follows = "";
     };
 
+    crane = {
+      url = "github:ipetkov/crane/master";
+    };
+
     disko = {
       url = "github:nix-community/disko/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -85,6 +89,7 @@
 
     selector4nix = {
       url = "github:StarryReverie/selector4nix/master";
+      inputs.crane.follows = "crane";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -105,6 +110,14 @@
 
     systems = {
       url = "github:nix-systems/default-linux/main";
+    };
+
+    vaultix = {
+      url = "github:milieuim/vaultix/main";
+      inputs.crane.follows = "crane";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.pre-commit-hooks.follows = "git-hooks";
     };
 
     wrapper-manager = {
