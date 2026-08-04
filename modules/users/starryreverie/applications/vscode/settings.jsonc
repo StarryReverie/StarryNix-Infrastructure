@@ -49,5 +49,10 @@
   },
   "nix.hiddenLanguageServerErrors": [
     "textDocument/documentSymbol"
-  ]
+  ],
+
+  // Extension: Tailwind CSS IntelliSense
+  "tailwindCSS.includeLanguages": {
+    "jinja-html": "html"
+  }
 }

@@ -57,7 +57,10 @@ in
 
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {
-        directories = [ ".config/VSCodium" ];
+        directories = [
+          ".config/VSCodium"
+          ".vscode-oss-shared"
+        ];
       };
     };
   };
