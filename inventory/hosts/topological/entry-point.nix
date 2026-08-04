@@ -11,7 +11,7 @@ inputs.nixpkgs.lib.nixosSystem {
     # Colmena metadata
     {
       deployment.allowLocalDeployment = true;
-      deployment.buildOnTarget = true;
+      deployment.buildOnTarget = false;
       deployment.targetHost = "topological.tail931dca.ts.net";
       deployment.tags = [ "server" ];
     }

@@ -45,6 +45,7 @@
       dnsproxy.enable = true;
       openssh.enable = true;
       gdm.enable = true;
+      selector4nix.enable = true;
       tailscale.enable = true;
       transparentProxy.enable = true;
     };
