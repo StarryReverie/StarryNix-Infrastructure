@@ -10,7 +10,6 @@
     {
       devShells.default = pkgs.mkShellNoCC {
         packages = [
-          inputs.agenix-rekey.packages.${system}.default
           pkgs.nixfmt
           pkgs.nixfmt-tree
         ];

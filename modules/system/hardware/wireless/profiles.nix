@@ -9,10 +9,10 @@ let
 in
 {
   config = lib.mkIf customCfg.enable {
-    age.secrets."wireless-secrets.env".rekeyFile = ./wireless-secrets.env.age;
+    vaultix.secrets."wireless-secrets.env".file = ./wireless-secrets.env.age;
 
     networking.networkmanager.ensureProfiles = {
-      environmentFiles = [ config.age.secrets."wireless-secrets.env".path ];
+      environmentFiles = [ config.vaultix.secrets."wireless-secrets.env".path ];
 
       profiles."BIT-Mobile" = {
         connection = {

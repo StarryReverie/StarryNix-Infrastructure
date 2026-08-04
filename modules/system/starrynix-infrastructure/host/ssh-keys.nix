@@ -17,10 +17,9 @@ let
       mapNode = cluster: node: {
         name = "${node.hostName}-ssh-private-key";
         value = lib.mkIf node.sshKey.mount {
-          rekeyFile = node.sshKey.encryptedPrivateKeyFile;
+          file = node.sshKey.encryptedPrivateKeyFile;
           path = "/run/starrynix-infrastructure-secrets/${node.hostName}/ssh_host_${node.sshKey.type}_key";
           owner = "microvm";
-          symlink = false;
         };
       };
       mapCluster = cluster: lib.attrsets.mapAttrsToList (name: node: mapNode cluster node) cluster.nodes;
@@ -33,6 +32,6 @@ let
 in
 {
   config = {
-    age.secrets = vmSshPrivateKeys;
+    vaultix.secrets = vmSshPrivateKeys;
   };
 }

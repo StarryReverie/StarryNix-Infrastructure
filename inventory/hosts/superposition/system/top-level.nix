@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  flakeRoot,
   ...
 }:
 {
@@ -12,7 +13,7 @@
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIKkfLJ1nNXoIFe33/puw/m/8ytPQhD7TYoTD2WCCl88";
+  vaultix.settings.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIKkfLJ1nNXoIFe33/puw/m/8ytPQhD7TYoTD2WCCl88";
 
   custom.system = {
     applications = {

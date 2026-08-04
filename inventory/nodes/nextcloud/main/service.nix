@@ -15,10 +15,10 @@ in
     hostName = "0.0.0.0";
 
     database.createLocally = true;
-    secretFile = config.age.secrets."secret-configurations".path;
+    secretFile = config.vaultix.secrets."secret-configurations".path;
 
     config = {
-      adminpassFile = config.age.secrets."nextcloud-admin-password".path;
+      adminpassFile = config.vaultix.secrets."nextcloud-admin-password".path;
       dbtype = "pgsql";
 
       objectstore.s3 = {
@@ -29,7 +29,7 @@ in
         bucket = "nextcloud";
         usePathStyle = true;
         key = "nextcloud";
-        secretFile = config.age.secrets."minio-secret".path;
+        secretFile = config.vaultix.secrets."minio-secret".path;
         region = "us-east-1";
       };
     };
@@ -53,19 +53,19 @@ in
     phpOptions."realpath_cache_size" = "0";
   };
 
-  age = {
+  vaultix = {
     secrets."nextcloud-admin-password" = {
-      rekeyFile = ./secrets/nextcloud-admin-password.age;
+      file = ./secrets/nextcloud-admin-password.age;
       owner = "nextcloud";
     };
 
     secrets."minio-secret" = {
-      rekeyFile = ./secrets/minio-secret.age;
+      file = ./secrets/minio-secret.age;
       owner = "nextcloud";
     };
 
     secrets."secret-configurations" = {
-      rekeyFile = ./secrets/secret-configurations.age;
+      file = ./secrets/secret-configurations.age;
       owner = "nextcloud";
     };
   };

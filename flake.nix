@@ -2,21 +2,6 @@
   description = "Declarative and virtualized service deployment and orchestraion infrastructure built on the Nix/NixOS ecosystem.";
 
   inputs = {
-    agenix = {
-      url = "github:ryantm/agenix/main";
-      inputs.darwin.follows = "";
-      inputs.home-manager.follows = "";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "systems";
-    };
-
-    agenix-rekey = {
-      url = "github:oddlama/agenix-rekey/main";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.pre-commit-hooks.follows = "git-hooks";
-    };
-
     colmena = {
       url = "github:zhaofengli/colmena/main";
       inputs.flake-compat.follows = "flake-compat";
@@ -128,10 +113,7 @@
   outputs =
     { flake-parts, ... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-      ];
+      systems = import inputs.systems;
 
       imports = [
         (inputs.nixpkgs.lib.modules.importApply ./modules/flake-modules.nix {

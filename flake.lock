@@ -1,60 +1,5 @@
 {
   "nodes": {
-    "agenix": {
-      "inputs": {
-        "darwin": [],
-        "home-manager": [],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "systems": [
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1770165109,
-        "narHash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I=",
-        "owner": "ryantm",
-        "repo": "agenix",
-        "rev": "b027ee29d959fda4b60b57566d64c98a202e0feb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ryantm",
-        "ref": "main",
-        "repo": "agenix",
-        "type": "github"
-      }
-    },
-    "agenix-rekey": {
-      "inputs": {
-        "devshell": "devshell",
-        "flake-parts": [
-          "flake-parts"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "pre-commit-hooks": [
-          "git-hooks"
-        ],
-        "treefmt-nix": "treefmt-nix"
-      },
-      "locked": {
-        "lastModified": 1774522439,
-        "narHash": "sha256-GvINrdGznE7mGlDNjW0/PMgOJlC+Nl9MkfxALB4QvWs=",
-        "owner": "oddlama",
-        "repo": "agenix-rekey",
-        "rev": "8b9c179bc1300ab130c90f2d25426bf0e7a2b58d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oddlama",
-        "ref": "main",
-        "repo": "agenix-rekey",
-        "type": "github"
-      }
-    },
     "colmena": {
       "inputs": {
         "flake-compat": [
@@ -97,27 +42,6 @@
         "owner": "ipetkov",
         "ref": "master",
         "repo": "crane",
-        "type": "github"
-      }
-    },
-    "devshell": {
-      "inputs": {
-        "nixpkgs": [
-          "agenix-rekey",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1728330715,
-        "narHash": "sha256-xRJ2nPOXb//u1jaBnDP56M7v5ldavjbtR6lfGqSvcKg=",
-        "owner": "numtide",
-        "repo": "devshell",
-        "rev": "dd6b80932022cea34a019e2bb32f6fa9e494dfef",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "devshell",
         "type": "github"
       }
     },
@@ -348,8 +272,6 @@
     },
     "root": {
       "inputs": {
-        "agenix": "agenix",
-        "agenix-rekey": "agenix-rekey",
         "colmena": "colmena",
         "crane": "crane",
         "disko": "disko",
@@ -466,27 +388,6 @@
         "owner": "nix-systems",
         "ref": "main",
         "repo": "default-linux",
-        "type": "github"
-      }
-    },
-    "treefmt-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "agenix-rekey",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1785360170,
-        "narHash": "sha256-XE1lKgQ3eIO3E7zWryqcRsax+mYXod/5RHBn4YaR9YE=",
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "rev": "d1187f8bc71fb8aab02395869ec3f5c1920f75c0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "treefmt-nix",
         "type": "github"
       }
     },

@@ -2,15 +2,18 @@
   config,
   inputs,
   self,
+  flakeRoot,
   ...
 }:
 let
   nixpkgs-lib = inputs.nixpkgs.lib;
 in
 {
-  flake.agenix-rekey = inputs.agenix-rekey.configure {
-    userFlake = self;
-    nixosConfigurations =
+  flake.vaultix = inputs.vaultix.configure {
+    identity = "/home/starryreverie/userdata/development/starrynix/infrastructure/secrets/identities/main.key";
+    cache = "secrets/cache";
+
+    nodes =
       let
         colmenaNodeConfigurations = (self.colmenaHive.introspect (x: x)).nodes;
 

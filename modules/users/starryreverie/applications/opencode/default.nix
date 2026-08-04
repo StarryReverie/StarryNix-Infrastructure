@@ -14,12 +14,13 @@ in
       packages = with pkgs; [ opencode ];
 
       file.xdg_data."opencode/auth.json".source =
-        config.age.secrets."starryreverie-opencode-auth.json".path;
+        config.vaultix.secrets."starryreverie-opencode-auth.json".path;
     };
 
-    age.secrets."starryreverie-opencode-auth.json" = {
-      rekeyFile = ./starryreverie-opencode-auth.json.age;
-      configureForUser = config.users.users.starryreverie.name;
+    vaultix.secrets."starryreverie-opencode-auth.json" = {
+      file = ./starryreverie-opencode-auth.json.age;
+      owner = config.users.users.starryreverie.name;
+      group = config.users.users.starryreverie.group;
     };
 
     preservation.preserveAt."/nix/persistence" = {

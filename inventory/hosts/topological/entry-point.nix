@@ -17,13 +17,12 @@ inputs.nixpkgs.lib.nixosSystem {
     }
 
     # External modules
-    inputs.agenix-rekey.nixosModules.default
-    inputs.agenix.nixosModules.default
     inputs.disko.nixosModules.default
     inputs.microvm.nixosModules.host
     inputs.nix-maid.nixosModules.default
     inputs.preservation.nixosModules.default
     inputs.selector4nix.nixosModules.default
+    inputs.vaultix.nixosModules.vaultix
 
     # StarryNix-Infrastructure
     (flakeRoot + /modules/system/starrynix-infrastructure/host)

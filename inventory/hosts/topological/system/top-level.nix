@@ -12,7 +12,7 @@
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN1iflX8DYwoguHB2BDxLy+eAcdBX+gTHEGqGNBFdvs/";
+  vaultix.settings.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN1iflX8DYwoguHB2BDxLy+eAcdBX+gTHEGqGNBFdvs/";
 
   custom.system = {
     core = {

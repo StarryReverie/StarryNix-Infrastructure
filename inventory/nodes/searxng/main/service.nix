@@ -34,11 +34,11 @@
       };
     };
 
-    environmentFile = config.age.secrets."searxng-secrets".path;
+    environmentFile = config.vaultix.secrets."searxng-secrets".path;
   };
 
-  age.secrets."searxng-secrets" = {
-    rekeyFile = ./secrets/searxng-secrets.age;
+  vaultix.secrets."searxng-secrets" = {
+    file = ./secrets/searxng-secrets.age;
     owner = "searx";
   };
 }

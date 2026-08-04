@@ -31,13 +31,14 @@
 
     # Networking
     {
-      age.secrets."10-ens18.network" = {
-        rekeyFile = ./10-ens18.network.age;
-        configureForUser = "systemd-network";
+      vaultix.secrets."10-ens18.network" = {
+        file = ./10-ens18.network.age;
+        owner = "systemd-network";
+        group = "systemd-network";
       };
 
       environment.etc."systemd/network/10-ens18.network" = {
-        source = config.age.secrets."10-ens18.network".path;
+        source = config.vaultix.secrets."10-ens18.network".path;
       };
     }
   ];

@@ -34,7 +34,7 @@ let
                 {
                   proto = "virtiofs";
                   tag = "ssh-private-key";
-                  source = builtins.dirOf config.age.secrets."${node.hostName}-ssh-private-key".path;
+                  source = builtins.dirOf config.vaultix.secrets."${node.hostName}-ssh-private-key".path;
                   mountPoint = "/etc/ssh/mount";
                 }
               ];
