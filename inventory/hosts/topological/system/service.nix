@@ -12,9 +12,7 @@
       starrynix-infrastructure.host = {
         deployment = {
           inherit (inputs.self) nodeConfigurations;
-          enabledClusters = [
-            "nextcloud"
-          ];
+          enabledClusters = [ ];
         };
 
         networking = {
