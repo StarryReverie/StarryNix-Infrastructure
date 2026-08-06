@@ -53,10 +53,26 @@ in
     services.mihomo = {
       enable = true;
       webui = pkgs.metacubexd;
-      configFile = config.vaultix.secrets."mihomo.yaml".path;
+      configFile = config.vaultix.templates."mihomo.yaml".path;
     };
 
-    vaultix.secrets."mihomo.yaml".file = ./mihomo.yaml.age;
+    vaultix.templates."mihomo.yaml".content =
+      let
+        makeReadablePlaceholders = lib.lists.map (name: "{{ ${name} }}");
+        makeHashPlaceholders = lib.lists.map (
+          name: config.vaultix.placeholder."mihomo-subscription-${name}"
+        );
+        providers = [
+          "coffeecloud"
+          "xsus"
+        ];
+      in
+      builtins.replaceStrings (makeReadablePlaceholders providers) (makeHashPlaceholders providers) (
+        builtins.readFile ./mihomo.yaml
+      );
+
+    vaultix.secrets."mihomo-subscription-coffeecloud".file = ./subscriptions/coffeecloud.age;
+    vaultix.secrets."mihomo-subscription-xsus".file = ./subscriptions/xsus.age;
 
     preservation.preserveAt."/nix/persistence" = {
       directories = [
