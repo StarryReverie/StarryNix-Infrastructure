@@ -64,6 +64,7 @@ in
         );
         providers = [
           "coffeecloud"
+          "wgetcloud"
           "xsus"
         ];
       in
@@ -72,6 +73,7 @@ in
       );
 
     vaultix.secrets."mihomo-subscription-coffeecloud".file = ./subscriptions/coffeecloud.age;
+    vaultix.secrets."mihomo-subscription-wgetcloud".file = ./subscriptions/wgetcloud.age;
     vaultix.secrets."mihomo-subscription-xsus".file = ./subscriptions/xsus.age;
 
     preservation.preserveAt."/nix/persistence" = {

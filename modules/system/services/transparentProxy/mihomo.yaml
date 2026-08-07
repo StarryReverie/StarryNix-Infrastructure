@@ -30,6 +30,20 @@ proxy-providers:
       timeout: 5000
       lazy: true
       expected-status: 204
+  wgetcloud:
+    type: http
+    url: {{ wgetcloud }}
+    interval: 7200
+    path: ./wgetcloud-nodes.yaml
+    override:
+      additional-prefix: "[WgetCloud] "
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
   xsus:
     type: http
     url: {{ xsus }}
@@ -52,11 +66,13 @@ proxy-groups:
       - AUTO
     use:
       - coffeecloud
+      - wgetcloud
       - xsus
   - name: AUTO
     type: url-test
     use:
       - coffeecloud
+      - wgetcloud
       - xsus
     url: http://www.gstatic.com/generate_204
     interval: 300
