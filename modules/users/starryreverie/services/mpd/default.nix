@@ -54,14 +54,6 @@ in
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
       file.xdg_config.".config/ncmpcpp/config".source = ./config.ini;
-
-      gsettings.settings = {
-        io.github.htkhiem.Euphonica = {
-          client.mpd-use-unix-socket = true;
-          client.mpd-unix-socket = "/run/user/${builtins.toString config.users.users.starryreverie.uid}/mpd/socket";
-          ui.use-visualizer = false;
-        };
-      };
     };
 
     preservation.preserveAt."/nix/persistence" = lib.mkIf (customCfg.enable or false) {
