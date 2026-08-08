@@ -4,14 +4,13 @@ gui:
   showRandomTip: false
   border: single
 git:
-  pagers:
-    - externalDiffCommand: difft --color=always
+  diffRenderers:
+    - command: difft --color=always
+      type: extDiff
   log:
     order: default
   branchLogCmd: git log --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
   fetchAll: false
-
 update:
   method: never
 disableStartupPopups: true
-
