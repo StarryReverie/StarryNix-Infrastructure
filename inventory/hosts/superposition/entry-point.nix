@@ -3,18 +3,7 @@ injectedModules:
 inputs.nixpkgs.lib.nixosSystem {
   inherit specialArgs;
 
-  extraModules = [
-    inputs.colmena.nixosModules.deploymentOptions
-  ];
-
   modules = injectedModules ++ [
-    # Colmena metadata
-    {
-      deployment.allowLocalDeployment = true;
-      deployment.targetHost = null;
-      deployment.tags = [ "workstation" ];
-    }
-
     # External modules
     inputs.disko.nixosModules.default
     inputs.nix-maid.nixosModules.default

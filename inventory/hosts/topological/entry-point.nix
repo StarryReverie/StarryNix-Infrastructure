@@ -3,19 +3,7 @@ injectedModules:
 inputs.nixpkgs.lib.nixosSystem {
   inherit specialArgs;
 
-  extraModules = [
-    inputs.colmena.nixosModules.deploymentOptions
-  ];
-
   modules = injectedModules ++ [
-    # Colmena metadata
-    {
-      deployment.allowLocalDeployment = true;
-      deployment.buildOnTarget = false;
-      deployment.targetHost = "topological.tail931dca.ts.net";
-      deployment.tags = [ "server" ];
-    }
-
     # External modules
     inputs.disko.nixosModules.default
     inputs.microvm.nixosModules.host

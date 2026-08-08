@@ -2,15 +2,6 @@
   description = "Declarative and virtualized service deployment and orchestraion infrastructure built on the Nix/NixOS ecosystem.";
 
   inputs = {
-    colmena = {
-      url = "github:zhaofengli/colmena/main";
-      inputs.flake-compat.follows = "flake-compat";
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.nix-github-actions.follows = "";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.stable.follows = "";
-    };
-
     crane = {
       url = "github:ipetkov/crane/master";
     };

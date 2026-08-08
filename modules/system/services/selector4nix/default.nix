@@ -37,10 +37,6 @@ in
           priority = 40;
         }
         {
-          url = "https://colmena.cachix.org/";
-          priority = 40;
-        }
-        {
           url = "https://nix-community.cachix.org/";
           priority = 40;
         }

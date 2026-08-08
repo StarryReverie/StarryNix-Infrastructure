@@ -93,7 +93,6 @@ in
     (mkEntry "hardware" "zramSwap")
     (mkEntry "programs" "atuin")
     (mkEntry "programs" "bat")
-    (mkEntry "programs" "colmena")
     (mkEntry "programs" "difftastic")
     (mkEntry "programs" "direnv")
     (mkEntry "programs" "eza")

@@ -70,7 +70,6 @@
     programs = {
       atuin.enable = true;
       bat.enable = true;
-      colmena.enable = true;
       difftastic.enable = true;
       direnv.enable = true;
       eza.enable = true;

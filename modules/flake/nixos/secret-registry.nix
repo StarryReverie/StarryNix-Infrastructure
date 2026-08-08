@@ -15,8 +15,6 @@ in
 
     nodes =
       let
-        colmenaNodeConfigurations = (self.colmenaHive.introspect (x: x)).nodes;
-
         microvmNodeConfigurations = nixpkgs-lib.pipe self.nodeConfigurations [
           (nixpkgs-lib.attrsets.mapAttrsToList (
             clusterName: cluster:
@@ -30,7 +28,7 @@ in
         ];
       in
       nixpkgs-lib.attrsets.mergeAttrsList [
-        colmenaNodeConfigurations
+        self.nixosConfigurations
         microvmNodeConfigurations
       ];
   };
