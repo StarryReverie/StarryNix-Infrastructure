@@ -44,4 +44,15 @@ in
       "superposition" = importApplyHost (flakeRoot + /inventory/hosts/superposition/entry-point.nix);
       "topological" = importApplyHost (flakeRoot + /inventory/hosts/topological/entry-point.nix);
     };
+
+  flake.deploy = {
+    nodes = nixpkgs-lib.attrsets.mapAttrs (hostname: cfg: {
+      inherit hostname;
+      profiles.system = {
+        sshUser = "root";
+        user = "root";
+        path = cfg.pkgs.deploy-rs.lib.activate.nixos cfg;
+      };
+    }) self.nixosConfigurations;
+  };
 }

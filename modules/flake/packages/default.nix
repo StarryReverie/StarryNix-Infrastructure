@@ -32,6 +32,13 @@ in
               in
               externalPackageSet;
           })
+
+          (final: prev: {
+            deploy-rs = {
+              inherit (prev) deploy-rs;
+              lib = (inputs.deploy-rs.overlays.default final final).deploy-rs.lib;
+            };
+          })
         ];
 
         config = {
