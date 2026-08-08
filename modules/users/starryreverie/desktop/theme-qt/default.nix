@@ -29,7 +29,7 @@ in
 
       file.xdg_config =
         let
-          derivationsPkgs = inputs.starrynix-derivations.packages.${pkgs.stdenv.hostPlatform.system};
+          derivationsPkgs = pkgs.pkgsExternal.starrynix-derivations;
           kvlibadwaita = derivationsPkgs.kvlibadwaita.overrideAttrs {
             # Kvantum tries to modify the files directly when applying customizations
             postFixup = ''
