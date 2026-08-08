@@ -15,6 +15,13 @@
       url = "github:ipetkov/crane/master";
     };
 
+    deploy-rs = {
+      url = "github:serokell/deploy-rs/master";
+      inputs.flake-compat.follows = "flake-compat";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.utils.follows = "flake-utils";
+    };
+
     disko = {
       url = "github:nix-community/disko/master";
       inputs.nixpkgs.follows = "nixpkgs";
