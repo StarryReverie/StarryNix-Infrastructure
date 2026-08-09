@@ -11,7 +11,11 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ lixPackageSets.latest.nixpkgs-review ];
+      packages = with pkgs; [
+        (nixpkgs-review.override {
+          nix = config.nix.package;
+        })
+      ];
     };
   };
 }

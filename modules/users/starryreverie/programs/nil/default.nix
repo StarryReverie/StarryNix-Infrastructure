@@ -13,7 +13,7 @@ in
     users.users.starryreverie.maid = {
       packages = with pkgs; [
         (nil.override {
-          nix = lixPackageSets.latest.lix;
+          nix = config.nix.package;
         })
       ];
     };
