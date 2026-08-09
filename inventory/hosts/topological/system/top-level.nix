@@ -22,13 +22,7 @@
       nix.enable = true;
       userManagement.enable = true;
     };
-    desktop = {
-      desktopEssentials.enable = true;
-      font.enable = true;
-      environment-gnome.enable = true;
-    };
     hardware = {
-      graphicsDriver-intel.enable = true;
       networking.enable = true;
       oomKiller.enable = true;
       powerManagement.enable = true;
@@ -44,7 +38,6 @@
       dconf.enable = true;
       dnsproxy.enable = true;
       openssh.enable = true;
-      gdm.enable = true;
       selector4nix.enable = true;
       tailscale.enable = true;
       transparentProxy.enable = true;

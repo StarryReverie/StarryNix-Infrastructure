@@ -17,30 +17,17 @@
   };
 
   custom.users.csl = {
-    applications = {
-      firefox.enable = true;
-      nautilus.enable = true;
-    };
     core = {
       environment.enable = true;
       ephemeralRootfs.enable = true;
       localization.enable = true;
       xdg.enable = true;
     };
-    desktop = {
-      inputMethod.enable = true;
-      theme-gtk.enable = true;
-      theme-qt.enable = true;
-    };
     hardware = {
-      sound.enable = true;
       wireless.enable = true;
     };
     security = {
       password.enable = true;
-    };
-    services = {
-      dconf.enable = true;
     };
   };
 }
