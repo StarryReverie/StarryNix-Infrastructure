@@ -30,8 +30,6 @@ in
                 nixpkgs.pkgs = nixpkgs-lib.mkForce (
                   withSystem config.nixpkgs.hostPlatform.system ({ pkgs, ... }: pkgs)
                 );
-                # To pass assertion `options.nixpkgs.pkgs.isDefined -> config.nixpkgs.config == { }`
-                nixpkgs.config = nixpkgs-lib.mkForce { };
                 nixpkgs.overlays = nixpkgs-lib.mkForce [ ];
               };
             }
