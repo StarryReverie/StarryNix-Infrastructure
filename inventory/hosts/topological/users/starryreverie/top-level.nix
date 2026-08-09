@@ -13,9 +13,7 @@
     extraGroups = [ "wheel" ];
 
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQrkIsLMV70klKFtQY8JK5QgXKGyTpZcIaLarXG5dBv"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBHhBWBm0pl855WnAlKB6567DR3fzAWPYAbYI4YxmYFu starryreverie@superposition"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJFYQFEqRJVSW3kBXGRJ5QrgDYIPYl5mANwsXMmy26Ak starryreverie@DESKTOP-Q1328MM"
     ];
   };
 
@@ -25,14 +23,10 @@
 
   custom.users.starryreverie = {
     applications = {
-      alacritty.enable = true;
-      firefox.enable = true;
       git.enable = true;
       helix.enable = true;
       htop.enable = true;
       lazygit.enable = true;
-      nautilus.enable = true;
-      resources.enable = true;
       yazi.enable = true;
       zellij.enable = true;
       zsh.enable = true;
@@ -42,11 +36,7 @@
       ephemeralRootfs.enable = true;
       xdg.enable = true;
     };
-    desktop = {
-      inputMethod.enable = true;
-    };
     hardware = {
-      sound.enable = true;
       wireless.enable = true;
     };
     programs = {
