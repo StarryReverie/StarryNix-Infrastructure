@@ -39,6 +39,7 @@ in
     in
     {
       "interference" = importApplyHost (flakeRoot + /inventory/hosts/interference/entry-point.nix);
+      "origin" = importApplyHost (flakeRoot + /inventory/hosts/origin/entry-point.nix);
       "superposition" = importApplyHost (flakeRoot + /inventory/hosts/superposition/entry-point.nix);
       "topological" = importApplyHost (flakeRoot + /inventory/hosts/topological/entry-point.nix);
     };
