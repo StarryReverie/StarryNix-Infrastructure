@@ -1,26 +1,19 @@
 {
   disko.devices.disk.main = {
-    device = "/dev/vda";
+    device = "/dev/disk/by-id/nvme-WDC_PC_SN520_SDAPMUW-256G-1101_190916443204";
     type = "disk";
     content.type = "gpt";
 
-    content.partitions.bios = {
-      name = "BIOS";
-      size = "2M";
-      type = "EF02";
-      priority = 1;
-    };
-
     content.partitions.esp = {
       name = "ESP";
-      size = "510M";
+      size = "512M";
       type = "EF00";
-      priority = 2;
+      priority = 1;
 
       content = {
         type = "filesystem";
         format = "vfat";
-        mountpoint = "/boot";
+        mountpoint = "/efi";
         mountOptions = [ "fmask=0077,dmask=0077" ];
       };
     };
@@ -28,7 +21,7 @@
     content.partitions.persistence = {
       name = "PERSISTENCE";
       size = "100%";
-      priority = 3;
+      priority = 2;
 
       content = {
         type = "btrfs";

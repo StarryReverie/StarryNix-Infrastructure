@@ -7,38 +7,54 @@
 }:
 {
   imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")
+    (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   config = lib.mkMerge [
+    # Bootloader
+    {
+      boot.loader.efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/efi";
+      };
+
+      boot.loader.systemd-boot.enable = true;
+    }
+
+    # Console
+    {
+      console = {
+        earlySetup = true;
+        packages = with pkgs; [ terminus_font ];
+        font = "${pkgs.terminus_font}/share/consolefonts/ter-d24b.psf.gz";
+      };
+    }
+
     # Initrd
     {
       boot.initrd.availableKernelModules = [
-        "ata_piix"
-        "sr_mod"
-        "uhci_hcd"
-        "virtio_blk"
-        "virtio_pci"
+        "nvme"
+        "xhci_pci"
+        "usb_storage"
+        "sd_mod"
+        "rtsx_pci_sdmmc"
       ];
       boot.initrd.kernelModules = [ ];
     }
 
     # Kernel
     {
-      boot.kernelModules = [ "kvm-intel" ];
+      boot.kernelModules = [ "kvm-amd" ];
       boot.extraModulePackages = [ ];
     }
 
-    # Networking
+    # Power Management
     {
-      vaultix.secrets."10-ens18.network" = {
-        file = ./10-ens18.network.age;
-        owner = "systemd-network";
-        group = "systemd-network";
-      };
-
-      environment.etc."systemd/network/10-ens18.network" = {
-        source = config.vaultix.secrets."10-ens18.network".path;
+      systemd.sleep.settings.Sleep = {
+        AllowSuspend = "no";
+        AllowHibernation = "no";
+        AllowHybridSleep = "no";
+        AllowSuspendThenHibernate = "no";
       };
     }
   ];
