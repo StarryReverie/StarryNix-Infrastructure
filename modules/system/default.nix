@@ -106,7 +106,6 @@ in
     (mkEntry "programs" "zoxide")
     (mkEntry "security" "fail2ban")
     (mkEntry "security" "password")
-    (mkEntry "security" "secret")
     (mkEntry "security" "sudo")
     (mkEntry "services" "dconf")
     (mkEntry "services" "dnsproxy")

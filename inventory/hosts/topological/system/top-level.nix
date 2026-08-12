@@ -31,7 +31,6 @@
     };
     security = {
       fail2ban.enable = true;
-      secret.enable = true;
       sudo.enable = true;
     };
     services = {
