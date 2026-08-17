@@ -56,25 +56,32 @@ in
       configFile = config.vaultix.templates."mihomo.yaml".path;
     };
 
-    vaultix.templates."mihomo.yaml".content =
+    vaultix =
       let
-        makeReadablePlaceholders = lib.lists.map (name: "{{ ${name} }}");
-        makeHashPlaceholders = lib.lists.map (
-          name: config.vaultix.placeholder."mihomo-subscription-${name}"
-        );
         providers = [
           "coffeecloud"
           "wgetcloud"
           "xsus"
         ];
       in
-      builtins.replaceStrings (makeReadablePlaceholders providers) (makeHashPlaceholders providers) (
-        builtins.readFile ./mihomo.yaml
-      );
+      {
+        templates."mihomo.yaml".content =
+          let
+            makeReadablePlaceholders = lib.lists.map (name: "{{ ${name} }}");
+            makeHashPlaceholders = lib.lists.map (
+              name: config.vaultix.placeholder."mihomo-subscription-${name}"
+            );
+          in
+          lib.strings.replaceStrings (makeReadablePlaceholders providers) (makeHashPlaceholders providers) (
+            builtins.readFile ./mihomo.yaml
+          );
 
-    vaultix.secrets."mihomo-subscription-coffeecloud".file = ./subscriptions/coffeecloud.age;
-    vaultix.secrets."mihomo-subscription-wgetcloud".file = ./subscriptions/wgetcloud.age;
-    vaultix.secrets."mihomo-subscription-xsus".file = ./subscriptions/xsus.age;
+        secrets = lib.attrsets.foldAttrs lib.attrsets.recursiveUpdate { } (
+          lib.lists.map (name: {
+            "mihomo-subscription-${name}".file = ./subscriptions/${name}.age;
+          }) providers
+        );
+      };
 
     preservation.preserveAt."/nix/persistence" = {
       directories = [
