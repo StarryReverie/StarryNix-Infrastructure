@@ -81,6 +81,7 @@ in
     (mkEntry "development" "java")
     (mkEntry "development" "rust")
     (mkEntry "hardware" "bluetooth")
+    (mkEntry "hardware" "console")
     (mkEntry "hardware" "cpuScheduler")
     (mkEntry "hardware" "graphicsDriver-intel")
     (mkEntry "hardware" "graphicsDriver-nvidia")

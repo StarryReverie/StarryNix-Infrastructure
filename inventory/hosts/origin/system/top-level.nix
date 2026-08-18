@@ -20,6 +20,7 @@
       userManagement.enable = true;
     };
     hardware = {
+      console.enable = true;
       networking.enable = true;
       zramSwap.enable = true;
     };

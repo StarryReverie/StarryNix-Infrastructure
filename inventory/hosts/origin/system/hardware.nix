@@ -11,15 +11,6 @@
   ];
 
   config = lib.mkMerge [
-    # Console
-    {
-      console = {
-        earlySetup = true;
-        packages = with pkgs; [ terminus_font ];
-        font = "${pkgs.terminus_font}/share/consolefonts/ter-d24b.psf.gz";
-      };
-    }
-
     # ISO image
     {
       isoImage.squashfsCompression = "gzip -Xcompression-level 1";

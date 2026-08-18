@@ -23,6 +23,7 @@
       userManagement.enable = true;
     };
     hardware = {
+      console.enable = true;
       cpuScheduler.enable = true;
       networking.enable = true;
       oomKiller.enable = true;
