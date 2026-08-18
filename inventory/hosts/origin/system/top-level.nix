@@ -14,8 +14,13 @@
 
   vaultix.settings.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBtaKKqMtgBWUg8Nk3IWMnPMvPoVfqdKxNHe/HAZr0Nh";
 
+  boot.postBootCommands = lib.mkForce "";
+
   custom.system = {
     core = {
+      ephemeralRootfs.enable = true;
+      etcOverlay.enable = true;
+      initrd.enable = true;
       nix.enable = true;
       userManagement.enable = true;
     };
