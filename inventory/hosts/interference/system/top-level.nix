@@ -26,6 +26,7 @@
       console.enable = true;
       cpuScheduler.enable = true;
       networking.enable = true;
+      noSuspend.enable = true;
       oomKiller.enable = true;
       powerManagement.enable = true;
       wireless.enable = true;

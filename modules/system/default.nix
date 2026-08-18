@@ -87,6 +87,7 @@ in
     (mkEntry "hardware" "graphicsDriver-nvidia")
     (mkEntry "hardware" "keyMapper")
     (mkEntry "hardware" "networking")
+    (mkEntry "hardware" "noSuspend")
     (mkEntry "hardware" "oomKiller")
     (mkEntry "hardware" "powerManagement")
     (mkEntry "hardware" "sound")

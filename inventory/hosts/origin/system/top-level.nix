@@ -22,6 +22,7 @@
     hardware = {
       console.enable = true;
       networking.enable = true;
+      noSuspend.enable = true;
       zramSwap.enable = true;
     };
     services = {
