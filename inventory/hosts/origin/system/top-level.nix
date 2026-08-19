@@ -33,6 +33,7 @@
     services = {
       openssh.enable = true;
       selector4nix.enable = true;
+      transparentProxy.enable = true;
     };
   };
 }

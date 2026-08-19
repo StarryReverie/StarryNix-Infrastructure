@@ -23,8 +23,8 @@
             passphrase="$(${config.systemd.package}/bin/systemd-ask-password \
               "Type passphrase to decrypt the SSH host private key ($n attempt(s) left)")"
 
-            # `age` doesn't support read passphrase from anything but a real tty. Use `script` to
-            # create a pty to trick `age` to read passphrase from piped input.
+            # `age` doesn't allow reading passphrase from anything but a real tty. Use `script` to
+            # create a pty to trick `age` to read passphrase from the actually piped input.
             if printf '%s\n' "$passphrase" | ${pkgs.util-linux}/bin/script -qec \
               "${pkgs.age}/bin/age -d -o /nix/persistence/etc/ssh/ssh_host_ed25519_key ${./keys/ed25519.age}" /dev/null; then
               chmod 0600 /nix/persistence/etc/ssh/ssh_host_ed25519_key
