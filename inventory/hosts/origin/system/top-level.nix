@@ -16,6 +16,9 @@
 
   boot.postBootCommands = lib.mkForce "";
 
+  users.users.nixos.enable = lib.mkForce false;
+  services.getty.autologinUser = lib.mkForce config.users.users.root.name;
+
   custom.system = {
     core = {
       ephemeralRootfs.enable = true;
