@@ -12,7 +12,7 @@
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  vaultix.settings.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBtaKKqMtgBWUg8Nk3IWMnPMvPoVfqdKxNHe/HAZr0Nh";
+  vaultix.settings.hostPubkey = builtins.readFile ./keys/ed25519.pub;
 
   boot.postBootCommands = lib.mkForce "";
 
