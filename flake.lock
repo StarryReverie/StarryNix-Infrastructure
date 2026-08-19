@@ -2,11 +2,11 @@
   "nodes": {
     "crane": {
       "locked": {
-        "lastModified": 1785782307,
-        "narHash": "sha256-MPaRdVkf6zZP5fCPxYCi8Dr4pZzgmXzg8T9nVEbp3Mw=",
+        "lastModified": 1787074141,
+        "narHash": "sha256-MWnmk87W8akPIKh+yd0bTfXvlyumKQVh5l/KTbgI95o=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "2c71e194474d13de031d729b729c968ddbe3507f",
+        "rev": "6ed595a5527c0ec9563e0e06417f1b8fc88ccb66",
         "type": "github"
       },
       "original": {
@@ -238,15 +238,15 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1786935457,
-        "narHash": "sha256-OyPLHrWI7YXe6Flth06tkIjMrpsrlarsdgcYYAFOl5c=",
-        "rev": "4df4976d944e0057c4c9f99919c6cda2c623563a",
+        "lastModified": 1787070829,
+        "narHash": "sha256-xe+M6F3syqECh9nH7Fmyxrjs13PtQV3S9o/EbutKz84=",
+        "rev": "0ae2bc1419c3f345984c2629e72e7a631820fa4d",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable-small/nixos-26.11pre1056375.4df4976d944e/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1057639.0ae2bc1419c3/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://channels.nixos.org/nixos-unstable-small/nixexprs.tar.xz"
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
       }
     },
     "preservation": {
@@ -302,11 +302,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786961735,
-        "narHash": "sha256-Oh+wjI3eq7HY4o0LpxQ3URyYGSecvv/9vlm8UNANiXc=",
+        "lastModified": 1787007496,
+        "narHash": "sha256-NTbh8WlNsnK6DAeUSWr9+vmrCdbAZZnO/ov4J3XjqjI=",
         "owner": "StarryReverie",
         "repo": "selector4nix",
-        "rev": "2e0ce402f9e61220db891f1b9b9303cb5784c5f1",
+        "rev": "8dec146ec022043c71aee2d3595573e99ded9223",
         "type": "github"
       },
       "original": {
@@ -402,11 +402,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784033318,
-        "narHash": "sha256-67+m+CbQf5q73BoP6KwOhwPfIgpm8p64qdN74eRUHxo=",
+        "lastModified": 1787073475,
+        "narHash": "sha256-WcGQJ80DbxHiRvCA1vQxtxbDmm2R/zN1tncY65W0LW8=",
         "owner": "milieuim",
         "repo": "vaultix",
-        "rev": "ea2b13afe5ea5ef72f0829b97141c4757334b4ec",
+        "rev": "3d702088dd129aa4f9067be4dadd228e994bee86",
         "type": "github"
       },
       "original": {

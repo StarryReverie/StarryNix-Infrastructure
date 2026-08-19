@@ -63,7 +63,7 @@
     };
 
     nixpkgs = {
-      url = "https://channels.nixos.org/nixos-unstable-small/nixexprs.tar.xz";
+      url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     };
 
     preservation = {
