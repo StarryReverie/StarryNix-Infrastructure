@@ -6,7 +6,7 @@
 
     content.partitions.esp = {
       name = "ESP";
-      size = "512M";
+      size = "2G";
       type = "EF00";
       priority = 1;
 
