@@ -63,7 +63,7 @@
     };
 
     nixpkgs = {
-      url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
+      url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
     preservation = {
