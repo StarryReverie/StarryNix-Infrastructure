@@ -104,6 +104,7 @@ in
     (mkEntry "programs" "glow")
     (mkEntry "programs" "nil")
     (mkEntry "programs" "nixpkgs-review")
+    (mkEntry "programs" "nixTools")
     (mkEntry "programs" "ripgrep")
     (mkEntry "programs" "zoxide")
     (mkEntry "security" "fail2ban")
