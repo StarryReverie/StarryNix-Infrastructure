@@ -77,8 +77,7 @@
       fd.enable = true;
       glow.enable = true;
       fzf.enable = true;
-      nil.enable = true;
-      nixpkgs-review.enable = true;
+      nixTools.enable = true;
       ripgrep.enable = true;
       zoxide.enable = true;
     };

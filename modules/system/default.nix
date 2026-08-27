@@ -102,8 +102,6 @@ in
     (mkEntry "programs" "fd")
     (mkEntry "programs" "fzf")
     (mkEntry "programs" "glow")
-    (mkEntry "programs" "nil")
-    (mkEntry "programs" "nixpkgs-review")
     (mkEntry "programs" "nixTools")
     (mkEntry "programs" "ripgrep")
     (mkEntry "programs" "zoxide")
