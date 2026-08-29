@@ -101,8 +101,8 @@ keymap = [
   { on = ["r", "s"], run = "rename --hovered --empty=stem --cursor=start", desc = "Rename this file (empty stem)" },
   { on = ["r", "e"], run = "rename --hovered --empty=ext --cursor=end",    desc = "Rename this file (empty extension)" },
   { on = ["r", "a"], run = "rename --hovered --empty=all --cursor=end",    desc = "Rename this file (empty all)" },
-  { on = ["r", "b"], run = 'shell -- for f in "$@"; do case "$f" in *.bak) mv -- "$f" "${f%.bak}" ;; *) mv -- "$f" "$f.bak" ;; esac; done', desc = "Toggle backup status" },
-  { on = ["r", "l"], run = 'shell -- for f in "$@"; do mv -- "$f" "$f.bak" && cat "$f.bak" > "$f"; done', desc = "Backup and dereference symlinks" },
+  { on = ["r", "b"], run = 'shell -- for f in %s; do case "$f" in *.bak) mv -- "$f" "${f%.bak}" ;; *) mv -- "$f" "$f.bak" ;; esac; done', desc = "Toggle backup status" },
+  { on = ["r", "l"], run = 'shell -- for f in %s; do mv -- "$f" "$f.bak" && cat "$f.bak" > "$f"; done', desc = "Backup and dereference symlinks" },
 
   { on = ["y", "y"], run = "yank",   desc = "Copy files" },
   { on = "<C-c>",    run = "yank",   desc = "Copy files" },
