@@ -166,6 +166,8 @@ in
         wantedBy = [ "niri-session.target" ];
         partOf = [ "niri-session.target" ];
         after = [ "niri-session.target" ];
+        stopIfChanged = false;
+        restartIfChanged = false;
       };
     };
   };

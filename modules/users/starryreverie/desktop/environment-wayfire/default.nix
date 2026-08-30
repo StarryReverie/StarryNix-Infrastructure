@@ -146,6 +146,8 @@ in
         wantedBy = [ "wayfire-session.target" ];
         partOf = [ "wayfire-session.target" ];
         after = [ "wayfire-session.target" ];
+        stopIfChanged = false;
+        restartIfChanged = false;
       };
     };
   };
