@@ -13,7 +13,7 @@ let
   import-tree-lib = import-tree.withLib nixpkgs-lib;
 in
 {
-  imports = (import-tree-lib.leafs ./flake) ++ [
+  imports = (import-tree-lib.leaves ./flake) ++ [
     inputs.flake-parts.flakeModules.easyOverlay
   ];
 }
