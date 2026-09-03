@@ -60,17 +60,8 @@ in
           syust = "systemctl --user status";
           syul = "journalctl --user -xeu";
         };
-      };
-    };
 
-    preservation.preserveAt."/nix/persistence" = lib.mkIf (customCfg.enable or false) {
-      users.starryreverie = {
-        files = [
-          {
-            file = ".zsh_history";
-            how = "symlink";
-          }
-        ];
+        historyFile = lib.mkIf config.preservation.enable "/nix/persistence/home/starryreverie/.zsh_history";
       };
     };
   };

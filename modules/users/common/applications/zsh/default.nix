@@ -48,11 +48,18 @@ let
         alwaysSourceProfile = lib.mkOption {
           type = lib.types.bool;
           description = ''
-            Always try to source `.zprofile` in a interative shell, no matter
-            whether it is a login shell or not
+            Always try to source `.zprofile` in a interative shell, no matter whether it is a login
+            shell or not
           '';
           default = false;
           example = true;
+        };
+
+        historyFile = lib.mkOption {
+          type = lib.types.str;
+          description = "Path to zsh's command history file, environment variables are allowed";
+          default = "$HOME/.zsh_history";
+          example = "$HOME/.zsh_history";
         };
       };
 
@@ -82,7 +89,7 @@ let
                 # ===== History
                 HISTSIZE="10000"
                 SAVEHIST="10000"
-                HISTFILE="$HOME/.zsh_history"
+                HISTFILE="${customCfg.historyFile}"
 
                 enabled_opts=(
                   HIST_FCNTL_LOCK HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY
