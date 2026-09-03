@@ -91,6 +91,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stinkpot = {
+      url = "https://tangled.org/oppi.li/stinkpot/archive/main.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     systems = {
       url = "github:nix-systems/default-linux/main";
     };

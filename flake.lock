@@ -284,6 +284,7 @@
         "selector4nix": "selector4nix",
         "starrynix-derivations": "starrynix-derivations",
         "starrynix-resources": "starrynix-resources",
+        "stinkpot": "stinkpot",
         "systems": "systems",
         "vaultix": "vaultix",
         "wrapper-manager": "wrapper-manager"
@@ -368,6 +369,23 @@
         "ref": "master",
         "repo": "StarryNix-Resources",
         "type": "github"
+      }
+    },
+    "stinkpot": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787038886,
+        "narHash": "sha256-HwBtYIwtj5HkUwAv5haoei0Be6dXdLKilbA/A76L46c=",
+        "type": "tarball",
+        "url": "https://tangled.org/did:plc:wqstj3k5tslmm246baaf3tpa/archive/63594fa4893cc4d00a6c952430dc05be523882f9.tar.gz?prefix=stinkpot-main"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://tangled.org/oppi.li/stinkpot/archive/main.tar.gz"
       }
     },
     "systems": {

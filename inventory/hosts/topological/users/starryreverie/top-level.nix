@@ -48,6 +48,7 @@
       fd.enable = true;
       fzf.enable = true;
       ripgrep.enable = true;
+      stinkpot.enable = true;
       zoxide.enable = true;
     };
     security = {

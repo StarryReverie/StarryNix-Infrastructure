@@ -74,10 +74,11 @@
       eza.enable = true;
       fastfetch.enable = true;
       fd.enable = true;
-      glow.enable = true;
       fzf.enable = true;
+      glow.enable = true;
       nixTools.enable = true;
       ripgrep.enable = true;
+      stinkpot.enable = true;
       zoxide.enable = true;
     };
     security = {

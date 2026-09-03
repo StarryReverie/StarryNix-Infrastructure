@@ -36,6 +36,7 @@
       eza.enable = true;
       fd.enable = true;
       ripgrep.enable = true;
+      stinkpot.enable = true;
       zoxide.enable = true;
     };
     security = {

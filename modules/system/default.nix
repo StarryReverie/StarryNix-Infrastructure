@@ -103,6 +103,7 @@ in
     (mkEntry "programs" "glow")
     (mkEntry "programs" "nixTools")
     (mkEntry "programs" "ripgrep")
+    (mkEntry "programs" "stinkpot")
     (mkEntry "programs" "zoxide")
     (mkEntry "security" "fail2ban")
     (mkEntry "security" "password")
