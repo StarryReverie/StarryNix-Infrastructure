@@ -59,11 +59,11 @@
     };
 
     nix-maid = {
-      url = "github:viperML/nix-maid/master";
+      url = "https://codeberg.org/viperML/nix-maid/archive/master.tar.gz";
     };
 
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
+      url = "github:NixOS/nixpkgs/9fbb54b33e91ee4ca368e35a78e0613c720600b3";
     };
 
     preservation = {
@@ -104,7 +104,7 @@
     };
 
     wrapper-manager = {
-      url = "github:viperML/wrapper-manager/master";
+      url = "https://codeberg.org/viperML/wrapper-manager/archive/master.tar.gz";
     };
   };
 
