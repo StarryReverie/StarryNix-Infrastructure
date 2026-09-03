@@ -63,7 +63,8 @@
     };
 
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/9fbb54b33e91ee4ca368e35a78e0613c720600b3";
+      # url = "github:NixOS/nixpkgs/9fbb54b33e91ee4ca368e35a78e0613c720600b3";
+      url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
     preservation = {
