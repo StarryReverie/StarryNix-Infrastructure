@@ -93,7 +93,6 @@ in
     (mkEntry "hardware" "sound")
     (mkEntry "hardware" "wireless")
     (mkEntry "hardware" "zramSwap")
-    (mkEntry "programs" "atuin")
     (mkEntry "programs" "bat")
     (mkEntry "programs" "difftastic")
     (mkEntry "programs" "direnv")

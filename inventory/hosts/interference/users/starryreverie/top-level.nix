@@ -32,7 +32,6 @@
       environment.enable = true;
     };
     programs = {
-      atuin.enable = true;
       bat.enable = true;
       eza.enable = true;
       fd.enable = true;

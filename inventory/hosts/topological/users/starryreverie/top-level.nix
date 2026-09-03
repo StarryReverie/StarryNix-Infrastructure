@@ -40,7 +40,6 @@
       wireless.enable = true;
     };
     programs = {
-      atuin.enable = true;
       bat.enable = true;
       difftastic.enable = true;
       direnv.enable = true;
