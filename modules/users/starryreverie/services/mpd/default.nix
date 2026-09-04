@@ -53,7 +53,7 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      file.xdg_config.".config/ncmpcpp/config".source = ./config.ini;
+      file.xdg_config."ncmpcpp/config".source = ./config.ini;
     };
 
     preservation.preserveAt."/nix/persistence" = lib.mkIf (customCfg.enable or false) {
