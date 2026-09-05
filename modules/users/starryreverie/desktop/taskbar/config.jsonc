@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "margin": "0 6 0 6",
+  "margin": "4 6 0 6",
   "position": "top",
   "reload_style_on_change": true,
 
@@ -9,8 +9,10 @@
     "clock",
     "idle_inhibitor",
     "custom/lock",
-    "custom/wallpaper",
     "tray"
+  ],
+  "modules-center": [
+    "mpris"
   ],
   "modules-right": [
     "network",
@@ -18,8 +20,6 @@
     "bluetooth",
     "wireplumber",
     "backlight",
-    "memory",
-    "cpu",
     "custom/notification"
   ],
 
@@ -35,12 +35,6 @@
     "format": " {:%B %d - %H:%M} ",
     "tooltip": true,
     "tooltip-format": "Date:     {:%Y-%m-%d\nWeekday:  %A\nTimezone: %Z\nTime:     %H:%M:%S}"
-  },
-  "custom/wallpaper": {
-    "interval": "once",
-    "format": "  ",
-    "on-click": "true",
-    "tooltip": false
   },
   "idle_inhibitor": {
     "interval": "once",
@@ -63,6 +57,15 @@
     "icon-size": 16,
     "show-passive-items": true,
     "spacing": 6
+  },
+
+  "mpris": {
+    "interval": 1,
+    "format": "{artist} - {title}",
+    "max-length": 40,
+    "tooltip-format-playing": "Position: {position}/{length}\nArtist:   {artist}\nTitle:    {title}\nAlbum:    {album}\nStatus:   Playing",
+    "tooltip-format-paused": "Position: {position}/{length}\nArtist:   {artist}\nTitle:    {title}\nAlbum:    {album}\nStatus:   Paused",
+    "tooltip-format-stopped": "Position: {position}/{length}\nArtist:   {artist}\nTitle:    {title}\nAlbum:    {album}\nStatus:   Stopped"
   },
 
   "network": {
@@ -136,17 +139,6 @@
     "tooltip-format": "Brightness: {percent}%",
     "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"],
     "reverse-scrolling": true
-  },
-  "memory": {
-	  "interval": 10,
-    "format": "  {percentage}% ",
-    "tooltip": true,
-    "tooltip-format": "Percentage:    {percentage}%\nRAM Total:     {total:0.1f}GiB\nRAM Available: {avail:0.1f}GiB\nRAM Used:      {used:0.1f}GiB\nSwap Used:     {swapUsed:0.1f}GiB"
-  },
-  "cpu": {
-	  "interval": 10,
-    "format": "  {usage}% ",
-    "tooltip": true
   },
   "custom/notification": {
     "interval": "once",

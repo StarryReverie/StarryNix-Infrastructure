@@ -16,27 +16,41 @@
 #clock,
 #idle_inhibitor,
 #custom-lock,
-#custom-wallpaper,
 #tray,
+#mpris,
 #network,
 #battery,
 #bluetooth,
 #wireplumber,
 #backlight,
-#memory,
-#cpu,
 #custom-notification {
-  border-radius: 4px;
-  margin: 4px 2px 0px 2px;
-  padding: 2px;
+  border-radius: 8px;
+  margin: 0px 2px;
   color: #b6bad6;
 }
 
-#custom-launcher {
-  color: white;
-  background-color: #5f92e4;
+#custom-launcher,
+#clock,
+#idle_inhibitor,
+#custom-lock,
+#network,
+#battery,
+#bluetooth,
+#wireplumber,
+#backlight,
+#custom-notification {
+  padding: 2px 3px;
 }
 
+#tray {
+  padding: 2px 5px;
+}
+
+#mpris {
+  padding: 2px 8px;
+}
+
+#mpris,
 #clock,
 #idle_inhibitor,
 #custom-lock,
@@ -47,10 +61,13 @@
 #bluetooth,
 #wireplumber,
 #backlight,
-#memory,
-#cpu,
 #custom-notification {
   background-color: #131822;
+}
+
+#custom-launcher {
+  color: white;
+  background-color: #5f92e4;
 }
 
 tooltip {
