@@ -10,6 +10,8 @@ let
 in
 {
   config = lib.mkIf customCfg.enable {
+    nix.package = pkgs.nixVersions.latest;
+
     nix.settings.experimental-features = [
       "nix-command"
       "flakes"
