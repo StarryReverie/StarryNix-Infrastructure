@@ -85,9 +85,6 @@
     security = {
       password.enable = true;
     };
-    services = {
-      mpd.enable = true;
-    };
     virtualization = {
       container.enable = true;
       libvirt.enable = true;
