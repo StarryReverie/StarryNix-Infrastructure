@@ -39,7 +39,7 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [ fzf ];
+      packages = [ pkgs.fzf ];
     };
   };
 }

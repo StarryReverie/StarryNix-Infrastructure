@@ -19,7 +19,7 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [ fastfetch-unwrapped ];
+      packages = [ pkgs.fastfetch-unwrapped ];
     };
   };
 }

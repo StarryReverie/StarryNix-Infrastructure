@@ -9,20 +9,20 @@ let
 in
 {
   config = lib.mkIf customCfg.enable {
-    fonts.packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans-static
-      open-sans
+    fonts.packages = [
+      pkgs.noto-fonts
+      pkgs.noto-fonts-cjk-sans-static
+      pkgs.open-sans
 
-      libertinus
-      noto-fonts-cjk-serif-static
+      pkgs.libertinus
+      pkgs.noto-fonts-cjk-serif-static
 
-      cascadia-code
-      maple-mono.NL-NF-CN-unhinted
-      source-code-pro
+      pkgs.cascadia-code
+      pkgs.maple-mono.NL-NF-CN-unhinted
+      pkgs.source-code-pro
 
-      nerd-fonts.symbols-only
-      noto-fonts-color-emoji
+      pkgs.nerd-fonts.symbols-only
+      pkgs.noto-fonts-color-emoji
     ];
 
     fonts.fontDir.enable = true;

@@ -15,15 +15,15 @@ in
     i18n.inputMethod.fcitx5 = {
       waylandFrontend = true;
 
-      addons = with pkgs; [
-        fcitx5-gtk
+      addons = [
+        pkgs.fcitx5-gtk
 
-        fcitx5-pinyin-zhwiki
-        fcitx5-pinyin-moegirl
-        fcitx5-pinyin-minecraft
-        kdePackages.fcitx5-chinese-addons
+        pkgs.fcitx5-pinyin-zhwiki
+        pkgs.fcitx5-pinyin-moegirl
+        pkgs.fcitx5-pinyin-minecraft
+        pkgs.kdePackages.fcitx5-chinese-addons
 
-        fcitx5-fluent
+        pkgs.fcitx5-fluent
       ];
 
       settings.inputMethod = {

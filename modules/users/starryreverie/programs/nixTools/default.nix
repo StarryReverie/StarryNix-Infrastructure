@@ -11,13 +11,13 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [
-        (nil.override { nix = config.nix.package; })
-        (nixpkgs-review.override { nix = config.nix.package; })
-        dix
-        nix-diff
-        nix-output-monitor
-        nix-tree
+      packages = [
+        (pkgs.nil.override { nix = config.nix.package; })
+        (pkgs.nixpkgs-review.override { nix = config.nix.package; })
+        pkgs.dix
+        pkgs.nix-diff
+        pkgs.nix-output-monitor
+        pkgs.nix-tree
       ];
     };
   };

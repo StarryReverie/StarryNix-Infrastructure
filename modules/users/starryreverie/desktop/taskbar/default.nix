@@ -11,10 +11,10 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [
-        waybar
-        brightnessctl
-        nerd-fonts.symbols-only
+      packages = [
+        pkgs.waybar
+        pkgs.brightnessctl
+        pkgs.nerd-fonts.symbols-only
       ];
 
       file.xdg_config."waybar/config.jsonc".source = ./config.jsonc;

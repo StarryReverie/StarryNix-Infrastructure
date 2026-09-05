@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ hyprlock ];
+      packages = [ pkgs.hyprlock ];
 
       file.xdg_config."hypr/hyprlock.conf".source =
         let

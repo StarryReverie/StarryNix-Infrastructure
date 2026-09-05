@@ -36,7 +36,7 @@ let
     {
       config = lib.mkIf (customCfg.enable or false) {
         maid = {
-          packages = with pkgs; [ git ];
+          packages = [ pkgs.git ];
 
           file.home.".gitconfig".text = lib.generators.toGitINI customCfg.settings;
         };

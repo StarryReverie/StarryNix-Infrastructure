@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ splayer-next ];
+      packages = [ pkgs.splayer-next ];
     };
 
     preservation.preserveAt."/nix/persistence" = {

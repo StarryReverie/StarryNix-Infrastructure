@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ htop ];
+      packages = [ pkgs.htop ];
 
       file.xdg_config."htop/htoprc".source = ./htoprc;
     };

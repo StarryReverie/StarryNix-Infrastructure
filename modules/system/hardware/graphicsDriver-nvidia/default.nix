@@ -29,8 +29,8 @@ in
 
       hardware.graphics = {
         enable = true;
-        extraPackages = with pkgs; [
-          linux-firmware
+        extraPackages = [
+          pkgs.linux-firmware
         ];
       };
 

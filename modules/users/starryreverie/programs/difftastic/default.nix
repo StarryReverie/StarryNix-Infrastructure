@@ -30,7 +30,7 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [ difftastic ];
+      packages = [ pkgs.difftastic ];
     };
   };
 }

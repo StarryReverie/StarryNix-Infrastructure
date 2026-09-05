@@ -11,7 +11,7 @@ in
   config = lib.mkIf customCfg.enable {
     console = {
       earlySetup = true;
-      packages = with pkgs; [ terminus_font ];
+      packages = [ pkgs.terminus_font ];
       font = "${pkgs.terminus_font}/share/consolefonts/ter-d24b.psf.gz";
     };
   };

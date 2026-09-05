@@ -19,7 +19,7 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [ lazygit ];
+      packages = [ pkgs.lazygit ];
 
       file.xdg_config."lazygit/config.yml".source = ./config.yml;
     };

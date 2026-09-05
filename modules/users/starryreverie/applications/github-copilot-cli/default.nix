@@ -12,21 +12,20 @@ let
   copilotSandboxCore = pkgs.buildFHSEnvBubblewrap {
     name = "copilot-sandbox-core";
 
-    targetPkgs =
-      p: with p; [
-        github-copilot-cli
+    targetPkgs = p: [
+      p.github-copilot-cli
 
-        coreutils-full
-        binutils
-        findutils
-        file
-        procps
-        gnutar
-        gzip
-        xz
-        unzip
-        jq
-      ];
+      p.coreutils-full
+      p.binutils
+      p.findutils
+      p.file
+      p.procps
+      p.gnutar
+      p.gzip
+      p.xz
+      p.unzip
+      p.jq
+    ];
 
     runScript = "copilot";
 

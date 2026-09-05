@@ -30,15 +30,15 @@ let
   };
 in
 {
-  paths = with pkgs; [
-    difftastic
-    direnv
+  paths = [
     helix-wrapped
-    htop
-    lazygit
-    zellij
-    yazi-unwrapped
-    nixfmt
-    nixfmt-tree
+    pkgs.difftastic
+    pkgs.direnv
+    pkgs.htop
+    pkgs.lazygit
+    pkgs.nixfmt
+    pkgs.nixfmt-tree
+    pkgs.yazi-unwrapped
+    pkgs.zellij
   ];
 }

@@ -11,11 +11,11 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [
-        (mpv.override {
-          scripts = with pkgs.mpvScripts; [
-            mpris
-            uosc
+      packages = [
+        (pkgs.mpv.override {
+          scripts = [
+            pkgs.mpvScripts.mpris
+            pkgs.mpvScripts.uosc
           ];
           youtubeSupport = false;
         })

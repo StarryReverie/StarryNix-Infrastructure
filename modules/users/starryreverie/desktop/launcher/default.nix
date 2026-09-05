@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ rofi ];
+      packages = [ pkgs.rofi ];
 
       file.xdg_config."rofi/config.rasi".source = ./config.rasi;
     };

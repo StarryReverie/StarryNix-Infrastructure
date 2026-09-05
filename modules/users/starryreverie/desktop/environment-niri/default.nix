@@ -14,38 +14,38 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [
+      packages = [
         # Supporting utilities
-        xwayland-satellite
-        brightnessctl
-        libnotify
-        playerctl
+        pkgs.xwayland-satellite
+        pkgs.brightnessctl
+        pkgs.libnotify
+        pkgs.playerctl
 
         # System
-        dconf-editor
+        pkgs.dconf-editor
 
         # Files
-        file-roller
+        pkgs.file-roller
 
         # Documents
-        newsflash
-        papers
-        textpieces
+        pkgs.newsflash
+        pkgs.papers
+        pkgs.textpieces
 
         # Pictures
-        curtail
-        loupe
-        switcheroo
+        pkgs.curtail
+        pkgs.loupe
+        pkgs.switcheroo
 
         # Media
-        eartag
-        mousai
+        pkgs.eartag
+        pkgs.mousai
 
         # Efficiency
-        eyedropper
-        gnome-calculator
-        gnome-calendar
-        gnome-clocks
+        pkgs.eyedropper
+        pkgs.gnome-calculator
+        pkgs.gnome-calendar
+        pkgs.gnome-clocks
       ];
 
       file.xdg_config."niri/config.kdl".text = lib.mkAfter (builtins.readFile ./config.kdl);
@@ -88,18 +88,17 @@ in
       systemd.services."niri-taskbar" = {
         serviceConfig.ExecStart = "${lib.getExe pkgs.waybar}";
         serviceConfig.Slice = "session.slice";
-        path =
-          (with pkgs; [
-            swaynotificationcenter
-            hyprlock
-            rofi
-          ])
-          ++ (lib.optionals config.services.pipewire.wireplumber.enable [
-            pkgs.wireplumber
-          ])
-          ++ (lib.optionals config.hardware.bluetooth.enable [
-            pkgs.blueman
-          ]);
+        path = [
+          pkgs.swaynotificationcenter
+          pkgs.hyprlock
+          pkgs.rofi
+        ]
+        ++ (lib.optionals config.services.pipewire.wireplumber.enable [
+          pkgs.wireplumber
+        ])
+        ++ (lib.optionals config.hardware.bluetooth.enable [
+          pkgs.blueman
+        ]);
         wantedBy = [ "niri-session.target" ];
         partOf = [ "niri-session.target" ];
         after = [ "niri-session.target" ];

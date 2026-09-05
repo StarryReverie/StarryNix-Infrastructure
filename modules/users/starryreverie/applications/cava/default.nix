@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ cava ];
+      packages = [ pkgs.cava ];
 
       file.xdg_config."cava/config".source = ./config.ini;
     };

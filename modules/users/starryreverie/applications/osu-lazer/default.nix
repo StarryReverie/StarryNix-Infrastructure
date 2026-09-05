@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ osu-lazer-bin ];
+      packages = [ pkgs.osu-lazer-bin ];
     };
 
     preservation.preserveAt."/nix/persistence" = {

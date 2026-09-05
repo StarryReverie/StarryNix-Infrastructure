@@ -11,9 +11,9 @@ in
 {
   config = {
     users.users.csl.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [
-        adw-gtk3
-        gnome-themes-extra
+      packages = [
+        pkgs.adw-gtk3
+        pkgs.gnome-themes-extra
       ];
 
       gsettings.settings = {

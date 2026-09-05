@@ -9,7 +9,7 @@ let
 in
 {
   config = lib.mkIf customCfg.enable {
-    environment.systemPackages = with pkgs; [ nautilus ];
+    environment.systemPackages = [ pkgs.nautilus ];
 
     services.gvfs.enable = true;
 

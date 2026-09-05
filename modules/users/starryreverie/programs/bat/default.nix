@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ bat ];
+      packages = [ pkgs.bat ];
 
       file.xdg_config."bat/config".text = ''
         --style="-changes,-numbers,-snip"

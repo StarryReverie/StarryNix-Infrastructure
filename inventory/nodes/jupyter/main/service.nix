@@ -17,22 +17,20 @@
 
     kernels."python3-data-science" =
       let
-        env = pkgs.python3.withPackages (
-          p: with p; [
-            ipympl
-            ipython
-            matplotlib
-            mpmath
-            numpy
-            openpyxl
-            pandas
-            scikit-learn
-            scipy
-            statsmodels
-            sympy
-            typing-extensions
-          ]
-        );
+        env = pkgs.python3.withPackages (p: [
+          p.ipympl
+          p.ipython
+          p.matplotlib
+          p.mpmath
+          p.numpy
+          p.openpyxl
+          p.pandas
+          p.scikit-learn
+          p.scipy
+          p.statsmodels
+          p.sympy
+          p.typing-extensions
+        ]);
       in
       {
         language = "python";

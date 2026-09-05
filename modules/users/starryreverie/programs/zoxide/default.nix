@@ -20,7 +20,7 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [ zoxide ];
+      packages = [ pkgs.zoxide ];
     };
 
     preservation.preserveAt."/nix/persistence" = lib.mkIf (customCfg.enable or false) {

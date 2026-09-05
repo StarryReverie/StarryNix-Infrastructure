@@ -26,7 +26,7 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [ yazi ];
+      packages = [ pkgs.yazi ];
 
       file.xdg_config."yazi/yazi.toml".source = ./yazi.toml;
       file.xdg_config."yazi/keymap.toml".source = ./keymap.toml;

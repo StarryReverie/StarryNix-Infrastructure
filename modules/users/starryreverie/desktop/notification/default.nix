@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ swaynotificationcenter ];
+      packages = [ pkgs.swaynotificationcenter ];
 
       file.xdg_config."swaync/config.json".source = ./config.json;
       file.xdg_config."swaync/style.css".source = ./style.css;

@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ rufin ];
+      packages = [ pkgs.rufin ];
     };
 
     preservation.preserveAt."/nix/persistence" = {

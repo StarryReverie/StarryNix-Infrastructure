@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ fd ];
+      packages = [ pkgs.fd ];
 
       file.xdg_config."fd/ignore".text = ''
         **/node_modules/**

@@ -19,11 +19,11 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [
-        adw-gtk3
-        gnome-themes-extra
-        reversal-icon-theme
-        vimix-cursors
+      packages = [
+        pkgs.adw-gtk3
+        pkgs.gnome-themes-extra
+        pkgs.reversal-icon-theme
+        pkgs.vimix-cursors
       ];
 
       gsettings.settings = {

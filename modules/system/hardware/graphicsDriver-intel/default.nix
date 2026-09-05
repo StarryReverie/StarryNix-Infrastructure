@@ -13,10 +13,10 @@ in
 
     hardware.graphics = {
       enable = true;
-      extraPackages = with pkgs; [
-        libva
-        intel-media-driver
-        linux-firmware
+      extraPackages = [
+        pkgs.libva
+        pkgs.intel-media-driver
+        pkgs.linux-firmware
       ];
     };
   };

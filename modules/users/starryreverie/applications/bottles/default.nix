@@ -11,9 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [
-        bottles
-      ];
+      packages = [ pkgs.bottles ];
     };
 
     preservation.preserveAt."/nix/persistence" = {

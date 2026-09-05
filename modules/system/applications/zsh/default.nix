@@ -11,8 +11,8 @@ in
   config = lib.mkIf customCfg.enable {
     programs.zsh.enable = true;
 
-    environment.systemPackages = with pkgs; [
-      nix-zsh-completions
+    environment.systemPackages = [
+      pkgs.nix-zsh-completions
     ];
   };
 }

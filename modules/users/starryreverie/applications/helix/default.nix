@@ -20,7 +20,7 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [ helix ];
+      packages = [ pkgs.helix ];
 
       file.xdg_config."helix/config.toml".source = ./config.toml;
       file.xdg_config."helix/languages.toml".source = ./languages.toml;

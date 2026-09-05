@@ -31,7 +31,7 @@ in
     };
 
     users.users.starryreverie.maid = lib.mkIf (customCfg.enable or false) {
-      packages = with pkgs; [ zellij ];
+      packages = [ pkgs.zellij ];
 
       file.xdg_config."zellij/config.kdl".source = ./config.kdl;
       file.xdg_config."zellij/layouts".source = ./layouts;

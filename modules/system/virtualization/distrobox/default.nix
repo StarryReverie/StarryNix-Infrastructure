@@ -9,8 +9,8 @@ let
 in
 {
   config = lib.mkIf customCfg.enable {
-    environment.systemPackages = with pkgs; [
-      (distrobox.overrideAttrs {
+    environment.systemPackages = [
+      (pkgs.distrobox.overrideAttrs {
         # Distrobox hardcodes binary paths pointing to /nix/store in its
         # configuration. Once the store path of distrobox is changed, the box
         # will break.

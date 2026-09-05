@@ -11,9 +11,9 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [
-        wl-clipboard
-        cliphist
+      packages = [
+        pkgs.wl-clipboard
+        pkgs.cliphist
         (pkgs.writeScriptBin "clipboard-select" (builtins.readFile ./clipboard-select.sh))
       ];
     };

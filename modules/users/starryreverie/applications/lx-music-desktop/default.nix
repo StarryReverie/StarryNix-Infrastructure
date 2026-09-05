@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = with pkgs; [ lx-music-desktop ];
+      packages = [ pkgs.lx-music-desktop ];
     };
 
     preservation.preserveAt."/nix/persistence" = {

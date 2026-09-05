@@ -13,7 +13,7 @@ in
       enable = true;
       qemu = {
         swtpm.enable = true;
-        vhostUserPackages = with pkgs; [ virtiofsd ];
+        vhostUserPackages = [ pkgs.virtiofsd ];
       };
     };
     virtualisation.spiceUSBRedirection.enable = true;
