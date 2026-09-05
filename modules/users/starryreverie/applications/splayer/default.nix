@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 let
@@ -17,7 +16,7 @@ in
 
     preservation.preserveAt."/nix/persistence" = {
       users.starryreverie = {
-        directories = [ ".config/SPlayer" ];
+        directories = [ ".config/SPlayer-Next" ];
       };
     };
   };
