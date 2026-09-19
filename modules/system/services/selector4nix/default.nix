@@ -19,6 +19,9 @@ in
         ip = "127.0.0.1";
         port = 5496;
       };
+      network = {
+        streaming_window_max_len = 4;
+      };
       substituters = [
         {
           url = "https://cache.nixos.org/";
@@ -26,7 +29,7 @@ in
         }
         {
           url = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store/";
-          priority = 30;
+          priority = 50;
         }
         {
           url = "https://mirrors.ustc.edu.cn/nix-channels/store/";
@@ -34,7 +37,7 @@ in
         }
         {
           url = "https://mirror.sjtu.edu.cn/nix-channels/store/";
-          priority = 40;
+          priority = 35;
         }
         {
           url = "https://nix-community.cachix.org/";
