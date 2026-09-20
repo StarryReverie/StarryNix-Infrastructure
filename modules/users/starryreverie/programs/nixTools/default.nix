@@ -18,6 +18,7 @@ in
         pkgs.nix-diff
         pkgs.nix-output-monitor
         pkgs.nix-tree
+        pkgs.pkgsExternal.drvgraph.drvgraph
       ];
     };
   };

@@ -18,6 +18,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    drvgraph = {
+      url = "github:StarryReverie/DrvGraph/main";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.systems.follows = "systems";
+    };
+
     flake-compat = {
       url = "https://git.lix.systems/lix-project/flake-compat/archive/main.tar.gz";
     };
