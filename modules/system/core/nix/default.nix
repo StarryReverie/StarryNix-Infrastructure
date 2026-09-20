@@ -22,8 +22,9 @@ in
       "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
-
       "https://nix-community.cachix.org"
+
+      "https://drvgraph.cachix.org"
       "https://selector4nix.cachix.org"
     ];
 

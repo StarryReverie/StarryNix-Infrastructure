@@ -43,6 +43,11 @@ in
           url = "https://nix-community.cachix.org/";
           priority = 40;
         }
+
+        {
+          url = "https://drvgraph.cachix.org/";
+          priority = 40;
+        }
         {
           url = "https://selector4nix.cachix.org/";
           priority = 40;
