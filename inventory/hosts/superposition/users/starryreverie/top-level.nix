@@ -21,6 +21,7 @@
     applications = {
       alacritty.enable = true;
       cava.enable = true;
+      cinny.enable = true;
       easyeffects.enable = true;
       firefox.enable = true;
       git.enable = true;

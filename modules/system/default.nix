@@ -31,6 +31,7 @@ in
     (mkEntry "applications" "alacritty")
     (mkEntry "applications" "bottles")
     (mkEntry "applications" "cava")
+    (mkEntry "applications" "cinny")
     (mkEntry "applications" "easyeffects")
     (mkEntry "applications" "firefox")
     (mkEntry "applications" "git")
