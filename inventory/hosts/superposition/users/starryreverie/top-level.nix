@@ -23,7 +23,6 @@
       cava.enable = true;
       easyeffects.enable = true;
       firefox.enable = true;
-      fractal.enable = true;
       git.enable = true;
       helix.enable = true;
       htop.enable = true;
