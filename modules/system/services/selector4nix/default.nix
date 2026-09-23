@@ -19,9 +19,6 @@ in
         ip = "127.0.0.1";
         port = 5496;
       };
-      network = {
-        streaming_window_max_len = 4;
-      };
       substituters = [
         {
           url = "https://cache.nixos.org/";
