@@ -61,6 +61,7 @@ in
         providers = [
           "coffeecloud"
           "wgetcloud"
+          "wgetcloud2"
           "xsus"
         ];
       in
