@@ -49,45 +49,5 @@ in
             "";
       };
     };
-
-    services.mihomo = {
-      enable = true;
-      webui = pkgs.metacubexd;
-      configFile = config.vaultix.templates."mihomo.yaml".path;
-    };
-
-    vaultix =
-      let
-        providers = [
-          "coffeecloud"
-          "wgetcloud"
-          "wgetcloud2"
-          "xsus"
-        ];
-      in
-      {
-        templates."mihomo.yaml".content =
-          let
-            makeReadablePlaceholders = lib.lists.map (name: "{{ ${name} }}");
-            makeHashPlaceholders = lib.lists.map (
-              name: config.vaultix.placeholder."mihomo-subscription-${name}"
-            );
-          in
-          lib.strings.replaceStrings (makeReadablePlaceholders providers) (makeHashPlaceholders providers) (
-            builtins.readFile ./mihomo.yaml
-          );
-
-        secrets = lib.attrsets.foldAttrs lib.attrsets.recursiveUpdate { } (
-          lib.lists.map (name: {
-            "mihomo-subscription-${name}".file = ./subscriptions/${name}.age;
-          }) providers
-        );
-      };
-
-    preservation.preserveAt."/nix/persistence" = {
-      directories = [
-        "/var/lib/private/mihomo"
-      ];
-    };
   };
 }
