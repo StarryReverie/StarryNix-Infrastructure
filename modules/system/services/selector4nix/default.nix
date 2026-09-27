@@ -49,6 +49,10 @@ in
           url = "https://selector4nix.cachix.org/";
           priority = 40;
         }
+        {
+          url = "https://starrynix-derivations.cachix.org/";
+          priority = 40;
+        }
       ];
     };
   };

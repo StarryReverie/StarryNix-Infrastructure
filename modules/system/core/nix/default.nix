@@ -26,6 +26,7 @@ in
 
       "https://drvgraph.cachix.org"
       "https://selector4nix.cachix.org"
+      "https://starrynix-derivations.cachix.org/"
     ];
 
     nix.settings.trusted-public-keys = [
@@ -34,6 +35,7 @@ in
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "drvgraph.cachix.org-1:OngTuA0ekssxvRfZnRAvq1shmPRfJu3EO135RcbUvBg="
       "selector4nix.cachix.org-1:wovVlT07In5JCVz2tFgxPQTLpnN8hZT6P/RwfFcz3KE="
+      "starrynix-derivations.cachix.org-1:xeKb1mqP+suib++KMMe64pofNgsSgDJQLgcV2FVNZ2s="
     ];
 
     nix.settings.trusted-users = [
