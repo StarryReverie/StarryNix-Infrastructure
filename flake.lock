@@ -290,6 +290,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1790323409,
+        "narHash": "sha256-VVTPf+Hyd5ebpjBMHmrLMSBIeW6ls48Bqtosj7CNKLA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e94cb152ed51bd6e24eb4a41f1460252beb52cd2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "preservation": {
       "locked": {
         "lastModified": 1757436102,
@@ -326,7 +342,6 @@
         "selector4nix": "selector4nix",
         "starrynix-derivations": "starrynix-derivations",
         "starrynix-resources": "starrynix-resources",
-        "stinkpot": "stinkpot",
         "systems": "systems",
         "vaultix": "vaultix",
         "wrapper-manager": "wrapper-manager"
@@ -361,27 +376,25 @@
     },
     "starrynix-derivations": {
       "inputs": {
-        "flake-compat": [
-          "flake-compat"
-        ],
         "flake-parts": [
           "flake-parts"
         ],
-        "nixpkgs": [
-          "nixpkgs"
+        "nixpkgs": "nixpkgs_3",
+        "systems": [
+          "systems"
         ]
       },
       "locked": {
-        "lastModified": 1769565026,
-        "narHash": "sha256-mJOqIV9pm5EyUyaVy/JGswc5doJH5dNYT9Gik3iwXyE=",
+        "lastModified": 1790508809,
+        "narHash": "sha256-7mSZthMFQ6eW6QIEtOD5QCGutLB7IlfcGO2OiRiGrZA=",
         "owner": "StarryReverie",
         "repo": "StarryNix-Derivations",
-        "rev": "feaa6ff3b4e9795782d3b96e19b1dd0de6bdad46",
+        "rev": "2002c886c6361390d0990bd5d0a91d433a1cb550",
         "type": "github"
       },
       "original": {
         "owner": "StarryReverie",
-        "ref": "master",
+        "ref": "main",
         "repo": "StarryNix-Derivations",
         "type": "github"
       }
@@ -411,23 +424,6 @@
         "ref": "master",
         "repo": "StarryNix-Resources",
         "type": "github"
-      }
-    },
-    "stinkpot": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1789557480,
-        "narHash": "sha256-Ku4xDZwvtGcMADQ0xrzznyHLQjEttDJTF2jzP8Yhgv8=",
-        "type": "tarball",
-        "url": "https://tangled.org/did:plc:wqstj3k5tslmm246baaf3tpa/archive/71ecf8b2ebcb0a0509040fba7622205ea243627a.tar.gz?prefix=stinkpot-main"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://tangled.org/oppi.li/stinkpot/archive/main.tar.gz"
       }
     },
     "systems": {

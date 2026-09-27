@@ -69,7 +69,6 @@
     };
 
     nixpkgs = {
-      # url = "github:NixOS/nixpkgs/9fbb54b33e91ee4ca368e35a78e0613c720600b3";
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
@@ -85,21 +84,15 @@
     };
 
     starrynix-derivations = {
-      url = "github:StarryReverie/StarryNix-Derivations/master";
-      inputs.flake-compat.follows = "flake-compat";
+      url = "github:StarryReverie/StarryNix-Derivations/main";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
     };
 
     starrynix-resources = {
       url = "github:StarryReverie/StarryNix-Resources/master";
       inputs.flake-compat.follows = "flake-compat";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    stinkpot = {
-      url = "https://tangled.org/oppi.li/stinkpot/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -8,7 +8,7 @@ let
   selfCfg = config.custom.users.starryreverie or { };
   customCfg = selfCfg.programs.stinkpot or { };
 
-  stinkpotPkg = pkgs.pkgsExternal.stinkpot.stinkpot;
+  stinkpotPkg = pkgs.pkgsExternal.starrynix-derivations.stinkpot;
 in
 {
   config = {
