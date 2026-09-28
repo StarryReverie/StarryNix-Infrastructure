@@ -60,7 +60,7 @@ in
       (lib.attrsets.mapAttrsToList (name: flake: { "nix/inputs/${name}".source = flake.outPath; }))
       lib.attrsets.mergeAttrsList
     ];
-    nix.settings.nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
+    nix.settings.nix-path = lib.mkForce [ "nixpkgs=/etc/nix/inputs/nixpkgs" ];
 
     system.nixos.revision = inputs.nixpkgs.rev or inputs.nixpkgs.dirtyRev or null;
     system.nixos.versionSuffix =
