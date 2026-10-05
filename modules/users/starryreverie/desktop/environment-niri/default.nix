@@ -107,7 +107,7 @@ in
       systemd.services."niri-swayidle" = {
         serviceConfig.ExecStart =
           let
-            screensaverPackage = pkgs.pkgsExternal.nclock-background.nclock-screensaver;
+            screensaverPackage = pkgs.pkgsExternal.starrynix-derivations.nclock-screensaver;
 
             lockCommand = "${lib.getExe pkgs.hyprlock}";
             screensaverCommand = lib.strings.concatStringsSep " " [

@@ -52,12 +52,6 @@
       inputs.spectrum.follows = "";
     };
 
-    nclock-background = {
-      url = "github:StarryReverie/nclock-background/main";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-maid = {
       url = "https://codeberg.org/viperML/nix-maid/archive/master.tar.gz";
     };
