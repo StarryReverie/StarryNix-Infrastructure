@@ -26,6 +26,10 @@ in
               usernamehw.errorlens
               yzhang.dictionary-completion
 
+              # Haskell
+              haskell.haskell
+              justusadam.language-haskell
+
               # Nix
               jeff-hykin.better-nix-syntax
               jnoortheen.nix-ide

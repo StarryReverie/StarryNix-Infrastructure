@@ -35,6 +35,9 @@
   "git.allowForcePush": true,
   "git.confirmSync": false,
 
+  // Extension: Haskell
+  "haskell.manageHLS": "PATH",
+
   // Extension: Nix IDE
   "nix.enableLanguageServer": true,
   "nix.serverSettings": {
