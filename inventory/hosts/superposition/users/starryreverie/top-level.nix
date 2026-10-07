@@ -81,6 +81,7 @@
       nixTools.enable = true;
       ripgrep.enable = true;
       stinkpot.enable = true;
+      textTools.enable = true;
       zoxide.enable = true;
     };
     security = {

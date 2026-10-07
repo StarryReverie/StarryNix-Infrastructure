@@ -106,6 +106,7 @@ in
     (mkEntry "programs" "nixTools")
     (mkEntry "programs" "ripgrep")
     (mkEntry "programs" "stinkpot")
+    (mkEntry "programs" "textTools")
     (mkEntry "programs" "zoxide")
     (mkEntry "security" "fail2ban")
     (mkEntry "security" "password")
