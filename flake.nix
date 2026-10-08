@@ -49,7 +49,7 @@
     microvm = {
       url = "github:microvm-nix/microvm.nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.spectrum.follows = "";
+      inputs.spectrum.follows = "void";
     };
 
     nix-maid = {
@@ -94,6 +94,10 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.pre-commit-hooks.follows = "git-hooks";
+    };
+
+    void = {
+      url = "github:StarryReverie/void/main";
     };
 
     wrapper-manager = {

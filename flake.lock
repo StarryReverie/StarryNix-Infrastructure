@@ -179,7 +179,9 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "spectrum": []
+        "spectrum": [
+          "void"
+        ]
       },
       "locked": {
         "lastModified": 1790890970,
@@ -277,6 +279,7 @@
         "starrynix-resources": "starrynix-resources",
         "systems": "systems",
         "vaultix": "vaultix",
+        "void": "void",
         "wrapper-manager": "wrapper-manager"
       }
     },
@@ -402,6 +405,22 @@
         "owner": "milieuim",
         "ref": "main",
         "repo": "vaultix",
+        "type": "github"
+      }
+    },
+    "void": {
+      "locked": {
+        "lastModified": 1791463318,
+        "narHash": "sha256-hTJPMh9Bwky2TlaWmLrkBHdUBmpxSCPRK+bmnFNpNQE=",
+        "owner": "StarryReverie",
+        "repo": "void",
+        "rev": "3ba29f2defdfadcabeebc10e8ffa76e8eea6fc9c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "StarryReverie",
+        "ref": "main",
+        "repo": "void",
         "type": "github"
       }
     },
