@@ -6,7 +6,7 @@
 }:
 let
   helix-wrapped = inputs.wrapper-manager.lib.wrapWith pkgs {
-    basePackage = pkgs.helix-unwrapped;
+    basePackage = pkgs.steelix.unwrapped;
 
     prependFlags = [
       "--config"
