@@ -14,6 +14,8 @@ in
     programs.firefox.preferences = {
       "browser.download.open_pdf_attachments_inline" = true;
 
+      "browser.nova.enabled" = false;
+
       "media.hardware-video-decoding.forece-enabled" = true;
       "media.hardware-video-encoding.forece-enabled" = true;
     };
