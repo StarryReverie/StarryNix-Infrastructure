@@ -38,7 +38,6 @@
       qq.enable = true;
       resources.enable = true;
       rufin.enable = true;
-      splayer.enable = true;
       telegram-desktop.enable = true;
       vscode.enable = true;
       yazi.enable = true;

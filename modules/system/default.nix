@@ -50,7 +50,6 @@ in
     (mkEntry "applications" "qq")
     (mkEntry "applications" "resources")
     (mkEntry "applications" "rufin")
-    (mkEntry "applications" "splayer")
     (mkEntry "applications" "steam")
     (mkEntry "applications" "telegram-desktop")
     (mkEntry "applications" "vscode")
