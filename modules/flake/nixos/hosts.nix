@@ -38,6 +38,7 @@ in
         (import entryPoint) specialArgs injectedModules;
     in
     {
+      "entanglement" = importApplyHost (flakeRoot + /inventory/hosts/entanglement/entry-point.nix);
       "interference" = importApplyHost (flakeRoot + /inventory/hosts/interference/entry-point.nix);
       "origin" = importApplyHost (flakeRoot + /inventory/hosts/origin/entry-point.nix);
       "superposition" = importApplyHost (flakeRoot + /inventory/hosts/superposition/entry-point.nix);
