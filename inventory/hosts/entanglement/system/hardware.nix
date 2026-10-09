@@ -39,5 +39,16 @@
       boot.kernelModules = [ "kvm-intel" ];
       boot.extraModulePackages = [ ];
     }
+
+    # Key Mapper
+    {
+      # Keyd ignores mice by default. Specific mouse device ID must be added explicitly.
+      services.keyd.keyboards.default.ids = [
+        # 2.4G Receiver
+        "3554:fc00:dc9a6987"
+        # Bluetooth 1
+        "25a7:faa0:c238fbe2"
+      ];
+    }
   ];
 }
