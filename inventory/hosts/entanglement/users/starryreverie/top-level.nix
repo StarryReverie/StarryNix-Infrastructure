@@ -32,6 +32,7 @@
       lazygit.enable = true;
       mpv.enable = true;
       nautilus.enable = true;
+      opencode.enable = true;
       qq.enable = true;
       resources.enable = true;
       rufin.enable = true;
