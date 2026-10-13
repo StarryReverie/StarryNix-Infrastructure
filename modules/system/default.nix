@@ -34,6 +34,7 @@ in
     (mkEntry "applications" "cinny")
     (mkEntry "applications" "easyeffects")
     (mkEntry "applications" "firefox")
+    (mkEntry "applications" "folia-major")
     (mkEntry "applications" "git")
     (mkEntry "applications" "github-copilot-cli")
     (mkEntry "applications" "helix")

@@ -24,6 +24,7 @@
       cinny.enable = true;
       easyeffects.enable = true;
       firefox.enable = true;
+      folia-major.enable = true;
       git.enable = true;
       helix.enable = true;
       htop.enable = true;
