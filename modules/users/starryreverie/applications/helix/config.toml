@@ -48,13 +48,13 @@ normal = "NORMAL"
 select = "SELECT"
 
 [keys.insert]
-A-I = ["move_line_up", "move_line_up", "move_line_up", "move_line_up", "move_line_up"]
+A-I = ["move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up"]
 A-J = "move_prev_word_start"
-A-K = ["move_line_down", "move_line_down", "move_line_down", "move_line_down", "move_line_down"]
+A-K = ["move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down"]
 A-L = ["move_next_word_end", "move_char_right"]
-A-i = "move_line_up"
+A-i = "move_visual_line_up"
 A-j = "move_char_left"
-A-k = "move_line_down"
+A-k = "move_visual_line_down"
 A-l = "move_char_right"
 
 [keys.normal]
@@ -70,16 +70,16 @@ C-A-i = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_bef
 C-A-k = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 E = ":quit"
 H = "insert_at_line_start"
-I = ["move_line_up", "move_line_up", "move_line_up", "move_line_up", "move_line_up"]
+I = ["move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up", "move_visual_line_up"]
 J = "move_prev_word_start"
-K = ["move_line_down", "move_line_down", "move_line_down", "move_line_down", "move_line_down"]
+K = ["move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down", "move_visual_line_down"]
 L = "move_next_word_end"
 W = ":write"
 X = "extend_line_below"
 h = "insert_mode"
-i = "move_line_up"
+i = "move_visual_line_up"
 j = "move_char_left"
-k = "move_line_down"
+k = "move_visual_line_down"
 x = "@miw"
 ";" = "goto_word"
 "'" = "collapse_selection"
@@ -93,9 +93,9 @@ k = "scroll_down"
 
 [keys.normal.g]
 h = "goto_line_start"
-i = "move_line_up"
+i = "move_visual_line_up"
 j = "goto_first_nonwhitespace"
-k = "move_line_down"
+k = "move_visual_line_down"
 l = "goto_line_end"
 s = "no_op"
 
@@ -134,16 +134,16 @@ A-o = "no_op"
 A-p = "no_op"
 E = ":quit"
 H = "insert_at_line_start"
-I = ["extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up", "extend_line_up"]
+I = ["extend_visual_line_up", "extend_visual_line_up", "extend_visual_line_up", "extend_visual_line_up", "extend_visual_line_up"]
 J = "extend_prev_word_start"
-K = ["extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down", "extend_line_down"]
+K = ["extend_visual_line_down", "extend_visual_line_down", "extend_visual_line_down", "extend_visual_line_down", "extend_visual_line_down"]
 L = "extend_next_word_end"
 W = ":write"
 X = "extend_line_below"
 h = "insert_mode"
-i = "extend_line_up"
+i = "extend_visual_line_up"
 j = "extend_char_left"
-k = "extend_line_down"
+k = "extend_visual_line_down"
 x = ["move_prev_word_end", "move_next_word_start", "trim_selections"]
 ";" = "extend_to_word"
 "'" = "collapse_selection"
