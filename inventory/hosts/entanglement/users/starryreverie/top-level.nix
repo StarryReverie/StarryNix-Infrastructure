@@ -40,6 +40,7 @@
       vscode.enable = true;
       yazi.enable = true;
       zellij.enable = true;
+      zotero.enable = true;
       zsh.enable = true;
     };
     core = {

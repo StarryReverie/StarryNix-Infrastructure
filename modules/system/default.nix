@@ -56,6 +56,7 @@ in
     (mkEntry "applications" "vscode")
     (mkEntry "applications" "yazi")
     (mkEntry "applications" "zellij")
+    (mkEntry "applications" "zotero")
     (mkEntry "applications" "zsh")
     (mkEntry "core" "environment")
     (mkEntry "core" "ephemeralRootfs")

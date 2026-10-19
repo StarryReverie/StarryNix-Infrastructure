@@ -45,6 +45,7 @@ in
           allowUnfree = true;
 
           permittedInsecurePackages = [
+            "firefox-esr-140-bin-unwrapped-140.17.0esr"
             "minio-2025-10-15T17-29-55Z"
             "pnpm-10.29.2"
           ];
