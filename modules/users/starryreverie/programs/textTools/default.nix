@@ -14,6 +14,7 @@ in
       packages = [
         pkgs.jq
         pkgs.serpl
+        pkgs.tokei
       ];
     };
   };
