@@ -11,6 +11,7 @@
   "window.customTitleBarVisibility": "never",
   "window.controlsStyle": "hidden",
 
+  "editor.fullwidthCharacterWidth": "twoCells",
   "editor.stickyScroll.scrollWithEditor": false,
   "editor.stickyScroll.enabled": false,
   "terminal.integrated.stickyScroll.enabled": false,
