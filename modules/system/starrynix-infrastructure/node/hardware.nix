@@ -9,8 +9,6 @@ let
 in
 {
   config = {
-    boot.initrd.systemd.enable = true;
-
     networking.hostName = lib.mkDefault cfg.nodeInformation.hostName;
 
     microvm.hypervisor = lib.mkDefault "qemu";
