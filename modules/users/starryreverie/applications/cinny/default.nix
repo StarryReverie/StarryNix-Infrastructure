@@ -11,7 +11,9 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = [ pkgs.cinny-desktop ];
+      packages = [
+        pkgs.pkgsExternal.starrynix-derivations.patchedPackages.cinny-desktop
+      ];
     };
 
     preservation.preserveAt."/nix/persistence" = {
