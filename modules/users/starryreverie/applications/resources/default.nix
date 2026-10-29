@@ -14,7 +14,7 @@ in
       packages = [ pkgs.resources ];
 
       gsettings.settings = {
-        net.nokyan.Resources = {
+        org.gnome.Resources = {
           base = "Binary";
           show-logical-cpus = true;
           sidebar-description = true;
