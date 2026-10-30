@@ -68,7 +68,6 @@
       url = "github:StarryReverie/selector4nix/master";
       inputs.crane.follows = "crane";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     starrynix-derivations = {
@@ -92,7 +91,6 @@
       url = "github:milieuim/vaultix/main";
       inputs.crane.follows = "crane";
       inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
       inputs.pre-commit-hooks.follows = "git-hooks";
     };
 
