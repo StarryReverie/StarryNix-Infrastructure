@@ -86,6 +86,7 @@
       zoxide.enable = true;
     };
     security = {
+      keyring.enable = true;
       password.enable = true;
     };
     virtualization = {

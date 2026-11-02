@@ -110,6 +110,7 @@ in
     (mkEntry "programs" "textTools")
     (mkEntry "programs" "zoxide")
     (mkEntry "security" "fail2ban")
+    (mkEntry "security" "keyring")
     (mkEntry "security" "password")
     (mkEntry "security" "sudo")
     (mkEntry "services" "dconf")
