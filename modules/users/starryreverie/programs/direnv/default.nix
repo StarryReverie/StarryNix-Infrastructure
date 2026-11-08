@@ -13,6 +13,7 @@ let
     global = {
       log_filter = "^$";
       log_format = "-";
+      warn_timeout = "0s";
     };
   };
 
