@@ -34,7 +34,6 @@
       nautilus.enable = true;
       opencode.enable = true;
       qq.enable = true;
-      resources.enable = true;
       rufin.enable = true;
       telegram-desktop.enable = true;
       vscode.enable = true;
