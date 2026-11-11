@@ -1,0 +1,69 @@
+{
+  "helix_mode": true,
+  "base_keymap": "VSCode",
+  "vim": {
+    "use_system_clipboard": "never"
+  },
+
+  "buffer_font_family": "Maple Mono NL NF CN",
+  "buffer_line_height": "comfortable",
+  "buffer_font_size": 12.0,
+  "ui_font_family": "Noto Sans",
+  "ui_font_size": 14.0,
+  "markdown_preview": {
+    "font_size": 14.0,
+    "heading_font_weight": 700.0
+  },
+  "terminal": {
+    "font_size": 12.0,
+    "blinking": "on"
+  },
+
+  "close_panel_on_toggle": true,
+  "relative_line_numbers": "enabled",
+  "gutter": {
+    "line_numbers": true
+  },
+  "vertical_scroll_margin": 5.0,
+  "minimap": {
+    "show": "always"
+  },
+  "sticky_scroll": {
+    "enabled": false
+  },
+  "cursor_blink": true,
+  "theme": {
+    "mode": "system",
+    "light": "Rosé Pine Dawn",
+    "dark": "Rosé Pine Moon"
+  },
+
+  "toolbar": {
+    "code_actions": false,
+    "agent_review": false
+  },
+  "title_bar": {
+    "show_sign_in": false
+  },
+  "agent": {
+    "button": false,
+    "model_parameters": []
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "project_panel": {
+    "sticky_scroll": false,
+    "git_status": true,
+    "file_icons": true,
+    "entry_spacing": "comfortable"
+  },
+  "show_edit_predictions": false,
+
+  "disable_ai": true,
+  "auto_update": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  }
+}

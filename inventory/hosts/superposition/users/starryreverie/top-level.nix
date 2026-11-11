@@ -41,6 +41,7 @@
       telegram-desktop.enable = true;
       vscode.enable = true;
       yazi.enable = true;
+      zed.enable = true;
       zellij.enable = true;
       zotero.enable = true;
       zsh.enable = true;

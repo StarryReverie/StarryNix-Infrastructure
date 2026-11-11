@@ -54,6 +54,7 @@ in
     (mkEntry "applications" "telegram-desktop")
     (mkEntry "applications" "vscode")
     (mkEntry "applications" "yazi")
+    (mkEntry "applications" "zed")
     (mkEntry "applications" "zellij")
     (mkEntry "applications" "zotero")
     (mkEntry "applications" "zsh")

@@ -1,0 +1,98 @@
+[
+  {
+    "context": "VimControl && helix_mode && !menu && !BufferSearchBar",
+    "bindings": {
+      // File Operations
+      "shift-w": "workspace::Save",
+      "shift-e": "pane::CloseActiveItem",
+
+      // Editing Operations
+      "h": "vim::InsertBefore",
+      "shift-h": "vim::InsertFirstNonWhitespace",
+
+      "ctrl-alt-i": "editor::MoveLineUp",
+      "ctrl-alt-k": "editor::MoveLineDown",
+
+      // Navigation
+      "i": ["vim::Up", { "display_lines": true }],
+      "k": ["vim::Down", { "display_lines": true }],
+      "j": "vim::WrappingLeft",
+      "l": "vim::WrappingRight",
+
+      "shift-i": ["workspace::SendKeystrokes", "i i i i i"],
+      "shift-k": ["workspace::SendKeystrokes", "k k k k k"],
+      "shift-j": "vim::PreviousWordStart",
+      "shift-l": "vim::NextWordEnd",
+
+      "g i": ["workspace::SendKeystrokes", "i"],
+      "g k": ["workspace::SendKeystrokes", "k"],
+      "g j": "vim::FirstNonWhitespace",
+      "g l": "vim::EndOfLine",
+      "g h": "vim::StartOfLine",
+
+      ";": "vim::HelixJumpToWord",
+
+      "alt-i": "vim::SelectLargerSyntaxNode",
+      "alt-k": "vim::SelectSmallerSyntaxNode",
+      "alt-j": "vim::SelectPreviousSyntaxNode",
+      "alt-l": "vim::SelectNextSyntaxNode",
+
+      "-": "vim::NextLineStart",
+      "_": "vim::PreviousLineStart",
+
+      // Selections
+      "x": ["workspace::SendKeystrokes", "shift-j shift-l"],
+      "shift-x": "vim::HelixSelectLine",
+
+      "'": "vim::HelixCollapseSelection",
+
+      // Window Management
+      "w i": "workspace::MovePaneUp",
+      "w k": "workspace::MovePaneDown",
+      "w j": "workspace::MovePaneLeft",
+      "w l": "workspace::MovePaneRight",
+
+      "w w": "workspace::ActivateNextPane",
+      "w shift-w": "workspace::ActivatePreviousPane",
+
+      "w shift-i": "pane::SplitUp",
+      "w shift-k": "pane::SplitDown",
+      "w shift-j": "pane::SplitLeft",
+      "w shift-l": "pane::SplitRight",
+
+      "w c": "workspace::NewFile",
+      "w e": "pane::CloseActiveItem",
+
+      "w n": "pane::ActivateNextItem",
+      "w p": "pane::ActivatePreviousItem",
+
+      "w f": "project_panel::ToggleFocus",
+
+      // Pickers
+      "space a": "editor::ToggleCodeActions",
+      "space d": "diagnostics::DeployCurrentFile",
+      "space shift-d": "diagnostics::Deploy",
+      "space f": "file_finder::Toggle",
+      "space r": "editor::Rename",
+      "space ?": "command_palette::Toggle",
+
+      // Folding
+      "=": "editor::ToggleFold",
+      "+": "editor::ToggleFoldRecursive"
+    }
+  },
+  {
+    "context": "Editor && !VimControl",
+    "bindings": {
+      "alt-i": "editor::MoveUp",
+      "alt-k": "editor::MoveDown",
+      "alt-j": "editor::MoveLeft",
+      "alt-l": "editor::MoveRight",
+
+      "alt-shift-i": ["workspace::SendKeystrokes", "alt-i alt-i alt-i alt-i alt-i"],
+      "alt-shift-k": ["workspace::SendKeystrokes", "alt-k alt-k alt-k alt-k alt-k"],
+      "alt-shift-j": "editor::MoveToPreviousWordStart",
+      "alt-shift-l": "editor::MoveToNextWordEnd"
+    }
+  }
+]
