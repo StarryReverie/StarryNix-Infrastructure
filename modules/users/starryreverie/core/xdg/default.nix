@@ -41,6 +41,7 @@ in
             "image/png" = "org.gnome.Loupe.desktop";
             "image/gif" = "org.gnome.Loupe.desktop";
             "image/webp" = "org.gnome.Loupe.desktop";
+            "image/avif" = "org.gnome.Loupe.desktop";
             "image/svg+xml" = "org.gnome.Loupe.desktop";
             "image/tiff" = "org.gnome.Loupe.desktop";
             "image/x-ms-bmp" = "org.gnome.Loupe.desktop";
@@ -67,27 +68,27 @@ in
             "video/webm" = "mpv.desktop";
 
             # Text
-            "text/plain" = "Helix.desktop";
-            "text/markdown" = "Helix.desktop";
-            "text/x-markdown" = "Helix.desktop";
-            "text/css" = "Helix.desktop";
-            "text/csv" = "Helix.desktop";
+            "text/plain" = "dev.zed.Zed.desktop";
+            "text/markdown" = "dev.zed.Zed.desktop";
+            "text/x-markdown" = "dev.zed.Zed.desktop";
+            "text/css" = "dev.zed.Zed.desktop";
+            "text/csv" = "dev.zed.Zed.desktop";
           };
 
           added = {
             "image/png" = [
-              "com.github.huluti.Curtail.desktop"
               "io.gitlab.adhami3310.Converter.desktop"
             ];
             "image/jpeg" = [
-              "com.github.huluti.Curtail.desktop"
               "io.gitlab.adhami3310.Converter.desktop"
             ];
             "text/plain" = [
+              "Helix.desktop"
               "codium.desktop"
               "code.desktop"
             ];
             "text/markdown" = [
+              "Helix.desktop"
               "codium.desktop"
               "code.desktop"
             ];

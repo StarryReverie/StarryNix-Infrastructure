@@ -31,7 +31,6 @@ in
         pkgs.textpieces
 
         # Pictures
-        pkgs.curtail
         pkgs.loupe
         pkgs.switcheroo
 
