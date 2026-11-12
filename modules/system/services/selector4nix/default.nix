@@ -26,7 +26,7 @@ in
         }
         {
           url = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store/";
-          priority = 50;
+          priority = 30;
         }
         {
           url = "https://mirrors.ustc.edu.cn/nix-channels/store/";
@@ -34,7 +34,7 @@ in
         }
         {
           url = "https://mirror.sjtu.edu.cn/nix-channels/store/";
-          priority = 35;
+          priority = 50;
         }
         {
           url = "https://nix-community.cachix.org/";
