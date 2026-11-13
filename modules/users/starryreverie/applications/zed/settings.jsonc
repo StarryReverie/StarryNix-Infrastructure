@@ -1,10 +1,27 @@
 {
-  "helix_mode": true,
-  "base_keymap": "VSCode",
-  "vim": {
-    "use_system_clipboard": "never"
+  // General
+  "cli_default_open_behavior": "new_window",
+  "close_panel_on_toggle": true,
+  "restore_on_startup": "launchpad",
+  "theme": {
+    "mode": "system",
+    "light": "Rosé Pine Dawn",
+    "dark": "Rosé Pine Moon"
   },
 
+  // Editor
+  "auto_signature_help": true,
+  "relative_line_numbers": "enabled",
+  "sticky_scroll": {
+    "enabled": false
+  },
+  "search": {
+    "regex": true
+  },
+  "use_smartcase_search": true,
+  "vertical_scroll_margin": 5.0,
+
+  // Fonts
   "buffer_font_family": "Maple Mono NL NF CN",
   "buffer_line_height": "comfortable",
   "buffer_font_size": 12.0,
@@ -14,43 +31,31 @@
     "font_size": 14.0,
     "heading_font_weight": 700.0
   },
-  "terminal": {
-    "font_size": 12.0,
-    "blinking": "on"
+
+  // Keymapping
+  "helix_mode": true,
+  "base_keymap": "VSCode",
+  "vim": {
+    "use_smartcase_find": true,
+    "use_system_clipboard": "never"
   },
 
-  "close_panel_on_toggle": true,
-  "relative_line_numbers": "enabled",
+  // Windows and Panels
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
   "gutter": {
+    "min_line_number_digits": 3,
+    "folds": false,
+    "runnables": true,
+    "breakpoints": true,
+    "bookmarks": true,
     "line_numbers": true
   },
-  "vertical_scroll_margin": 5.0,
   "minimap": {
-    "show": "always"
-  },
-  "sticky_scroll": {
-    "enabled": false
-  },
-  "cursor_blink": true,
-  "theme": {
-    "mode": "system",
-    "light": "Rosé Pine Dawn",
-    "dark": "Rosé Pine Moon"
-  },
-
-  "toolbar": {
-    "code_actions": false,
-    "agent_review": false
-  },
-  "title_bar": {
-    "show_sign_in": false
-  },
-  "agent": {
-    "button": false,
-    "model_parameters": []
-  },
-  "collaboration_panel": {
-    "button": false
+    "show": "never"
   },
   "project_panel": {
     "sticky_scroll": false,
@@ -58,10 +63,35 @@
     "file_icons": true,
     "entry_spacing": "comfortable"
   },
-  "show_edit_predictions": false,
+  "status_bar": {
+    "line_endings_button": true
+  },
+  "terminal": {
+    "cursor_shape": "underline",
+    "bell": "system",
+    "font_size": 12.0,
+    "blinking": "on"
+  },
+  "title_bar": {
+    "show_sign_in": false
+  },
+  "toolbar": {
+    "code_actions": false,
+    "agent_review": false
+  },
+  "window_title_separator": " - ",
 
-  "disable_ai": true,
+  // No AI and Proprietary Services
+  "show_edit_predictions": false,
+  "agent": {
+    "button": false,
+    "model_parameters": []
+  },
   "auto_update": false,
+  "collaboration_panel": {
+    "button": false
+  },
+  "disable_ai": true,
   "telemetry": {
     "diagnostics": false,
     "metrics": false
