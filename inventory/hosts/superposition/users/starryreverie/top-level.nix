@@ -21,10 +21,8 @@
     applications = {
       alacritty.enable = true;
       cava.enable = true;
-      cinny.enable = true;
       easyeffects.enable = true;
       firefox.enable = true;
-      fractal.enable = true;
       git.enable = true;
       helix.enable = true;
       htop.enable = true;
@@ -38,6 +36,7 @@
       prismlauncher.enable = true;
       qq.enable = true;
       rufin.enable = true;
+      sable.enable = true;
       telegram-desktop.enable = true;
       vscode.enable = true;
       yazi.enable = true;
