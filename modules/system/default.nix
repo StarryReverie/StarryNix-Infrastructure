@@ -50,6 +50,7 @@ in
     (mkEntry "applications" "prismlauncher")
     (mkEntry "applications" "qq")
     (mkEntry "applications" "rufin")
+    (mkEntry "applications" "sable")
     (mkEntry "applications" "steam")
     (mkEntry "applications" "telegram-desktop")
     (mkEntry "applications" "vscode")
