@@ -1,106 +1,144 @@
 {
   description = "Declarative and virtualized service deployment and orchestraion infrastructure built on the Nix/NixOS ecosystem.";
 
-  inputs = {
-    crane = {
-      url = "github:ipetkov/crane/master";
-    };
+  inputs.crane = {
+    url = "github:ipetkov/crane/master";
+  };
 
-    deploy-rs = {
-      url = "github:serokell/deploy-rs/master";
-      inputs.flake-compat.follows = "flake-compat";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.utils.follows = "flake-utils";
+  inputs.deploy-rs = {
+    url = "github:serokell/deploy-rs/master";
+    inputs.flake-compat = {
+      follows = "flake-compat";
     };
+    inputs.nixpkgs = {
+      follows = "nixpkgs";
+    };
+    inputs.utils = {
+      follows = "flake-utils";
+    };
+  };
 
-    disko = {
-      url = "github:nix-community/disko/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+  inputs.disko = {
+    url = "github:nix-community/disko/master";
+    inputs.nixpkgs = {
+      follows = "nixpkgs";
     };
+  };
 
-    flake-compat = {
-      url = "https://git.lix.systems/lix-project/flake-compat/archive/main.tar.gz";
-    };
+  inputs.flake-compat = {
+    url = "https://git.lix.systems/lix-project/flake-compat/archive/main.tar.gz";
+  };
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts/main";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
+  inputs.flake-parts = {
+    url = "github:hercules-ci/flake-parts/main";
+    inputs.nixpkgs-lib = {
+      follows = "nixpkgs";
     };
+  };
 
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "systems";
+  inputs.flake-utils = {
+    url = "github:numtide/flake-utils";
+    inputs.systems = {
+      follows = "systems";
     };
+  };
 
-    flakey-profile = {
-      url = "github:lf-/flakey-profile/main";
-    };
+  inputs.flakey-profile = {
+    url = "github:lf-/flakey-profile/main";
+  };
 
-    git-hooks = {
-      url = "github:cachix/git-hooks.nix/master";
-      inputs.flake-compat.follows = "flake-compat";
-      inputs.nixpkgs.follows = "nixpkgs";
+  inputs.git-hooks = {
+    url = "github:cachix/git-hooks.nix/master";
+    inputs.flake-compat = {
+      follows = "flake-compat";
     };
+    inputs.nixpkgs = {
+      follows = "nixpkgs";
+    };
+  };
 
-    import-tree = {
-      url = "github:vic/import-tree/main";
-    };
+  inputs.import-tree = {
+    url = "github:vic/import-tree/main";
+  };
 
-    microvm = {
-      url = "github:microvm-nix/microvm.nix/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.spectrum.follows = "void";
+  inputs.microvm = {
+    url = "github:microvm-nix/microvm.nix/main";
+    inputs.nixpkgs = {
+      follows = "nixpkgs";
     };
+    inputs.spectrum = {
+      follows = "void";
+    };
+  };
 
-    nix-maid = {
-      url = "https://codeberg.org/viperML/nix-maid/archive/master.tar.gz";
-    };
+  inputs.nix-maid = {
+    url = "https://codeberg.org/viperML/nix-maid/archive/master.tar.gz";
+  };
 
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
+  inputs.nixpkgs = {
+    url = "github:NixOS/nixpkgs/nixos-unstable";
+  };
 
-    preservation = {
-      url = "github:nix-community/preservation/main";
-    };
+  inputs.preservation = {
+    url = "github:nix-community/preservation/main";
+  };
 
-    selector4nix = {
-      url = "github:StarryReverie/selector4nix/master";
-      inputs.crane.follows = "crane";
-      inputs.flake-parts.follows = "flake-parts";
+  inputs.selector4nix = {
+    url = "github:StarryReverie/selector4nix/master";
+    inputs.crane = {
+      follows = "crane";
     };
+    inputs.flake-parts = {
+      follows = "flake-parts";
+    };
+  };
 
-    starrynix-derivations = {
-      url = "github:StarryReverie/StarryNix-Derivations/main";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.systems.follows = "systems";
+  inputs.starrynix-derivations = {
+    url = "github:StarryReverie/StarryNix-Derivations/main";
+    inputs.flake-parts = {
+      follows = "flake-parts";
     };
+    inputs.systems = {
+      follows = "systems";
+    };
+  };
 
-    starrynix-resources = {
-      url = "github:StarryReverie/StarryNix-Resources/master";
-      inputs.flake-compat.follows = "flake-compat";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
+  inputs.starrynix-resources = {
+    url = "github:StarryReverie/StarryNix-Resources/master";
+    inputs.flake-compat = {
+      follows = "flake-compat";
     };
+    inputs.flake-parts = {
+      follows = "flake-parts";
+    };
+    inputs.nixpkgs = {
+      follows = "nixpkgs";
+    };
+  };
 
-    systems = {
-      url = "github:nix-systems/default-linux/main";
-    };
+  inputs.systems = {
+    url = "github:nix-systems/default-linux/main";
+  };
 
-    vaultix = {
-      url = "github:milieuim/vaultix/main";
-      inputs.crane.follows = "crane";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.pre-commit-hooks.follows = "git-hooks";
+  inputs.vaultix = {
+    url = "github:milieuim/vaultix/main";
+    inputs.crane = {
+      follows = "crane";
     };
+    inputs.flake-parts = {
+      follows = "flake-parts";
+    };
+    inputs.pre-commit-hooks = {
+      follows = "git-hooks";
+    };
+  };
 
-    void = {
-      url = "github:StarryReverie/void/main";
-    };
+  inputs.void = {
+    url = "github:StarryReverie/void/main";
+  };
 
-    wrapper-manager = {
-      url = "https://codeberg.org/viperML/wrapper-manager/archive/master.tar.gz";
-    };
+  inputs.wrapper-manager = {
+    url = "https://codeberg.org/viperML/wrapper-manager/archive/master.tar.gz";
   };
 
   outputs =
