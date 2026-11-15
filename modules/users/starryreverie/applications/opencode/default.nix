@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (customCfg.enable or false) {
     users.users.starryreverie.maid = {
-      packages = [ pkgs.opencode ];
+      packages = [ pkgs.pkgsExternal.nixpkgs-stable.opencode ];
 
       file.xdg_data."opencode/auth.json".source =
         config.vaultix.secrets."starryreverie-opencode-auth.json".path;

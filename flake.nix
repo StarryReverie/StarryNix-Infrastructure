@@ -79,6 +79,10 @@
     url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
+  inputs.nixpkgs-stable = {
+    url = "github:NixOS/nixpkgs/31ecbaca1bdefa45dffc409f0250bd8039ea0010";
+  };
+
   inputs.preservation = {
     url = "github:nix-community/preservation/main";
   };
