@@ -9,9 +9,8 @@ let
 in
 {
   config = lib.mkIf customCfg.enable {
-    services.scx.enable = true;
-    services.scx.package = pkgs.scx.rustscheds;
+    services.scx-loader.enable = true;
 
-    services.scx.scheduler = "scx_lavd";
+    services.scx-loader.config.default_sched = "scx_lavd";
   };
 }
