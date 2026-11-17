@@ -35,6 +35,7 @@
       opencode.enable = true;
       qq.enable = true;
       rufin.enable = true;
+      sable.enable = true;
       telegram-desktop.enable = true;
       vscode.enable = true;
       yazi.enable = true;
