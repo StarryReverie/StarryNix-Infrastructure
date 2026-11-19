@@ -7,7 +7,7 @@
       "shift-e": "pane::CloseActiveItem",
 
       // Editing Operations
-      "h": "vim::InsertBefore",
+      "h": "vim::HelixInsert",
       "shift-h": "vim::InsertFirstNonWhitespace",
 
       "ctrl-alt-i": "editor::MoveLineUp",
